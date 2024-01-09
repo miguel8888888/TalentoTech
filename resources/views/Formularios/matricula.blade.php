@@ -68,7 +68,7 @@
                                         TECH</p>
     
                                 </div>
-                                <div class="mt-10 grid grid-cols-4 gap-4 lg:grid-cols-8 overscroll-contain h-1/2">
+                                <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8 overscroll-contain h-1/2">
                                     <div class="col-span-2">
                                         <label for="primer-nombre"
                                             class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>

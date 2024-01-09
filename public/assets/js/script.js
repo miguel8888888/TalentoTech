@@ -175,7 +175,7 @@ function render() {
         });
         plane.geometry.colorsNeedUpdate = true;
 
-        intersects[0].face.color.setStyle("#006ea0");
+        intersects[0].face.color.setStyle("#45B2D6");
         plane.geometry.colorsNeedUpdate = true;
     }
 

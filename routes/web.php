@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Formularios/matricula');
 });
+
+// Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
+Route::post('/matricula', [RegistrarController::class, 'guardarDatos'])->middleware('auth');

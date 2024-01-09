@@ -157,7 +157,7 @@ h1 {
 
 @media screen and (min-width: 860px) {
   .sky-container {
-    top: 18%;
+    /* top: 18%; */
     /* right: 12%; */
     left: auto;
   }
@@ -285,5 +285,6 @@ h1 {
 
 .scrollable-content {
   overflow: auto;
-  height: 50%; /* Puedes ajustar este porcentaje según tus necesidades */
+  height: 50%;
+  /* Puedes ajustar este porcentaje según tus necesidades */
 }

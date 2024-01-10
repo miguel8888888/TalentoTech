@@ -328,12 +328,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-
                                         </div>
                                     </div>
                                     <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
-                                    <div class="pant pant3 space-y-12 grid grid-cols-1">
+                                        <div class="pant pant3 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
                                                 <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Autorreconocimiento Grupo Étnico del Beneficiario </p>
 
@@ -638,32 +636,18 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-span-2 lg:col-span-12 mt-5">
                                                     <label for="profesion" class="block text-sm font-medium leading-6 text-gray-900">Si eres profesional, técnico o tecnólogo, escribe que profesión tienes</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="profesion" id="profesion" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
-                                               
                                             </div>
-                                          
-
                                         </div>
                                     </div>
                                     <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
                                         <div class="pant pant4 space-y-12 grid grid-cols-1">
-                                            <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Si eres profesional, técnico o tecnólogo, escribe que profesión tienes...</p>
-                                            </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
-                                                <div class="col-span-2">
-                                                    <label for="profesion_tecni_tec" class="block text-sm font-medium leading-6 text-gray-900">Profesion</label>
-                                                    <div class="mt-2">
-                                                        <input type="text" name="profesion_tecni_tec" id="profesion_tecni_tec" autocomplete="profesion_tecni_tec" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                                                    </div>
-                                                </div>
 
                                                 <div class="col-span-2">
                                                     <label for="pais_residencia" class="block text-sm font-medium leading-6 text-gray-900">País de Residencia</label>
@@ -931,7 +915,7 @@
                                         </div>
                                     </div>
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
-                                        Step content
+                                    <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
                                     </div>
                                 </div>
 
@@ -940,46 +924,6 @@
                                     <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-
-
-
-
-                            {{-- <div class="mt-8 flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                                    
-                                <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-                                    <div>
-                                    <p class="text-sm text-gray-700">
-                                        Página
-                                        <span class="font-medium" id="currentPage">1</span>
-                                        de
-                                        <span class="font-medium">5</span>
-                                    </p>
-                                    </div>
-                                    <div>
-                                        <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-                                            <a href="#" id="prevPage" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                            <span class="sr-only">Anterior</span>
-                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
-                                            </svg>
-                                            </a>
-                                            <!-- Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0" -->
-                                            <a href="#" aria-current="page" class="active relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 page-number" data-page="1">1</a>
-                                            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 page-number" data-page="2">2</a>
-                                            <a href="#" class="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex page-number" data-page="3">3</a>
-                                            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 page-number" data-page="4">4</a>
-                                            <a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 page-number" data-page="5">5</a>
-                                            <a href="#" id="nextPage" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
-                                            <span class="sr-only">Siguiente</span>
-                                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
-                                            </svg>
-                                            </a>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div> --}}
-
                         </form>
                     </div>
                 </div>

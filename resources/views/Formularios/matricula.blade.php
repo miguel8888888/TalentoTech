@@ -149,6 +149,7 @@
                                                     <label for="tipo-documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
                                                     <div class="mt-2">
                                                         <select id="tipo-documento" name="tipo-documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>CC</option>
                                                             <option>CE</option>
                                                             <option>TI</option>
@@ -181,6 +182,7 @@
                                                     <label for="sexo" class="block text-sm font-medium leading-6 text-gray-900">Sexo </label>
                                                     <div class="mt-2">
                                                         <select id="sexo" name="sexo" autocomplete="sexo-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Hombre</option>
                                                             <option>Mujer</option>
                                                             <option>Intersex</option>
@@ -192,6 +194,7 @@
                                                     <label for="identidad-genero" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
                                                     <div class="mt-2">
                                                         <select id="identidad-genero" name="identidad-genero" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Si</option>
                                                             <option>No</option>
                                                         </select>
@@ -202,6 +205,7 @@
                                                     <label for="genero" class="block text-sm font-medium leading-6 text-gray-900">Identidad de género </label>
                                                     <div class="mt-2">
                                                         <select id="genero" name="genero" autocomplete="genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Masculino</option>
                                                             <option>Femenino</option>
                                                             <option>Trans</option>
@@ -215,6 +219,7 @@
                                                     <label for="orientacion" class="block text-sm font-medium leading-6 text-gray-900">¿Cuál es su orientación sexual? </label>
                                                     <div class="mt-2">
                                                         <select id="orientacion" name="orientacion" autocomplete="orientacion-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Heterosexualidad</option>
                                                             <option>Homosexualidad</option>
                                                             <option>Bisexualidad</option>
@@ -289,6 +294,7 @@
                                                     <label for="familiar_tipo_documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
                                                     <div class="mt-2">
                                                         <select id="familiar_tipo_documento" name="familiar_tipo_documento" autocomplete="familiar_tipo_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>CC</option>
                                                             <option>CE</option>
                                                             <option>TI</option>
@@ -341,6 +347,7 @@
                                                     <label for="grupo_etnico" class="block text-sm font-medium leading-6 text-gray-900">Grupo Étnico</label>
                                                     <div class="mt-2">
                                                         <select id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Afrocolombiano</option>
                                                             <option>Palenquero</option>
                                                             <option>Comunidad Negra</option>
@@ -356,6 +363,7 @@
                                                     <label for="discapacidad" class="block text-sm font-medium leading-6 text-gray-900">¿Presenta alguna discapacidad?</label>
                                                     <div class="mt-2">
                                                         <select id="discapacidad" name="discapacidad" autocomplete="discapacidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Si</option>
                                                             <option>No</option>
                                                         </select>
@@ -366,6 +374,7 @@
                                                     <label for="discapacidad_certificada" class="block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
                                                     <div class="mt-2">
                                                         <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Si</option>
                                                             <option>No</option>
                                                         </select>
@@ -614,6 +623,7 @@
                                                     <label for="grado_escolaridad" class="block text-sm font-medium leading-6 text-gray-900">Grado de escolaridad</label>
                                                     <div class="mt-2">
                                                         <select id="grado_escolaridad" name="grado_escolaridad" autocomplete="grado_escolaridad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Bachillerato</option>
                                                             <option>Técnica </option>
                                                             <option>Tecnológico</option>
@@ -626,6 +636,7 @@
                                                     <label for="ocupacion" class="block text-sm font-medium leading-6 text-gray-900">Ocupación </label>
                                                     <div class="mt-2">
                                                         <select id="ocupacion" name="ocupacion" autocomplete="ocupacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
                                                             <option>Estudiante</option>
                                                             <option>Emprendedor </option>
                                                             <option>Independiente</option>

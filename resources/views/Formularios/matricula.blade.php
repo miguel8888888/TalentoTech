@@ -33,7 +33,7 @@
     </div>
     <div class="intro-container">
         <header>
-            <nav class="flex items-center justify-between flex-wrap p-6">
+            <nav class="flex items-center justify-between p-6">
                 <div class="flex items-center flex-shrink-0 text-white mr-6">
                     <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="w-1/9">
                 </div>

@@ -8,7 +8,7 @@
 @vite('resources/css/app.css')
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
 <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/plugins/smartwizart/css/smart_wizard.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/smartwizart/css/smart_wizard_all.min.css') }}">
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> --}}
 
@@ -366,9 +366,17 @@
 
 <script type="text/javascript">
     window.addEventListener("load", function() {
-        $('#smartwizard').smartWizard();
+        $('#smartwizard').smartWizard({
+                theme: 'dots'
+        });
+
+        // var options = {
+        // };
+        // $('#smartwizard').smartWizard("setOptions", options);
     });
 </script>
+
+
 
 
 {{-- <script>

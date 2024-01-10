@@ -262,17 +262,7 @@ h1 {
   color: #e62117;
 }
 
-.inactive {
-  background: #fff !important;
-  color: black !important;
-  border: solid 1px #d1d5db !important;
-}
 
-.active {
-  background: #4f46e5 !important;
-  color: white !important;
-  border: none !important;
-}
 
 .d-none {
   display: none !important;

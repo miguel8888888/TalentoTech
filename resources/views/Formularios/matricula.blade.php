@@ -98,6 +98,12 @@
                                             Step Title
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#step-5">
+                                            <span class="num">5</span>
+                                            Step Title
+                                        </a>
+                                    </li>
                                 </ul>
 
                                 <div class="tab-content">

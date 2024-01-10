@@ -647,7 +647,282 @@
                                         </div>
                                     </div>
                                     <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
-                                        Step content
+                                        <div class="pant pant4 space-y-12 grid grid-cols-1">
+                                            <div class="border-b border-gray-900/10">
+                                                <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Si eres profesional, técnico o tecnólogo, escribe que profesión tienes...</p>
+                                            </div>
+                                            <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
+                                                <div class="col-span-2">
+                                                    <label for="profesion_tecni_tec" class="block text-sm font-medium leading-6 text-gray-900">Profesion</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="profesion_tecni_tec" id="profesion_tecni_tec" autocomplete="profesion_tecni_tec" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="pais_residencia" class="block text-sm font-medium leading-6 text-gray-900">País de Residencia</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="pais_residencia" id="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="depto_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="depto_residencia" id="depto_residencia" autocomplete="depto_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="municipio_residencia" class="block text-sm font-medium leading-6 text-gray-900">Municipio Residencia</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-span-2">
+                                                    <label for="zona_ubi" class="block text-sm font-medium leading-6 text-gray-900">Zona de ubicación</label>
+                                                    <div class="mt-2">
+                                                        <select id="zona_ubi" name="zona_ubi" autocomplete="zona_ubi" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Rural</option>
+                                                            <option>Urbana</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="corregimiento" class="block text-sm font-medium leading-6 text-gray-900">Nombre corregimiento</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="corregimiento" id="corregimiento" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="nom_vereda" class="block text-sm font-medium leading-6 text-gray-900">Nombre Vereda</label>
+                                                    <div class="mt-2">
+                                                        <input id="nom_vereda" name="nom_vereda" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="caserio" class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Zona Resto (caserío)</label>
+                                                    <div class="mt-2">
+                                                        <input id="caserio" name="caserio" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="barrio" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Barrio</label>
+                                                    <div class="mt-2">
+                                                        <input id="barrio" name="barrio" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="direccion" class="block text-sm font-medium leading-6 text-gray-900">Dirección</label>
+                                                    <div class="mt-2">
+                                                        <input id="direccion" name="direccion" type="text" autocomplete="direccion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-span-2">
+                                                    <label for="estrato" class="block text-sm font-medium leading-6 text-gray-900">Estrato socioeconómico</label>
+                                                    <div class="mt-2">
+                                                        <input id="estrato" name="estrato" type="text" autocomplete="estrato" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tipo de Vivienda</label>
+                                                    <div class="mt-2">
+                                                        <select id="tipo_vivienda" name="tipo_vivienda" autocomplete="tipo_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Casa</option>
+                                                            <option>Habitación o Cuarto</option>
+                                                            <option>Albergue (Vivienda temporal)</option>
+                                                            <option>Inquilinato</option>
+                                                            <option>Casa lote</option>
+                                                            <option>Apartamento</option>
+                                                            <option>Vivienda indígena</option>
+                                                            <option>Palafito</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-span-2">
+                                                    <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tenencia de la Vivienda</label>
+                                                    <div class="mt-2">
+                                                        <select id="tipo_vivienda" name="tipo_vivienda" autocomplete="tipo_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Propia</option>
+                                                            <option>Arriendo</option>
+                                                            <option>Familiar</option>
+                                                            <option>Albergue</option>
+                                                            <option>Apartamento</option>
+                                                            <option>Lugar de trabajo</option>
+                                                            <option>Posada (vivienda otra persona sin pagar)</option>
+                                                            <option>Asentamiento- Invasión</option>
+                                                            <option>Paga Diario</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-5 col-span-2">
+                                                </div>
+                                                <div class="lg:col-span-4 mt-6 col-span-2">
+                                                    <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">¿Tiene acceso a servicios básicos?</label>
+                                                    <div class="pt-6 grid grid-cols-2 gap-6" id="filter-section-mobile-0">
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="Agua" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="Agua" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Agua</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the first column) ... -->
+                                                        </div>
+
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="alcantarillado" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="alcantarillado" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Alcantarillado</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="electricidad" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="electricidad" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Energía eléctrica</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="internet" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="internet" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Internet</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="telefonia" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="telefonia" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Telefonía fija o móvil</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="plan_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="plan_movil" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Plan de datos o recargas</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="ninguna_ant" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="ninguna_ant" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Ninguna de las Anteriores</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 mt-6 col-span-2">
+                                                    <label for="equipos" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con equipos tecnológicos?</label>
+                                                    <div class="pt-6 grid grid-cols-2 gap-6" id="filter-section-mobile-0">
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="Computador" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="Computador" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Computador</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the first column) ... -->
+                                                        </div>
+
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="eq_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="eq_movil" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Teléfono móvil (Android o iPhone)</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <input id="tableta" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <label for="tableta" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Tableta</label>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                        <div class="space-y-6">
+                                                            <div class="flex items-center">
+                                                                <label for="otro_eq" class="block text-sm font-medium leading-6 text-gray-900">Otro ¿Cuál?</label>
+                                                                <div>
+                                                                    <input id="otro_eq" name="otro_eq" type="text" autocomplete="otro_eq" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                                </div>
+                                                            </div>
+                                                            <!-- ... (rest of the items in the second column) ... -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 mt-6 col-span-2">
+                                                    <label for="disponible" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con la disponibilidad para el desarrollo de la formación de 10 horas semanales?</label>
+                                                    <div class="mt-2">
+                                                        <select id="disponible" name="disponible" autocomplete="disponible" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Si</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 mt-6 col-span-2">
+                                                    <label for="horario" class="block text-sm font-medium leading-6 text-gray-900">Elige la opción del horario de formación semanal que más se adapta a tu disponibilidad</label>
+                                                    <div class="mt-2">
+                                                        <select id="horario" name="horario" autocomplete="horario" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Opción 1 (Lunes a Viernes de 10am a 12m)</option>
+                                                            <option>Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
+                                                            <option>Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
+                                                            <option>Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 col-span-2">
+                                                    <label for="eje_final" class="block text-sm font-medium leading-6 text-gray-900">Eje Final de formación - Bootcamps</label>
+                                                    <div class="mt-2">
+                                                        <select id="eje_final" name="eje_final" autocomplete="eje_final" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Análisis de Datos</option>
+                                                            <option>Inteligencia artificial</option>
+                                                            <option>Arquitectura en la nube</option>
+                                                            <option>BlockChain</option>
+                                                            <option>Programación</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 col-span-2">
+                                                    <label for="nivel_alcnz" class="block text-sm font-medium leading-6 text-gray-900">Nivel según el resultado posterior a la prueba de conocimiento</label>
+                                                    <div class="mt-2">
+                                                        <select id="nivel_alcnz" name="nivel_alcnz" autocomplete="nivel_alcnz" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Explorador (Básico)</option>
+                                                            <option>Integrador (Intermedio)</option>
+                                                            <option>Innovador (Avanzado)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-4 col-span-2">
+                                                    <label for="modalidad" class="block text-sm font-medium leading-6 text-gray-900">Modalidad en la que realizará su bootcamps</label>
+                                                    <div class="mt-2">
+                                                        <select id="modalidad" name="modalidad" autocomplete="modalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option>Presencial / híbrido</option>
+                                                            <option>Virtual</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="lg:col-span-6 col-span-2">
+                                                    <p class="block text-sm font-medium text-gray-900">
+                                                        <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera presencial  y otras horas de modalidad virtual</em>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
                                         Step content

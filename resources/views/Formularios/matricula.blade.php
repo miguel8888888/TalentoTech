@@ -245,15 +245,80 @@
                                     <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                                         <div class="pant pant2 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600">CARACTERIZACIÓN DEL PARTICIPANTE TALENTO
-                                                    TECH</p>
+                                                <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Información adicional de contacto de un familiar </p>
 
                                             </div>
-                                            <div class="mt-10 grid grid-cols-4 gap-4 lg:grid-cols-8 overscroll-contain h-1/2">
+                                            <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-2">
-                                                    <label for="primer-nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
+                                                    <label for="familiar_primer_nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="primer-nombre" id="primer-nombre" autocomplete="given-name" class="block w-full rounded-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="familiar_primer_nombre" id="familiar_primer_nombre" autocomplete="familiar_primer_nombre" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Nombre</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="familiar_segundo_nombre" id="familiar_segundo_nombre" autocomplete="familiar_segundo_nombre" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_primer_apellido" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="familiar_primer_apellido" id="familiar_primer_apellido" autocomplete="familiar_primer_apellido" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_segundo_apellido" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
+                                                    <div class="mt-2">
+                                                        <input type="text" name="familiar_segundo_apellido" id="familiar_segundo_apellido" autocomplete="familiar_segundo_apellido" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_tipo_documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
+                                                    <div class="mt-2">
+                                                        <select id="familiar_tipo_documento" name="familiar_tipo_documento" autocomplete="familiar_tipo_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option>CC</option>
+                                                            <option>CE</option>
+                                                            <option>TI</option>
+                                                            <option>PA</option>
+                                                            <option>TMF</option>
+                                                            <option>PEP</option>
+                                                            <option>Visa</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
+                                                    <div class="mt-2">
+                                                        <input type="number" name="familiar_numero_documento" id="familiar_numero_documento" autocomplete="familiar_numero_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_email" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
+                                                    <div class="mt-2">
+                                                        <input id="familiar_email" name="familiar_email" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_llamadaTel" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
+                                                    <div class="mt-2">
+                                                        <input id="familiar_llamadaTel" name="familiar_llamadaTel" type="number" autocomplete="llamadaTel" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-span-2">
+                                                    <label for="familiar_whatsApp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
+                                                    <div class="mt-2">
+                                                        <input id="familiar_whatsApp" name="familiar_whatsApp" type="number" autocomplete="whatsApp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
                                             </div>

@@ -926,7 +926,58 @@
                                         </div>
                                     </div>
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
-                                    <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                                        <div class="pant pant5 space-y-12 grid grid-cols-1">
+                                            <label for="" class="block text-sm font-medium leading-6 text-gray-900">Usted cuenta con los siguinetes requisitos:</label>
+                                            <ul class="block text-sm font-medium leading-6 text-gray-900 grid grid-cols-2">
+                                                <li class="mt-3">
+                                                    - Nacionalidad colombiana.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Mayores de 18 años.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Haber presentado la prueba de habilidades digitales y haber sido asignado en su nivel para realizar la formación.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Tener disponibilidad para el desarrollo de la formación de hasta 10 horas semanales.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Contar con equipo de cómputo o disponibilidad de este, dispositivo móvil o electrónico con acceso a internet para el desarrollo de la formación.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Tener una cuenta propia y personal de correo electrónico.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Haber leído y aceptado los requisitos de la convocatoria.
+                                                </li>
+                                                <li class="mt-3">
+                                                    - Aceptar la política de tratamiento de datos establecida por el MinTIC y por el Ejecutor.
+                                                </li>
+                                                <li>
+
+                                                </li>
+                                                <li class="mt-6">
+                                                    <label for="" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
+                                                    <label class="block">
+                                                        <span class="sr-only">Anexar Documento Identidad</span>
+                                                        <input type="file" class="block w-full text-sm text-slate-500
+                                                        file:mr-4 file:py-2 file:px-4
+                                                        file:rounded-full file:border-0
+                                                        file:text-sm file:font-semibold
+                                                        file:bg-violet-50 file:text-violet-700
+                                                        hover:file:bg-violet-100
+                                                        "/>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <div class="grid justify-items-end w-full">
+                                                <div class="w-1/2">
+                                                    <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
                                     </div>
                                 </div>
 

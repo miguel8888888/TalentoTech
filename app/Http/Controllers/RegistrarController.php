@@ -10,20 +10,19 @@ class RegistrarController extends Controller
     public function guardarDatos(Request $request)
     {
         $validated = $request->validate([
-            'primer_nombre' => 'nullable|string|max:50',
-            'segundo_nombre' => 'nullable|string|max:50',
-            'primer_apellido' => 'nullable|string|max:50',
-            'segundo_apellido' => 'nullable|string|max:50',
+            'primer_nombre' => 'string|max:50',
+            'segundo_nombre' => 'required|string|max:50',
+            'primer_apellido' => 'required|string|max:50',
+            'segundo_apellido' => 'required|string|max:50',
         ]);
         // 'fecha_diligenciamiento' => 'nullable|date',
 
         $informacion_usuario = new Participante();
-        // $informacion_usuario->fecha_diligenciamiento = ($request->input('roles'));
-        // $informacion_usuario->primer_nombre = ($request->input('primer-nombre'));
-        // $informacion_usuario->segundo_nombre = ($request->input('segundo-nombre'));
-        // $informacion_usuario->primer_apellido = ($request->input('primer-apellido'));
-        // $informacion_usuario->segundo_apellido = ($request->input('segundo-apellido'));
-        $informacion_usuario->save($validated);
+        $informacion_usuario->primer_nombre = $request->input('primer_nombre');
+        $informacion_usuario->segundo_nombre = $request->input('segundo_nombre');
+        $informacion_usuario->primer_apellido = $request->input('primer_apellido');
+        $informacion_usuario->segundo_apellido = $request->input('segundo_apellido');
+        $informacion_usuario->save();
 
 
         return redirect('/');

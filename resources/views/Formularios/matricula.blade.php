@@ -387,7 +387,7 @@
                                                 <div class="col-span-2 lg:col-span-12 ">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
-                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3  gap-6">
+                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="dicapacidad_psicosocial" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -476,7 +476,7 @@
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
-                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="segun_dicapacidad_1" name="segun_dicapacidad_1" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -531,7 +531,7 @@
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
-                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="adulto_mayor" name="adulto_mayor" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -752,9 +752,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2">
-                                                    <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tenencia de la Vivienda</label>
+                                                    <label for="tendencia_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tenencia de la Vivienda</label>
                                                     <div class="mt-2">
-                                                        <select id="tipo_vivienda" name="tipo_vivienda" autocomplete="tipo_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="tendencia_vivienda" name="tendencia_vivienda" autocomplete="tendencia_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option>Propia</option>
                                                             <option>Arriendo</option>
@@ -771,12 +771,12 @@
                                                 <div class="lg:col-span-5 col-span-2">
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
-                                                    <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">¿Tiene acceso a servicios básicos?</label>
-                                                    <div class="pt-6 grid grid-cols-2 gap-6" id="filter-section-mobile-0">
+                                                    <label for="Agua" class="block text-sm font-medium leading-6 text-gray-900">¿Tiene acceso a servicios básicos?</label>
+                                                    <div class="pt-6 grid grid-cols-2" id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="Agua" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="Agua" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Agua</label>
+                                                                <label for="Agua" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Agua</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
                                                         </div>
@@ -784,54 +784,54 @@
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="alcantarillado" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="alcantarillado" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Alcantarillado</label>
+                                                                <label for="alcantarillado" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Alcantarillado</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="electricidad" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="electricidad" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Energía eléctrica</label>
+                                                                <label for="electricidad" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Energía eléctrica</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="internet" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="internet" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Internet</label>
+                                                                <label for="internet" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Internet</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="telefonia" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="telefonia" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Telefonía fija o móvil</label>
+                                                                <label for="telefonia" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Telefonía fija o móvil</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="plan_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="plan_movil" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Plan de datos o recargas</label>
+                                                                <label for="plan_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Plan de datos o recargas</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="ninguna_ant" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="ninguna_ant" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Ninguna de las Anteriores</label>
+                                                                <label for="ninguna_ant" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Ninguna de las Anteriores</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
-                                                    <label for="equipos" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con equipos tecnológicos?</label>
-                                                    <div class="pt-6 grid grid-cols-2 gap-6" id="filter-section-mobile-0">
+                                                    <label for="Computador" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con equipos tecnológicos?</label>
+                                                    <div class="pt-6 grid grid-cols-2 " id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="Computador" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="Computador" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Computador</label>
+                                                                <label for="Computador" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Computador</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
                                                         </div>
@@ -839,14 +839,14 @@
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="eq_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="eq_movil" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Teléfono móvil (Android o iPhone)</label>
+                                                                <label for="eq_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Teléfono móvil (Android o iPhone)</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="tableta" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                                                                <label for="tableta" class="ml-3 min-w-0 flex-1 text-gray-500 text-sm">Tableta</label>
+                                                                <label for="tableta" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Tableta</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
@@ -959,14 +959,14 @@
                                                 <li class="mt-6">
                                                     <label for="" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
                                                     <label class="block">
-                                                        <span class="sr-only">Anexar Documento Identidad</span>
+                                                        <span class="sr-only">Anexar Documento Identidad:</span>
                                                         <input type="file" class="block w-full text-sm text-slate-500
                                                         file:mr-4 file:py-2 file:px-4
                                                         file:rounded-full file:border-0
                                                         file:text-sm file:font-semibold
                                                         file:bg-violet-50 file:text-violet-700
                                                         hover:file:bg-violet-100
-                                                        " />
+                                                        " name="file_upload_field" />
                                                     </label>
                                                 </li>
                                             </ul>

@@ -957,7 +957,7 @@
 
                                                 </li>
                                                 <li class="mt-6">
-                                                    <label for="" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
+                                                    <label for="file_upload_field" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
                                                     <label class="block">
                                                         <span class="sr-only">Anexar Documento Identidad:</span>
                                                         <input type="file" class="block w-full text-sm text-slate-500

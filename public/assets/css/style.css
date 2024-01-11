@@ -153,7 +153,6 @@ canvas {
   position: absolute;
   z-index: 1000;
   color: white;
-  text-transform: uppercase;
   margin: 0 auto;
   right: 0;
   left: 0;

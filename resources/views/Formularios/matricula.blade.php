@@ -69,7 +69,7 @@
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-12 py-12">
-                        <form class="needs-validation" id="enviar_matricula" action="/matricula" method="POST" enctype="multipart/form-data">
+                        <form class="needs-validation" id="enviar_matricula" action="/matricula" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -77,31 +77,31 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#step-1">
                                             <div class="num">1</div>
-                                            Step Title
+                                            Paso 1
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#step-2">
                                             <span class="num">2</span>
-                                            Step Title
+                                            Paso 2
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#step-3">
                                             <span class="num">3</span>
-                                            Step Title
+                                            Paso 3
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#step-4">
                                             <span class="num">4</span>
-                                            Step Title
+                                            Paso 4
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#step-5">
                                             <span class="num">5</span>
-                                            Step Title
+                                            Paso 5
                                         </a>
                                     </li>
                                 </ul>
@@ -118,7 +118,7 @@
                                                 <div class="col-span-2">
                                                     <label for="primer-nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="primer_nombre" id="primer_nombre" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="primer_nombre" id="primer_nombre" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required="" />
                                                     </div>
                                                 </div>
 
@@ -381,16 +381,16 @@
                                                     </div>
                                                 </div>
 
-                                              
 
 
-                                                <div  class="col-span-2 lg:col-span-12 ">
+
+                                                <div class="col-span-2 lg:col-span-12 ">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3  gap-6">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_psicosocial" name="dicapacidad_psicosocial" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_psicosocial" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_psicosocial" class="font-medium text-gray-900">Discapacidad psicosocial (mental)</label>
@@ -398,16 +398,16 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_auditiva" name="dicapacidad_auditiva" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_auditiva" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_auditiva" class="font-medium text-gray-900">Discapacidad auditiva</label>
-                                                                    
+
                                                                 </div>
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="sensorial" name="sensorial" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="sensorial" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="sensorial" class="font-medium text-gray-900">Sensorial, Gusto, Olfato, Tacto</label>
@@ -415,7 +415,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sordoceguera" name="dicapacidad_sordoceguera" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_sordoceguera" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sordoceguera" class="font-medium text-gray-900">Discapacidad sordoceguera</label>
@@ -423,7 +423,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_piel" name="dicapacidad_piel" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_piel" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_piel" class="font-medium text-gray-900">Piel, pelo y uñas</label>
@@ -431,7 +431,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_intelectual" name="dicapacidad_intelectual" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_intelectual" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_intelectual" class="font-medium text-gray-900">Discapacidad intelectual</label>
@@ -439,7 +439,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sistemica" name="dicapacidad_sistemica" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_sistemica" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sistemica" class="font-medium text-gray-900">Sistémica</label>
@@ -447,7 +447,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_visual" name="dicapacidad_visual" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_visual" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_visual" class="font-medium text-gray-900">Discapacidad visual</label>
@@ -455,7 +455,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_multiple" name="dicapacidad_multiple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_multiple" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_multiple" class="font-medium text-gray-900">Discapacidad múltiple</label>
@@ -463,7 +463,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_voz_habla" name="dicapacidad_voz_habla" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_voz_habla" name="discapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_voz_habla" class="font-medium text-gray-900">Voz y Habla</label>
@@ -471,9 +471,9 @@
                                                             </div>
                                                         </div>
                                                     </fieldset>
-                                                </div >
+                                                </div>
 
-                                                <div  class="col-span-2 lg:col-span-12">
+                                                <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -521,14 +521,14 @@
                                                                     <label for="segun_dicapacidad_5" class="font-medium text-gray-900">El beneficiario recibe atención en terapia y/o rehabilitación</label>
                                                                 </div>
                                                             </div>
-                                                            
-                                                            
-                                                            
+
+
+
                                                         </div>
                                                     </fieldset>
-                                                </div >
+                                                </div>
 
-                                                <div  class="col-span-2 lg:col-span-12">
+                                                <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -612,12 +612,12 @@
                                                                     <label for="comunidad_lgtb" class="font-medium text-gray-900">Comunidad LGTBIAQ+</label>
                                                                 </div>
                                                             </div>
-                                                            
-                                                            
-                                                            
+
+
+
                                                         </div>
                                                     </fieldset>
-                                                </div >
+                                                </div>
 
                                                 <div class="col-span-2 mt-5">
                                                     <label for="grado_escolaridad" class="block text-sm font-medium leading-6 text-gray-900">Grado de escolaridad</label>
@@ -919,7 +919,7 @@
                                                 </div>
                                                 <div class="lg:col-span-6 col-span-2">
                                                     <p class="block text-sm font-medium text-gray-900">
-                                                        <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera presencial  y otras horas de modalidad virtual</em>
+                                                        <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera presencial y otras horas de modalidad virtual</em>
                                                     </p>
                                                 </div>
                                             </div>
@@ -966,7 +966,7 @@
                                                         file:text-sm file:font-semibold
                                                         file:bg-violet-50 file:text-violet-700
                                                         hover:file:bg-violet-100
-                                                        "/>
+                                                        " />
                                                     </label>
                                                 </li>
                                             </ul>
@@ -975,9 +975,9 @@
                                                     <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
-                                        
+
                                     </div>
                                 </div>
 

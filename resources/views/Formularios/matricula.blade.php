@@ -479,7 +479,7 @@
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-2">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_dicapacidad_1" name="segun_dicapacidad_1" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_dicapacidad_1" name="segun_dicapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_dicapacidad_1" class="font-medium text-gray-900">El beneficiario cuenta con la ayuda técnica/Producto de apoyo</label>
@@ -488,7 +488,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_dicapacidad_2" name="segun_dicapacidad_2" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_dicapacidad_2" name="segun_dicapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_dicapacidad_2" class="font-medium text-gray-900">El beneficiario requiere la ayuda de otra persona</label>
@@ -497,7 +497,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_dicapacidad_3" name="segun_dicapacidad_3" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_dicapacidad_3" name="segun_dicapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_dicapacidad_3" class="font-medium text-gray-900">El beneficiario requiere terapia y/o rehabilitación</label>
@@ -506,7 +506,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_dicapacidad_4" name="segun_dicapacidad_4" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_dicapacidad_4" name="segun_dicapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_dicapacidad_4" class="font-medium text-gray-900">El beneficiario requiere ayuda técnica/Producto de apoyo</label>
@@ -515,7 +515,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_dicapacidad_5" name="segun_dicapacidad_5" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_dicapacidad_5" name="segun_dicapacidad[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_dicapacidad_5" class="font-medium text-gray-900">El beneficiario recibe atención en terapia y/o rehabilitación</label>
@@ -534,7 +534,7 @@
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="adulto_mayor" name="adulto_mayor" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="adulto_mayor" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="adulto_mayor" class="font-medium text-gray-900">Adulto mayor</label>
@@ -543,7 +543,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="mujer_gestante" name="mujer_gestante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="mujer_gestante" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="mujer_gestante" class="font-medium text-gray-900">Mujer gestante</label>
@@ -552,7 +552,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="victima_confilcto" name="victima_confilcto" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="victima_confilcto" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="victima_confilcto" class="font-medium text-gray-900">Víctima de conflicto armado</label>
@@ -561,7 +561,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="jovenes" name="jovenes" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="jovenes" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="jovenes" class="font-medium text-gray-900">Jóvenes</label>
@@ -570,7 +570,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="grupo_etnico2" name="grupo_etnico2" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="grupo_etnico2" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="grupo_etnico2" class="font-medium text-gray-900">Grupo Étnico</label>
@@ -579,7 +579,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="madre_lactante" name="madre_lactante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="madre_lactante" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="madre_lactante" class="font-medium text-gray-900">Madre lactante </label>
@@ -588,7 +588,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="firmantes_paz" name="firmantes_paz" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="firmantes_paz" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="firmantes_paz" class="font-medium text-gray-900">Firmantes de Paz </label>
@@ -597,7 +597,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="discapacidad" name="discapacidad" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="discapacidad" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="discapacidad" class="font-medium text-gray-900">Discapacidad </label>
@@ -606,7 +606,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="comunidad_lgtb" name="comunidad_lgtb" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="comunidad_lgtb" name="gruposATD[]" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="comunidad_lgtb" class="font-medium text-gray-900">Comunidad LGTBIAQ+</label>

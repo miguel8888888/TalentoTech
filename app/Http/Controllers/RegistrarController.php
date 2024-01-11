@@ -25,6 +25,12 @@ class RegistrarController extends Controller
         $informacion_usuario->save();
 
 
+        $cadena = $request->input('numero_documento');
+        /* $cadena = str_replace(' ', '-', $cadena);
+        $cadena = str_replace('+', '_', $cadena); */
+        $fileName =$cadena . '.pdf';
+        $filePath = $request->file('file_upload_field')->storeAs('uploads/' . 'documentos', $fileName, 'public');
+        $informacion_usuario->documento = '/storage/' . $filePath;
         return redirect('/');
     }
 }

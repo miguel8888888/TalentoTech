@@ -388,7 +388,7 @@
 
 
                                                 <div class="col-span-2 lg:col-span-12">
-                                                    <fieldset class="mt-5 prent_discapaciti d-none">
+                                                    <fieldset  class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
@@ -627,11 +627,11 @@
                                                     <div class="mt-2">
                                                         <select id="grado_escolaridad" name="grado_escolaridad" autocomplete="grado_escolaridad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Bachillerato</option>
-                                                            <option>Técnica </option>
-                                                            <option>Tecnológico</option>
-                                                            <option>Profesional</option>
-                                                            <option>Posgrado</option>
+                                                            <option value="Bachillerato">Bachillerato</option>
+                                                            <option value="Técnica">Técnica </option>
+                                                            <option value="Tecnológico">Tecnológico</option>
+                                                            <option value="Profesional">Profesional</option>
+                                                            <option value="Posgrado">Posgrado</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -640,13 +640,13 @@
                                                     <div class="mt-2">
                                                         <select id="ocupacion" name="ocupacion" autocomplete="ocupacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Estudiante</option>
-                                                            <option>Emprendedor </option>
-                                                            <option>Independiente</option>
-                                                            <option>Obrero o empleado del Gobierno</option>
-                                                            <option>Obrero o empleado de empresa particular</option>
-                                                            <option>Labores del Hogar</option>
-                                                            <option>Desempleado</option>
+                                                            <option value="Estudiante">Estudiante</option>
+                                                            <option value="Emprendedor">Emprendedor </option>
+                                                            <option value="Independiente">Independiente</option>
+                                                            <option value="Obrero o empleado del Gobierno">Obrero o empleado del Gobierno</option>
+                                                            <option value="Obrero o empleado de empresa particular">Obrero o empleado de empresa particular</option>
+                                                            <option value="Labores del Hogar">Labores del Hogar</option>
+                                                            <option value="Desempleado">Desempleado</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1094,7 +1094,11 @@
                         required: true, 
                         minlength: 1
                     },
-                    tipo_discapacidad: {
+                    grado_escolaridad: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    ocupacion: {
                         required: true, 
                         minlength: 1
                     }

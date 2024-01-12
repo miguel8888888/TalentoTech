@@ -146,9 +146,9 @@
 
 
                                                 <div class="col-span-2">
-                                                    <label for="tipo-documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
+                                                    <label for="tipo_documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
                                                     <div class="mt-2">
-                                                        <select id="tipo-documento" name="tipo-documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="tipo_documento" name="tipo_documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option>CC</option>
                                                             <option>CE</option>
@@ -158,16 +158,16 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="numero-documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
+                                                    <label for="numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
                                                     <div class="mt-2">
-                                                        <input type="number" name="numero-documento" id="numero-documento" autocomplete="numero-documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="number" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="nacimiento" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Nacimiento</label>
+                                                    <label for="fecha_nacimiento" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Nacimiento</label>
                                                     <div class="mt-2">
-                                                        <input type="date" name="nacimiento" id="nacimiento" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -183,20 +183,20 @@
                                                     <div class="mt-2">
                                                         <select id="sexo" name="sexo" autocomplete="sexo-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Hombre</option>
-                                                            <option>Mujer</option>
-                                                            <option>Intersex</option>
+                                                            <option value="Hombre">Hombre</option>
+                                                            <option value="Mujer">Mujer</option>
+                                                            <option value="Intersex">Intersex</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="identidad-genero" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
+                                                    <label for="identidad_genero" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
                                                     <div class="mt-2">
-                                                        <select id="identidad-genero" name="identidad-genero" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="identidad_genero" name="identidad_genero" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Si</option>
-                                                            <option>No</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -219,23 +219,23 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="orientacion" class="block text-sm font-medium leading-6 text-gray-900">¿Cuál es su orientación sexual? </label>
+                                                    <label for="orientacion_sexual" class="block text-sm font-medium leading-6 text-gray-900">¿Cuál es su orientación sexual? </label>
                                                     <div class="mt-2">
-                                                        <select id="orientacion" name="orientacion" autocomplete="orientacion-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="orientacion_sexual" name="orientacion_sexual" autocomplete="orientacion-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Heterosexualidad</option>
-                                                            <option>Homosexualidad</option>
-                                                            <option>Bisexualidad</option>
-                                                            <option>Otro</option>
-                                                            <option>No deseo responder</option>
+                                                            <option value="Heterosexualidad">Heterosexualidad</option>
+                                                            <option value="Homosexualidad">Homosexualidad</option>
+                                                            <option value="Bisexualidad">Bisexualidad</option>
+                                                            <option value="Otro">Otro</option>
+                                                            <option value="No deseo responder">No deseo responder</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
+                                                    <label for="correo_electronico" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
                                                     <div class="mt-2">
-                                                        <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="correo_electronico" name="correo_electronico" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -298,13 +298,13 @@
                                                     <div class="mt-2">
                                                         <select id="familiar_tipo_documento" name="familiar_tipo_documento" autocomplete="familiar_tipo_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>CC</option>
-                                                            <option>CE</option>
-                                                            <option>TI</option>
-                                                            <option>PA</option>
-                                                            <option>TMF</option>
-                                                            <option>PEP</option>
-                                                            <option>Visa</option>
+                                                            <option value="CC">CC</option>
+                                                            <option value="CE">CE</option>
+                                                            <option value="TI">TI</option>
+                                                            <option value="PA">PA</option>
+                                                            <option value="TMF">TMF</option>
+                                                            <option value="PEP">PEP</option>
+                                                            <option value="Visa">Visa</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1003,13 +1003,16 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r78/three.min.js'></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/plugins/smartwizart/js/jquery.smartWizard.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jquery_validate/jquery.validate.min.js) }}"></script>
-    <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.js) }}"></script>
-    <script src="{{ asset('assets/plugins/jquery_validate/localization/messages_es.min.js) }}"></script>
+
+    <script src="{{ asset('assets/plugins/jquery_validate/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery_validate/localization/messages_es.min.js') }}"></script>
 
     <script type="text/javascript">
+        let form = $("#enviar_matricula");
         window.addEventListener("load", function() {
             initValidate();
+            
             $('#smartwizard').smartWizard({
                 theme: 'dots',
                 lang: { // Language variables for button
@@ -1028,7 +1031,7 @@
                 $('.prent_discapaciti').addClass('d-none');
             }
         });
-        $("#identidad-genero").change(function() {
+        $("#identidad_genero").change(function() {
             if ( $('option:selected', this).text() == 'Si') {
                 $('.identi_genero').removeClass('d-none');
             }
@@ -1040,25 +1043,41 @@
             form.validate({
                 onfocusout: false,
                 rules: {
-                    num_documento: {
+                    primer_nombre: {
                         required: true, 
-                        minlength: 6
+                        minlength: 3
                     },
-                    num_celular: {
-                        required: true, 
-                        minlength: 10
+                    primer_apellido: {
+                        required: true,
+                        minlength: 3
                     },
-                    num_ws: {
+                    tipo_documento: {
                         required: true, 
-                        minlength: 6
+                        minlength: 1
                     },
-                    ac_num_documento: {
+                    numero_documento: {
                         required: true, 
-                        minlength: 6
+                        minlength: 8
                     },
-                    ac_num_celular: {
+                    fecha_nacimiento: {
                         required: true, 
-                        minlength: 10
+                        minlength: 3
+                    },
+                    sexo: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    identidad_genero: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    correo_electronico: {
+                        required: true, 
+                        minlength: 5
+                    },
+                    orientacion_sexual: {
+                        required: true, 
+                        minlength: 1
                     },
                     file2: {
                         filesize: 1048576
@@ -1071,6 +1090,28 @@
                     $('#error-div').html(error[0].innerHTML)//<-error[0].innerHTML is the error msg.
                 }  */
             });
+        }
+        $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+            if (form.valid()) {
+
+                return true;
+            } else {
+                return false;
+            }
+        });
+        $('input[name=fecha_nacimiento]').change(function() { 
+            $('input[name=edad]').val(calcularEdad($(this).val()));
+        });
+        function calcularEdad(fecha) {
+            var hoy = new Date();
+            var cumpleanos = new Date(fecha);
+            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+            var m = hoy.getMonth() - cumpleanos.getMonth();
+
+            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+                edad--;
+            }
+            return edad;
         }
     </script>
 </body>

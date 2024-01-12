@@ -284,3 +284,11 @@ canvas {
   height: 50%;
   /* Puedes ajustar este porcentaje según tus necesidades */
 }
+
+label.error{
+  color: #e62117;
+  font-size: 12px;
+}
+input.error{
+  border: solid 1px #e62117;
+}

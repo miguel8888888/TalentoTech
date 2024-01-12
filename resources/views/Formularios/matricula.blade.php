@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="sky-container">
-        <div class="text-right sky-container__left">
+        <div class="text-right sky-container__left w-100">
             <p class="portfolio text-center text-5xl mt-10">
                 MATRÍCULA TALENTO TECH CAUCA Y NARIÑO
             </p>

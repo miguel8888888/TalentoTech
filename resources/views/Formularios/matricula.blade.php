@@ -384,8 +384,8 @@
 
 
 
-                                                <div class="col-span-2 lg:col-span-12 ">
-                                                    <fieldset class="mt-5">
+                                                <div class="col-span-2 lg:col-span-12">
+                                                    <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
@@ -473,8 +473,8 @@
                                                     </fieldset>
                                                 </div>
 
-                                                <div class="col-span-2 lg:col-span-12">
-                                                    <fieldset class="mt-5">
+                                                <div class="col-span-2 lg:col-span-12 ">
+                                                    <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-2">
                                                             <div class="relative flex gap-x-3">
@@ -529,7 +529,7 @@
                                                 </div>
 
                                                 <div class="col-span-2 lg:col-span-12">
-                                                    <fieldset class="mt-5">
+                                                    <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
@@ -1010,7 +1010,17 @@
                     next: 'Siguiente',
                     previous: 'Anterior'
                 },
+                autoAdjustHeight: false,
             });
+        });
+        $("#discapacidad").change(function() {
+            /* alert( $('option:selected', this).text() ); */
+            if ( $('option:selected', this).text() == 'Si') {
+                $('.prent_discapaciti').removeClass('d-none');
+            }
+            else if ( $('option:selected', this).text() == 'No') {
+                $('.prent_discapaciti').addClass('d-none');
+            }
         });
     </script>
 </body>

@@ -1003,10 +1003,13 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r78/three.min.js'></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/plugins/smartwizart/js/jquery.smartWizard.min.js') }}"></script>
-
+    <script src="{{ asset('assets/plugins/jquery_validate/jquery.validate.min.js) }}"></script>
+    <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.js) }}"></script>
+    <script src="{{ asset('assets/plugins/jquery_validate/localization/messages_es.min.js) }}"></script>
 
     <script type="text/javascript">
         window.addEventListener("load", function() {
+            initValidate();
             $('#smartwizard').smartWizard({
                 theme: 'dots',
                 lang: { // Language variables for button
@@ -1033,6 +1036,42 @@
                 $('.identi_genero').addClass('d-none');
             }
         });
+        function initValidate() {
+            form.validate({
+                onfocusout: false,
+                rules: {
+                    num_documento: {
+                        required: true, 
+                        minlength: 6
+                    },
+                    num_celular: {
+                        required: true, 
+                        minlength: 10
+                    },
+                    num_ws: {
+                        required: true, 
+                        minlength: 6
+                    },
+                    ac_num_documento: {
+                        required: true, 
+                        minlength: 6
+                    },
+                    ac_num_celular: {
+                        required: true, 
+                        minlength: 10
+                    },
+                    file2: {
+                        filesize: 1048576
+                    }
+                },
+                messages: { 
+                    file2: "El archivo debe ser PDF, JPG o PNG, y menos de 1 MB"
+                }
+                /* errorPlacement: function(error, element) {
+                    $('#error-div').html(error[0].innerHTML)//<-error[0].innerHTML is the error msg.
+                }  */
+            });
+        }
     </script>
 </body>
 

@@ -1006,6 +1006,18 @@
                                                         " name="url_archivo" id="url_archivo" />
                                                     </label>
                                                 </li>
+                                                <li></li>
+                                                <li class="mt-6">
+                                                    <label for="requisitos_aceptados" class=" block text-sm font-medium leading-6 text-gray-900">Acepto que cumplo con los requisitos</label>
+                                                    <div class="mt-2">
+                                                        <select id="requisitos_aceptados" name="requisitos_aceptados" autocomplete="requisitos_aceptados" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
+                                                        </select>
+                                                    </div>
+                                                    
+                                                </li>
                                             </ul>
                                             <div class="grid justify-items-end w-full">
                                                 <div class="w-1/2">
@@ -1236,6 +1248,10 @@
                     url_archivo: {
                         required: true, 
                         extension: "pdf"
+                    },
+                    requisitos_aceptados: {
+                        required: true, 
+                        minlength: 1
                     },
                 
                 },

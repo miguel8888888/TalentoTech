@@ -212,9 +212,9 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="identidad_genero" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
+                                                    <label for="identidad_genero_preg" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
                                                     <div class="mt-2">
-                                                        <select id="identidad_genero" name="identidad_genero" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="identidad_genero_preg" name="identidad_genero_preg" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option value="Si">Si</option>
                                                             <option value="No">No</option>
@@ -224,9 +224,9 @@
 
                                                 <div class="col-span-2">
                                                     <div class="identi_genero d-none">
-                                                        <label for="genero" class="block text-sm font-medium leading-6 text-gray-900">Identidad de género </label>
+                                                        <label for="identidad_genero" class="block text-sm font-medium leading-6 text-gray-900">Identidad de género </label>
                                                         <div class="mt-2">
-                                                            <select id="genero" name="genero" autocomplete="genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <select id="identidad_genero" name="identidad_genero" autocomplete="genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                                 <option selected disabled>Seleccione...</option>
                                                                 <option>Masculino</option>
                                                                 <option>Femenino</option>
@@ -798,7 +798,6 @@
                                                             <option value="Arriendo">Arriendo</option>
                                                             <option value="Familiar">Familiar</option>
                                                             <option value="Albergue">Albergue</option>
-                                                            <option value="Apartamento">Apartamento</option>
                                                             <option value="Lugar de trabajo">Lugar de trabajo</option>
                                                             <option value="Posada (vivienda otra persona sin pagar)">Posada (vivienda otra persona sin pagar)</option>
                                                             <option value="Asentamiento- Invasión">Asentamiento- Invasión</option>
@@ -1066,7 +1065,7 @@
                 $('.prent_discapaciti').addClass('d-none');
             }
         });
-        $("#identidad_genero").change(function() {
+        $("#identidad_genero_preg").change(function() {
             if ( $('option:selected', this).text() == 'Si') {
                 $('.identi_genero').removeClass('d-none');
             }

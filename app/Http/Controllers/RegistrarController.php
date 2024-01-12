@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Participante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RegistrarController extends Controller
 {
@@ -12,7 +13,7 @@ class RegistrarController extends Controller
         $validated = $request->validate([
             'primer_nombre' => ' required',
             'primer_apellido' => 'required',
-            
+
         ]);
         // 'fecha_diligenciamiento' => 'nullable|date',
 
@@ -80,8 +81,8 @@ class RegistrarController extends Controller
         $cadena = $request->input('numero_documento');
         /* $cadena = str_replace(' ', '-', $cadena);
         $cadena = str_replace('+', '_', $cadena); */
-        $fileName =$cadena . '.pdf';
-        $filePath = $request->file('file_upload_field')->storeAs('uploads/' . 'documentos', $fileName, 'public');
+        $fileName = $cadena . '.pdf';
+        $filePath = $request->file('url_archivo')->storeAs('uploads/' . 'documentos', $fileName, 'public');
         $informacion_usuario->documento = '/storage/' . $filePath;
         return redirect('/');
     }

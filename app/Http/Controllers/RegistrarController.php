@@ -68,6 +68,7 @@ class RegistrarController extends Controller
         $informacion_usuario->tenencia_vivienda = $request->input('tenencia_vivienda');
         $informacion_usuario->servicios_basicos = $request->input('servicios_basicos');
         $informacion_usuario->equipos_tecnologicos = $request->input('equipos_tecnologicos');
+        $informacion_usuario->otros_equipos = $request->input('otros_equipos');
         $informacion_usuario->disponibilidad_formacion = $request->input('disponibilidad_formacion');
         $informacion_usuario->horario_formacion = $request->input('horario_formacion');
         $informacion_usuario->eje_final_formacion = $request->input('eje_final_formacion');

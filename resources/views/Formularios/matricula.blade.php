@@ -351,13 +351,13 @@
                                                     <div class="mt-2">
                                                         <select id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Afrocolombiano</option>
-                                                            <option>Palenquero</option>
-                                                            <option>Comunidad Negra</option>
-                                                            <option>Raizal del archipiélago de San Andrés y Providencia</option>
-                                                            <option>Indígena</option>
-                                                            <option>Rrom/Gitano</option>
-                                                            <option>No se Autorreconoce en ninguno de los anteriores</option>
+                                                            <option value="Afrocolombiano">Afrocolombiano</option>
+                                                            <option value="Palenquero">Palenquero</option>
+                                                            <option value="Comunidad Negra">Comunidad Negra</option>
+                                                            <option value="Raizal del archipiélago de San Andrés y Providencia">Raizal del archipiélago de San Andrés y Providencia</option>
+                                                            <option value="Indígena">Indígena</option>
+                                                            <option value="Rrom/Gitano">Rrom/Gitano</option>
+                                                            <option value="No se Autorreconoce en ninguno de los anteriores">No se Autorreconoce en ninguno de los anteriores</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -367,8 +367,8 @@
                                                     <div class="mt-2">
                                                         <select id="discapacidad" name="discapacidad" autocomplete="discapacidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Si</option>
-                                                            <option>No</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -378,8 +378,8 @@
                                                     <div class="mt-2">
                                                         <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Si</option>
-                                                            <option>No</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1061,7 +1061,7 @@
                     },
                     fecha_nacimiento: {
                         required: true, 
-                        minlength: 3
+                        minlength: 1
                     },
                     sexo: {
                         required: true, 
@@ -1081,7 +1081,24 @@
                     },
                     file2: {
                         filesize: 1048576
+                    },
+                    grupo_etnico: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    discapacidad: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    discapacidad_certificada: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    tipo_discapacidad: {
+                        required: true, 
+                        minlength: 1
                     }
+                
                 },
                 messages: { 
                     file2: "El archivo debe ser PDF, JPG o PNG, y menos de 1 MB"

@@ -84,7 +84,7 @@ class RegistrarController extends Controller
         $fileName = $cadena . '.pdf';
         $filePath = $request->file('url_archivo')->storeAs('uploads/' . 'documentos', $fileName, 'public');
         $informacion_usuario->documento = '/storage/' . $filePath;
-        return redirect('/');
+        return view('Formularios/registroExitoso', compact('informacion_usuario'));
     }
 }
 

@@ -150,9 +150,13 @@
                                                     <div class="mt-2">
                                                         <select id="tipo_documento" name="tipo_documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>CC</option>
-                                                            <option>CE</option>
-                                                            <option>TI</option>
+                                                            <option value="CC">CC</option>
+                                                            <option value="CE">CE</option>
+                                                            <option value="TI">TI</option>
+                                                            <option value="PA">PA</option>
+                                                            <option value="TMF">TMF</option>
+                                                            <option value="PEP">PEP</option>
+                                                            <option value="Visa">Visa</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -388,13 +392,15 @@
                                                 </div>
 
                                                 <div class="col-span-3">
-                                                    <label for="discapacidad_certificada" class="prent_discapaciti d-none block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
-                                                    <div class="mt-2">
-                                                        <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                            <option selected disabled>Seleccione...</option>
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
-                                                        </select>
+                                                    <div class="prent_discapaciti d-none">
+                                                        <label for="discapacidad_certificada" class=" block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
+                                                        <div class="mt-2">
+                                                            <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                                <option selected disabled>Seleccione...</option>
+                                                                <option value="Si">Si</option>
+                                                                <option value="No">No</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -546,7 +552,7 @@
                                                 </div>
 
                                                 <div class="col-span-2 lg:col-span-12">
-                                                    <fieldset class="mt-5 prent_discapaciti d-none">
+                                                    <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
@@ -685,9 +691,9 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="depto_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
+                                                    <label for="departamento_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="depto_residencia" id="depto_residencia" autocomplete="depto_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -701,12 +707,12 @@
 
 
                                                 <div class="col-span-2">
-                                                    <label for="zona_ubi" class="block text-sm font-medium leading-6 text-gray-900">Zona de ubicación</label>
+                                                    <label for="zona_ubicacion" class="block text-sm font-medium leading-6 text-gray-900">Zona de ubicación</label>
                                                     <div class="mt-2">
-                                                        <select id="zona_ubi" name="zona_ubi" autocomplete="zona_ubi" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="zona_ubicacion" name="zona_ubicacion" autocomplete="zona_ubicacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Rural</option>
-                                                            <option>Urbana</option>
+                                                            <option value="Rural">Rural</option>
+                                                            <option value="Urbana">Urbana</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -746,9 +752,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2">
-                                                    <label for="estrato" class="block text-sm font-medium leading-6 text-gray-900">Estrato socioeconómico</label>
+                                                    <label for="estrato_socioeconomico" class="block text-sm font-medium leading-6 text-gray-900">Estrato socioeconómico</label>
                                                     <div class="mt-2">
-                                                        <input id="estrato" name="estrato" type="text" autocomplete="estrato" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <select id="estrato_socioeconomico" name="estrato_socioeconomico" autocomplete="estrato_socioeconomico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
@@ -757,31 +775,31 @@
                                                     <div class="mt-2">
                                                         <select id="tipo_vivienda" name="tipo_vivienda" autocomplete="tipo_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Casa</option>
-                                                            <option>Habitación o Cuarto</option>
-                                                            <option>Albergue (Vivienda temporal)</option>
-                                                            <option>Inquilinato</option>
-                                                            <option>Casa lote</option>
-                                                            <option>Apartamento</option>
-                                                            <option>Vivienda indígena</option>
-                                                            <option>Palafito</option>
+                                                            <option value="Casa">Casa</option>
+                                                            <option value="Habitación o Cuarto">Habitación o Cuarto</option>
+                                                            <option value="Albergue (Vivienda temporal)">Albergue (Vivienda temporal)</option>
+                                                            <option value="Inquilinato">Inquilinato</option>
+                                                            <option value="Casa lote">Casa lote</option>
+                                                            <option value="Apartamento">Apartamento</option>
+                                                            <option value="Vivienda indígena">Vivienda indígena</option>
+                                                            <option value="Palafito">Palafito</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2">
-                                                    <label for="tendencia_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tenencia de la Vivienda</label>
+                                                    <label for="tenencia_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tenencia de la Vivienda</label>
                                                     <div class="mt-2">
-                                                        <select id="tendencia_vivienda" name="tendencia_vivienda" autocomplete="tendencia_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="tenencia_vivienda" name="tenencia_vivienda" autocomplete="tenencia_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Propia</option>
-                                                            <option>Arriendo</option>
-                                                            <option>Familiar</option>
-                                                            <option>Albergue</option>
-                                                            <option>Apartamento</option>
-                                                            <option>Lugar de trabajo</option>
-                                                            <option>Posada (vivienda otra persona sin pagar)</option>
-                                                            <option>Asentamiento- Invasión</option>
-                                                            <option>Paga Diario</option>
+                                                            <option value="Propia">Propia</option>
+                                                            <option value="Arriendo">Arriendo</option>
+                                                            <option value="Familiar">Familiar</option>
+                                                            <option value="Albergue">Albergue</option>
+                                                            <option value="Apartamento">Apartamento</option>
+                                                            <option value="Lugar de trabajo">Lugar de trabajo</option>
+                                                            <option value="Posada (vivienda otra persona sin pagar)">Posada (vivienda otra persona sin pagar)</option>
+                                                            <option value="Asentamiento- Invasión">Asentamiento- Invasión</option>
+                                                            <option value="Paga Diario">Paga Diario</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -792,7 +810,7 @@
                                                     <div class="pt-6 grid grid-cols-2" id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="Agua" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="Agua" name="servicios_basicos[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="Agua" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Agua</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
@@ -800,42 +818,42 @@
 
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="alcantarillado" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="alcantarillado" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="alcantarillado" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Alcantarillado</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="electricidad" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="electricidad" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="electricidad" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Energía eléctrica</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="internet" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="internet" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="internet" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Internet</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="telefonia" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="telefonia" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="telefonia" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Telefonía fija o móvil</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="plan_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="plan_movil" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="plan_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Plan de datos o recargas</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="ninguna_ant" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="ninguna_ant" name="servicios_basicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="ninguna_ant" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Ninguna de las Anteriores</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
@@ -847,7 +865,7 @@
                                                     <div class="pt-6 grid grid-cols-2 " id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="Computador" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="Computador" name="equipos_tecnologicos[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="Computador" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Computador</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
@@ -855,23 +873,23 @@
 
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="eq_movil" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="eq_movil" name="equipos_tecnologicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="eq_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Teléfono móvil (Android o iPhone)</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="tableta" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input id="tableta" name="equipos_tecnologicos[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="tableta" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Tableta</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <label for="otro_eq" class="block text-sm font-medium leading-6 text-gray-900">Otro ¿Cuál?</label>
+                                                                <label for="otro_equipo" class="block text-sm font-medium leading-6 text-gray-900">Otro ¿Cuál?</label>
                                                                 <div>
-                                                                    <input id="otro_eq" name="otro_eq" type="text" autocomplete="otro_eq" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                                    <input id="otro_equipo" name="otro_equipo" type="text" autocomplete="otro_equipo" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                                 </div>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
@@ -879,58 +897,58 @@
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
-                                                    <label for="disponible" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con la disponibilidad para el desarrollo de la formación de 10 horas semanales?</label>
+                                                    <label for="disponibilidad_formacion" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con la disponibilidad para el desarrollo de la formación de 10 horas semanales?</label>
                                                     <div class="mt-2">
-                                                        <select id="disponible" name="disponible" autocomplete="disponible" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
+                                                        <select id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Si</option>
-                                                            <option>No</option>
+                                                            <option value="Si">Si</option>
+                                                            <option value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
-                                                    <label for="horario" class="block text-sm font-medium leading-6 text-gray-900">Elige la opción del horario de formación semanal que más se adapta a tu disponibilidad</label>
+                                                    <label for="horario_formacion" class="block text-sm font-medium leading-6 text-gray-900">Elige la opción del horario de formación semanal que más se adapta a tu disponibilidad</label>
                                                     <div class="mt-2">
-                                                        <select id="horario" name="horario" autocomplete="horario" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="horario_formacion" name="horario_formacion" autocomplete="horario_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Opción 1 (Lunes a Viernes de 10am a 12m)</option>
-                                                            <option>Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
-                                                            <option>Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
-                                                            <option>Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
+                                                            <option value="Opción 1 (Lunes a Viernes de 10am a 12m)">Opción 1 (Lunes a Viernes de 10am a 12m)</option>
+                                                            <option value="Opción 2 (Lunes a viernes de 2pm a 4pm)">Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
+                                                            <option value="Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)">Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
+                                                            <option value="Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)">Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 col-span-2">
-                                                    <label for="eje_final" class="block text-sm font-medium leading-6 text-gray-900">Eje Final de formación - Bootcamps</label>
+                                                    <label for="eje_final_formacion" class="block text-sm font-medium leading-6 text-gray-900">Eje Final de formación - Bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select id="eje_final" name="eje_final" autocomplete="eje_final" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Análisis de Datos</option>
-                                                            <option>Inteligencia artificial</option>
-                                                            <option>Arquitectura en la nube</option>
-                                                            <option>BlockChain</option>
-                                                            <option>Programación</option>
+                                                            <option value="Análisis de Datos">Análisis de Datos</option>
+                                                            <option value="Inteligencia artificial">Inteligencia artificial</option>
+                                                            <option value="Arquitectura en la nube">Arquitectura en la nube</option>
+                                                            <option value="BlockChain">BlockChain</option>
+                                                            <option value="Programación">Programación</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 col-span-2">
-                                                    <label for="nivel_alcnz" class="block text-sm font-medium leading-6 text-gray-900">Nivel según el resultado posterior a la prueba de conocimiento</label>
+                                                    <label for="nivel_formacion" class="block text-sm font-medium leading-6 text-gray-900">Nivel según el resultado posterior a la prueba de conocimiento</label>
                                                     <div class="mt-2">
-                                                        <select id="nivel_alcnz" name="nivel_alcnz" autocomplete="nivel_alcnz" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Explorador (Básico)</option>
-                                                            <option>Integrador (Intermedio)</option>
-                                                            <option>Innovador (Avanzado)</option>
+                                                            <option value="Explorador (Básico)">Explorador (Básico)</option>
+                                                            <option value="Integrador (Intermedio)">Integrador (Intermedio)</option>
+                                                            <option value="Innovador (Avanzado)">Innovador (Avanzado)</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-4 col-span-2">
-                                                    <label for="modalidad" class="block text-sm font-medium leading-6 text-gray-900">Modalidad en la que realizará su bootcamps</label>
+                                                    <label for="modalidad_bootcamps" class="block text-sm font-medium leading-6 text-gray-900">Modalidad en la que realizará su bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select id="modalidad" name="modalidad" autocomplete="modalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option>Presencial / híbrido</option>
-                                                            <option>Virtual</option>
+                                                            <option value="Presencial / híbrido">Presencial / híbrido</option>
+                                                            <option value="Virtual">Virtual</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -974,7 +992,7 @@
 
                                                 </li>
                                                 <li class="mt-6">
-                                                    <label for="file_upload_field" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
+                                                    <label for="url_archivo" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
                                                     <label class="block">
                                                         <span class="sr-only">Anexar Documento Identidad:</span>
                                                         <input type="file" class="block w-full text-sm text-slate-500
@@ -983,7 +1001,7 @@
                                                         file:text-sm file:font-semibold
                                                         file:bg-violet-50 file:text-violet-700
                                                         hover:file:bg-violet-100
-                                                        " name="file_upload_field" />
+                                                        " name="url_archivo" id="url_archivo" />
                                                     </label>
                                                 </li>
                                             </ul>
@@ -1026,7 +1044,7 @@
         let form = $("#enviar_matricula");
         window.addEventListener("load", function() {
             initValidate();
-            
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
             $('#smartwizard').smartWizard({
                 theme: 'dots',
                 lang: { // Language variables for button
@@ -1071,7 +1089,8 @@
                     },
                     numero_documento: {
                         required: true, 
-                        minlength: 8
+                        minlength: 8,
+                        number: true
                     },
                     fecha_nacimiento: {
                         required: true, 
@@ -1087,15 +1106,18 @@
                     },
                     correo_electronico: {
                         required: true, 
-                        minlength: 5
+                        minlength: 5,
+                        email: true
                     },
                     celular_llamadas: {
                         required: true, 
-                        minlength: 10
+                        minlength: 10,
+                        number: true
                     },
                     whatsapp: {
                         required: true, 
-                        minlength: 10
+                        minlength: 10,
+                        number: true
                     },
                     orientacion_sexual: {
                         required: true, 
@@ -1123,22 +1145,23 @@
                     },
                     familiar_numero_documento: {
                         required: true, 
-                        minlength: 8
+                        minlength: 8,
+                        number: true
                     },
                     familiar_correo_electronico: {
                         required: true, 
-                        minlength: 5
+                        minlength: 5,
+                        email: true
                     },
                     familiar_celular_llamadas: {
                         required: true, 
-                        minlength: 10
+                        minlength: 10,
+                        number: true
                     },
                     familiar_whatsapp: {
                         required: true, 
-                        minlength: 10
-                    },
-                    file2: {
-                        filesize: 1048576
+                        minlength: 10,
+                        number: true
                     },
                     grupo_etnico: {
                         required: true, 
@@ -1155,7 +1178,62 @@
                     ocupacion: {
                         required: true, 
                         minlength: 1
-                    }
+                    },
+                    pais_residencia: {
+                        required: true, 
+                        minlength: 4
+                    },
+                    departamento_residencia: {
+                        required: true, 
+                        minlength: 4
+                    },
+                    municipio_residencia: {
+                        required: true, 
+                        minlength: 4
+                    },
+                    zona_ubicacion: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    direccion: {
+                        required: true, 
+                        minlength: 5
+                    },
+                    estrato_socioeconomico: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    tipo_vivienda: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    tenencia_vivienda: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    disponibilidad_formacion: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    horario_formacion: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    eje_final_formacion: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    nivel_formacion: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    modalidad_bootcamps: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    url_archivo: {
+                        filesize: 1048576
+                    },
                 
                 },
                 messages: { 

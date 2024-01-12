@@ -963,35 +963,32 @@
                                         </div>
                                     </div>
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
-                                        <div class="pant pant5 space-y-12 grid grid-cols-1">
-                                            <label for="" class="block text-sm font-medium leading-6 text-gray-900">Usted cuenta con los siguinetes requisitos:</label>
+                                        <div class="pant pant5 grid grid-cols-1">
+                                            <p for="" class="block text-sm font-medium leading-6 text-black"><b>Usted cuenta con los siguientes requisitos:</b></p>
                                             <ul class="block text-sm font-medium leading-6 text-gray-900 grid grid-cols-2">
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Nacionalidad colombiana.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Mayores de 18 años.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Haber presentado la prueba de habilidades digitales y haber sido asignado en su nivel para realizar la formación.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Tener disponibilidad para el desarrollo de la formación de hasta 10 horas semanales.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Contar con equipo de cómputo o disponibilidad de este, dispositivo móvil o electrónico con acceso a internet para el desarrollo de la formación.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Tener una cuenta propia y personal de correo electrónico.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Haber leído y aceptado los requisitos de la convocatoria.
                                                 </li>
-                                                <li class="mt-3">
+                                                <li class="col-span-2">
                                                     - Aceptar la política de tratamiento de datos establecida por el MinTIC y por el Ejecutor.
-                                                </li>
-                                                <li>
-
                                                 </li>
                                                 <li class="mt-6">
                                                     <label for="url_archivo" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
@@ -1006,7 +1003,6 @@
                                                         " name="url_archivo" id="url_archivo" />
                                                     </label>
                                                 </li>
-                                                <li></li>
                                                 <li class="mt-6">
                                                     <label for="requisitos_aceptados" class=" block text-sm font-medium leading-6 text-gray-900">Acepto que cumplo con los requisitos</label>
                                                     <div class="mt-2">
@@ -1020,8 +1016,8 @@
                                                 </li>
                                             </ul>
                                             <div class="grid justify-items-end w-full">
-                                                <div class="w-1/2">
-                                                    <button id="sendForm" type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
+                                                <div class="w-1/2 mt-3">
+                                                    <button id="sendForm" type="submit" class="pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
                                                 </div>
                                             </div>
 

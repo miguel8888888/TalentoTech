@@ -1081,6 +1081,14 @@
                 $('.identi_genero').addClass('d-none');
             }
         });
+        $("#requisitos_aceptados").change(function() {
+            if ( $('option:selected', this).text() == 'Si') {
+                $('#sendForm').removeClass('pointer-events-none');
+            }
+            else if ( $('option:selected', this).text() == 'No') {
+                $('#sendForm').addClass('pointer-events-none');
+            }
+        });
         function initValidate() {
             form.validate({
                 onfocusout: false,

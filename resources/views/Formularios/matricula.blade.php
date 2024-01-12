@@ -331,23 +331,23 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="familiar_email" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
+                                                    <label for="familiar_correo_electronico" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
                                                     <div class="mt-2">
-                                                        <input id="familiar_email" name="familiar_email" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="familiar_correo_electronico" name="familiar_correo_electronico" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="familiar_llamadaTel" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
+                                                    <label for="familiar_celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
-                                                        <input id="familiar_llamadaTel" name="familiar_llamadaTel" type="number" autocomplete="llamadaTel" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="familiar_celular_llamadas" name="familiar_celular_llamadas" type="number" autocomplete="familiar_celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="familiar_whatsApp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
+                                                    <label for="familiar_whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
-                                                        <input id="familiar_whatsApp" name="familiar_whatsApp" type="number" autocomplete="whatsApp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="familiar_whatsapp" name="familiar_whatsapp" type="number" autocomplete="familiar_whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1108,6 +1108,34 @@
                     ciudad_nacimiento: {
                         required: true, 
                         minlength: 1
+                    },
+                    familiar_primer_nombre: {
+                        required: true, 
+                        minlength: 3
+                    },
+                    familiar_primer_apellido: {
+                        required: true,
+                        minlength: 3
+                    },
+                    familiar_tipo_documento: {
+                        required: true, 
+                        minlength: 1
+                    },
+                    familiar_numero_documento: {
+                        required: true, 
+                        minlength: 8
+                    },
+                    familiar_correo_electronico: {
+                        required: true, 
+                        minlength: 5
+                    },
+                    familiar_celular_llamadas: {
+                        required: true, 
+                        minlength: 10
+                    },
+                    familiar_whatsapp: {
+                        required: true, 
+                        minlength: 10
                     },
                     file2: {
                         filesize: 1048576

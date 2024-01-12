@@ -256,14 +256,14 @@
                                                 <div class="col-span-2">
                                                     <label for="celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
-                                                        <input id="celular_llamadas" name="celular_llamadas" type="number" autocomplete="llamadaTel" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="celular_llamadas" name="celular_llamadas" type="number" autocomplete="celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="whatsApp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
+                                                    <label for="whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
-                                                        <input id="whatsApp" name="whatsApp" type="number" autocomplete="whatsApp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="whatsapp" name="whatsapp" type="number" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,7 +388,7 @@
                                                 </div>
 
                                                 <div class="col-span-3">
-                                                    <label for="discapacidad_certificada" class="block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
+                                                    <label for="discapacidad_certificada" class="prent_discapaciti d-none block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
                                                     <div class="mt-2">
                                                         <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
@@ -1089,6 +1089,14 @@
                         required: true, 
                         minlength: 5
                     },
+                    celular_llamadas: {
+                        required: true, 
+                        minlength: 10
+                    },
+                    whatsapp: {
+                        required: true, 
+                        minlength: 10
+                    },
                     orientacion_sexual: {
                         required: true, 
                         minlength: 1
@@ -1109,10 +1117,6 @@
                         minlength: 1
                     },
                     discapacidad: {
-                        required: true, 
-                        minlength: 1
-                    },
-                    discapacidad_certificada: {
                         required: true, 
                         minlength: 1
                     },

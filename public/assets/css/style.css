@@ -229,6 +229,16 @@ canvas {
   color: #00aced;
 }
 
+.correct i {
+  bottom: 7px;
+  right: 7px;
+  color: #255086;
+}
+
+.correct:hover i {
+  color: #285892;
+}
+
 .social-icon a {
   position: absolute;
   background: white;
@@ -285,10 +295,11 @@ canvas {
   /* Puedes ajustar este porcentaje según tus necesidades */
 }
 
-label.error{
+label.error {
   color: #e62117;
   font-size: 12px;
 }
-input.error{
+
+input.error {
   border: solid 1px #e62117;
 }

@@ -14,6 +14,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/smartwizart/css/smart_wizard_all.min.css') }}">
@@ -50,10 +51,24 @@
         </div>
 <div class=" flex justify-center">
 
-    <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3">
-        <p class="text-3xl font-bold text-black">
+    <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-2">
+        <div class="correct col-span-2 text-5xl m-4">
+            <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
+            <i class="fa fa-lg fa-circle-check"></i>
+        </div>
+        <p class="font-bold text-black col-span-2">
             Seño@r {{$informacion_usuario->primer_nombre}} {{$informacion_usuario->primer_apellido}}, su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
         </p>
+        
+        <div class="twitter text-right m-2 text-4xl">
+            <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
+            <i class="fa fa-twitter fa-lg"></i>
+        </div>
+        
+        <div class="youtube text-left m-2 text-4xl">
+            <a href="https://www.youtube.com/channel/UC9Yp2yz6-pwhQuPlIDV_mjA" target="_blank"></a>
+            <i class="fa fa-youtube fa-lg"></i>
+        </div>
     </div>
 </div>
         @if($errors->any())
@@ -61,7 +76,6 @@
         @endif
         
     </div>
-
     <!-- partial -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>

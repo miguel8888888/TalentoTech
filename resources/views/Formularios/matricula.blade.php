@@ -1037,7 +1037,7 @@
     <script src="{{ asset('assets/plugins/smartwizart/js/jquery.smartWizard.min.js') }}"></script>
 
     <script src="{{ asset('assets/plugins/jquery_validate/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery_validate/localization/messages_es.min.js') }}"></script>
 
     <script type="text/javascript">
@@ -1273,7 +1273,7 @@
             if (form.valid()) {
                 $("#sendForm").prop('disabled',true);
                 $("#sendForm").html('Enviando...');
-
+                this.submit();
             }
         });
     </script>

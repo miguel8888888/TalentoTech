@@ -10,15 +10,14 @@ class RegistrarController extends Controller
     public function guardarDatos(Request $request)
     {
         $validated = $request->validate([
-            'primer_nombre' => 'string|max:50',
-            'segundo_nombre' => 'required|string|max:50',
-            'primer_apellido' => 'required|string|max:50',
-            'segundo_apellido' => 'required|string|max:50',
+            'primer_nombre' => ' required',
+            'primer_apellido' => 'required',
+            
         ]);
         // 'fecha_diligenciamiento' => 'nullable|date',
 
         $informacion_usuario = new Participante();
-        $informacion_usuario->fecha_diligenciamiento = $request->input('fecha_diligenciamiento');
+        $informacion_usuario->fecha_diligenciamiento = date('Y-m-d');
         $informacion_usuario->primer_nombre = $request->input('primer_nombre');
         $informacion_usuario->segundo_nombre = $request->input('segundo_nombre');
         $informacion_usuario->primer_apellido = $request->input('primer_apellido');
@@ -48,9 +47,9 @@ class RegistrarController extends Controller
         $informacion_usuario->grupo_etnico = $request->input('grupo_etnico');
         $informacion_usuario->discapacidad = $request->input('discapacidad');
         $informacion_usuario->discapacidad_certificada = $request->input('discapacidad_certificada');
-        $informacion_usuario->tipo_discapacidad = $request->input('tipo_discapacidad');
-        $informacion_usuario->segun_discapacidad = $request->input('segun_discapacidad');
-        $informacion_usuario->grupo_atencion_diferencial = $request->input('grupo_atencion_diferencial');
+        $informacion_usuario->tipo_discapacidad = implode(" | ", (array) $request->input('tipo_discapacidad'));
+        $informacion_usuario->segun_discapacidad = implode(" | ", (array) $request->input('segun_discapacidad'));
+        $informacion_usuario->grupo_atencion_diferencial = implode(" | ", (array) $request->input('grupo_atencion_diferencial'));
         $informacion_usuario->grado_escolaridad = $request->input('grado_escolaridad');
         $informacion_usuario->ocupacion = $request->input('ocupacion');
         $informacion_usuario->profesion = $request->input('profesion');
@@ -66,8 +65,8 @@ class RegistrarController extends Controller
         $informacion_usuario->estrato_socioeconomico = $request->input('estrato_socioeconomico');
         $informacion_usuario->tipo_vivienda = $request->input('tipo_vivienda');
         $informacion_usuario->tenencia_vivienda = $request->input('tenencia_vivienda');
-        $informacion_usuario->servicios_basicos = $request->input('servicios_basicos');
-        $informacion_usuario->equipos_tecnologicos = $request->input('equipos_tecnologicos');
+        $informacion_usuario->servicios_basicos = implode(" | ", (array) $request->input('servicios_basicos'));
+        $informacion_usuario->equipos_tecnologicos = implode(" | ", (array) $request->input('equipos_tecnologicos'));
         $informacion_usuario->otros_equipos = $request->input('otros_equipos');
         $informacion_usuario->disponibilidad_formacion = $request->input('disponibilidad_formacion');
         $informacion_usuario->horario_formacion = $request->input('horario_formacion');

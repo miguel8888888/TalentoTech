@@ -1105,6 +1105,7 @@
                 $('#sendForm').addClass('pointer-events-none');
             }
         });
+        
         const municipiosPorDepartamento = {
             "Nariño": ["Aldana",
                         "Ancuya",

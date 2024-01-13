@@ -199,7 +199,7 @@
                                                 <div class="col-span-2">
                                                     <label for="edad" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
                                                     <div class="mt-2">
-                                                        <input type="number" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input disabled type="number" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
                                                     </div>
                                                 </div>
 
@@ -1333,15 +1333,15 @@
                     },
                     pais_residencia: {
                         required: true, 
-                        minlength: 4
+                        minlength: 1
                     },
                     departamento_residencia: {
                         required: true, 
-                        minlength: 4
+                        minlength: 1
                     },
                     municipio_residencia: {
                         required: true, 
-                        minlength: 4
+                        minlength: 1
                     },
                     zona_ubicacion: {
                         required: true, 

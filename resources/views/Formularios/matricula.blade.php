@@ -693,21 +693,33 @@
                                                 <div class="col-span-2">
                                                     <label for="pais_residencia" class="block text-sm font-medium leading-6 text-gray-900">País de Residencia</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="pais_residencia" id="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <!-- <input type="text" name="pais_residencia" id="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
+                                                        <select id="pais_residencia" name="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option selected disabled>Seleccione...</option>
+                                                            <option value="Rural">Colombia</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
                                                     <label for="departamento_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <!-- <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
+                                                        <select id="departamento_residencia" name="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option value="" selected="" disabled>Elige tu departamento</option>
+                                                            <option value="Nariño">Nariño</option>
+                                                            <option value="Cauca">Cauca</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
                                                     <label for="municipio_residencia" class="block text-sm font-medium leading-6 text-gray-900">Municipio Residencia</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <!-- <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
+                                                        <select id="municipio_residencia" name="municipio_residencia" autocomplete="municipio_residencia" class="municipios_container block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                            <option value="" selected="" disabled>Elige tu municipio</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
@@ -1092,6 +1104,124 @@
             else if ( $('option:selected', this).text() == 'No') {
                 $('#sendForm').addClass('pointer-events-none');
             }
+        });
+        const municipiosPorDepartamento = {
+            "Nariño": ["Aldana",
+                        "Ancuya",
+                        "Arboleda",
+                        "Barbacoas",
+                        "Belén",
+                        "Buesaco",
+                        "Chachagüí",
+                        "Colón",
+                        "Consacá",
+                        "Contadero",
+                        "Córdoba",
+                        "Cuaspud",
+                        "Cumbal",
+                        "Cumbitara",
+                        "El Charco",
+                        "El Peñol",
+                        "El Rosario",
+                        "El Tablón de Gómez",
+                        "El Tambo",
+                        "Francisco Pizarro",
+                        "Funes",
+                        "Guachucal",
+                        "Guaitarilla",
+                        "Gualmatán",
+                        "Iles",
+                        "Imués",
+                        "Ipiales",
+                        "La Cruz",
+                        "La Florida",
+                        "La Llanada",
+                        "La Tola",
+                        "La Unión",
+                        "Leiva",
+                        "Linares",
+                        "Los Andes",
+                        "Magüí Payán",
+                        "Mallama",
+                        "Mosquera",
+                        "Nariño",
+                        "Olaya Herrera",
+                        "Ospina",
+                        "Pasto",
+                        "Policarpa",
+                        "Potosí",
+                        "Providencia",
+                        "Puerres",
+                        "Pupiales",
+                        "Ricaurte",
+                        "Roberto Payán",
+                        "Samaniego",
+                        "San Bernardo",
+                        "San Lorenzo",
+                        "San Pablo",
+                        "San Pedro de Cartago",
+                        "Sandoná",
+                        "Santa Bárbara",
+                        "Santacruz",
+                        "Sapuyes",
+                        "Taminango",
+                        "Tangua",
+                        "Tumaco",
+                        "Túquerres",
+                        "Yacuanquer"],
+            "Cauca": ["Almaguer",
+                        "Argelia",
+                        "Balboa",
+                        "Bolívar",
+                        "Buenos Aires",
+                        "Cajibío",
+                        "Caldono",
+                        "Caloto",
+                        "Corinto",
+                        "El Tambo",
+                        "Florencia",
+                        "Guachené",
+                        "Guapí",
+                        "Inzá",
+                        "Jambaló",
+                        "La Sierra",
+                        "La Vega",
+                        "López de Micay",
+                        "Mercaderes",
+                        "Miranda",
+                        "Morales",
+                        "Padilla",
+                        "Páez",
+                        "Patía",
+                        "Piamonte",
+                        "Piendamó",
+                        "Popayán",
+                        "Puerto Tejada",
+                        "Puracé",
+                        "Rosas",
+                        "San Sebastián",
+                        "Santander de Quilichao",
+                        "Silvia",
+                        "Sotara",
+                        "Suárez",
+                        "Timbío",
+                        "Timbiquí",
+                        "Toribío",
+                        "Totoró",
+                        "Villa Rica"]
+            // Puedes agregar más departamentos y sus municipios aquí
+        };
+
+        // Función para actualizar los municipios al cambiar el departamento seleccionado
+        $("#departamento_residencia").change(function() {
+            const departamentoSeleccionado = $(this).val();
+            const municipios = municipiosPorDepartamento[departamentoSeleccionado] || [];
+
+            // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
+            $("#municipios_container").empty();
+            municipios.forEach(municipio => {
+                $(".municipios_container").append(`<option value="${municipio}">${municipio}</option>`);
+            });
         });
         function initValidate() {
             form.validate({

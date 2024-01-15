@@ -312,3 +312,20 @@ input.error {
 .gris_back{
   background-color: #e3e3e3;
 }
+
+@media screen and (max-width: 400px) {
+  .titulo-principal{
+    font-size: 23px;
+    padding: 1px 23px;
+  }
+  .logo-talentotech{
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .logo-talentotech{
+    margin-top: 150px;
+  }
+}

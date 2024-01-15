@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MatriculaExito;
 use App\Models\Participante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class RegistrarController extends Controller
@@ -85,6 +87,12 @@ class RegistrarController extends Controller
         $fileName = $cadena . '.pdf';
         $filePath = $request->file('url_archivo')->storeAs('uploads/' . 'documentos', $fileName, 'public');
         $informacion_usuario->documento = '/storage/' . $filePath;
+
+        $contentMail = $informacion_usuario;
+
+        $correo = new MatriculaExito($contentMail);
+        Mail::to($informacion_usuario->correo_electronico)->send($correo);
+
         return view('Formularios/registroExitoso', compact('informacion_usuario'));
     }
 }

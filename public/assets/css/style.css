@@ -318,4 +318,14 @@ input.error {
     font-size: 23px;
     padding: 1px 23px;
   }
+  .logo-talentotech{
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .logo-talentotech{
+    margin-top: 150px;
+  }
 }

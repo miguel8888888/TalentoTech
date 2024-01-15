@@ -46,7 +46,7 @@
                 </div>
             </nav>
         </header>
-        <div class="w-full justify-center flex">
+        <div class="w-full justify-center flex logo-talentotech">
             <img src="{{ asset('assets/img/TalentoTech.png') }}" class="w-1/2">
         </div>
         <h1 class="text-5xl font-bold titulo-principal">

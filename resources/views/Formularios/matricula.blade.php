@@ -53,7 +53,9 @@
             ¡Bienvenido/a a Talento Tech, tu puerta de entrada al futuro digital!
         </h1>
         @if($errors->any())
-        {{ implode('', $errors->all('<div>:message</div>')) }}
+            <div class="bg-white w-9/12 p-24">
+                {{!! implode('', $errors->all('<div>:message</div>')) !!}}
+            </div>
         @endif
         <div class="button shift-camera-button z-100" id="inscribirme">
             <div class="border">

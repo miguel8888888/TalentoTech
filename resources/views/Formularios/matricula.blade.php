@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <title>TalentoTech - Inscripciones 2024</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.typekit.net/jrj6out.js"></script>
     <script>
         try {
@@ -52,7 +53,7 @@
             ¡Bienvenido/a a Talento Tech, tu puerta de entrada al futuro digital!
         </h1>
         @if($errors->any())
-            {{ implode('', $errors->all('<div>:message</div>')) }}
+        {{ implode('', $errors->all('<div>:message</div>')) }}
         @endif
         <div class="button shift-camera-button z-100" id="inscribirme">
             <div class="border">
@@ -199,7 +200,7 @@
                                                 <div class="col-span-2">
                                                     <label for="edad" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
                                                     <div class="mt-2">
-                                                        <input disabled type="number" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
+                                                        <input readonly type="number" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
                                                     </div>
                                                 </div>
 
@@ -240,7 +241,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </div>
 
                                                 <div class="col-span-2">
@@ -415,7 +416,7 @@
 
 
                                                 <div class="col-span-2 lg:col-span-12">
-                                                    <fieldset  class="mt-5 prent_discapaciti d-none">
+                                                    <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
@@ -518,7 +519,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_2" name="segun_discapacidad[]"  value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_2" class="font-medium text-gray-900">El beneficiario requiere la ayuda de otra persona</label>
@@ -536,7 +537,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_4" name="segun_discapacidad[]"  value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_4" class="font-medium text-gray-900">El beneficiario requiere ayuda técnica/Producto de apoyo</label>
@@ -1028,7 +1029,7 @@
                                                             <option value="No">No</option>
                                                         </select>
                                                     </div>
-                                                    
+
                                                 </li>
                                             </ul>
                                             <div class="grid justify-items-end w-full">
@@ -1070,7 +1071,7 @@
         let form = $("#enviar_matricula");
         window.addEventListener("load", function() {
             initValidate();
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            $('html, body').animate({scrollTop: 0}, 500);
             $('#smartwizard').smartWizard({
                 theme: 'dots',
                 lang: { // Language variables for button
@@ -1082,134 +1083,133 @@
         });
         $("#discapacidad").change(function() {
             /* alert( $('option:selected', this).text() ); */
-            if ( $('option:selected', this).text() == 'Si') {
+            if ($('option:selected', this).text() == 'Si') {
                 $('.prent_discapaciti').removeClass('d-none');
-            }
-            else if ( $('option:selected', this).text() == 'No') {
+            } else if ($('option:selected', this).text() == 'No') {
                 $('.prent_discapaciti').addClass('d-none');
             }
         });
         $("#identidad_genero_preg").change(function() {
-            if ( $('option:selected', this).text() == 'Si') {
+            if ($('option:selected', this).text() == 'Si') {
                 $('.identi_genero').removeClass('d-none');
-            }
-            else if ( $('option:selected', this).text() == 'No') {
+            } else if ($('option:selected', this).text() == 'No') {
                 $('.identi_genero').addClass('d-none');
             }
         });
         $("#requisitos_aceptados").change(function() {
-            if ( $('option:selected', this).text() == 'Si') {
+            if ($('option:selected', this).text() == 'Si') {
                 $('#sendForm').removeClass('pointer-events-none');
-            }
-            else if ( $('option:selected', this).text() == 'No') {
+            } else if ($('option:selected', this).text() == 'No') {
                 $('#sendForm').addClass('pointer-events-none');
             }
         });
-        
+
         const municipiosPorDepartamento = {
             "Nariño": ["Aldana",
-                        "Ancuya",
-                        "Arboleda",
-                        "Barbacoas",
-                        "Belén",
-                        "Buesaco",
-                        "Chachagüí",
-                        "Colón",
-                        "Consacá",
-                        "Contadero",
-                        "Córdoba",
-                        "Cuaspud",
-                        "Cumbal",
-                        "Cumbitara",
-                        "El Charco",
-                        "El Peñol",
-                        "El Rosario",
-                        "El Tablón de Gómez",
-                        "El Tambo",
-                        "Francisco Pizarro",
-                        "Funes",
-                        "Guachucal",
-                        "Guaitarilla",
-                        "Gualmatán",
-                        "Iles",
-                        "Imués",
-                        "Ipiales",
-                        "La Cruz",
-                        "La Florida",
-                        "La Llanada",
-                        "La Tola",
-                        "La Unión",
-                        "Leiva",
-                        "Linares",
-                        "Los Andes",
-                        "Magüí Payán",
-                        "Mallama",
-                        "Mosquera",
-                        "Nariño",
-                        "Olaya Herrera",
-                        "Ospina",
-                        "Pasto",
-                        "Policarpa",
-                        "Potosí",
-                        "Providencia",
-                        "Puerres",
-                        "Pupiales",
-                        "Ricaurte",
-                        "Roberto Payán",
-                        "Samaniego",
-                        "San Bernardo",
-                        "San Lorenzo",
-                        "San Pablo",
-                        "San Pedro de Cartago",
-                        "Sandoná",
-                        "Santa Bárbara",
-                        "Santacruz",
-                        "Sapuyes",
-                        "Taminango",
-                        "Tangua",
-                        "Tumaco",
-                        "Túquerres",
-                        "Yacuanquer"],
+                "Ancuya",
+                "Arboleda",
+                "Barbacoas",
+                "Belén",
+                "Buesaco",
+                "Chachagüí",
+                "Colón",
+                "Consacá",
+                "Contadero",
+                "Córdoba",
+                "Cuaspud",
+                "Cumbal",
+                "Cumbitara",
+                "El Charco",
+                "El Peñol",
+                "El Rosario",
+                "El Tablón de Gómez",
+                "El Tambo",
+                "Francisco Pizarro",
+                "Funes",
+                "Guachucal",
+                "Guaitarilla",
+                "Gualmatán",
+                "Iles",
+                "Imués",
+                "Ipiales",
+                "La Cruz",
+                "La Florida",
+                "La Llanada",
+                "La Tola",
+                "La Unión",
+                "Leiva",
+                "Linares",
+                "Los Andes",
+                "Magüí Payán",
+                "Mallama",
+                "Mosquera",
+                "Nariño",
+                "Olaya Herrera",
+                "Ospina",
+                "Pasto",
+                "Policarpa",
+                "Potosí",
+                "Providencia",
+                "Puerres",
+                "Pupiales",
+                "Ricaurte",
+                "Roberto Payán",
+                "Samaniego",
+                "San Bernardo",
+                "San Lorenzo",
+                "San Pablo",
+                "San Pedro de Cartago",
+                "Sandoná",
+                "Santa Bárbara",
+                "Santacruz",
+                "Sapuyes",
+                "Taminango",
+                "Tangua",
+                "Tumaco",
+                "Túquerres",
+                "Yacuanquer"
+            ],
             "Cauca": ["Almaguer",
-                        "Argelia",
-                        "Balboa",
-                        "Bolívar",
-                        "Buenos Aires",
-                        "Cajibío",
-                        "Caldono",
-                        "Caloto",
-                        "Corinto",
-                        "El Tambo",
-                        "Florencia",
-                        "Guachené",
-                        "Guapí",
-                        "Inzá",
-                        "Jambaló",
-                        "La Sierra",
-                        "La Vega",
-                        "López de Micay",
-                        "Mercaderes",
-                        "Miranda",
-                        "Morales",
-                        "Padilla",
-                        "Páez",
-                        "Patía",
-                        "Piamonte",
-                        "Piendamó",
-                        "Popayán",
-                        "Puerto Tejada",
-                        "Puracé",
-                        "Rosas",
-                        "San Sebastián",
-                        "Santander de Quilichao",
-                        "Silvia",
-                        "Sotara",
-                        "Suárez",
-                        "Timbío",
-                        "Timbiquí",
-                        "Toribío",
-                        "Totoró",
-                        "Villa Rica"]
+                "Argelia",
+                "Balboa",
+                "Bolívar",
+                "Buenos Aires",
+                "Cajibío",
+                "Caldono",
+                "Caloto",
+                "Corinto",
+                "El Tambo",
+                "Florencia",
+                "Guachené",
+                "Guapí",
+                "Inzá",
+                "Jambaló",
+                "La Sierra",
+                "La Vega",
+                "López de Micay",
+                "Mercaderes",
+                "Miranda",
+                "Morales",
+                "Padilla",
+                "Páez",
+                "Patía",
+                "Piamonte",
+                "Piendamó",
+                "Popayán",
+                "Puerto Tejada",
+                "Puracé",
+                "Rosas",
+                "San Sebastián",
+                "Santander de Quilichao",
+                "Silvia",
+                "Sotara",
+                "Suárez",
+                "Timbío",
+                "Timbiquí",
+                "Toribío",
+                "Totoró",
+                "Villa Rica"
+            ]
             // Puedes agregar más departamentos y sus municipios aquí
         };
 
@@ -1224,12 +1224,13 @@
                 $(".municipios_container").append(`<option value="${municipio}">${municipio}</option>`);
             });
         });
+
         function initValidate() {
             form.validate({
                 onfocusout: false,
                 rules: {
                     primer_nombre: {
-                        required: true, 
+                        required: true,
                         minlength: 3
                     },
                     primer_apellido: {
@@ -1237,55 +1238,59 @@
                         minlength: 3
                     },
                     tipo_documento: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     numero_documento: {
-                        required: true, 
+                        required: true,
                         minlength: 8,
                         number: true
                     },
                     fecha_nacimiento: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
+                    edad: {
+                        required: true,
+                        min: 18
+                    },
                     sexo: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     identidad_genero: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     correo_electronico: {
-                        required: true, 
+                        required: true,
                         minlength: 5,
                         email: true
                     },
                     celular_llamadas: {
-                        required: true, 
+                        required: true,
                         minlength: 10,
                         number: true
                     },
                     whatsapp: {
-                        required: true, 
+                        required: true,
                         minlength: 10,
                         number: true
                     },
                     orientacion_sexual: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     nacionalidad: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     ciudad_nacimiento: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     familiar_primer_nombre: {
-                        required: true, 
+                        required: true,
                         minlength: 3
                     },
                     familiar_primer_apellido: {
@@ -1293,108 +1298,108 @@
                         minlength: 3
                     },
                     familiar_tipo_documento: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     familiar_numero_documento: {
-                        required: true, 
+                        required: true,
                         minlength: 8,
                         number: true
                     },
                     familiar_correo_electronico: {
-                        required: true, 
+                        required: true,
                         minlength: 5,
                         email: true
                     },
                     familiar_celular_llamadas: {
-                        required: true, 
+                        required: true,
                         minlength: 10,
                         number: true
                     },
                     familiar_whatsapp: {
-                        required: true, 
+                        required: true,
                         minlength: 10,
                         number: true
                     },
                     grupo_etnico: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     discapacidad: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     grado_escolaridad: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     ocupacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     pais_residencia: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     departamento_residencia: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     municipio_residencia: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     zona_ubicacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     direccion: {
-                        required: true, 
+                        required: true,
                         minlength: 5
                     },
                     estrato_socioeconomico: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     tipo_vivienda: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     tenencia_vivienda: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     disponibilidad_formacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     horario_formacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     eje_final_formacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     nivel_formacion: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     modalidad_bootcamps: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
                     url_archivo: {
-                        required: true, 
+                        required: true,
                         extension: "pdf"
                     },
                     requisitos_aceptados: {
-                        required: true, 
+                        required: true,
                         minlength: 1
                     },
-                
+
                 },
-                messages: { 
+                messages: {
                     url_archivo: "El archivo debe ser PDF"
                 }
                 /* errorPlacement: function(error, element) {
@@ -1404,15 +1409,16 @@
         }
         $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
             if (form.valid()) {
-
+                $('html, body').animate({scrollTop: 0}, 500);
                 return true;
             } else {
                 return false;
             }
         });
-        $('input[name=fecha_nacimiento]').change(function() { 
+        $('input[name=fecha_nacimiento]').change(function() {
             $('input[name=edad]').val(calcularEdad($(this).val()));
         });
+
         function calcularEdad(fecha) {
             var hoy = new Date();
             var cumpleanos = new Date(fecha);
@@ -1425,10 +1431,10 @@
             return edad;
         }
 
-        $("#enviar_matricula").on("submit", function(event){
+        $("#enviar_matricula").on("submit", function(event) {
             event.preventDefault();
             if (form.valid()) {
-                $("#sendForm").prop('disabled',true);
+                $("#sendForm").prop('disabled', true);
                 $("#sendForm").html('Enviando...');
                 this.submit();
             }

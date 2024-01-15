@@ -11,6 +11,7 @@ class RegistrarController extends Controller
     public function guardarDatos(Request $request)
     {
         $validated = $request->validate([
+            'numero_documento' => ' required',
             'primer_nombre' => ' required',
             'primer_apellido' => 'required',
 

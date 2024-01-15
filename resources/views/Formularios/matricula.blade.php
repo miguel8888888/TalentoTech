@@ -49,7 +49,7 @@
         <div class="w-full justify-center flex">
             <img src="{{ asset('assets/img/TalentoTech.png') }}" class="w-1/2">
         </div>
-        <h1 class="text-5xl font-bold">
+        <h1 class="text-5xl font-bold titulo-principal">
             ¡Bienvenido/a a Talento Tech, tu puerta de entrada al futuro digital!
         </h1>
         @if($errors->any())

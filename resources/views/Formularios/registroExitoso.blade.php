@@ -51,23 +51,31 @@
         </div>
 <div class=" flex justify-center">
 
-    <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-2">
-        <div class="correct col-span-2 text-5xl m-4">
+    <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-3">
+        <div class="correct col-span-3 text-5xl m-4">
             <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
             <i class="fa fa-lg fa-circle-check"></i>
         </div>
-        <p class="font-bold text-black col-span-2">
+        <p class="font-bold text-black col-span-3">
             Su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
         </p>
         
-        <div class="twitter text-right m-2 text-4xl">
-            <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
-            <i class="fa fa-twitter fa-lg"></i>
+        <div class="instagram text-right m-2 text-4xl">
+            <a href="https://www.instagram.com/descubreutp?igsh=Zm4wcmUzdWxteXEx" target="_blank">
+                <i class="fa fa-instagram fa-lg"></i>
+            </a>
+        </div>
+        
+        <div class="facebook text-center m-2 text-4xl">
+            <a href="https://www.facebook.com/profile.php?id=100063576547225&mibextid=kFxxJD" target="_blank">
+                <i class="fa fa-facebook fa-lg"></i>
+            </a>
         </div>
         
         <div class="youtube text-left m-2 text-4xl">
-            <a href="https://www.youtube.com/channel/UC9Yp2yz6-pwhQuPlIDV_mjA" target="_blank"></a>
-            <i class="fa fa-youtube fa-lg"></i>
+            <a href="https://youtube.com/@DescubreUTP?si=yaDg3EM6kSqiTjpN" target="_blank">
+                <i class="fa fa-youtube fa-lg"></i>
+            </a>
         </div>
     </div>
 </div>

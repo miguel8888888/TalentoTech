@@ -209,24 +209,44 @@ canvas {
   text-align: left;
 }
 
-.twitter:hover a {
+.instagram:hover a {
   transform: rotate(-45deg) scale(1.05);
 }
 
-.twitter:hover i {
-  color: #21c2ff;
+.instagram:hover i {
+  color: #255086;
 }
 
-.twitter a {
+.instagram a {
   bottom: -40px;
   right: -75px;
   transform: rotate(-45deg);
 }
 
-.twitter i {
+.instagram i {
   bottom: 7px;
   right: 7px;
-  color: #00aced;
+  color: #255086;
+}
+
+.facebook:hover a {
+  transform: rotate(-45deg) scale(1.05);
+}
+
+.facebook:hover i {
+  color: #255086;
+}
+
+.facebook a {
+  bottom: -40px;
+  right: -75px;
+  transform: rotate(-45deg);
+}
+
+.facebook i {
+  bottom: 7px;
+  right: 7px;
+  color: #255086;
 }
 
 .correct i {
@@ -263,7 +283,7 @@ canvas {
 }
 
 .youtube:hover i {
-  color: #ec4c44;
+  color: #255086;
 }
 
 .youtube a {
@@ -275,7 +295,7 @@ canvas {
 .youtube i {
   bottom: 7px;
   left: 7px;
-  color: #e62117;
+  color: #255086;
 }
 
 

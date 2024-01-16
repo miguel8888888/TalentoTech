@@ -164,7 +164,7 @@
                                                 <div class="col-span-2">
                                                     <label for="numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
                                                     <div class="mt-2">
-                                                        <input type="text" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="number" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -196,7 +196,7 @@
                                                 <div class="col-span-2">
                                                     <label for="edad" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
                                                     <div class="mt-2">
-                                                        <input readonly  type="text" inputmode="numeric" pattern="[0-9]*" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
+                                                        <input readonly  type="number" inputmode="numeric" pattern="[0-9]*" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
                                                     </div>
                                                 </div>
 
@@ -264,14 +264,14 @@
                                                 <div class="col-span-2">
                                                     <label for="celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
-                                                        <input id="celular_llamadas" name="celular_llamadas"  type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="celular_llamadas" name="celular_llamadas"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
                                                     <label for="whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
-                                                        <input id="whatsapp" name="whatsapp"  type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="whatsapp" name="whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -334,7 +334,7 @@
                                                 <div class="col-span-2">
                                                     <label for="familiar_numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
                                                     <div class="mt-2">
-                                                        <input  type="text" inputmode="numeric" pattern="[0-9]*" name="familiar_numero_documento" id="familiar_numero_documento" autocomplete="familiar_numero_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input  type="number" inputmode="numeric" pattern="[0-9]*" name="familiar_numero_documento" id="familiar_numero_documento" autocomplete="familiar_numero_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -348,14 +348,14 @@
                                                 <div class="col-span-2">
                                                     <label for="familiar_celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
-                                                        <input id="familiar_celular_llamadas" name="familiar_celular_llamadas"  type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="familiar_celular_llamadas" name="familiar_celular_llamadas"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
                                                     <label for="familiar_whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
-                                                        <input id="familiar_whatsapp" name="familiar_whatsapp"  type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="familiar_whatsapp" name="familiar_whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
                                             </div>

@@ -303,34 +303,44 @@ label.error {
 input.error {
   border: solid 1px #e62117;
 }
-.w-100{
+
+.w-100 {
   width: 100% !important;
 }
 
 
 
-.gris_back{
+.gris_back {
   background-color: #e3e3e3;
 }
 
 @media screen and (max-width: 400px) {
-  .titulo-principal{
+  .titulo-principal {
     font-size: 23px;
     padding: 1px 23px;
   }
-  .logo-talentotech{
+
+  .logo-talentotech {
     margin-top: 200px;
   }
 }
 
 @media screen and (max-width: 900px) {
 
-  .logo-talentotech{
+  .logo-talentotech {
     margin-top: 150px;
   }
-  
-  .tituloX{
+
+  .tituloX {
     font-size: 25px !important;
     padding: 1px 79px !important;
   }
+}
+
+.error_mens {
+  border: solid 3px #255086;
+  border-radius: 0.75rem;
+  margin: 10px;
+  padding: 7px 37px;
+  box-shadow: 5px 6px 15px -5px #255086;
 }

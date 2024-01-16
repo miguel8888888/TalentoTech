@@ -1403,7 +1403,8 @@
                     },
                     url_archivo: {
                         required: true,
-                        extension: "pdf"
+                        extension: "pdf",
+                        maxsize: 2097152
                     },
                     requisitos_aceptados: {
                         required: true,
@@ -1412,7 +1413,10 @@
 
                 },
                 messages: {
-                    url_archivo: "El archivo debe ser PDF, y no mayor a 2MB",
+                    url_archivo: {
+                        required: "Por favor, selecciona un archivo.",
+                        maxsize: "El tamaño del archivo debe ser menor o igual a 2 MB."
+                    },
                     "tipo_discapacidad[]": "Selecciona al menos un tipo de discapacidad",
                     "segun_discapacidad[]": "Selecciona al menos una opción según la discapacidad",
                 }
@@ -1429,7 +1433,6 @@
         $("#smartwizard").on("showStep", function(e, anchorObject, stepIndex, stepDirection) {
             $(".sw-btn-prev").removeClass("d-none");
             $(".sw-btn-next").removeClass("d-none");
-            console.log(e);
             switch(stepIndex) {
                 case 0: 
                     $(".sw-btn-prev").addClass("d-none");
@@ -1459,20 +1462,22 @@
 
         $("#enviar_matricula").on("submit", function(event) {
             event.preventDefault();
-            var file_size = $('#url_archivo')[0].files[0].size;
-            if(file_size>2097152) {
-        // 		$("#file_size_error").html("El archivo debe ser PDF, y no mayor a 2MB");
-        // 		$(".inputBox").css("border-color","#FF0000");
-                alert("El archivo debe ser PDF, y no mayor a 2MB");
-                // initValidate();
-        		return false;
-        	} else {
-        	    if (form.valid()) {
-                    $("#sendForm").prop('disabled', true);
-                    $("#sendForm").html('Enviando...');
-                    this.submit();
-                }
-        	}
+            // var file_size = $('#url_archivo')[0].files[0].size;
+            // if(file_size>2097152) {
+            //     // alert("El archivo debe ser PDF, y no mayor a 2MB");
+            //     // initValidate();
+            //     form.validate().showErrors({
+            //         "url_archivo": "Este es tu mensaje de error personalizado",
+            //         // Agrega más campos y mensajes según sea necesario
+            //     });
+        	// 	return false;
+        	// } else {
+            // }
+            if (form.valid()) {
+                $("#sendForm").prop('disabled', true);
+                $("#sendForm").html('Enviando...');
+                this.submit();
+            }
         });
     </script>
 </body>

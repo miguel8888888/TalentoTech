@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>TalentoTech - Inscripciones 2024</title>
+    <title>TalentoTech - Matriculas 2024</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.typekit.net/jrj6out.js"></script>
     <script>
@@ -903,7 +903,7 @@
                                                             <div class="flex items-center">
                                                                 <label for="otros_equipos" class="block text-sm font-medium leading-6 text-gray-900">Otro ¿Cuál?</label>
                                                                 <div>
-                                                                    <input id="otros_equipos" name="otro_equipos" type="text" autocomplete="otro_equipos" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                                    <input id="otros_equipos" name="otros_equipos" type="text" autocomplete="otro_equipos" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                                 </div>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->

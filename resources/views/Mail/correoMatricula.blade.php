@@ -33,7 +33,7 @@
                 </tr><!-- end tr --> --}}
 				<tr>
 					<td valign="middle" colspan="2">
-                        <img src="https://talentotechbogota.co/images/logo_talento.svg" alt="" style="width: 70%; height: auto; margin: auto; display: block;">
+                        <img src="https://matricula.talentotechregion3.com.co/public/assets/img/TalentoTech.png" alt="" style="width: 70%; height: auto; margin: auto; display: block;">
 					</td>
 				</tr><!-- end tr -->
 				<tr>
@@ -51,10 +51,10 @@
 				</tr><!-- end tr -->
                 <tr>
                     <td>
-                        <img src="https://talentotechbogota.co/images/logo_potenciadelavida.svg" alt="" style="width: 300px; width: 50%; height: auto; margin: auto; display: block;">
+                        <img src="https://matricula.talentotechregion3.com.co/public/assets/img/logo_potenciadelavida.png" alt="" style="width: 300px; width: 50%; height: auto; margin: auto; display: block;">
                     </td>
                     <td>
-                        <img src="https://talentotechbogota.co/images/logo_mintic.svg" alt="" style="width: 300px; width: 50%; height: auto; margin: auto; display: block;">
+                        <img src="https://matricula.talentotechregion3.com.co/public/assets/img/logo_mintic.png" alt="" style="width: 300px; width: 50%; height: auto; margin: auto; display: block;">
                     </td>
                 </tr>
 				<!-- 1 Column Text + Button : END -->

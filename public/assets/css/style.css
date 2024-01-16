@@ -328,4 +328,9 @@ input.error {
   .logo-talentotech{
     margin-top: 150px;
   }
+  
+  .tituloX{
+    font-size: 25px !important;
+    padding: 1px 79px !important;
+  }
 }

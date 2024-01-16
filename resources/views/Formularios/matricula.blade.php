@@ -53,8 +53,8 @@
             ¡Bienvenido/a a Talento Tech, tu puerta de entrada al futuro digital!
         </h1>
         @if($errors->any())
-            <div class="bg-white w-9/12 p-24">
-                {{!! implode('', $errors->all('<div>:message</div>')) !!}}
+            <div class="bg-white rounded-xl p-6 text-black w-9/12 mt-10 mx-auto">
+                {!! implode('', $errors->all('<div class="text-red">:message</div>')) !!}
             </div>
         @endif
         <div class="button shift-camera-button z-100" id="inscribirme">
@@ -65,9 +65,9 @@
             <div class="text text-xl">¡Quiero Inscribirme!</div>
         </div>
     </div>
-    <div class="sky-container">
+    <div class="sky-container" style="display: none;">
         <div class="text-right sky-container__left">
-            <p class="portfolio text-center text-5xl mt-10">
+            <p class="portfolio text-center text-5xl mt-10 tituloX">
                 MATRÍCULA TALENTO TECH CAUCA Y NARIÑO
             </p>
         </div>
@@ -157,12 +157,7 @@
                                                         <select id="tipo_documento" name="tipo_documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option value="CC">CC</option>
-                                                            <option value="CE">CE</option>
-                                                            <option value="TI">TI</option>
-                                                            <option value="PA">PA</option>
-                                                            <option value="TMF">TMF</option>
                                                             <option value="PEP">PEP</option>
-                                                            <option value="Visa">Visa</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -420,10 +415,11 @@
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
-                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
+                                                        <input id="dicapacidad_psicosocialsss" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        <div class="grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_psicosocial" class="font-medium text-gray-900">Discapacidad psicosocial (mental)</label>
@@ -431,7 +427,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_auditiva" class="font-medium text-gray-900">Discapacidad auditiva</label>
@@ -440,7 +436,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="sensorial" class="font-medium text-gray-900">Sensorial, Gusto, Olfato, Tacto</label>
@@ -448,7 +444,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sordoceguera" class="font-medium text-gray-900">Discapacidad sordoceguera</label>
@@ -456,7 +452,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_piel" class="font-medium text-gray-900">Piel, pelo y uñas</label>
@@ -464,7 +460,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_intelectual" class="font-medium text-gray-900">Discapacidad intelectual</label>
@@ -472,7 +468,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sistemica" class="font-medium text-gray-900">Sistémica</label>
@@ -480,7 +476,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_visual" class="font-medium text-gray-900">Discapacidad visual</label>
@@ -488,7 +484,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_multiple" class="font-medium text-gray-900">Discapacidad múltiple</label>
@@ -496,7 +492,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_voz_habla" class="font-medium text-gray-900">Voz y Habla</label>
@@ -509,10 +505,11 @@
                                                 <div class="col-span-2 lg:col-span-12 ">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
-                                                        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2">
+                                                        <input id="dicapacidad_psicosocialsss" name="segun_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        <div class="grid grid-cols-1 lg:grid-cols-2">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_1" name="segun_discapacidad[]" value="El beneficiario cuenta con la ayuda técnica/Producto de apoyo" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_1" name="segun_discapacidad[]" value="El beneficiario cuenta con la ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_1" class="font-medium text-gray-900">El beneficiario cuenta con la ayuda técnica/Producto de apoyo</label>
@@ -521,7 +518,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_2" class="font-medium text-gray-900">El beneficiario requiere la ayuda de otra persona</label>
@@ -530,7 +527,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_3" name="segun_discapacidad[]" value="El beneficiario requiere terapia y/o rehabilitación" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_3" name="segun_discapacidad[]" value="El beneficiario requiere terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_3" class="font-medium text-gray-900">El beneficiario requiere terapia y/o rehabilitación</label>
@@ -539,7 +536,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_4" class="font-medium text-gray-900">El beneficiario requiere ayuda técnica/Producto de apoyo</label>
@@ -548,7 +545,7 @@
 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_5" name="segun_discapacidad[]" value="El beneficiario recibe atención en terapia y/o rehabilitación" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input id="segun_discapacidad_5" name="segun_discapacidad[]" value="El beneficiario recibe atención en terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_5" class="font-medium text-gray-900">El beneficiario recibe atención en terapia y/o rehabilitación</label>
@@ -740,30 +737,30 @@
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="corregimiento" class="block text-sm font-medium leading-6 text-gray-900">Nombre corregimiento</label>
+                                                    <label for="corregimiento_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre corregimiento</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="corregimiento" id="corregimiento" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="corregimiento_nombre" id="corregimiento_nombre" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="nom_vereda" class="block text-sm font-medium leading-6 text-gray-900">Nombre Vereda</label>
+                                                    <label for="vereda_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre Vereda</label>
                                                     <div class="mt-2">
-                                                        <input id="nom_vereda" name="nom_vereda" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="vereda_nombre" name="vereda_nombre" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="caserio" class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Zona Resto (caserío)</label>
+                                                    <label for="zona_resto" class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Zona Resto (caserío)</label>
                                                     <div class="mt-2">
-                                                        <input id="caserio" name="caserio" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="zona_resto" name="zona_resto" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
                                                 <div class="col-span-2">
-                                                    <label for="barrio" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Barrio</label>
+                                                    <label for="barrio_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Barrio</label>
                                                     <div class="mt-2">
-                                                        <input id="barrio" name="barrio" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="barrio_nombre" name="barrio_nombre" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
 
@@ -784,10 +781,6 @@
                                                             <option value="4">4</option>
                                                             <option value="5">5</option>
                                                             <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1008,6 +1001,9 @@
                                                 </li>
                                                 <li class="col-span-2">
                                                     - Aceptar la política de tratamiento de datos establecida por el MinTIC y por el Ejecutor.
+                                                </li>
+                                                <li class="col-span-2">
+                                                    - El archivo debe ser PDF, y no mayor a 2MB
                                                 </li>
                                                 <li class="mt-6">
                                                     <label for="url_archivo" class="block text-sm font-medium leading-6 text-gray-900">Anexar Documento Identidad</label>
@@ -1245,7 +1241,7 @@
                     },
                     numero_documento: {
                         required: true,
-                        minlength: 8,
+                        minlength: 6,
                         number: true
                     },
                     fecha_nacimiento: {
@@ -1257,6 +1253,10 @@
                         min: 18
                     },
                     sexo: {
+                        required: true,
+                        minlength: 1
+                    },
+                    identidad_genero_preg: {
                         required: true,
                         minlength: 1
                     },
@@ -1305,7 +1305,7 @@
                     },
                     familiar_numero_documento: {
                         required: true,
-                        minlength: 8,
+                        minlength: 6,
                         number: true
                     },
                     familiar_correo_electronico: {
@@ -1330,6 +1330,16 @@
                     discapacidad: {
                         required: true,
                         minlength: 1
+                    },
+                    discapacidad_certificada: {
+                        required: true,
+                        minlength: 1
+                    },
+                    "tipo_discapacidad[]": {
+                        require_from_group: [1, ".tipo_discapacidad-group"]
+                    },
+                    "segun_discapacidad[]": {
+                        require_from_group: [1, ".segun_discapacidad-group"]
                     },
                     grado_escolaridad: {
                         required: true,
@@ -1402,11 +1412,10 @@
 
                 },
                 messages: {
-                    url_archivo: "El archivo debe ser PDF"
+                    url_archivo: "El archivo debe ser PDF, y no mayor a 2MB",
+                    "tipo_discapacidad[]": "Selecciona al menos un tipo de discapacidad",
+                    "segun_discapacidad[]": "Selecciona al menos una opción según la discapacidad",
                 }
-                /* errorPlacement: function(error, element) {
-                    $('#error-div').html(error[0].innerHTML)//<-error[0].innerHTML is the error msg.
-                }  */
             });
         }
         $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
@@ -1435,19 +1444,22 @@
 
         $("#enviar_matricula").on("submit", function(event) {
             event.preventDefault();
-            if (form.valid()) {
-                $("#sendForm").prop('disabled', true);
-                $("#sendForm").html('Enviando...');
-                this.submit();
-            }
+            var file_size = $('#url_archivo')[0].files[0].size;
+            if(file_size>2097152) {
+        // 		$("#file_size_error").html("El archivo debe ser PDF, y no mayor a 2MB");
+        // 		$(".inputBox").css("border-color","#FF0000");
+                alert("El archivo debe ser PDF, y no mayor a 2MB");
+                // initValidate();
+        		return false;
+        	} else {
+        	    if (form.valid()) {
+                    $("#sendForm").prop('disabled', true);
+                    $("#sendForm").html('Enviando...');
+                    this.submit();
+                }
+        	}
         });
     </script>
 </body>
 
 </html>
-
-<!-- <div class="mt-6 flex items-center justify-end gap-x-6">
-    <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-    <button type="submit"
-        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
-</div>  -->

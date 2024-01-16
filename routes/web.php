@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 // Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
 Route::post('/matricula', [RegistrarController::class, 'guardarDatos']);
+Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');

@@ -232,7 +232,7 @@ $(".shift-camera-button").click(function () {
             zIndex: 2001,
             ease: Power3.easeInOut,
         }),
-        TweenLite.to(skyContainer, 2, { opacity: 1, zIndex: 1000, ease: Power3.easeInOut }),
+        TweenLite.to(skyContainer, 2, { opacity: 1, display: 'block', zIndex: 1000, ease: Power3.easeInOut }),
     ]);
 });
 
@@ -245,7 +245,7 @@ $(".x-mark").click(function () {
             zIndex: 0,
             ease: Power3.easeInOut,
         }),
-        TweenLite.to(skyContainer, 0.5, { opacity: 0, zIndex: 0, ease: Power3.easeInOut }),
+        TweenLite.to(skyContainer, 0.5, { opacity: 0, display: 'none', zIndex: 0, ease: Power3.easeInOut }),
         TweenLite.to(camera.rotation, 3, { x: 0, ease: Power3.easeInOut }),
         TweenLite.to(camera.position, 3, { z: 50, ease: Power3.easeInOut }),
         TweenLite.to(camera.position, 2.5, { y: 0, ease: Power3.easeInOut }),

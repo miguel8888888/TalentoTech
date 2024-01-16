@@ -57,7 +57,7 @@
             <i class="fa fa-lg fa-circle-check"></i>
         </div>
         <p class="font-bold text-black col-span-2">
-            Seño@r {{$informacion_usuario->primer_nombre}} {{$informacion_usuario->primer_apellido}}, su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
+            Su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
         </p>
         
         <div class="twitter text-right m-2 text-4xl">

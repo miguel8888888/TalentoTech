@@ -1426,6 +1426,21 @@
                 return false;
             }
         });
+        $("#smartwizard").on("showStep", function(e, anchorObject, stepIndex, stepDirection) {
+            $(".sw-btn-prev").removeClass("d-none");
+            $(".sw-btn-next").removeClass("d-none");
+            console.log(e);
+            switch(stepIndex) {
+                case 0: 
+                    $(".sw-btn-prev").addClass("d-none");
+                break;
+                case 4: 
+                    $(".sw-btn-next").addClass("d-none");
+                break;
+                default:
+                // code block
+            }
+        });
         $('input[name=fecha_nacimiento]').change(function() {
             $('input[name=edad]').val(calcularEdad($(this).val()));
         });

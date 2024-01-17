@@ -161,7 +161,7 @@ class RegistrarController extends Controller
         $informacion_usuario->nivel_formacion = $request->input('nivel_formacion');
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
-        $informacion_usuario->save();
+        // $informacion_usuario->save();
 
 
         $cadena = $request->input('numero_documento');
@@ -179,6 +179,7 @@ class RegistrarController extends Controller
         // Redirigir a una nueva vista con los datos
         $datos = ['mensaje' => $informacion_usuario->primer_nombre . ' ' . $informacion_usuario->primer_apellido];
         return redirect()->route('registroexitoso')->with('datos', $datos);
+        // return response()->json(['mensaje' => 'Datos procesados correctamente']);
     }
 
     public function cargarVistaExito()

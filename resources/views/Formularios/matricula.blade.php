@@ -1022,7 +1022,7 @@
                                             </ul>
                                             <div class="grid justify-items-end w-full">
                                                 <div class="w-1/2 mt-3">
-                                                    <button id="sendForm" type="submit" class="pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
+                                                    <button id="sendForm" type="submit" class="x-mark pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
                                                 </div>
                                             </div>
                 
@@ -1043,7 +1043,42 @@
         </div>
     </div>
     <div class="sky-container" style="display: none;">
-        
+        <div class="w-full justify-center flex">
+            <img src="{{ asset('assets/img/TalentoTech.png') }}" class="w-1/2">
+        </div>
+        <div class=" flex justify-center">
+
+            <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-3">
+                <div class="correct col-span-3 text-5xl m-4">
+                    <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
+                    <i class="fa fa-lg fa-circle-check"></i>
+                </div>
+                <p class="font-bold text-black col-span-3">
+                    Su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
+                </p>
+                
+                <div class="instagram text-right m-2 text-4xl">
+                    <a href="https://www.instagram.com/descubreutp?igsh=Zm4wcmUzdWxteXEx" target="_blank">
+                        <i class="fa fa-instagram fa-lg"></i>
+                    </a>
+                </div>
+                
+                <div class="facebook text-center m-2 text-4xl">
+                    <a href="https://www.facebook.com/profile.php?id=100063576547225&mibextid=kFxxJD" target="_blank">
+                        <i class="fa fa-facebook fa-lg"></i>
+                    </a>
+                </div>
+                
+                <div class="youtube text-left m-2 text-4xl">
+                    <a href="https://youtube.com/@DescubreUTP?si=yaDg3EM6kSqiTjpN" target="_blank">
+                        <i class="fa fa-youtube fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        @if($errors->any())
+            {{ implode('', $errors->all('<div>:message</div>')) }}
+        @endif
     </div>
 
     <!-- partial -->

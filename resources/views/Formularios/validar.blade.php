@@ -57,7 +57,7 @@
                 <div class="left-plane"></div>
                 <div class="right-plane"></div>
             </div>
-            <div class="text text-xl">¡Quiero Inscribirme!</div>
+            <div class="text text-xl">¡INICIAR PROCESO DE MATRÍCULA!</div>
         </div>
     </div>
     <div class="sky-container w-full" style="display: none;">

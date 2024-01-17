@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Formularios/matricula');
+    return view('Formularios/validar');
 });
 
 // Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
 Route::post('/matricula', [RegistrarController::class, 'guardarDatos']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
+Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']);

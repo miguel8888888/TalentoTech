@@ -26,55 +26,27 @@
 <body>
     <!-- partial:index.partial.html -->
     <!-- This pen isn't a fan of small view heights, check it out in  fullpage view for optimal viewing	 -->
-    <div class="x-mark">
-        <div class="container mt-10">
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-    </div>
+    <header>
+        <nav class="flex items-center justify-between p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="w-1/9">
+            </div>
+            <div class="w-full block flex-grow flex items-center w-auto">
+                <div class="text-sm flex-grow"></div>
+                <div>
+                    <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="w-1/9">
+                </div>
+            </div>
+        </nav>
+    </header>
     <div class="intro-container">
-        <header>
-            <nav class="flex items-center justify-between p-6">
-                <div class="flex items-center flex-shrink-0 text-white mr-6">
-                    <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="w-1/9">
-                </div>
-                <div class="w-full block flex-grow flex items-center w-auto">
-                    <div class="text-sm flex-grow"></div>
-                    <div>
-                        <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="w-1/9">
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="w-full justify-center flex logo-talentotech">
-            <img src="{{ asset('assets/img/TalentoTech.png') }}" class="w-1/2">
-        </div>
-        <h1 class="text-5xl font-bold titulo-principal">
-            ¡Bienvenido/a a Talento Tech, tu puerta de entrada al futuro digital!
-        </h1>
-        @if($errors->any())
-            <div class="bg-white rounded-xl p-6 text-black w-9/12 mt-10 mx-auto grid grid-cols-2 sm:grid-cols-1">
-                {!! implode('', $errors->all('<div class="text-black error_mens">:message</div>')) !!}
-            </div>
-        @endif
-        <div class="button shift-camera-button z-100" id="inscribirme">
-            <div class="border">
-                <div class="left-plane"></div>
-                <div class="right-plane"></div>
-            </div>
-            <div class="text text-xl">¡Quiero Inscribirme!</div>
-        </div>
-    </div>
-    <div class="sky-container" style="display: none;">
-        <div class="text-right sky-container__left">
-            <p class="portfolio text-center text-5xl mt-10 tituloX">
-                MATRÍCULA TALENTO TECH CAUCA Y NARIÑO
-            </p>
-        </div>
         <div class="text-left sky-container__right w-100">
-            <div class="py-12">
+            <div class="py-4">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-12 py-12">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-12 py-4">
+                        <div class="sky-container__left w-full text-black text-right">
+                            <p class="portfolio text-center m-4 tituloX" style="font-size: 30px;">Matrícula talento tech cauca y nariño</p>
+                        </div>
                         <form class="needs-validation" id="enviar_matricula" action="/matricula" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             <!-- SmartWizard html -->
@@ -111,46 +83,45 @@
                                         </a>
                                     </li>
                                 </ul>
-
+                
                                 <div class="tab-content">
                                     <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                                         <div class="pant pant1 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600">CARACTERIZACIÓN DEL PARTICIPANTE TALENTO
-                                                    TECH</p>
-
+                                                <p class="mt-1 text-sm leading-6 text-gray-600">Caracterización del participante talento tech</p>
+                
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-2">
-                                                    <label for="primer-nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
+                                                    <label for="primer_nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="primer_nombre" id="primer_nombre" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required="" />
+                                                        <input type="text" name="primer_nombre" id="primer_nombre" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('primer_nombre', $informacion_usuario->primer_nombre)}}" required="" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
-                                                    <label for="segundo-nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Nombre</label>
+                                                    <label for="segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Nombre</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="segundo_nombre" id="segundo_nombre" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="segundo_nombre" id="segundo_nombre" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_nombre', $informacion_usuario->segundo_nombre)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
-                                                    <label for="primer-apellido" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
+                                                    <label for="segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="primer_apellido" id="primer_apellido" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="primer_apellido" id="primer_apellido" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_nombre', $informacion_usuario->segundo_nombre)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
-                                                    <label for="segundo-apellido" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
+                                                    <label for="segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="segundo_apellido" id="segundo_apellido" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="segundo_apellido" id="segundo_apellido" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_nombre', $informacion_usuario->segundo_nombre)}}"/>
                                                     </div>
                                                 </div>
-
-
-
+                
+                
+                
                                                 <div class="col-span-2">
                                                     <label for="tipo_documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
                                                     <div class="mt-2">
@@ -160,14 +131,14 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
                                                     <div class="mt-2">
-                                                        <input type="number" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input readonly type="number" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('numero_documento', $informacion_usuario->numero_documento)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="nacionalidad" class="block text-sm font-medium leading-6 text-gray-900">Nacionalidad</label>
                                                     <div class="mt-2">
@@ -178,28 +149,28 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="ciudad_nacimiento" class="block text-sm font-medium leading-6 text-gray-900">Ciudad de nacimiento</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="ciudad_nacimiento" id="ciudad_nacimiento" autocomplete="nacionalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="ciudad_nacimiento" id="ciudad_nacimiento" autocomplete="nacionalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('ciudad_nacimiento', $informacion_usuario->ciudad_nacimiento)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="fecha_nacimiento" class="block text-sm font-medium leading-6 text-gray-900">Fecha de Nacimiento</label>
                                                     <div class="mt-2">
-                                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('fecha_nacimiento', $informacion_usuario->fecha_nacimiento)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="edad" class="block text-sm font-medium leading-6 text-gray-900">Edad</label>
                                                     <div class="mt-2">
-                                                        <input readonly  type="number" inputmode="numeric" pattern="[0-9]*" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back" />
+                                                        <input readonly  type="number" inputmode="numeric" pattern="[0-9]*" name="edad" id="edad" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 gris_back"  value="{{old('edad', $informacion_usuario->edad)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="sexo" class="block text-sm font-medium leading-6 text-gray-900">Sexo </label>
                                                     <div class="mt-2">
@@ -211,7 +182,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="identidad_genero_preg" class="block text-sm font-medium leading-6 text-gray-900">¿Desea responder preguntas sobre su identidad de género? </label>
                                                     <div class="mt-2">
@@ -222,7 +193,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <div class="identi_genero d-none">
                                                         <label for="identidad_genero" class="block text-sm font-medium leading-6 text-gray-900">Identidad de género </label>
@@ -237,9 +208,9 @@
                                                             </select>
                                                         </div>
                                                     </div>
-
+                
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="orientacion_sexual" class="block text-sm font-medium leading-6 text-gray-900">¿Cuál es su orientación sexual? </label>
                                                     <div class="mt-2">
@@ -253,36 +224,36 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="correo_electronico" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
                                                     <div class="mt-2">
-                                                        <input id="correo_electronico" name="correo_electronico" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="correo_electronico" name="correo_electronico" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('correo_electronico', $informacion_usuario->correo_electronico)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
-                                                        <input id="celular_llamadas" name="celular_llamadas"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="celular_llamadas" name="celular_llamadas"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('celular_llamadas', $informacion_usuario->celular_llamadas)}}"/>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
-                                                        <input id="whatsapp" name="whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="whatsapp" name="whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('whatsapp', $informacion_usuario->whatsapp)}}"/>
                                                     </div>
                                                 </div>
                                             </div>
-
+                
                                         </div>
                                     </div>
                                     <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                                         <div class="pant pant2 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
                                                 <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Información adicional de contacto de un familiar </p>
-
+                
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-2">
@@ -291,30 +262,30 @@
                                                         <input type="text" name="familiar_primer_nombre" id="familiar_primer_nombre" autocomplete="familiar_primer_nombre" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Nombre</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="familiar_segundo_nombre" id="familiar_segundo_nombre" autocomplete="familiar_segundo_nombre" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_primer_apellido" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="familiar_primer_apellido" id="familiar_primer_apellido" autocomplete="familiar_primer_apellido" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_segundo_apellido" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="familiar_segundo_apellido" id="familiar_segundo_apellido" autocomplete="familiar_segundo_apellido" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
-
-
+                
+                
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_tipo_documento" class="block text-sm font-medium leading-6 text-gray-900">Tipo Documento </label>
                                                     <div class="mt-2">
@@ -330,28 +301,28 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_numero_documento" class="block text-sm font-medium leading-6 text-gray-900">Número documento</label>
                                                     <div class="mt-2">
                                                         <input  type="number" inputmode="numeric" pattern="[0-9]*" name="familiar_numero_documento" id="familiar_numero_documento" autocomplete="familiar_numero_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_correo_electronico" class="block text-sm font-medium leading-6 text-gray-900">Correo electrónico</label>
                                                     <div class="mt-2">
                                                         <input id="familiar_correo_electronico" name="familiar_correo_electronico" type="email" autocomplete="email" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_celular_llamadas" class="block text-sm font-medium leading-6 text-gray-900">Número de Celular llamadas</label>
                                                     <div class="mt-2">
                                                         <input id="familiar_celular_llamadas" name="familiar_celular_llamadas"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_celular_llamadas" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="familiar_whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
                                                     <div class="mt-2">
@@ -365,7 +336,7 @@
                                         <div class="pant pant3 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
                                                 <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Autorreconocimiento Grupo Étnico del Beneficiario </p>
-
+                
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-2">
@@ -383,7 +354,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-3">
                                                     <label for="discapacidad" class="block text-sm font-medium leading-6 text-gray-900">¿Presenta alguna discapacidad?</label>
                                                     <div class="mt-2">
@@ -394,7 +365,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-3">
                                                     <div class="prent_discapaciti d-none">
                                                         <label for="discapacidad_certificada" class=" block text-sm font-medium leading-6 text-gray-900">¿La discapacidad está certificada?</label>
@@ -407,10 +378,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
-
-
+                
+                
+                
+                
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
@@ -430,7 +401,7 @@
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_auditiva" class="font-medium text-gray-900">Discapacidad auditiva</label>
-
+                
                                                                 </div>
                                                             </div>
                                                             <div class="relative flex gap-x-3">
@@ -500,7 +471,7 @@
                                                         </div>
                                                     </fieldset>
                                                 </div>
-
+                
                                                 <div class="col-span-2 lg:col-span-12 ">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
@@ -514,7 +485,7 @@
                                                                     <label for="segun_discapacidad_1" class="font-medium text-gray-900">El beneficiario cuenta con la ayuda técnica/Producto de apoyo</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -523,7 +494,7 @@
                                                                     <label for="segun_discapacidad_2" class="font-medium text-gray-900">El beneficiario requiere la ayuda de otra persona</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="segun_discapacidad_3" name="segun_discapacidad[]" value="El beneficiario requiere terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -532,7 +503,7 @@
                                                                     <label for="segun_discapacidad_3" class="font-medium text-gray-900">El beneficiario requiere terapia y/o rehabilitación</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -541,7 +512,7 @@
                                                                     <label for="segun_discapacidad_4" class="font-medium text-gray-900">El beneficiario requiere ayuda técnica/Producto de apoyo</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="segun_discapacidad_5" name="segun_discapacidad[]" value="El beneficiario recibe atención en terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -550,13 +521,13 @@
                                                                     <label for="segun_discapacidad_5" class="font-medium text-gray-900">El beneficiario recibe atención en terapia y/o rehabilitación</label>
                                                                 </div>
                                                             </div>
-
-
-
+                
+                
+                
                                                         </div>
                                                     </fieldset>
                                                 </div>
-
+                
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
@@ -569,7 +540,7 @@
                                                                     <label for="adulto_mayor" class="font-medium text-gray-900">Adulto mayor</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="mujer_gestante" name="grupo_atencion_diferencial[]" value="Mujer gestante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -578,7 +549,7 @@
                                                                     <label for="mujer_gestante" class="font-medium text-gray-900">Mujer gestante</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="victima_confilcto" name="grupo_atencion_diferencial[]" value="Víctima de conflicto armado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -587,7 +558,7 @@
                                                                     <label for="victima_confilcto" class="font-medium text-gray-900">Víctima de conflicto armado</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="jovenes" name="grupo_atencion_diferencial[]" value="Jóvenes" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -596,7 +567,7 @@
                                                                     <label for="jovenes" class="font-medium text-gray-900">Jóvenes</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="grupo_etnico2" name="grupo_atencion_diferencial[]" value="Grupo Étnico" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -605,7 +576,7 @@
                                                                     <label for="grupo_etnico2" class="font-medium text-gray-900">Grupo Étnico</label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="madre_lactante" name="grupo_atencion_diferencial[]" value="Madre lactante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -614,7 +585,7 @@
                                                                     <label for="madre_lactante" class="font-medium text-gray-900">Madre lactante </label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="firmantes_paz" name="grupo_atencion_diferencial[]" value="Firmantes de Paz" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -623,7 +594,7 @@
                                                                     <label for="firmantes_paz" class="font-medium text-gray-900">Firmantes de Paz </label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="discapacidad" name="grupo_atencion_diferencial[]" value="Discapacidad" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -632,7 +603,7 @@
                                                                     <label for="discapacidad" class="font-medium text-gray-900">Discapacidad </label>
                                                                 </div>
                                                             </div>
-
+                
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
                                                                     <input id="comunidad_lgtb" name="grupo_atencion_diferencial[]" value="Comunidad LGTBIAQ+" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
@@ -641,13 +612,13 @@
                                                                     <label for="comunidad_lgtb" class="font-medium text-gray-900">Comunidad LGTBIAQ+</label>
                                                                 </div>
                                                             </div>
-
-
-
+                
+                
+                
                                                         </div>
                                                     </fieldset>
                                                 </div>
-
+                
                                                 <div class="col-span-2 mt-5">
                                                     <label for="grado_escolaridad" class="block text-sm font-medium leading-6 text-gray-900">Grado de escolaridad</label>
                                                     <div class="mt-2">
@@ -688,7 +659,7 @@
                                     <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
                                         <div class="pant pant4 space-y-12 grid grid-cols-1">
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
-
+                
                                                 <div class="col-span-2">
                                                     <label for="pais_residencia" class="block text-sm font-medium leading-6 text-gray-900">País de Residencia</label>
                                                     <div class="mt-2">
@@ -699,7 +670,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="departamento_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
                                                     <div class="mt-2">
@@ -711,7 +682,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="municipio_residencia" class="block text-sm font-medium leading-6 text-gray-900">Municipio Residencia</label>
                                                     <div class="mt-2">
@@ -721,9 +692,9 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
-
-
+                
+                
+                
                                                 <div class="col-span-2">
                                                     <label for="zona_ubicacion" class="block text-sm font-medium leading-6 text-gray-900">Zona de ubicación</label>
                                                     <div class="mt-2">
@@ -734,35 +705,35 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="corregimiento_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre corregimiento</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="corregimiento_nombre" id="corregimiento_nombre" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="vereda_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre Vereda</label>
                                                     <div class="mt-2">
                                                         <input id="vereda_nombre" name="vereda_nombre" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="zona_resto" class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Zona Resto (caserío)</label>
                                                     <div class="mt-2">
                                                         <input id="zona_resto" name="zona_resto" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="barrio_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Barrio</label>
                                                     <div class="mt-2">
                                                         <input id="barrio_nombre" name="barrio_nombre" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="direccion" class="block text-sm font-medium leading-6 text-gray-900">Dirección</label>
                                                     <div class="mt-2">
@@ -783,7 +754,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
+                
                                                 <div class="col-span-2">
                                                     <label for="tipo_vivienda" class="block text-sm font-medium leading-6 text-gray-900">Tipo de Vivienda</label>
                                                     <div class="mt-2">
@@ -828,7 +799,7 @@
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
                                                         </div>
-
+                
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="alcantarillado" name="servicios_basicos[]" value="Alcantarillado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
@@ -883,7 +854,7 @@
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
                                                         </div>
-
+                
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
                                                                 <input id="eq_movil" name="equipos_tecnologicos[]" value="Teléfono móvil (Android o iPhone)" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
@@ -1026,7 +997,7 @@
                                                             <option value="No">No</option>
                                                         </select>
                                                     </div>
-
+                
                                                 </li>
                                             </ul>
                                             <div class="grid justify-items-end w-full">
@@ -1034,12 +1005,12 @@
                                                     <button id="sendForm" type="submit" class="pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
                                                 </div>
                                             </div>
-
+                
                                         </div>
-
+                
                                     </div>
                                 </div>
-
+                
                                 <!-- Include optional progressbar HTML -->
                                 <div class="progress">
                                     <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1050,6 +1021,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="sky-container" style="display: none;">
+        
     </div>
 
     <!-- partial -->

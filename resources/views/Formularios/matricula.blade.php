@@ -387,13 +387,13 @@
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <input id="dicapacidad_psicosocialsss" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
                                                         @php
-                                                            $valoresGuardados = $informacion_usuario->tipo_discapacidad;
-                                                            $valoresSeparados = explode(' | ', $valoresGuardados);
+                                                            $valoresGuardTipoDis = $informacion_usuario->tipo_discapacidad;
+                                                            $valoresSepTipoDis = explode(' | ', $valoresGuardTipoDis);
                                                         @endphp
                                                         <div class="grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input @if(in_array('Discapacidad psicosocial (mental)', $valoresSeparados)) checked @endif id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad psicosocial (mental)', $valoresSepTipoDis)) checked @endif id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_psicosocial" class="font-medium text-gray-900">Discapacidad psicosocial (mental)</label>
@@ -401,7 +401,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad auditiva', $valoresSepTipoDis)) checked @endif id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_auditiva" class="font-medium text-gray-900">Discapacidad auditiva</label>
@@ -410,7 +410,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Sensorial, Gusto, Olfato, Tacto', $valoresSepTipoDis)) checked @endif id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="sensorial" class="font-medium text-gray-900">Sensorial, Gusto, Olfato, Tacto</label>
@@ -418,7 +418,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad sordoceguera', $valoresSepTipoDis)) checked @endif id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sordoceguera" class="font-medium text-gray-900">Discapacidad sordoceguera</label>
@@ -426,7 +426,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Piel, pelo y uñas', $valoresSepTipoDis)) checked @endif id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_piel" class="font-medium text-gray-900">Piel, pelo y uñas</label>
@@ -434,7 +434,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad intelectual', $valoresSepTipoDis)) checked @endif id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_intelectual" class="font-medium text-gray-900">Discapacidad intelectual</label>
@@ -442,7 +442,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Sistémica', $valoresSepTipoDis)) checked @endif id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sistemica" class="font-medium text-gray-900">Sistémica</label>
@@ -450,7 +450,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad visual', $valoresSepTipoDis)) checked @endif id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_visual" class="font-medium text-gray-900">Discapacidad visual</label>
@@ -458,7 +458,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad múltiple', $valoresSepTipoDis)) checked @endif id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_multiple" class="font-medium text-gray-900">Discapacidad múltiple</label>
@@ -466,7 +466,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Voz y Habla', $valoresSepTipoDis)) checked @endif id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_voz_habla" class="font-medium text-gray-900">Voz y Habla</label>
@@ -480,10 +480,14 @@
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
                                                         <input id="dicapacidad_psicosocialsss" name="segun_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        @php
+                                                            $valoresGuardSegunDis = $informacion_usuario->segun_discapacidad;
+                                                            $valoresSepSegunDis = explode(' | ', $valoresGuardSegunDis);
+                                                        @endphp
                                                         <div class="grid grid-cols-1 lg:grid-cols-2">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_1" name="segun_discapacidad[]" value="El beneficiario cuenta con la ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('El beneficiario cuenta con la ayuda técnica/Producto de apoyo', $valoresSepSegunDis)) checked @endif id="segun_discapacidad_1" name="segun_discapacidad[]" value="El beneficiario cuenta con la ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_1" class="font-medium text-gray-900">El beneficiario cuenta con la ayuda técnica/Producto de apoyo</label>
@@ -492,7 +496,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('El beneficiario requiere la ayuda de otra persona', $valoresSepSegunDis)) checked @endif id="segun_discapacidad_2" name="segun_discapacidad[]" value="El beneficiario requiere la ayuda de otra persona" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_2" class="font-medium text-gray-900">El beneficiario requiere la ayuda de otra persona</label>
@@ -501,7 +505,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_3" name="segun_discapacidad[]" value="El beneficiario requiere terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('El beneficiario requiere terapia y/o rehabilitación', $valoresSepSegunDis)) checked @endif id="segun_discapacidad_3" name="segun_discapacidad[]" value="El beneficiario requiere terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_3" class="font-medium text-gray-900">El beneficiario requiere terapia y/o rehabilitación</label>
@@ -510,7 +514,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('El beneficiario requiere ayuda técnica/Producto de apoyo', $valoresSepSegunDis)) checked @endif id="segun_discapacidad_4" name="segun_discapacidad[]" value="El beneficiario requiere ayuda técnica/Producto de apoyo" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_4" class="font-medium text-gray-900">El beneficiario requiere ayuda técnica/Producto de apoyo</label>
@@ -519,7 +523,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="segun_discapacidad_5" name="segun_discapacidad[]" value="El beneficiario recibe atención en terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('El beneficiario recibe atención en terapia y/o rehabilitación', $valoresSepSegunDis)) checked @endif id="segun_discapacidad_5" name="segun_discapacidad[]" value="El beneficiario recibe atención en terapia y/o rehabilitación" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="segun_discapacidad_5" class="font-medium text-gray-900">El beneficiario recibe atención en terapia y/o rehabilitación</label>
@@ -535,10 +539,14 @@
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">¿Hace parte de alguno de estos grupos de atención diferencial?</legend>
+                                                        @php
+                                                            $valoresGuardAtencion = $informacion_usuario->grupo_atencion_diferencial;
+                                                            $valoresSepAtencion = explode(' | ', $valoresGuardAtencion);
+                                                        @endphp
                                                         <div class="mt-6 grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="adulto_mayor" name="grupo_atencion_diferencial[]" value="Adulto mayor" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Adulto mayor', $valoresSepAtencion)) checked @endif id="adulto_mayor" name="grupo_atencion_diferencial[]" value="Adulto mayor" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="adulto_mayor" class="font-medium text-gray-900">Adulto mayor</label>
@@ -547,7 +555,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="mujer_gestante" name="grupo_atencion_diferencial[]" value="Mujer gestante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Mujer gestante', $valoresSepAtencion)) checked @endif id="mujer_gestante" name="grupo_atencion_diferencial[]" value="Mujer gestante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="mujer_gestante" class="font-medium text-gray-900">Mujer gestante</label>
@@ -556,7 +564,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="victima_confilcto" name="grupo_atencion_diferencial[]" value="Víctima de conflicto armado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Víctima de conflicto armado', $valoresSepAtencion)) checked @endif id="victima_confilcto" name="grupo_atencion_diferencial[]" value="Víctima de conflicto armado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="victima_confilcto" class="font-medium text-gray-900">Víctima de conflicto armado</label>
@@ -565,7 +573,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="jovenes" name="grupo_atencion_diferencial[]" value="Jóvenes" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Jóvenes', $valoresSepAtencion)) checked @endif id="jovenes" name="grupo_atencion_diferencial[]" value="Jóvenes" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="jovenes" class="font-medium text-gray-900">Jóvenes</label>
@@ -574,7 +582,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="grupo_etnico2" name="grupo_atencion_diferencial[]" value="Grupo Étnico" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Grupo Étnico', $valoresSepAtencion)) checked @endif id="grupo_etnico2" name="grupo_atencion_diferencial[]" value="Grupo Étnico" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="grupo_etnico2" class="font-medium text-gray-900">Grupo Étnico</label>
@@ -583,7 +591,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="madre_lactante" name="grupo_atencion_diferencial[]" value="Madre lactante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Madre lactante', $valoresSepAtencion)) checked @endif id="madre_lactante" name="grupo_atencion_diferencial[]" value="Madre lactante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="madre_lactante" class="font-medium text-gray-900">Madre lactante </label>
@@ -592,7 +600,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="firmantes_paz" name="grupo_atencion_diferencial[]" value="Firmantes de Paz" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Firmantes de Paz', $valoresSepAtencion)) checked @endif id="firmantes_paz" name="grupo_atencion_diferencial[]" value="Firmantes de Paz" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="firmantes_paz" class="font-medium text-gray-900">Firmantes de Paz </label>
@@ -601,7 +609,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="discapacidad" name="grupo_atencion_diferencial[]" value="Discapacidad" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad', $valoresSepAtencion)) checked @endif id="discapacidad" name="grupo_atencion_diferencial[]" value="Discapacidad" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="discapacidad" class="font-medium text-gray-900">Discapacidad </label>
@@ -610,7 +618,7 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="comunidad_lgtb" name="grupo_atencion_diferencial[]" value="Comunidad LGTBIAQ+" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Comunidad LGTBIAQ+', $valoresSepAtencion)) checked @endif id="comunidad_lgtb" name="grupo_atencion_diferencial[]" value="Comunidad LGTBIAQ+" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="comunidad_lgtb" class="font-medium text-gray-900">Comunidad LGTBIAQ+</label>
@@ -795,10 +803,14 @@
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
                                                     <label for="Agua" class="block text-sm font-medium leading-6 text-gray-900">¿Tiene acceso a servicios básicos?</label>
+                                                    @php
+                                                        $valoresGuardServicios = $informacion_usuario->servicios_basicos;
+                                                        $valoresSepServicios = explode(' | ', $valoresGuardServicios);
+                                                    @endphp
                                                     <div class="pt-6 grid grid-cols-2" id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="Agua" name="servicios_basicos[]" value="Agua" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Agua', $valoresSepServicios)) checked @endif id="Agua" name="servicios_basicos[]" value="Agua" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="Agua" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Agua</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
@@ -806,42 +818,42 @@
                 
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="alcantarillado" name="servicios_basicos[]" value="Alcantarillado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Alcantarillado', $valoresSepServicios)) checked @endif id="alcantarillado" name="servicios_basicos[]" value="Alcantarillado" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="alcantarillado" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Alcantarillado</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="electricidad" name="servicios_basicos[]" value="Energía eléctrica" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Energía eléctrica', $valoresSepServicios)) checked @endif id="electricidad" name="servicios_basicos[]" value="Energía eléctrica" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="electricidad" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Energía eléctrica</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="internet" name="servicios_basicos[]" value="Internet" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Internet', $valoresSepServicios)) checked @endif id="internet" name="servicios_basicos[]" value="Internet" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="internet" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Internet</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="telefonia" name="servicios_basicos[]" value="Telefonía fija o móvil" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Telefonía fija o móvil', $valoresSepServicios)) checked @endif id="telefonia" name="servicios_basicos[]" value="Telefonía fija o móvil" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="telefonia" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Telefonía fija o móvil</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="plan_movil" name="servicios_basicos[]" value="Plan de datos o recargas" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Plan de datos o recargas', $valoresSepServicios)) checked @endif id="plan_movil" name="servicios_basicos[]" value="Plan de datos o recargas" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="plan_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Plan de datos o recargas</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="ninguna_ant" name="servicios_basicos[]" value="Ninguna de las Anteriores" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Ninguna de las Anteriores', $valoresSepServicios)) checked @endif id="ninguna_ant" name="servicios_basicos[]" value="Ninguna de las Anteriores" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="ninguna_ant" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Ninguna de las Anteriores</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
@@ -850,10 +862,14 @@
                                                 </div>
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
                                                     <label for="Computador" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con equipos tecnológicos?</label>
+                                                    @php
+                                                        $valoresGuardEquiposTec = $informacion_usuario->equipos_tecnologicos;
+                                                        $valoresSepEquiposTec = explode(' | ', $valoresGuardEquiposTec);
+                                                    @endphp
                                                     <div class="pt-6 grid grid-cols-2 " id="filter-section-mobile-0">
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="Computador" name="equipos_tecnologicos[]" value="Computador" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Computador', $valoresSepEquiposTec)) checked @endif id="Computador" name="equipos_tecnologicos[]" value="Computador" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="Computador" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Computador</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the first column) ... -->
@@ -861,14 +877,14 @@
                 
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="eq_movil" name="equipos_tecnologicos[]" value="Teléfono móvil (Android o iPhone)" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Teléfono móvil (Android o iPhone)', $valoresSepEquiposTec)) checked @endif id="eq_movil" name="equipos_tecnologicos[]" value="Teléfono móvil (Android o iPhone)" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="eq_movil" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Teléfono móvil (Android o iPhone)</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
                                                         </div>
                                                         <div class="space-y-6">
                                                             <div class="flex items-center">
-                                                                <input id="tableta" name="equipos_tecnologicos[]" value="Tableta" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                                                <input @if(in_array('Tableta', $valoresSepEquiposTec)) checked @endif id="tableta" name="equipos_tecnologicos[]" value="Tableta" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                                                 <label for="tableta" class="ml-3 min-w-0 flex-1 text-gray-900 text-sm">Tableta</label>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->
@@ -877,7 +893,7 @@
                                                             <div class="flex items-center">
                                                                 <label for="otros_equipos" class="block text-sm font-medium leading-6 text-gray-900">Otro ¿Cuál?</label>
                                                                 <div>
-                                                                    <input id="otros_equipos" name="otros_equipos" type="text" autocomplete="otro_equipos" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                                    <input id="otros_equipos" name="otros_equipos" type="text" autocomplete="otro_equipos" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('otros_equipos', $informacion_usuario->otros_equipos)}}"/>
                                                                 </div>
                                                             </div>
                                                             <!-- ... (rest of the items in the second column) ... -->

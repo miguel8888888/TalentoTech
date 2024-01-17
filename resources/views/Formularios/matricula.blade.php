@@ -47,7 +47,7 @@
                         <div class="sky-container__left w-full text-black text-right">
                             <p class="portfolio text-center m-4 tituloX" style="font-size: 30px;">Matrícula talento tech cauca y nariño</p>
                         </div>
-                        <form class="needs-validation" id="enviar_matricula" action="/matricula" method="POST" enctype="multipart/form-data" novalidate>
+                        <form class="needs-validation" id="enviar_matricula" action="/matricula/{{ $informacion_usuario->id }}" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
@@ -109,14 +109,14 @@
                                                 <div class="col-span-2">
                                                     <label for="segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Primer Apellido</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="primer_apellido" id="primer_apellido" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_nombre', $informacion_usuario->segundo_nombre)}}"/>
+                                                        <input type="text" name="primer_apellido" id="primer_apellido" autocomplete="family-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('primer_apellido', $informacion_usuario->primer_apellido)}}"/>
                                                     </div>
                                                 </div>
                 
                                                 <div class="col-span-2">
                                                     <label for="segundo_nombre" class="block text-sm font-medium leading-6 text-gray-900">Segundo Apellido</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="segundo_apellido" id="segundo_apellido" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_nombre', $informacion_usuario->segundo_nombre)}}"/>
+                                                        <input type="text" name="segundo_apellido" id="segundo_apellido" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('segundo_apellido', $informacion_usuario->segundo_apellido)}}"/>
                                                     </div>
                                                 </div>
                 

@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Mail\MatriculaExito;
 use App\Models\Participante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class RegistrarController extends Controller
 {
-    public function guardarDatos(Request $request)
+    public function guardarDatos(Request $request, $number)
     {
         $validated = $request->validate(
             [
@@ -103,7 +104,8 @@ class RegistrarController extends Controller
         );
         // 'fecha_diligenciamiento' => 'nullable|date',
 
-        $informacion_usuario = new Participante();
+        $informacion_usuario = Participante::find($number);
+
         $informacion_usuario->fecha_diligenciamiento = date('Y-m-d');
         $informacion_usuario->primer_nombre = $request->input('primer_nombre');
         $informacion_usuario->segundo_nombre = $request->input('segundo_nombre');
@@ -161,7 +163,7 @@ class RegistrarController extends Controller
         $informacion_usuario->nivel_formacion = $request->input('nivel_formacion');
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
-        // $informacion_usuario->save();
+        $informacion_usuario->save();
 
 
         $cadena = $request->input('numero_documento');

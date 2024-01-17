@@ -27,14 +27,22 @@
     <!-- partial:index.partial.html -->
     <!-- This pen isn't a fan of small view heights, check it out in  fullpage view for optimal viewing	 -->
     <header>
-        <nav class="flex items-center justify-between p-6">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-                <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="w-1/9">
-            </div>
-            <div class="w-full block flex-grow flex items-center w-auto">
-                <div class="text-sm flex-grow"></div>
+        <nav class="grid grid-cols-3 p-6">
+            <div class="w-full flex items-center">
+                
                 <div>
-                    <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="w-1/9">
+                    <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}">
+                </div>
+            </div>
+            <div class="w-full flex items-center">
+                
+                <div>
+                    <img src="{{ asset('assets/img/TalentoTech.png') }}" class="mx-auto w-2/3">
+                </div>
+            </div>
+            <div class="w-full flex items-center">
+                <div class="mx-auto" style="margin-right: 0px">
+                    <img src="{{ asset('assets/img/logo_mintic.svg') }}">
                 </div>
             </div>
         </nav>

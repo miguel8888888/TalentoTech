@@ -51,7 +51,7 @@
                     <i class="fa fa-lg fa-circle-check"></i>
                 </div>
                 <p class="font-bold text-black col-span-3">
-                    Su registro ha sido realizado con exito, gracias por utilizar nuestros canales vituales, Lo invitamos a revisar nuestros demas redes sociales
+                    ¡Felicidades! Has completado exitosamente tu proceso de matrícula. Ahora, te invitamos a estar atento a tu correo electrónico, donde nos comunicaremos contigo para proporcionarte detalles sobre el inicio de tu formación y otra información importante para que comiences este emocionante viaje. ¡Estamos emocionados de tenerte en nuestro programa!
                 </p>
                 
                 <div class="instagram text-right m-2 text-4xl">

@@ -41,16 +41,16 @@
             </nav>
         </header>
         <div class="w-full justify-center flex">
-            <img src="{{ asset('assets/img/TalentoTech.png') }}" class="w-1/2">
+            <img src="{{ asset('assets/img/TalentoTech.png') }}" style="width: 45%">
         </div>
         <div class=" flex justify-center">
 
-            <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-3">
+            <div class="bg-white rounded-xl py-4 px-2 mx-3 grid grid-cols-3" style="width: 90%">
                 <div class="correct col-span-3 text-5xl m-4">
                     <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
                     <i class="fa fa-lg fa-circle-check"></i>
                 </div>
-                <p class="font-bold text-black col-span-3">
+                <p class="font-bold text-black col-span-3" style="margin-bottom: 1rem">
                     ¡Felicidades! Has completado exitosamente tu proceso de matrícula. Ahora, te invitamos a estar atento a tu correo electrónico, donde nos comunicaremos contigo para proporcionarte detalles sobre el inicio de tu formación y otra información importante para que comiences este emocionante viaje. ¡Estamos emocionados de tenerte en nuestro programa!
                 </p>
                 

@@ -20,17 +20,6 @@
 		<div style="max-width: 600px; margin: 0 auto; background: #255086; height: 100vh; display: flex;">
 			<!-- BEGIN BODY -->
 			<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-				{{-- <tr>
-                    <td valign="top" style="padding: 1em 2.5em 0 2.5em; background: #ffffff;">
-                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td style="text-align: center;">
-                                    <h1 style="margin: 0;"><a href="#" style="color: #0187C4 !important; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;">e-Verify</a></h1>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr><!-- end tr --> --}}
 				<tr>
 					<td valign="middle" colspan="2">
                         <img src="https://matricula.talentotechregion3.com.co/public/assets/img/TalentoTech.png" alt="" style="width: 70%; height: auto; margin: auto; display: block;">
@@ -41,8 +30,18 @@
 						<table>
 							<tr>
 								<td>
-									<div style="padding: 0 2.5em; text-align: center;">
-										<h2 style="color: #fff; font-weight: 400; line-height: 1.4;">Bienvenido a Talento Tech, {{$contentMail->primer_nombre}} {{$contentMail->primer_apellido}}, su matrícula se registró con éxito</h2>
+									<div style="padding: 0 2.5em; text-align: justify;">
+										<h2 style="color: #fff; font-weight: 400; line-height: 1.4;">
+											@php
+												$opcionHorario = $contentMail->horario_formacion;
+												$opciones = ['Opción 1 ', 'Opción 2 ', 'Opción 3 ', 'Opción 4 '];
+												$horario = str_replace($opciones, '', $opcionHorario);
+											@endphp
+											🎉 {{$contentMail->primer_nombre}} {{$contentMail->primer_apellido}} Queremos informarte que tu matrícula en Talento Tech 2024 ha sido confirmada. ¡Oficialmente eres parte de nuestra familia! 🚀 Queremos compartirte que te encuentras inscrito en la temática de {{$contentMail->eje_final_formacion}}   y en el nivel {{$contentMail->nivel_formacion}}.La formación dará inicio de {{$horario}}.
+											<br>
+											<br>
+											Estamos emocionados de tenerte con nosotros, estamos seguros de que vivirás una experiencia increíble. ¡Nos vemos muy pronto para iniciar!
+										</h2>
 									</div>
 								</td>
 							</tr>

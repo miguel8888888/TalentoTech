@@ -350,7 +350,7 @@
                                                 <div class="col-span-2">
                                                     <label for="grupo_etnico" class="block text-sm font-medium leading-6 text-gray-900">Grupo Étnico</label>
                                                     <div class="mt-2">
-                                                        <select disabled id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Afrocolombiano') selected @endif value="Afrocolombiano">Afrocolombiano</option>
                                                             <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Palenquero') selected @endif value="Palenquero">Palenquero</option>
@@ -366,7 +366,7 @@
                                                 <div class="col-span-3">
                                                     <label for="discapacidad" class="block text-sm font-medium leading-6 text-gray-900">¿Presenta alguna discapacidad?</label>
                                                     <div class="mt-2">
-                                                        <select disabled id="discapacidad" name="discapacidad" autocomplete="discapacidad" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="discapacidad" name="discapacidad" autocomplete="discapacidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('discapacidad', $informacion_usuario->discapacidad) === 'Si') selected @endif value="Si">Si</option>
                                                             <option @if(old('discapacidad', $informacion_usuario->discapacidad) === 'No') selected @endif value="No">No</option>
@@ -401,7 +401,7 @@
                                                         <div class="grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad psicosocial (mental)', $valoresSepTipoDis)) checked @endif id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad psicosocial (mental)', $valoresSepTipoDis)) checked @endif id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_psicosocial" class="font-medium text-gray-900">Discapacidad psicosocial (mental)</label>
@@ -409,7 +409,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad auditiva', $valoresSepTipoDis)) checked @endif id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad auditiva', $valoresSepTipoDis)) checked @endif id="dicapacidad_auditiva" name="tipo_discapacidad[]" value="Discapacidad auditiva" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_auditiva" class="font-medium text-gray-900">Discapacidad auditiva</label>
@@ -418,7 +418,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Sensorial, Gusto, Olfato, Tacto', $valoresSepTipoDis)) checked @endif id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Sensorial, Gusto, Olfato, Tacto', $valoresSepTipoDis)) checked @endif id="sensorial" name="tipo_discapacidad[]" value="Sensorial, Gusto, Olfato, Tacto" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="sensorial" class="font-medium text-gray-900">Sensorial, Gusto, Olfato, Tacto</label>
@@ -426,7 +426,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad sordoceguera', $valoresSepTipoDis)) checked @endif id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad sordoceguera', $valoresSepTipoDis)) checked @endif id="dicapacidad_sordoceguera" name="tipo_discapacidad[]" value="Discapacidad sordoceguera" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sordoceguera" class="font-medium text-gray-900">Discapacidad sordoceguera</label>
@@ -434,7 +434,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Piel, pelo y uñas', $valoresSepTipoDis)) checked @endif id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Piel, pelo y uñas', $valoresSepTipoDis)) checked @endif id="dicapacidad_piel" name="tipo_discapacidad[]" value="Piel, pelo y uñas" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_piel" class="font-medium text-gray-900">Piel, pelo y uñas</label>
@@ -442,7 +442,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad intelectual', $valoresSepTipoDis)) checked @endif id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad intelectual', $valoresSepTipoDis)) checked @endif id="dicapacidad_intelectual" name="tipo_discapacidad[]" value="Discapacidad intelectual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_intelectual" class="font-medium text-gray-900">Discapacidad intelectual</label>
@@ -450,7 +450,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Sistémica', $valoresSepTipoDis)) checked @endif id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Sistémica', $valoresSepTipoDis)) checked @endif id="dicapacidad_sistemica" name="tipo_discapacidad[]" value="Sistémica" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_sistemica" class="font-medium text-gray-900">Sistémica</label>
@@ -458,7 +458,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad visual', $valoresSepTipoDis)) checked @endif id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad visual', $valoresSepTipoDis)) checked @endif id="dicapacidad_visual" name="tipo_discapacidad[]" value="Discapacidad visual" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_visual" class="font-medium text-gray-900">Discapacidad visual</label>
@@ -466,7 +466,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Discapacidad múltiple', $valoresSepTipoDis)) checked @endif id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad múltiple', $valoresSepTipoDis)) checked @endif id="dicapacidad_multiple" name="tipo_discapacidad[]" value="Discapacidad múltiple" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_multiple" class="font-medium text-gray-900">Discapacidad múltiple</label>
@@ -474,7 +474,7 @@
                                                             </div>
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input disabled @if(in_array('Voz y Habla', $valoresSepTipoDis)) checked @endif id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Voz y Habla', $valoresSepTipoDis)) checked @endif id="dicapacidad_voz_habla" name="tipo_discapacidad[]" value="Voz y Habla" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_voz_habla" class="font-medium text-gray-900">Voz y Habla</label>
@@ -684,7 +684,7 @@
                                                     <label for="pais_residencia" class="block text-sm font-medium leading-6 text-gray-900">País de Residencia</label>
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="pais_residencia" id="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
-                                                        <select disabled id="pais_residencia" name="pais_residencia" autocomplete="pais_residencia" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="pais_residencia" name="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('pais_residencia', $informacion_usuario->pais_residencia) === 'Colombia') selected @endif value="Colombia">Colombia</option>
                                                         </select>
@@ -695,7 +695,7 @@
                                                     <label for="departamento_residencia" class="block text-sm font-medium leading-6 text-gray-900">Departamento de Residencia</label>
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
-                                                        <select disabled id="departamento_residencia" name="departamento_residencia" autocomplete="departamento_residencia" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="departamento_residencia" name="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Elige tu departamento</option>
                                                             <option @if(old('departamento_residencia', $informacion_usuario->departamento_residencia) === 'Nariño') selected @endif value="Nariño">Nariño</option>
                                                             <option @if(old('departamento_residencia', $informacion_usuario->departamento_residencia) === 'Cauca') selected @endif value="Cauca">Cauca</option>
@@ -707,7 +707,7 @@
                                                     <label for="municipio_residencia" class="block text-sm font-medium leading-6 text-gray-900">Municipio Residencia</label>
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
-                                                        <select disabled id="municipio_residencia" name="municipio_residencia" autocomplete="municipio_residencia" class="gris_back municipios_container block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="municipio_residencia" name="municipio_residencia" autocomplete="municipio_residencia" class="municipios_container block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Elige tu municipio</option>
                                                         </select>
                                                     </div>
@@ -911,7 +911,7 @@
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
                                                     <label for="disponibilidad_formacion" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con la disponibilidad para el desarrollo de la formación de 10 horas semanales?</label>
                                                     <div class="mt-2">
-                                                        <select disabled id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
+                                                        <select readonly onmousedown="return false;" id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'Si') selected @endif value="Si">Si</option>
                                                             <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'No') selected @endif value="No">No</option>
@@ -933,7 +933,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="eje_final_formacion" class="block text-sm font-medium leading-6 text-gray-900">Eje Final de formación - Bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select disabled id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select readonly onmousedown="return false;" id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Análisis de Datos') selected @endif value="Análisis de Datos">Análisis de Datos</option>
                                                             <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Inteligencia artificial') selected @endif value="Inteligencia artificial">Inteligencia artificial</option>
@@ -946,7 +946,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="nivel_formacion" class="block text-sm font-medium leading-6 text-gray-900">Nivel según el resultado posterior a la prueba de conocimiento</label>
                                                     <div class="mt-2">
-                                                        <select disabled id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select readonly onmousedown="return false;" id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Explorador (Básico)') selected @endif value="Explorador (Básico)">Explorador (Básico)</option>
                                                             <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Integrador (Intermedio)') selected @endif value="Integrador (Intermedio)">Integrador (Intermedio)</option>
@@ -957,7 +957,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="modalidad_bootcamps" class="block text-sm font-medium leading-6 text-gray-900">Modalidad en la que realizará su bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select readonly onmousedown="return false;" id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Presencial / híbrido') selected @endif value="Presencial / híbrido">Presencial / híbrido</option>
                                                             <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Virtual') selected @endif value="Virtual">Virtual</option>
@@ -1028,8 +1028,11 @@
                 
                                                 </li>
                                             </ul>
-                                            <div class="grid justify-items-end w-full">
-                                                <div class="w-1/2 mt-3">
+                                            <div class="grid grid-cols-2 w-full">
+                                                <div class="flex items-center text-black w-full">
+                                                    <a href="#" target="_blank" class="mt-2"><u>Política de tratamiento de datos</u></a>
+                                                </div>
+                                                <div class="w-full mt-3">
                                                     <button id="sendForm" type="submit" class="x-mark pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>
                                                 </div>
                                             </div>

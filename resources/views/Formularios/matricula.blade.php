@@ -252,7 +252,7 @@
                                     <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                                         <div class="pant pant2 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Información adicional de contacto de un familiar </p>
+                                                <p class="mt-1 text-sm leading-6 text-gray-600">Información adicional de contacto de un familiar </p>
                 
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
@@ -335,7 +335,7 @@
                                     <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
                                         <div class="pant pant3 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600 uppercase">Autorreconocimiento Grupo Étnico del Beneficiario </p>
+                                                <p class="mt-1 text-sm leading-6 text-gray-600">Autorreconocimiento Grupo Étnico del Beneficiario </p>
                 
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
@@ -1060,40 +1060,6 @@
 
     <script type="text/javascript">
         let form = $("#enviar_matricula");
-        window.addEventListener("load", function() {
-            initValidate();
-            $('html, body').animate({scrollTop: 0}, 500);
-            $('#smartwizard').smartWizard({
-                theme: 'dots',
-                lang: { // Language variables for button
-                    next: 'Siguiente',
-                    previous: 'Anterior'
-                },
-                autoAdjustHeight: false,
-            });
-        });
-        $("#discapacidad").change(function() {
-            /* alert( $('option:selected', this).text() ); */
-            if ($('option:selected', this).text() == 'Si') {
-                $('.prent_discapaciti').removeClass('d-none');
-            } else if ($('option:selected', this).text() == 'No') {
-                $('.prent_discapaciti').addClass('d-none');
-            }
-        });
-        $("#identidad_genero_preg").change(function() {
-            if ($('option:selected', this).text() == 'Si') {
-                $('.identi_genero').removeClass('d-none');
-            } else if ($('option:selected', this).text() == 'No') {
-                $('.identi_genero').addClass('d-none');
-            }
-        });
-        $("#requisitos_aceptados").change(function() {
-            if ($('option:selected', this).text() == 'Si') {
-                $('#sendForm').removeClass('pointer-events-none');
-            } else if ($('option:selected', this).text() == 'No') {
-                $('#sendForm').addClass('pointer-events-none');
-            }
-        });
 
         const municipiosPorDepartamento = {
             "Nariño": ["Aldana",
@@ -1203,18 +1169,18 @@
             ]
             // Puedes agregar más departamentos y sus municipios aquí
         };
-
-        // Función para actualizar los municipios al cambiar el departamento seleccionado
-        // $("#departamento_residencia").change(function() {
-        //     const departamentoSeleccionado = $(this).val();
-        //     const municipios = municipiosPorDepartamento[departamentoSeleccionado] || [];
-
-        //     // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
-        //     $("#municipios_container").empty();
-        //     municipios.forEach(municipio => {
-        //         $(".municipios_container").append(`<option @if(old('municipio_residencia', $informacion_usuario->municipio_residencia) === '${municipio}') selected @endif value="${municipio}">${municipio}</option>`);
-        //     });
-        // });
+        window.addEventListener("load", function() {
+            initValidate();
+            $('html, body').animate({scrollTop: 0}, 500);
+            $('#smartwizard').smartWizard({
+                theme: 'dots',
+                lang: { // Language variables for button
+                    next: 'Siguiente',
+                    previous: 'Anterior'
+                },
+                autoAdjustHeight: false,
+            });
+        });
 
         // Función para cargar los municipios
         function cargarMunicipios(departamentoSeleccionado) {
@@ -1234,6 +1200,30 @@
             const departamentoSeleccionado = $("#departamento_residencia").val();
             if (departamentoSeleccionado) {
                 cargarMunicipios(departamentoSeleccionado);
+            }
+            
+            if ($("#discapacidad").val()) {
+                if ($("#discapacidad").val() == 'Si') {
+                    $('.prent_discapaciti').removeClass('d-none');
+                } else if ($("#discapacidad").val() == 'No') {
+                    $('.prent_discapaciti').addClass('d-none');
+                }
+            }
+            
+            if ($("#identidad_genero_preg").val()) {
+                if ($("#identidad_genero_preg").val() == 'Si') {
+                    $('.identi_genero').removeClass('d-none');
+                } else if ($("#identidad_genero_preg").val() == 'No') {
+                    $('.identi_genero').addClass('d-none');
+                }
+            }
+            
+            if ($("#requisitos_aceptados").val()) {
+                if ($("#requisitos_aceptados").val() == 'Si') {
+                    $('#sendForm').removeClass('pointer-events-none');
+                } else if ($("#requisitos_aceptados").val() == 'No') {
+                    $('#sendForm').addClass('pointer-events-none');
+                }
             }
         });
 
@@ -1443,6 +1433,31 @@
                 }
             });
         }
+
+
+        $("#discapacidad").change(function() {
+            /* alert( $('option:selected', this).text() ); */
+            if ($('option:selected', this).text() == 'Si') {
+                $('.prent_discapaciti').removeClass('d-none');
+            } else if ($('option:selected', this).text() == 'No') {
+                $('.prent_discapaciti').addClass('d-none');
+            }
+        });
+        $("#identidad_genero_preg").change(function() {
+            if ($('option:selected', this).text() == 'Si') {
+                $('.identi_genero').removeClass('d-none');
+            } else if ($('option:selected', this).text() == 'No') {
+                $('.identi_genero').addClass('d-none');
+            }
+        });
+        $("#requisitos_aceptados").change(function() {
+            if ($('option:selected', this).text() == 'Si') {
+                $('#sendForm').removeClass('pointer-events-none');
+            } else if ($('option:selected', this).text() == 'No') {
+                $('#sendForm').addClass('pointer-events-none');
+            }
+        });
+
         $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
             if (form.valid()) {
                 $('html, body').animate({scrollTop: 0}, 500);
@@ -1483,17 +1498,6 @@
 
         $("#enviar_matricula").on("submit", function(event) {
             event.preventDefault();
-            // var file_size = $('#url_archivo')[0].files[0].size;
-            // if(file_size>2097152) {
-            //     // alert("El archivo debe ser PDF, y no mayor a 2MB");
-            //     // initValidate();
-            //     form.validate().showErrors({
-            //         "url_archivo": "Este es tu mensaje de error personalizado",
-            //         // Agrega más campos y mensajes según sea necesario
-            //     });
-        	// 	return false;
-        	// } else {
-            // }
             if (form.valid()) {
                 $("#sendForm").prop('disabled', true);
                 $("#sendForm").html('Enviando...');

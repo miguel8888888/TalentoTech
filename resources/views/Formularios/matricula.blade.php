@@ -127,7 +127,7 @@
                                                     <div class="mt-2">
                                                         <select id="tipo_documento" name="tipo_documento" autocomplete="tipo-documento-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="CC">CC</option>
+                                                            <option value="CC" @if(old('tipo_documento', $informacion_usuario->tipo_documento) === 'CC') selected @endif>CC</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -145,7 +145,7 @@
                                                         <!-- <input type="text" name="nacionalidad" id="nacionalidad" autocomplete="nacionalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="nacionalidad" name="nacionalidad" autocomplete="nacionalidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Colombiano">Colombiano(a)</option>
+                                                            <option value="Colombiano" @if(old('nacionalidad', $informacion_usuario->nacionalidad) === 'Colombiano') selected @endif>Colombiano(a)</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -176,9 +176,9 @@
                                                     <div class="mt-2">
                                                         <select id="sexo" name="sexo" autocomplete="sexo-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Hombre">Hombre</option>
-                                                            <option value="Mujer">Mujer</option>
-                                                            <option value="Intersex">Intersex</option>
+                                                            <option value="Hombre" @if(old('sexo', $informacion_usuario->sexo) === 'Hombre') selected @endif>Hombre</option>
+                                                            <option value="Mujer" @if(old('sexo', $informacion_usuario->sexo) === 'Mujer') selected @endif>Mujer</option>
+                                                            <option value="Intersex" @if(old('sexo', $informacion_usuario->sexo) === 'Intersex') selected @endif>Intersex</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -188,8 +188,8 @@
                                                     <div class="mt-2">
                                                         <select id="identidad_genero_preg" name="identidad_genero_preg" autocomplete="identidad-genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
+                                                            <option @if(old('identidad_genero_preg', $informacion_usuario->identidad_genero_preg) === 'Si') selected @endif value="Si">Si</option>
+                                                            <option @if(old('identidad_genero_preg', $informacion_usuario->identidad_genero_preg) === 'No') selected @endif value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -200,11 +200,11 @@
                                                         <div class="mt-2">
                                                             <select id="identidad_genero" name="identidad_genero" autocomplete="genero-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                                 <option selected disabled>Seleccione...</option>
-                                                                <option>Masculino</option>
-                                                                <option>Femenino</option>
-                                                                <option>Trans</option>
-                                                                <option>Otro</option>
-                                                                <option>No deseo responder</option>
+                                                                <option @if(old('identidad_genero', $informacion_usuario->identidad_genero) === 'Masculino') selected @endif value="Masculino">Masculino</option>
+                                                                <option @if(old('identidad_genero', $informacion_usuario->identidad_genero) === 'Femenino') selected @endif value="Femenino">Femenino</option>
+                                                                <option @if(old('identidad_genero', $informacion_usuario->identidad_genero) === 'Trans') selected @endif value="Trans">Trans</option>
+                                                                <option @if(old('identidad_genero', $informacion_usuario->identidad_genero) === 'Otro') selected @endif value="Otro">Otro</option>
+                                                                <option @if(old('identidad_genero', $informacion_usuario->identidad_genero) === 'No deseo responder') selected @endif value="No deseo responder">No deseo responder</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -216,11 +216,11 @@
                                                     <div class="mt-2">
                                                         <select id="orientacion_sexual" name="orientacion_sexual" autocomplete="orientacion-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Heterosexualidad">Heterosexualidad</option>
-                                                            <option value="Homosexualidad">Homosexualidad</option>
-                                                            <option value="Bisexualidad">Bisexualidad</option>
-                                                            <option value="Otro">Otro</option>
-                                                            <option value="No deseo responder">No deseo responder</option>
+                                                            <option @if(old('orientacion_sexual', $informacion_usuario->orientacion_sexual) === 'Heterosexualidad') selected @endif value="Heterosexualidad">Heterosexualidad</option>
+                                                            <option @if(old('orientacion_sexual', $informacion_usuario->orientacion_sexual) === 'Homosexualidad') selected @endif value="Homosexualidad">Homosexualidad</option>
+                                                            <option @if(old('orientacion_sexual', $informacion_usuario->orientacion_sexual) === 'Bisexualidad') selected @endif value="Bisexualidad">Bisexualidad</option>
+                                                            <option @if(old('orientacion_sexual', $informacion_usuario->orientacion_sexual) === 'Otro') selected @endif value="Otro">Otro</option>
+                                                            <option @if(old('orientacion_sexual', $informacion_usuario->orientacion_sexual) === 'No deseo responder') selected @endif value="No deseo responder">No deseo responder</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -291,13 +291,13 @@
                                                     <div class="mt-2">
                                                         <select id="familiar_tipo_documento" name="familiar_tipo_documento" autocomplete="familiar_tipo_documento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento)}}">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="CC">CC</option>
-                                                            <option value="CE">CE</option>
-                                                            <option value="TI">TI</option>
-                                                            <option value="PA">PA</option>
-                                                            <option value="TMF">TMF</option>
-                                                            <option value="PEP">PEP</option>
-                                                            <option value="Visa">Visa</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'CC') selected @endif value="CC">CC</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'CE') selected @endif value="CE">CE</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'TI') selected @endif value="TI">TI</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'PA') selected @endif value="PA">PA</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'TMF') selected @endif value="TMF">TMF</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'PEP') selected @endif value="PEP">PEP</option>
+                                                            <option @if(old('familiar_tipo_documento', $informacion_usuario->familiar_tipo_documento) === 'Visa') selected @endif value="Visa">Visa</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -344,13 +344,13 @@
                                                     <div class="mt-2">
                                                         <select id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Afrocolombiano">Afrocolombiano</option>
-                                                            <option value="Palenquero">Palenquero</option>
-                                                            <option value="Comunidad Negra">Comunidad Negra</option>
-                                                            <option value="Raizal del archipiélago de San Andrés y Providencia">Raizal del archipiélago de San Andrés y Providencia</option>
-                                                            <option value="Indígena">Indígena</option>
-                                                            <option value="Rrom/Gitano">Rrom/Gitano</option>
-                                                            <option value="No se Autorreconoce en ninguno de los anteriores">No se Autorreconoce en ninguno de los anteriores</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Afrocolombiano') selected @endif value="Afrocolombiano">Afrocolombiano</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Palenquero') selected @endif value="Palenquero">Palenquero</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Comunidad Negra') selected @endif value="Comunidad Negra">Comunidad Negra</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Raizal del archipiélago de San Andrés y Providencia') selected @endif value="Raizal del archipiélago de San Andrés y Providencia">Raizal del archipiélago de San Andrés y Providencia</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Indígena') selected @endif value="Indígena">Indígena</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'Rrom/Gitano') selected @endif value="Rrom/Gitano">Rrom/Gitano</option>
+                                                            <option @if(old('grupo_etnico', $informacion_usuario->grupo_etnico) === 'No se Autorreconoce en ninguno de los anteriores') selected @endif value="No se Autorreconoce en ninguno de los anteriores">No se Autorreconoce en ninguno de los anteriores</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -360,8 +360,8 @@
                                                     <div class="mt-2">
                                                         <select id="discapacidad" name="discapacidad" autocomplete="discapacidad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
+                                                            <option @if(old('discapacidad', $informacion_usuario->discapacidad) === 'Si') selected @endif value="Si">Si</option>
+                                                            <option @if(old('discapacidad', $informacion_usuario->discapacidad) === 'No') selected @endif value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -372,8 +372,8 @@
                                                         <div class="mt-2">
                                                             <select id="discapacidad_certificada" name="discapacidad_certificada" autocomplete="discapacidad_certificada" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                                 <option selected disabled>Seleccione...</option>
-                                                                <option value="Si">Si</option>
-                                                                <option value="No">No</option>
+                                                                <option @if(old('discapacidad_certificada', $informacion_usuario->discapacidad_certificada) === 'Si') selected @endif value="Si">Si</option>
+                                                                <option @if(old('discapacidad_certificada', $informacion_usuario->discapacidad_certificada) === 'No') selected @endif value="No">No</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -386,10 +386,14 @@
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
                                                         <input id="dicapacidad_psicosocialsss" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        @php
+                                                            $valoresGuardados = $informacion_usuario->tipo_discapacidad;
+                                                            $valoresSeparados = explode(' | ', $valoresGuardados);
+                                                        @endphp
                                                         <div class="grid grid-cols-1 lg:grid-cols-3">
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                                    <input @if(in_array('Discapacidad psicosocial (mental)', $valoresSeparados)) checked @endif id="dicapacidad_psicosocial" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
                                                                     <label for="dicapacidad_psicosocial" class="font-medium text-gray-900">Discapacidad psicosocial (mental)</label>
@@ -624,11 +628,11 @@
                                                     <div class="mt-2">
                                                         <select id="grado_escolaridad" name="grado_escolaridad" autocomplete="grado_escolaridad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Bachillerato">Bachillerato</option>
-                                                            <option value="Técnica">Técnica </option>
-                                                            <option value="Tecnológico">Tecnológico</option>
-                                                            <option value="Profesional">Profesional</option>
-                                                            <option value="Posgrado">Posgrado</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Bachillerato') selected @endif value="Bachillerato">Bachillerato</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Técnica') selected @endif value="Técnica">Técnica </option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Tecnológico') selected @endif value="Tecnológico">Tecnológico</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Profesional') selected @endif value="Profesional">Profesional</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Posgrado') selected @endif value="Posgrado">Posgrado</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -637,20 +641,20 @@
                                                     <div class="mt-2">
                                                         <select id="ocupacion" name="ocupacion" autocomplete="ocupacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Estudiante">Estudiante</option>
-                                                            <option value="Emprendedor">Emprendedor </option>
-                                                            <option value="Independiente">Independiente</option>
-                                                            <option value="Obrero o empleado del Gobierno">Obrero o empleado del Gobierno</option>
-                                                            <option value="Obrero o empleado de empresa particular">Obrero o empleado de empresa particular</option>
-                                                            <option value="Labores del Hogar">Labores del Hogar</option>
-                                                            <option value="Desempleado">Desempleado</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Estudiante') selected @endif value="Estudiante">Estudiante</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Emprendedor') selected @endif value="Emprendedor">Emprendedor </option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Independiente') selected @endif value="Independiente">Independiente</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Obrero o empleado del Gobierno') selected @endif value="Obrero o empleado del Gobierno">Obrero o empleado del Gobierno</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Obrero o empleado de empresa particular') selected @endif value="Obrero o empleado de empresa particular">Obrero o empleado de empresa particular</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Labores del Hogar') selected @endif value="Labores del Hogar">Labores del Hogar</option>
+                                                            <option @if(old('ocupacion', $informacion_usuario->ocupacion) === 'Desempleado') selected @endif value="Desempleado">Desempleado</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2 lg:col-span-12 mt-5">
                                                     <label for="profesion" class="block text-sm font-medium leading-6 text-gray-900">Si eres profesional, técnico o tecnólogo, escribe que profesión tienes</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="profesion" id="profesion" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="profesion" id="profesion" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('profesion', $informacion_usuario->profesion)}}"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -666,7 +670,7 @@
                                                         <!-- <input type="text" name="pais_residencia" id="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="pais_residencia" name="pais_residencia" autocomplete="pais_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Rural">Colombia</option>
+                                                            <option @if(old('pais_residencia', $informacion_usuario->pais_residencia) === 'Colombia') selected @endif value="Colombia">Colombia</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -676,9 +680,9 @@
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="departamento_residencia" name="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                            <option value="" selected="" disabled>Elige tu departamento</option>
-                                                            <option value="Nariño">Nariño</option>
-                                                            <option value="Cauca">Cauca</option>
+                                                            <option selected disabled>Elige tu departamento</option>
+                                                            <option @if(old('departamento_residencia', $informacion_usuario->departamento_residencia) === 'Nariño') selected @endif value="Nariño">Nariño</option>
+                                                            <option @if(old('departamento_residencia', $informacion_usuario->departamento_residencia) === 'Cauca') selected @endif value="Cauca">Cauca</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -688,7 +692,7 @@
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="municipio_residencia" name="municipio_residencia" autocomplete="municipio_residencia" class="municipios_container block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                                            <option value="" selected="" disabled>Elige tu municipio</option>
+                                                            <option selected disabled>Elige tu municipio</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -700,8 +704,8 @@
                                                     <div class="mt-2">
                                                         <select id="zona_ubicacion" name="zona_ubicacion" autocomplete="zona_ubicacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Rural">Rural</option>
-                                                            <option value="Urbana">Urbana</option>
+                                                            <option @if(old('zona_ubicacion', $informacion_usuario->zona_ubicacion) === 'Rural') selected @endif value="Rural">Rural</option>
+                                                            <option @if(old('zona_ubicacion', $informacion_usuario->zona_ubicacion) === 'Urbana') selected @endif value="Urbana">Urbana</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -709,35 +713,35 @@
                                                 <div class="col-span-2">
                                                     <label for="corregimiento_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre corregimiento</label>
                                                     <div class="mt-2">
-                                                        <input type="text" name="corregimiento_nombre" id="corregimiento_nombre" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input type="text" name="corregimiento_nombre" id="corregimiento_nombre" autocomplete="corregimiento" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('corregimiento_nombre', $informacion_usuario->corregimiento_nombre)}}"/>
                                                     </div>
                                                 </div>
                 
                                                 <div class="col-span-2">
                                                     <label for="vereda_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre Vereda</label>
                                                     <div class="mt-2">
-                                                        <input id="vereda_nombre" name="vereda_nombre" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="vereda_nombre" name="vereda_nombre" type="text" autocomplete="Vereda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('vereda_nombre', $informacion_usuario->vereda_nombre)}}"/>
                                                     </div>
                                                 </div>
                 
                                                 <div class="col-span-2">
                                                     <label for="zona_resto" class="block text-sm font-medium leading-6 text-gray-900">Nombre de la Zona Resto (caserío)</label>
                                                     <div class="mt-2">
-                                                        <input id="zona_resto" name="zona_resto" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="zona_resto" name="zona_resto" type="text" autocomplete="caserio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('zona_resto', $informacion_usuario->zona_resto)}}"/>
                                                     </div>
                                                 </div>
                 
                                                 <div class="col-span-2">
                                                     <label for="barrio_nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre del Barrio</label>
                                                     <div class="mt-2">
-                                                        <input id="barrio_nombre" name="barrio_nombre" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="barrio_nombre" name="barrio_nombre" type="text" autocomplete="barrio" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('barrio_nombre', $informacion_usuario->barrio_nombre)}}"/>
                                                     </div>
                                                 </div>
                 
                                                 <div class="col-span-2">
                                                     <label for="direccion" class="block text-sm font-medium leading-6 text-gray-900">Dirección</label>
                                                     <div class="mt-2">
-                                                        <input id="direccion" name="direccion" type="text" autocomplete="direccion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                                                        <input id="direccion" name="direccion" type="text" autocomplete="direccion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('direccion', $informacion_usuario->direccion)}}"/>
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2">
@@ -745,12 +749,12 @@
                                                     <div class="mt-2">
                                                         <select id="estrato_socioeconomico" name="estrato_socioeconomico" autocomplete="estrato_socioeconomico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 1) selected @endif value="1">1</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 2) selected @endif value="2">2</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 3) selected @endif value="3">3</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 4) selected @endif value="4">4</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 5) selected @endif value="5">5</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 6) selected @endif value="6">6</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -760,14 +764,14 @@
                                                     <div class="mt-2">
                                                         <select id="tipo_vivienda" name="tipo_vivienda" autocomplete="tipo_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Casa">Casa</option>
-                                                            <option value="Habitación o Cuarto">Habitación o Cuarto</option>
-                                                            <option value="Albergue (Vivienda temporal)">Albergue (Vivienda temporal)</option>
-                                                            <option value="Inquilinato">Inquilinato</option>
-                                                            <option value="Casa lote">Casa lote</option>
-                                                            <option value="Apartamento">Apartamento</option>
-                                                            <option value="Vivienda indígena">Vivienda indígena</option>
-                                                            <option value="Palafito">Palafito</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Casa') selected @endif value="Casa">Casa</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Habitación o Cuarto') selected @endif value="Habitación o Cuarto">Habitación o Cuarto</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Albergue (Vivienda temporal)') selected @endif value="Albergue (Vivienda temporal)">Albergue (Vivienda temporal)</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Inquilinato') selected @endif value="Inquilinato">Inquilinato</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Casa lote') selected @endif value="Casa lote">Casa lote</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Apartamento') selected @endif value="Apartamento">Apartamento</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Vivienda indígena') selected @endif value="Vivienda indígena">Vivienda indígena</option>
+                                                            <option @if(old('tipo_vivienda', $informacion_usuario->tipo_vivienda) === 'Palafito') selected @endif value="Palafito">Palafito</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -776,14 +780,14 @@
                                                     <div class="mt-2">
                                                         <select id="tenencia_vivienda" name="tenencia_vivienda" autocomplete="tenencia_vivienda" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Propia">Propia</option>
-                                                            <option value="Arriendo">Arriendo</option>
-                                                            <option value="Familiar">Familiar</option>
-                                                            <option value="Albergue">Albergue</option>
-                                                            <option value="Lugar de trabajo">Lugar de trabajo</option>
-                                                            <option value="Posada (vivienda otra persona sin pagar)">Posada (vivienda otra persona sin pagar)</option>
-                                                            <option value="Asentamiento- Invasión">Asentamiento- Invasión</option>
-                                                            <option value="Paga Diario">Paga Diario</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Propia') selected @endif value="Propia">Propia</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Arriendo') selected @endif value="Arriendo">Arriendo</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Familiar') selected @endif value="Familiar">Familiar</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Albergue') selected @endif value="Albergue">Albergue</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Lugar de trabajo') selected @endif value="Lugar de trabajo">Lugar de trabajo</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Posada (vivienda otra persona sin pagar)') selected @endif value="Posada (vivienda otra persona sin pagar)">Posada (vivienda otra persona sin pagar)</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Asentamiento- Invasión') selected @endif value="Asentamiento- Invasión">Asentamiento- Invasión</option>
+                                                            <option @if(old('tenencia_vivienda', $informacion_usuario->tenencia_vivienda) === 'Paga Diario') selected @endif value="Paga Diario">Paga Diario</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -885,8 +889,8 @@
                                                     <div class="mt-2">
                                                         <select id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
+                                                            <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'Si') selected @endif value="Si">Si</option>
+                                                            <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'No') selected @endif value="No">No</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -895,10 +899,10 @@
                                                     <div class="mt-2">
                                                         <select id="horario_formacion" name="horario_formacion" autocomplete="horario_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Opción 1 (Lunes a Viernes de 10am a 12m)">Opción 1 (Lunes a Viernes de 10am a 12m)</option>
-                                                            <option value="Opción 2 (Lunes a viernes de 2pm a 4pm)">Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
-                                                            <option value="Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)">Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
-                                                            <option value="Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)">Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
+                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 1 (Lunes a Viernes de 10am a 12m)') selected @endif value="Opción 1 (Lunes a Viernes de 10am a 12m)">Opción 1 (Lunes a Viernes de 10am a 12m)</option>
+                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 2 (Lunes a viernes de 2pm a 4pm)') selected @endif value="Opción 2 (Lunes a viernes de 2pm a 4pm)">Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
+                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)') selected @endif value="Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)">Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
+                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)') selected @endif value="Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)">Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -907,11 +911,11 @@
                                                     <div class="mt-2">
                                                         <select id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Análisis de Datos">Análisis de Datos</option>
-                                                            <option value="Inteligencia artificial">Inteligencia artificial</option>
-                                                            <option value="Arquitectura en la nube">Arquitectura en la nube</option>
-                                                            <option value="BlockChain">BlockChain</option>
-                                                            <option value="Programación">Programación</option>
+                                                            <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Análisis de Datos') selected @endif value="Análisis de Datos">Análisis de Datos</option>
+                                                            <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Inteligencia artificial') selected @endif value="Inteligencia artificial">Inteligencia artificial</option>
+                                                            <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Arquitectura en la nube') selected @endif value="Arquitectura en la nube">Arquitectura en la nube</option>
+                                                            <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'BlockChain') selected @endif value="BlockChain">BlockChain</option>
+                                                            <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Programación') selected @endif value="Programación">Programación</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -920,9 +924,9 @@
                                                     <div class="mt-2">
                                                         <select id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Explorador (Básico)">Explorador (Básico)</option>
-                                                            <option value="Integrador (Intermedio)">Integrador (Intermedio)</option>
-                                                            <option value="Innovador (Avanzado)">Innovador (Avanzado)</option>
+                                                            <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Explorador (Básico)') selected @endif value="Explorador (Básico)">Explorador (Básico)</option>
+                                                            <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Integrador (Intermedio)') selected @endif value="Integrador (Intermedio)">Integrador (Intermedio)</option>
+                                                            <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Innovador (Avanzado)') selected @endif value="Innovador (Avanzado)">Innovador (Avanzado)</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -931,8 +935,8 @@
                                                     <div class="mt-2">
                                                         <select id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Presencial / híbrido">Presencial / híbrido</option>
-                                                            <option value="Virtual">Virtual</option>
+                                                            <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Presencial / híbrido') selected @endif value="Presencial / híbrido">Presencial / híbrido</option>
+                                                            <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Virtual') selected @endif value="Virtual">Virtual</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -993,8 +997,8 @@
                                                     <div class="mt-2">
                                                         <select id="requisitos_aceptados" name="requisitos_aceptados" autocomplete="requisitos_aceptados" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option value="Si">Si</option>
-                                                            <option value="No">No</option>
+                                                            <option @if(old('requisitos_aceptados', $informacion_usuario->requisitos_aceptados) === 'Si') selected @endif value="Si">Si</option>
+                                                            <option @if(old('requisitos_aceptados', $informacion_usuario->requisitos_aceptados) === 'No') selected @endif value="No">No</option>
                                                         </select>
                                                     </div>
                 
@@ -1192,7 +1196,7 @@
             // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
             $("#municipios_container").empty();
             municipios.forEach(municipio => {
-                $(".municipios_container").append(`<option value="${municipio}">${municipio}</option>`);
+                $(".municipios_container").append(`<option @if(old('municipio_residencia', $informacion_usuario->municipio_residencia) === '${municipio}') selected @endif value="${municipio}">${municipio}</option>`);
             });
         });
 

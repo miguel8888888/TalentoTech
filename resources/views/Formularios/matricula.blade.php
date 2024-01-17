@@ -1205,16 +1205,44 @@
         };
 
         // Función para actualizar los municipios al cambiar el departamento seleccionado
-        $("#departamento_residencia").change(function() {
-            const departamentoSeleccionado = $(this).val();
+        // $("#departamento_residencia").change(function() {
+        //     const departamentoSeleccionado = $(this).val();
+        //     const municipios = municipiosPorDepartamento[departamentoSeleccionado] || [];
+
+        //     // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
+        //     $("#municipios_container").empty();
+        //     municipios.forEach(municipio => {
+        //         $(".municipios_container").append(`<option @if(old('municipio_residencia', $informacion_usuario->municipio_residencia) === '${municipio}') selected @endif value="${municipio}">${municipio}</option>`);
+        //     });
+        // });
+
+        // Función para cargar los municipios
+        function cargarMunicipios(departamentoSeleccionado) {
             const municipios = municipiosPorDepartamento[departamentoSeleccionado] || [];
+            const municipioResidencia = '{{ $informacion_usuario->municipio_residencia }}';
 
             // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
             $("#municipios_container").empty();
             municipios.forEach(municipio => {
-                $(".municipios_container").append(`<option @if(old('municipio_residencia', $informacion_usuario->municipio_residencia) === '${municipio}') selected @endif value="${municipio}">${municipio}</option>`);
+                const isSelected = municipio === municipioResidencia ? 'selected' : '';
+                $(".municipios_container").append(`<option ${isSelected} value="${municipio}">${municipio}</option>`);
             });
+        }
+
+        // Llama a la función para cargar los municipios al cargar la página
+        $(document).ready(function() {
+            const departamentoSeleccionado = $("#departamento_residencia").val();
+            if (departamentoSeleccionado) {
+                cargarMunicipios(departamentoSeleccionado);
+            }
         });
+
+        // Agrega el evento change para actualizar los municipios cuando se seleccione un nuevo departamento
+        $("#departamento_residencia").change(function() {
+            const departamentoSeleccionado = $(this).val();
+            cargarMunicipios(departamentoSeleccionado);
+        });
+
 
         function initValidate() {
             form.validate({

@@ -192,7 +192,7 @@ class RegistrarController extends Controller
     public function consultarUsuario(Request $request)
     {
         $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
-        if ($informacion_usuario->count() > 0) {
+        if ($informacion_usuario) {
             return view('Formularios/matricula', compact('informacion_usuario'));
         } else {
             return redirect('/');

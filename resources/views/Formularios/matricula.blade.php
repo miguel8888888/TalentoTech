@@ -393,7 +393,7 @@
                                                 <div class="col-span-2 lg:col-span-12">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Tipo de discapacidad </legend>
-                                                        <input  id="dicapacidad_psicosocialsss" name="tipo_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        <input  id="dicapacidad_psicosocialsss" name="tipo_discapacidad[]" value="" type="checkbox" class="tipo_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
                                                         @php
                                                             $valoresGuardTipoDis = $informacion_usuario->tipo_discapacidad;
                                                             $valoresSepTipoDis = explode(' | ', $valoresGuardTipoDis);
@@ -495,7 +495,7 @@
                                                 <div class="col-span-2 lg:col-span-12 ">
                                                     <fieldset class="mt-5 prent_discapaciti d-none">
                                                         <legend class="text-sm font-semibold leading-6 text-gray-900">Según la discapacidad</legend>
-                                                        <input id="dicapacidad_psicosocialsss" name="segun_discapacidad[]" value="Discapacidad psicosocial (mental)" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
+                                                        <input id="dicapacidad_psicosocialss" name="segun_discapacidad[]" value="" type="checkbox" class="segun_discapacidad-group h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" style="opacity: 0">
                                                         @php
                                                             $valoresGuardSegunDis = $informacion_usuario->segun_discapacidad;
                                                             $valoresSepSegunDis = explode(' | ', $valoresGuardSegunDis);
@@ -652,11 +652,15 @@
                                                     <div class="mt-2">
                                                         <select id="grado_escolaridad" name="grado_escolaridad" autocomplete="grado_escolaridad" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Básica Primaria') selected @endif value="Básica Primaria">Básica Primaria</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Básica Secundaria') selected @endif value="Básica Secundaria">Básica Secundaria</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Media') selected @endif value="Media">Media</option>
                                                             <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Bachillerato') selected @endif value="Bachillerato">Bachillerato</option>
-                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Técnica') selected @endif value="Técnica">Técnica </option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Técnico Profesional') selected @endif value="Técnico Profesional">Técnico Profesional </option>
                                                             <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Tecnológico') selected @endif value="Tecnológico">Tecnológico</option>
-                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Profesional') selected @endif value="Profesional">Profesional</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Profesional Universitario') selected @endif value="Profesional Universitario">Profesional Universitario</option>
                                                             <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'Posgrado') selected @endif value="Posgrado">Posgrado</option>
+                                                            <option @if(old('grado_escolaridad', $informacion_usuario->grado_escolaridad) === 'No Registra') selected @endif value="No Registra">No Registra</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -773,12 +777,14 @@
                                                     <div class="mt-2">
                                                         <select id="estrato_socioeconomico" name="estrato_socioeconomico" autocomplete="estrato_socioeconomico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 1) selected @endif value="1">1</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 2) selected @endif value="2">2</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 3) selected @endif value="3">3</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 4) selected @endif value="4">4</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 5) selected @endif value="5">5</option>
-                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === 6) selected @endif value="6">6</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "1") selected @endif value="1">1</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "2") selected @endif value="2">2</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "3") selected @endif value="3">3</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "4") selected @endif value="4">4</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "5") selected @endif value="5">5</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "6") selected @endif value="6">6</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "Zona rural") selected @endif value="Zona rural">Zona rural</option>
+                                                            <option @if(old('estrato_socioeconomico', $informacion_usuario->estrato_socioeconomico) === "No estratificado") selected @endif value="No estratificado">No estratificado</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1116,7 +1122,8 @@
         let form = $("#enviar_matricula");
 
         const municipiosPorDepartamento = {
-            "Nariño": ["Aldana",
+            "Nariño": ["Albán",
+                "Aldana",
                 "Ancuya",
                 "Arboleda",
                 "Barbacoas",
@@ -1133,7 +1140,7 @@
                 "El Charco",
                 "El Peñol",
                 "El Rosario",
-                "El Tablón de Gómez",
+                "El Tablón De Gómez",
                 "El Tambo",
                 "Francisco Pizarro",
                 "Funes",
@@ -1166,17 +1173,17 @@
                 "Ricaurte",
                 "Roberto Payán",
                 "Samaniego",
+                "San Andrés De Tumaco",
                 "San Bernardo",
                 "San Lorenzo",
                 "San Pablo",
-                "San Pedro de Cartago",
+                "San Pedro De Cartago",
                 "Sandoná",
                 "Santa Bárbara",
                 "Santacruz",
                 "Sapuyes",
                 "Taminango",
                 "Tangua",
-                "Tumaco",
                 "Túquerres",
                 "Yacuanquer"
             ],
@@ -1197,7 +1204,7 @@
                 "Jambaló",
                 "La Sierra",
                 "La Vega",
-                "López de Micay",
+                "López De Micay",
                 "Mercaderes",
                 "Miranda",
                 "Morales",
@@ -1211,10 +1218,12 @@
                 "Puracé",
                 "Rosas",
                 "San Sebastián",
-                "Santander de Quilichao",
+                "Santa Rosa",
+                "Santander De Quilichao",
                 "Silvia",
-                "Sotara",
+                "Sotará",
                 "Suárez",
+                "Sucre",
                 "Timbío",
                 "Timbiquí",
                 "Toribío",
@@ -1243,6 +1252,8 @@
 
             // Limpia y agrega los nuevos municipios al elemento HTML deseado (por ejemplo, un div con el id "municipios_container")
             $("#municipios_container").empty();
+
+            $(".municipios_container").html("");
             municipios.forEach(municipio => {
                 const isSelected = municipio === municipioResidencia ? 'selected' : '';
                 $(".municipios_container").append(`<option ${isSelected} value="${municipio}">${municipio}</option>`);
@@ -1254,6 +1265,11 @@
             const departamentoSeleccionado = $("#departamento_residencia").val();
             if (departamentoSeleccionado) {
                 cargarMunicipios(departamentoSeleccionado);
+            }
+            
+            if ($("input[name=fecha_nacimiento]").val()) {
+                $('input[name=edad]').val(calcularEdad($("input[name=fecha_nacimiento]").val()));
+                console.log($('input[name=fecha_nacimiento]').val());
             }
             
             if ($("#discapacidad").val()) {

@@ -37,10 +37,11 @@
 												$opciones = ['Opción 1 ', 'Opción 2 ', 'Opción 3 ', 'Opción 4 '];
 												$horario = str_replace($opciones, '', $opcionHorario);
 											@endphp
-											🎉 {{$contentMail->primer_nombre}} {{$contentMail->primer_apellido}} Queremos informarte que tu matrícula en Talento Tech 2024 ha sido confirmada. ¡Oficialmente eres parte de nuestra familia! 🚀 Queremos compartirte que te encuentras inscrito en la temática de {{$contentMail->eje_final_formacion}}   y en el nivel {{$contentMail->nivel_formacion}}.La formación dará inicio de {{$horario}}.
+											<p style="color: #fff">🎉 {{$contentMail->primer_nombre}} {{$contentMail->primer_apellido}} Queremos informarte que tu matrícula en Talento Tech 2024 ha sido confirmada. ¡Oficialmente eres parte de nuestra familia! 🚀 Queremos compartirte que te encuentras inscrito en la temática de {{$contentMail->eje_final_formacion}}   y en el nivel {{$contentMail->nivel_formacion}}.La formación dará inicio de {{$horario}}.
+											</p>
 											<br>
 											<br>
-											Estamos emocionados de tenerte con nosotros, estamos seguros de que vivirás una experiencia increíble. ¡Nos vemos muy pronto para iniciar!
+											<p style="color: #fff">Estamos emocionados de tenerte con nosotros, estamos seguros de que vivirás una experiencia increíble. ¡Nos vemos muy pronto para iniciar!</p>
 										</h2>
 									</div>
 								</td>

@@ -1030,7 +1030,7 @@
                                             </ul>
                                             <div class="grid grid-cols-2 w-full">
                                                 <div class="flex items-center text-black w-full">
-                                                    <a href="#" target="_blank" class="mt-2"><u>Política de tratamiento de datos</u></a>
+                                                    <a href="https://www.mintic.gov.co/portal/715/articles-2627_resolucion_0448_2022.pdf" target="_blank" class="mt-2"><u>Política de tratamiento de datos</u></a>
                                                 </div>
                                                 <div class="w-full mt-3">
                                                     <button id="sendForm" type="submit" class="x-mark pointer-events-none rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Matricular</button>

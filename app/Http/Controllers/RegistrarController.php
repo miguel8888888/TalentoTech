@@ -195,7 +195,7 @@ class RegistrarController extends Controller
         if ($informacion_usuario) {
             return view('Formularios/matricula', compact('informacion_usuario'));
         } else {
-            return redirect('/');
+            return view('Formularios/errorUsuario');
         }
     }
 }

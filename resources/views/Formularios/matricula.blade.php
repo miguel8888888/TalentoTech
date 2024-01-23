@@ -1409,6 +1409,20 @@
                     $(this).removeClass('gris_back');
                 }
             });
+            
+            $('#disponibilidad_formacion').prop('disabled', false);
+            $('#eje_final_formacion').prop('disabled', false);
+            $('#nivel_formacion').prop('disabled', false);
+            $('#modalidad_bootcamps').prop('disabled', false);
+            $('#numero_documento').prop('disabled', false);
+            $('#edad').prop('disabled', false);
+            
+            $('#disponibilidad_formacion').addClass('gris_back');
+            $('#eje_final_formacion').addClass('gris_back');
+            $('#nivel_formacion').addClass('gris_back');
+            $('#modalidad_bootcamps').addClass('gris_back');
+            $('#numero_documento').addClass('gris_back');
+            $('#edad').addClass('gris_back');
         }
 
         // Agrega el evento change para actualizar los municipios cuando se seleccione un nuevo departamento

@@ -50,16 +50,16 @@
                     <i class="fa fa-lg fa-circle-xmark"></i>
                 </div>
                 <p class="font-bold text-black col-span-3" style="margin-bottom: 1rem">
-                    Estimado usuario, en este momento no se encuentra inscrito, por favor regístrese en el siguiente botón.
+                    {{ $mensaje }}
                 </p>
             </div>
         </div>
-        <a href="https://talentotechregion3.com.co/registro/formulario.html" class="button shift-camera-button z-100" id="inscribirme">
+        <a href="{{ $url }}" class="button shift-camera-button z-100" id="inscribirme">
             <div class="border">
                 <div class="left-plane"></div>
                 <div class="right-plane"></div>
             </div>
-            <div class="text text-xl">¡INICIAR PROCESO DE INSCRIPCIÓN!</div>
+            <div class="text text-xl">{{ $mensaje2 }}</div>
         </a>
         @if($errors->any())
             {{ implode('', $errors->all('<div>:message</div>')) }}

@@ -937,10 +937,68 @@
                                                     <div class="mt-2">
                                                         <select id="horario_formacion" name="horario_formacion" autocomplete="horario_formacion" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 1 (Lunes a Viernes de 10am a 12m)') selected @endif value="Opción 1 (Lunes a Viernes de 10am a 12m)">Opción 1 (Lunes a Viernes de 10am a 12m)</option>
-                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 2 (Lunes a viernes de 2pm a 4pm)') selected @endif value="Opción 2 (Lunes a viernes de 2pm a 4pm)">Opción 2 (Lunes a viernes de 2pm a 4pm)</option>
-                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)') selected @endif value="Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)">Opción 3 (Martes a jueves de 6am a 8am y sábados de 8am a 12m)</option>
-                                                            <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)') selected @endif value="Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)">Opción 4 (Martes a jueves de 6pm a 8pm y sábados de 2pm a 6pm)</option>
+                                                            @if($informacion_usuario->eje_final_formacion =="Análisis de Datos")
+                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                @endif
+                                                            @endif
+                                                            @if($informacion_usuario->eje_final_formacion =="Inteligencia artificial")
+                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                @endif
+                                                            @endif
+                                                            @if($informacion_usuario->eje_final_formacion =="Arquitectura en la nube")
+                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y miercoles 9am a 12:30pm') selected @endif value="martes y miercoles 9am a 12:30pm">martes y miercoles 9am a 12:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                @endif
+                                                            @endif
+                                                            @if($informacion_usuario->eje_final_formacion =="BlockChain")
+                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                @endif
+                                                            @endif
+                                                            @if($informacion_usuario->eje_final_formacion =="Programación")
+                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                @endif
+                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                @endif
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
@@ -1054,6 +1112,7 @@
                                         </div>
                 
                                     </div>
+                                    <button onclick="editar()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 p-4 focus:outline-none dark:focus:ring-blue-800">Editar</button>
                                 </div>
                 
                                 <!-- Include optional progressbar HTML -->
@@ -1243,6 +1302,13 @@
                 },
                 autoAdjustHeight: false,
             });
+            $("#enviar_matricula").each(function() {
+                // Verificar si el valor del input no está vacío
+                if ($(this).val() !== "") {
+                    // Deshabilitar el input si tiene un valor
+                    $(this).prop("disabled", true);
+                }
+            });
         });
 
         // Función para cargar los municipios
@@ -1269,7 +1335,6 @@
             
             if ($("input[name=fecha_nacimiento]").val()) {
                 $('input[name=edad]').val(calcularEdad($("input[name=fecha_nacimiento]").val()));
-                console.log($('input[name=fecha_nacimiento]').val());
             }
             
             if ($("#discapacidad").val()) {
@@ -1295,7 +1360,56 @@
                     $('#sendForm').addClass('pointer-events-none');
                 }
             }
+            $("#enviar_matricula input[type='text'], #enviar_matricula input[type='date'], #enviar_matricula input[type='number'], #enviar_matricula input[type='email']").each(function() {
+                // Verificar si el valor del input no está vacío
+                if ($(this).val() !== "") {
+                    // Deshabilitar el input si tiene un valor
+                    $(this).prop("disabled", true);
+                    $(this).addClass("gris_back ");
+                }
+            });
+            $('#enviar_matricula select').each(function() {
+                // Verifica si la opción seleccionada tiene valor y está seleccionada
+                if ($(this).find('option:selected').val() !== "Seleccione...") {
+                    // Si la opción seleccionada tiene valor y está seleccionada, deshabilita el select
+                    $(this).prop('disabled', true);
+                    $(this).addClass('gris_back');
+                }
+            });
+            // $('#enviar_matricula input[type="checkbox"]').each(function() {
+            //     // Verifica si el checkbox actual está marcado
+            //     // var isChecked = $(this).prop('checked');
+            //     console.log($(this).prop('checked'));
+            //     if ($(this).prop('checked')) {
+                    
+            //         // Encuentra todos los checkboxes con el mismo nombre (misma familia)
+            //         var checkboxesMismaFamilia = $('input[name="' + $(this).attr('name') + '"]');
+    
+            //         // Deshabilita todos los checkboxes de la misma familia excepto el actual
+            //         checkboxesMismaFamilia.not(this).prop('disabled', isChecked);
+            //     }
+            // });
+
         });
+
+        function editar() {
+            $("#enviar_matricula input[type='text'], #enviar_matricula input[type='date'], #enviar_matricula input[type='number'], #enviar_matricula input[type='email']").each(function() {
+                // Verificar si el valor del input no está vacío
+                if ($(this).val() !== "") {
+                    // Deshabilitar el input si tiene un valor
+                    $(this).prop("disabled", false);
+                    $(this).removeClass("gris_back");
+                }
+            });
+            $('#enviar_matricula select').each(function() {
+                // Verifica si la opción seleccionada tiene valor y está seleccionada
+                if ($(this).find('option:selected').val() !== "Seleccione...") {
+                    // Si la opción seleccionada tiene valor y está seleccionada, deshabilita el select
+                    $(this).prop('disabled', false);
+                    $(this).removeClass('gris_back');
+                }
+            });
+        }
 
         // Agrega el evento change para actualizar los municipios cuando se seleccione un nuevo departamento
         $("#departamento_residencia").change(function() {
@@ -1574,6 +1688,7 @@
                 this.submit();
             }
         });
+        // Seleccionar todos los inputs dentro del formulario
     </script>
 </body>
 

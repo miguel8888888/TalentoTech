@@ -193,9 +193,19 @@ class RegistrarController extends Controller
     {
         $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
         if ($informacion_usuario) {
-            return view('Formularios/matricula', compact('informacion_usuario'));
+            if ($informacion_usuario->estado_registro == "Pre-matricula") {
+                return view('Formularios/matricula', compact('informacion_usuario'));
+            } else {
+                $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
+                $mensaje2 = "¡INICIAR PRUEBA!";
+                $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
+                return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+            }
         } else {
-            return view('Formularios/errorUsuario');
+            $mensaje = "Estimado usuario, en este momento no se encuentra inscrito, por favor regístrese en el siguiente botón.";
+            $mensaje2 = "¡INICIAR PROCESO DE INSCRIPCIÓN!";
+            $url = "https://talentotechregion3.com.co/registro/formulario.html";
+            return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
         }
     }
 }

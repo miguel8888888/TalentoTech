@@ -1706,19 +1706,20 @@
         $("#smartwizard").on("showStep", function(e, anchorObject, stepIndex, stepDirection) {
             $(".sw-btn-prev").removeClass("d-none");
             $(".sw-btn-next").removeClass("d-none");
-            bloquear();
             switch(stepIndex) {
+                // bloquear();
                 case 0: 
                     $(".sw-btn-prev").addClass("d-none");
-                    $(".sw-btn-next").attr("onclick", "bloquear()");
+                    // $(".sw-btn-next").attr("onclick", "bloquear()");
                 break;
                 case 4: 
                     $(".sw-btn-next").addClass("d-none");
-                    $(".sw-btn-prev").attr("onclick", "bloquear()");
+                    // $(".sw-btn-prev").attr("onclick", "bloquear()");
                 break;
                 default:
                 // code block
             }
+                bloquear();
         });
         $('input[name=fecha_nacimiento]').change(function() {
             $('input[name=edad]').val(calcularEdad($(this).val()));

@@ -163,6 +163,7 @@ class RegistrarController extends Controller
         $informacion_usuario->nivel_formacion = $request->input('nivel_formacion');
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
+        $informacion_usuario->estado_registro = "Matriculado";
         $informacion_usuario->save();
 
 
@@ -195,10 +196,15 @@ class RegistrarController extends Controller
         if ($informacion_usuario) {
             if ($informacion_usuario->estado_registro == "Pre-matricula") {
                 return view('Formularios/matricula', compact('informacion_usuario'));
-            } else {
+            } else if ($informacion_usuario->estado_registro == "Inscripción") {
                 $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
                 $mensaje2 = "¡INICIAR PRUEBA!";
                 $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
+                return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+            } else if ($informacion_usuario->estado_registro == "Matriculado") {
+                $mensaje = "Estimado usuario, Ya confirmaste matrícula, estaremos informando a tu correo la fecha de inicio";
+                $mensaje2 = "VOLVER!";
+                $url = "https://matricula.talentotechregion3.com.co/";
                 return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
             }
         } else {

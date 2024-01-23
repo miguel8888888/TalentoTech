@@ -920,7 +920,7 @@
                                                 <div class="lg:col-span-4 mt-6 col-span-2">
                                                     <label for="disponibilidad_formacion" class="block text-sm font-medium leading-6 text-gray-900">¿Cuenta con la disponibilidad para el desarrollo de la formación de 10 horas semanales?</label>
                                                     <div class="mt-2">
-                                                        <select readonly onmousedown="return false;" id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
+                                                        <select id="disponibilidad_formacion" name="disponibilidad_formacion" autocomplete="disponibilidad_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" style="width: 25%;">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'Si') selected @endif value="Si">Si</option>
                                                             <option @if(old('disponibilidad_formacion', $informacion_usuario->disponibilidad_formacion) === 'No') selected @endif value="No">No</option>
@@ -1000,7 +1000,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="eje_final_formacion" class="block text-sm font-medium leading-6 text-gray-900">Eje Final de formación - Bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select readonly onmousedown="return false;" id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="eje_final_formacion" name="eje_final_formacion" autocomplete="eje_final_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Análisis de Datos') selected @endif value="Análisis de Datos">Análisis de Datos</option>
                                                             <option @if(old('eje_final_formacion', $informacion_usuario->eje_final_formacion) === 'Inteligencia artificial') selected @endif value="Inteligencia artificial">Inteligencia artificial</option>
@@ -1013,7 +1013,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="nivel_formacion" class="block text-sm font-medium leading-6 text-gray-900">Nivel según el resultado posterior a la prueba de conocimiento</label>
                                                     <div class="mt-2">
-                                                        <select readonly onmousedown="return false;" id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Explorador (Básico)') selected @endif value="Explorador (Básico)">Explorador (Básico)</option>
                                                             <option @if(old('nivel_formacion', $informacion_usuario->nivel_formacion) === 'Integrador (Intermedio)') selected @endif value="Integrador (Intermedio)">Integrador (Intermedio)</option>
@@ -1024,7 +1024,7 @@
                                                 <div class="lg:col-span-4 col-span-2">
                                                     <label for="modalidad_bootcamps" class="block text-sm font-medium leading-6 text-gray-900">Modalidad en la que realizará su bootcamps</label>
                                                     <div class="mt-2">
-                                                        <select readonly onmousedown="return false;" id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                                        <select id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Presencial / híbrido') selected @endif value="Presencial / híbrido">Presencial / híbrido</option>
                                                             <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Virtual') selected @endif value="Virtual">Virtual</option>
@@ -1744,7 +1744,9 @@
             $('#modalidad_bootcamps').prop('disabled', false);
             $('#numero_documento').prop('disabled', false);
             $('#edad').prop('disabled', false);
+            $("#requisitos_aceptados").attr("onmousedown", "return false");
             event.preventDefault();
+            // 1085925417
             if (form.valid()) {
                 $("#sendForm").prop('disabled', true);
                 $("#sendForm").html('Enviando...');

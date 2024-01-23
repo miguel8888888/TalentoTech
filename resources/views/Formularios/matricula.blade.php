@@ -96,7 +96,7 @@
                                     <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                                         <div class="pant pant1 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600">Caracterización del participante talento tech</p>
+                                                <p class="mt-1 text-black leading-6">Caracterización del participante talento tech</p>
                 
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
@@ -260,7 +260,7 @@
                                     <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                                         <div class="pant pant2 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600">Información adicional de contacto de un familiar </p>
+                                                <p class="mt-1 text-black leading-6">Información adicional de contacto de un familiar </p>
                 
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
@@ -343,12 +343,12 @@
                                     <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
                                         <div class="pant pant3 space-y-12 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-sm leading-6 text-gray-600">Autorreconocimiento Grupo Étnico del Beneficiario </p>
+                                                <p class="mt-1 text-black leading-6">Autorreconocimiento Grupo Étnico del Beneficiario </p>
                 
                                             </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-2">
-                                                    <label for="grupo_etnico" class="block text-sm font-medium leading-6 text-gray-900">Grupo Étnico</label>
+                                                    <label for="grupo_etnico" class="block text-sm font-medium leading-6 text-gray-900">Autoidentificación Étnica</label>
                                                     <div class="mt-2">
                                                         <select id="grupo_etnico" name="grupo_etnico" autocomplete="grupo_etnico" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
@@ -598,15 +598,6 @@
                 
                                                             <div class="relative flex gap-x-3">
                                                                 <div class="flex h-6 items-center">
-                                                                    <input @if(in_array('Grupo Étnico', $valoresSepAtencion)) checked @endif id="grupo_etnico2" name="grupo_atencion_diferencial[]" value="Grupo Étnico" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                                                                </div>
-                                                                <div class="text-sm leading-6">
-                                                                    <label for="grupo_etnico2" class="font-medium text-gray-900">Grupo Étnico</label>
-                                                                </div>
-                                                            </div>
-                
-                                                            <div class="relative flex gap-x-3">
-                                                                <div class="flex h-6 items-center">
                                                                     <input @if(in_array('Madre lactante', $valoresSepAtencion)) checked @endif id="madre_lactante" name="grupo_atencion_diferencial[]" value="Madre lactante" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                                                 </div>
                                                                 <div class="text-sm leading-6">
@@ -690,6 +681,10 @@
                                     </div>
                                     <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
                                         <div class="pant pant4 space-y-12 grid grid-cols-1">
+                                            <div class="border-b border-gray-900/10">
+                                                <p class="mt-1 text-black leading-6">Información de residencia y selección de horario.</p>
+                
+                                            </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                 
                                                 <div class="col-span-2">
@@ -1037,7 +1032,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="lg:col-span-6 col-span-2">
-                                                    <p class="block text-sm font-medium text-gray-900">
+                                                    <p class="block text-sm font-medium text-gray-900 modalidadBootcamps">
                                                         <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera presencial y otras horas de modalidad virtual</em>
                                                     </p>
                                                 </div>
@@ -1046,7 +1041,11 @@
                                     </div>
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
                                         <div class="pant pant5 grid grid-cols-1">
-                                            <p for="" class="block text-sm font-medium leading-6 text-black"><b>Usted cuenta con los siguientes requisitos:</b></p>
+                                            <div class="border-b border-gray-900/10">
+                                                <p class="mt-1 text-black leading-6">Confirmación de matricula y cargue de documento de identidad</p>
+                
+                                            </div>
+                                            <p for="" class="block mt-10 text-sm font-medium leading-6 text-black"><b>Usted cuenta con los siguientes requisitos:</b></p>
                                             <ul class="block text-sm font-medium leading-6 text-gray-900 grid grid-cols-2">
                                                 <li class="col-span-2">
                                                     - Nacionalidad colombiana.
@@ -1363,6 +1362,14 @@
                     $('#sendForm').addClass('pointer-events-none');
                 }
             }
+            
+            if ($("#modalidad_bootcamps").val()) {
+                if ($("#modalidad_bootcamps").val() == 'Presencial / híbrido') {
+                    $('.modalidadBootcamps').removeClass('d-none');
+                } else if ($("#modalidad_bootcamps").val() == 'Virtual') {
+                    $('.modalidadBootcamps').addClass('d-none');
+                }
+            }
             bloquear();
             // $('#enviar_matricula input[type="checkbox"]').each(function() {
             //     // Verifica si el checkbox actual está marcado
@@ -1417,12 +1424,12 @@
                 }
             });
             
-            $('#disponibilidad_formacion').prop('disabled', false);
-            $('#eje_final_formacion').prop('disabled', false);
-            $('#nivel_formacion').prop('disabled', false);
-            $('#modalidad_bootcamps').prop('disabled', false);
-            $('#numero_documento').prop('disabled', false);
-            $('#edad').prop('disabled', false);
+            $('#disponibilidad_formacion').prop('disabled', true);
+            $('#eje_final_formacion').prop('disabled', true);
+            $('#nivel_formacion').prop('disabled', true);
+            $('#modalidad_bootcamps').prop('disabled', true);
+            $('#numero_documento').prop('disabled', true);
+            $('#edad').prop('disabled', true);
             
             $('#disponibilidad_formacion').addClass('gris_back');
             $('#eje_final_formacion').addClass('gris_back');
@@ -1458,6 +1465,7 @@
                     numero_documento: {
                         required: true,
                         minlength: 6,
+                        maxlength: 10,
                         number: true
                     },
                     fecha_nacimiento: {
@@ -1524,6 +1532,7 @@
                     familiar_numero_documento: {
                         required: true,
                         minlength: 6,
+                        maxlength: 12,
                         number: true
                     },
                     familiar_correo_electronico: {
@@ -1659,6 +1668,25 @@
                 $('.identi_genero').addClass('d-none');
             }
         });
+        $("#zona_ubicacion").change(function() {
+            if ($('option:selected', this).text() == 'Rural') {
+                $('#corregimiento_nombre').prop('disabled', false);
+                $('#vereda_nombre').prop('disabled', false);
+                $('#zona_resto').prop('disabled', false);
+
+                $('#corregimiento_nombre').removeClass('gris_back');
+                $('#vereda_nombre').removeClass('gris_back');
+                $('#zona_resto').removeClass('gris_back');
+            } else if ($('option:selected', this).text() == 'Urbana') {
+                $('#corregimiento_nombre').prop('disabled', true);
+                $('#vereda_nombre').prop('disabled', true);
+                $('#zona_resto').prop('disabled', true);
+
+                $('#corregimiento_nombre').addClass('gris_back');
+                $('#vereda_nombre').addClass('gris_back');
+                $('#zona_resto').addClass('gris_back');
+            }
+        });
         $("#requisitos_aceptados").change(function() {
             if ($('option:selected', this).text() == 'Si') {
                 $('#sendForm').removeClass('pointer-events-none');
@@ -1709,6 +1737,13 @@
         }
 
         $("#enviar_matricula").on("submit", function(event) {
+            editar();
+            $('#disponibilidad_formacion').prop('disabled', false);
+            $('#eje_final_formacion').prop('disabled', false);
+            $('#nivel_formacion').prop('disabled', false);
+            $('#modalidad_bootcamps').prop('disabled', false);
+            $('#numero_documento').prop('disabled', false);
+            $('#edad').prop('disabled', false);
             event.preventDefault();
             if (form.valid()) {
                 $("#sendForm").prop('disabled', true);

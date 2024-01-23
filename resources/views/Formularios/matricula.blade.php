@@ -1114,7 +1114,8 @@
                                     </div>
                                 </div>
                                 <div style="position: relative;">
-                                    <button onclick="editar()" type="button" class="dark:focus:ring-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 mb-2 me-2 p-4 px-5 py-2.5 rounded-md text-sm text-white" style=" background: #A08EEF; font-size: 16px; position: absolute; bottom: 0px;">Editar</button>
+                                    <button onclick="editar()" type="button" class="dark:focus:ring-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 mb-2 me-2 p-4 px-5 py-2.5 rounded-md text-sm text-white" style="background: #A08EEF;font-size: 16px;position: absolute;top: -51px;">Actualizar datos</button>
+                                    <p class="mb-4 text-black">Haz click aquí si deseas actualizar los datos de tu inscripción en este paso.</p>
                                 </div>
                 
                                 <!-- Include optional progressbar HTML -->
@@ -1362,6 +1363,24 @@
                     $('#sendForm').addClass('pointer-events-none');
                 }
             }
+            bloquear();
+            // $('#enviar_matricula input[type="checkbox"]').each(function() {
+            //     // Verifica si el checkbox actual está marcado
+            //     // var isChecked = $(this).prop('checked');
+            //     console.log($(this).prop('checked'));
+            //     if ($(this).prop('checked')) {
+                    
+            //         // Encuentra todos los checkboxes con el mismo nombre (misma familia)
+            //         var checkboxesMismaFamilia = $('input[name="' + $(this).attr('name') + '"]');
+    
+            //         // Deshabilita todos los checkboxes de la misma familia excepto el actual
+            //         checkboxesMismaFamilia.not(this).prop('disabled', isChecked);
+            //     }
+            // });
+
+        });
+
+        function bloquear() {
             $("#enviar_matricula input[type='text'], #enviar_matricula input[type='date'], #enviar_matricula input[type='number'], #enviar_matricula input[type='email']").each(function() {
                 // Verificar si el valor del input no está vacío
                 if ($(this).val() !== "") {
@@ -1378,21 +1397,7 @@
                     $(this).addClass('gris_back');
                 }
             });
-            // $('#enviar_matricula input[type="checkbox"]').each(function() {
-            //     // Verifica si el checkbox actual está marcado
-            //     // var isChecked = $(this).prop('checked');
-            //     console.log($(this).prop('checked'));
-            //     if ($(this).prop('checked')) {
-                    
-            //         // Encuentra todos los checkboxes con el mismo nombre (misma familia)
-            //         var checkboxesMismaFamilia = $('input[name="' + $(this).attr('name') + '"]');
-    
-            //         // Deshabilita todos los checkboxes de la misma familia excepto el actual
-            //         checkboxesMismaFamilia.not(this).prop('disabled', isChecked);
-            //     }
-            // });
-
-        });
+        }
 
         function editar() {
             $("#enviar_matricula input[type='text'], #enviar_matricula input[type='date'], #enviar_matricula input[type='number'], #enviar_matricula input[type='email']").each(function() {
@@ -1483,11 +1488,13 @@
                     celular_llamadas: {
                         required: true,
                         minlength: 10,
+                        maxlength: 10,
                         number: true
                     },
                     whatsapp: {
                         required: true,
                         minlength: 10,
+                        maxlength: 10,
                         number: true
                     },
                     orientacion_sexual: {
@@ -1527,11 +1534,13 @@
                     familiar_celular_llamadas: {
                         required: true,
                         minlength: 10,
+                        maxlength: 10,
                         number: true
                     },
                     familiar_whatsapp: {
                         required: true,
                         minlength: 10,
+                        maxlength: 10,
                         number: true
                     },
                     grupo_etnico: {
@@ -1669,12 +1678,15 @@
         $("#smartwizard").on("showStep", function(e, anchorObject, stepIndex, stepDirection) {
             $(".sw-btn-prev").removeClass("d-none");
             $(".sw-btn-next").removeClass("d-none");
+            bloquear();
             switch(stepIndex) {
                 case 0: 
                     $(".sw-btn-prev").addClass("d-none");
+                    $(".sw-btn-next").attr("onclick", "bloquear()");
                 break;
                 case 4: 
                     $(".sw-btn-next").addClass("d-none");
+                    $(".sw-btn-prev").attr("onclick", "bloquear()");
                 break;
                 default:
                 // code block

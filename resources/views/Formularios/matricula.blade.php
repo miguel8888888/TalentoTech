@@ -53,7 +53,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-12 py-4">
                         <div class="sky-container__left w-full text-black text-right">
-                            <p class="portfolio text-center m-4 tituloX" style="font-size: 30px;">Matrícula talento tech cauca y nariño</p>
+                            <p class="portfolio text-center m-4 tituloX" style="font-size: 30px;">Matrícula Talento Tech Cauca y Nariño</p>
                         </div>
                         <form class="needs-validation" id="enviar_matricula" action="/matricula/{{ $informacion_usuario->id }}" method="POST" enctype="multipart/form-data" novalidate>
                             @csrf
@@ -1112,7 +1112,9 @@
                                         </div>
                 
                                     </div>
-                                    <button onclick="editar()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 p-4 focus:outline-none dark:focus:ring-blue-800">Editar</button>
+                                </div>
+                                <div style="position: relative;">
+                                    <button onclick="editar()" type="button" class="dark:focus:ring-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 mb-2 me-2 p-4 px-5 py-2.5 rounded-md text-sm text-white" style=" background: #A08EEF; font-size: 16px; position: absolute; bottom: 0px;">Editar</button>
                                 </div>
                 
                                 <!-- Include optional progressbar HTML -->

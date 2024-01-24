@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>TalentoTech - Matriculas 2024</title>
+    <title>TalentoTech - Matrículas 2024</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://use.typekit.net/jrj6out.js"></script>
     <script>
@@ -248,7 +248,7 @@
                                                 </div>
                 
                                                 <div class="col-span-2">
-                                                    <label for="whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
+                                                    <label for="whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Número WhatsApp</label>
                                                     <div class="mt-2">
                                                         <input id="whatsapp" name="whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  value="{{old('whatsapp', $informacion_usuario->whatsapp)}}"/>
                                                     </div>
@@ -332,7 +332,7 @@
                                                 </div>
                 
                                                 <div class="col-span-2">
-                                                    <label for="familiar_whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Numero WhatsApp</label>
+                                                    <label for="familiar_whatsapp" class="block text-sm font-medium leading-6 text-gray-900">Número WhatsApp</label>
                                                     <div class="mt-2">
                                                         <input id="familiar_whatsapp" name="familiar_whatsapp"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="familiar_whatsapp" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('familiar_whatsapp', $informacion_usuario->familiar_whatsapp)}}"/>
                                                     </div>
@@ -671,7 +671,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-span-2 lg:col-span-12 mt-5">
-                                                    <label for="profesion" class="block text-sm font-medium leading-6 text-gray-900">Si eres profesional, técnico o tecnólogo, escribe que profesión tienes</label>
+                                                    <label for="profesion" class="block text-sm font-medium leading-6 text-gray-900">Si eres profesional, escribe que profesión tienes</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="profesion" id="profesion" autocomplete="given-name" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" value="{{old('profesion', $informacion_usuario->profesion)}}"/>
                                                     </div>
@@ -1042,7 +1042,7 @@
                                     <div id="step-5" class="tab-pane" role="tabpanel" aria-labelledby="step-5">
                                         <div class="pant pant5 grid grid-cols-1">
                                             <div class="border-b border-gray-900/10">
-                                                <p class="mt-1 text-black leading-6">Confirmación de matricula y cargue de documento de identidad</p>
+                                                <p class="mt-1 text-black leading-6">Confirmación de matrícula y cargue de documento de identidad</p>
                 
                                             </div>
                                             <p for="" class="block mt-10 text-sm font-medium leading-6 text-black"><b>Usted cuenta con los siguientes requisitos:</b></p>
@@ -1113,7 +1113,7 @@
                                     </div>
                                 </div>
                                 <div style="position: relative;">
-                                    <button onclick="editar()" type="button" class="dark:focus:ring-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 mb-2 me-2 p-4 px-5 py-2.5 rounded-md text-sm text-white" style="background: #A08EEF;font-size: 16px;position: absolute;top: -51px;">Actualizar datos</button>
+                                    <button onclick="editar()" type="button" class="dark:focus:ring-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium hover:bg-blue-800 mb-2 me-2 p-4 px-5 py-2.5 rounded-md text-sm text-white" style="background: #009ef7;font-size: 16px;position: absolute;top: -51px;">Actualizar datos</button>
                                     <p class="mb-4 text-black">Haz click aquí si deseas actualizar los datos de tu inscripción en este paso.</p>
                                 </div>
                 

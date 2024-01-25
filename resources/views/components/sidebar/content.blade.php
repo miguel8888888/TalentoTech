@@ -25,7 +25,7 @@
     </x-sidebar.link>
 
     <x-sidebar.link
-        title="Participantes"
+        title="Listado de Participantes"
         href="{{ route('participantes.index') }}"
         :isActive="request()->routeIs('participantes.index')"
     >
@@ -34,7 +34,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.dropdown
+    {{-- <x-sidebar.dropdown
         title="Buttons"
         :active="Str::startsWith(request()->route()->uri(), 'buttons')"
     >
@@ -57,14 +57,14 @@
             href="{{ route('buttons.text-icon') }}"
             :active="request()->routeIs('buttons.text-icon')"
         />
-    </x-sidebar.dropdown>
+    </x-sidebar.dropdown> --}}
 
     <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
         class="text-sm text-gray-500"
     >
-        Dummy Links
+        Futuros btn
     </div>
 
     @php
@@ -72,7 +72,7 @@
     @endphp
 
     @foreach ($links as $index => $link)
-        <x-sidebar.link title="Dummy link {{ $index + 1 }}" href="#" />
+        <x-sidebar.link title="Acción {{ $index + 1 }}" href="#" />
     @endforeach
 
 </x-perfect-scrollbar>

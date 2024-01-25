@@ -1,7 +1,7 @@
 <main class="flex flex-col items-center flex-1 px-4 pt-6 sm:justify-center">
-    <div>
+    <div class="flex w-2/3">
         <a href="/">
-            <x-application-logo class="w-20 h-20" />
+            <img src="/assets/img/TalentoTech.png" class="w-1/2 m-auto" alt="">
         </a>
     </div>
 

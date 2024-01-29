@@ -244,6 +244,9 @@ class RegistrarController extends Controller
         $filePath = $request->file('url_archivo_cc')->storeAs('uploads/' . 'documentos', $fileName, 'public');
         $documento_usuario->documento = '/storage/' . $filePath;
 
+        $documento_usuario->estado_registro = "Matriculado";
+        $documento_usuario->save();
+
         return redirect()->route('registroexitoso');
     }
 }

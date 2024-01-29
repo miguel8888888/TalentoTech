@@ -12,8 +12,8 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 class ParticipantesExport implements FromCollection, WithHeadings, WithStyles, ShouldAutoSize
 {
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return Participante::all();
@@ -28,7 +28,7 @@ class ParticipantesExport implements FromCollection, WithHeadings, WithStyles, S
     {
         return [
             // Style the first row as bold text.
-            1    => ['font' => ['bold' => true,'size' => 14]],
+            1    => ['font' => ['bold' => true, 'size' => 14]],
         ];
     }
 }

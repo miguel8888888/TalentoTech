@@ -239,13 +239,14 @@ class RegistrarController extends Controller
             ]
         );
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
+        $documento_usuario->estado_registro = "Matriculado";
+        $documento_usuario->save();
+
         $cadena = $CC;
         $fileName = $cadena . '.pdf';
         $filePath = $request->file('url_archivo_cc')->storeAs('uploads/' . 'documentos', $fileName, 'public');
         $documento_usuario->documento = '/storage/' . $filePath;
 
-        $documento_usuario->estado_registro = "Matriculado";
-        $documento_usuario->save();
 
         return redirect()->route('registroexitoso');
     }

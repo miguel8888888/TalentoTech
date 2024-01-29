@@ -1,11 +1,11 @@
 <section class="space-y-6">
     <header>
         <h2 class="text-lg font-medium">
-            {{ __('Delete Account') }}
+            {{ __('Eliminar Cuenta') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
+            {{ __('Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.') }}
         </p>
     </header>
 
@@ -14,7 +14,7 @@
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
     >
-        {{ __('Delete Account') }}
+        {{ __('Eliminar cuenta') }}
     </x-button>
 
     <x-modal
@@ -31,11 +31,11 @@
             @method('delete')
 
             <h2 class="text-lg font-medium">
-                {{ __('Are you sure you want to delete your account?') }}
+                {{ __('¿Estás seguro de que quieres eliminar tu cuenta?') }}
             </h2>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                {{ __('Una vez que se elimina su cuenta, todos sus recursos y datos se eliminarán permanentemente. Ingrese su contraseña para confirmar que desea eliminar permanentemente su cuenta.') }}
             </p>
 
             <div class="mt-6 space-y-6">
@@ -62,14 +62,14 @@
                     variant="secondary"
                     x-on:click="$dispatch('close')"
                 >
-                    {{ __('Cancel') }}
+                    {{ __('Cancelar') }}
                 </x-button>
 
                 <x-button
                     variant="danger"
                     class="ml-3"
                 >
-                    {{ __('Delete Account') }}
+                    {{ __('Eliminar Cuenta') }}
                 </x-button>
             </div>
         </form>

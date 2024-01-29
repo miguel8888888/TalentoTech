@@ -33,8 +33,18 @@ class GestionParticipantesController extends Controller
         ]);
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new ParticipantesExport, 'participantes.xlsx');
+    }
+
+    public function edit(Request $request, $number)
+    {
+        $participantes = Participante::find($number);
+        // dd($participantes);
+
+        return view('admin.participantes.edit', [
+            'participantes' => $participantes,
+        ]);
     }
 }

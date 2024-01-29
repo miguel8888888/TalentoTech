@@ -32,6 +32,11 @@ Route::post('/participantes/edit/{number}', [GestionParticipantesController::cla
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
 Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']);
 
+
+Route::get('/cargardocumentos/{CC}', [RegistrarController::class, 'cargardocumentos'])->name('cargardocumentos');
+Route::post('/guardardoc/{CC}', [RegistrarController::class, 'guardarCedula']);
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

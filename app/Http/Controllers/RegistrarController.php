@@ -193,6 +193,7 @@ class RegistrarController extends Controller
     public function consultarUsuario(Request $request)
     {
         $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
+        $CC = $request->input('numero_documento');
         if ($informacion_usuario) {
             if ($informacion_usuario->estado_registro == "Pre-matricula") {
                 return view('Formularios/matricula', compact('informacion_usuario'));
@@ -201,10 +202,15 @@ class RegistrarController extends Controller
                 $mensaje2 = "¡INICIAR PRUEBA!";
                 $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
                 return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
-            } else if ($informacion_usuario->estado_registro == "Matriculado") {
+            } else if ($informacion_usuario->estado_registro == "Matricula") {
                 $mensaje = "Estimado usuario, Ya confirmaste matrícula, estaremos informando a tu correo la fecha de inicio";
                 $mensaje2 = "VOLVER!";
                 $url = "https://matricula.talentotechregion3.com.co/";
+                return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+            } else if ($informacion_usuario->estado_registro == "Pos-matriculado") {
+                $mensaje = "Estimado usuario, por temas de manejo de información, para que su matrícula sea validada, por favor cargue el tipo de documento solicitado en el siguiente botón.";
+                $mensaje2 = "¡CARGAR DOCUMENTO!";
+                $url = route('cargardocumentos', ['CC' => $CC]);
                 return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
             }
         } else {
@@ -213,5 +219,31 @@ class RegistrarController extends Controller
             $url = "https://talentotechregion3.com.co/registro/formulario.html";
             return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
         }
+    }
+    public function cargardocumentos($CC)
+    {
+        return view('Formularios/cargardoc')->with('CC', $CC);;
+    }
+
+    public function guardarCedula(Request $request, $CC)
+    {
+        $validated = $request->validate(
+            [
+                'url_archivo_cc' => 'required|file|mimes:pdf|max:2048',
+            ],
+            [
+                'url_archivo_cc.required' => 'El campo archivo es obligatorio.',
+                'url_archivo_cc.file' => 'El archivo debe ser un archivo.',
+                'url_archivo_cc.mimes' => 'El archivo debe ser de tipo PDF.',
+                'url_archivo_cc.max' => 'El tamaño del archivo no debe superar los 2048 kilobytes.',
+            ]
+        );
+        $documento_usuario = Participante::where('numero_documento', $CC)->first();
+        $cadena = $CC;
+        $fileName = $cadena . '.pdf';
+        $filePath = $request->file('url_archivo_cc')->storeAs('uploads/' . 'documentos', $fileName, 'public');
+        $documento_usuario->documento = '/storage/' . $filePath;
+
+        return redirect()->route('registroexitoso');
     }
 }

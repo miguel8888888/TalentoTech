@@ -35,6 +35,7 @@ Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']
 
 Route::get('/cargardocumentos/{CC}', [RegistrarController::class, 'cargardocumentos'])->name('cargardocumentos');
 Route::post('/guardardoc/{CC}', [RegistrarController::class, 'guardarCedula']);
+Route::get('/correodocumento', [RegistrarController::class, 'enviarCorreos'])->name('correodocumento');
 
 
 Route::get('/dashboard', function () {

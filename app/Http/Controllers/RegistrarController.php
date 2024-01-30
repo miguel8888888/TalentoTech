@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CargarDocumento;
 use App\Mail\MatriculaExito;
 use App\Models\Participante;
 use Illuminate\Http\Request;
@@ -249,5 +250,19 @@ class RegistrarController extends Controller
 
 
         return redirect()->route('registroexitoso');
+    }
+
+
+    public function enviarCorreos()
+    {
+        $correoUsuarios = Participante::where('estado_registro', 'Pos-matriculado')
+            ->select('correo_electronico', 'estado_registro')
+            ->get();
+
+        foreach ($correoUsuarios as $usuario) {
+            $correo = new CargarDocumento();
+            Mail::to($usuario->correo_electronico)->send($correo);
+        }
+        return redirect('/');
     }
 }

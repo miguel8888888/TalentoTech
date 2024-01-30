@@ -38,6 +38,8 @@ Route::get('/cargardocumentos/{CC}', [RegistrarController::class, 'cargardocumen
 Route::post('/guardardoc/{CC}', [RegistrarController::class, 'guardarCedula']);
 Route::get('/correodocumento', [RegistrarController::class, 'enviarCorreos'])->name('correodocumento');
 
+Route::get('/recuperardocs', [RegistrarController::class, 'obtenerDocumentosCargados'])->name('recuperardocs');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

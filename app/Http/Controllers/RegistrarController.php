@@ -165,6 +165,7 @@ class RegistrarController extends Controller
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
         $informacion_usuario->estado_registro = "Matriculado";
+        $informacion_usuario->carga_documento = "Si";
         $informacion_usuario->save();
 
 
@@ -241,6 +242,7 @@ class RegistrarController extends Controller
         );
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
         $documento_usuario->estado_registro = "Matricula";
+        $documento_usuario->carga_documento = "Si";
         $documento_usuario->save();
 
         $cadena = $CC;
@@ -264,5 +266,24 @@ class RegistrarController extends Controller
             Mail::to($usuario->correo_electronico)->send($correo);
         }
         return redirect('/');
+    }
+
+
+    public function obtenerDocumentosCargados()
+    {
+        $carpetaAlmacenamiento = 'public/uploads/documentos';
+        // Obtén la lista de archivos en la carpeta especificada
+        $archivos = Storage::files($carpetaAlmacenamiento);
+        // dd($archivos);
+        // Imprime los nombres de los archivos
+        foreach ($archivos as $archivo) {
+            $docCedula = pathinfo($archivo, PATHINFO_FILENAME) . PHP_EOL;
+            $nombreArchivoLimpiado = preg_replace('/[^a-zA-Z0-9-]/', '', $docCedula);
+            $documento_usuario = Participante::where('numero_documento', $nombreArchivoLimpiado)->first();
+            // dd($nombreArchivoLimpiado);
+            $documento_usuario->carga_documento = "Si";
+            $documento_usuario->save();
+        }
+        echo "datos actualizados";
     }
 }

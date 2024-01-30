@@ -164,7 +164,7 @@ class RegistrarController extends Controller
         $informacion_usuario->nivel_formacion = $request->input('nivel_formacion');
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
-        $informacion_usuario->estado_registro = "Matriculado";
+        $informacion_usuario->estado_registro = "Matricula";
         $informacion_usuario->carga_documento = "Si";
         $informacion_usuario->save();
 
@@ -278,12 +278,14 @@ class RegistrarController extends Controller
         // Imprime los nombres de los archivos
         foreach ($archivos as $archivo) {
             $docCedula = pathinfo($archivo, PATHINFO_FILENAME) . PHP_EOL;
-            $nombreArchivoLimpiado = preg_replace('/[^a-zA-Z0-9-]/', '', $docCedula);
-            $documento_usuario = Participante::where('numero_documento', $nombreArchivoLimpiado)->first();
+            $nombreArchivoLimpiado = str_replace(' ', '', $docCedula);
+            $nombreArchivoSinSaltos = str_replace(["\r", "\n"], '', $nombreArchivoLimpiado);
+            
+            $documento_usuario = Participante::where('numero_documento', $nombreArchivoSinSaltos)->first();
             // dd($nombreArchivoLimpiado);
             $documento_usuario->carga_documento = "Si";
             $documento_usuario->save();
         }
-        echo "datos actualizados";
+        echo 'datos actualizados';
     }
 }

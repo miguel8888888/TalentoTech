@@ -46,10 +46,20 @@
 <script>
     let form = $("#enviar_matricula");
 
+    window.addEventListener("load", function() {
+        $("#enviar_matricula").each(function() {
+                // Verificar si el valor del input no está vacío
+            if ($(this).val() !== "") {
+                    // Deshabilitar el input si tiene un valor
+                $(this).prop("disabled", true);
+                }
+            });
+        });
+
     $("#enviar_matricula").on("submit", function(event) {    
         event.preventDefault();
         // 1085925417
-        if (form.valid()) {
+        if (form) {
             $("#sendForm").prop('disabled', true);
             $("#sendForm").html('Enviando...');
             this.submit();

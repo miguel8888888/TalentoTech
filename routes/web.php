@@ -29,6 +29,7 @@ Route::get('export/', [GestionParticipantesController::class, 'export'])->name('
 // Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
 Route::post('/matricula/{number}', [RegistrarController::class, 'guardarDatos']);
 Route::post('/participantes/edit/{number}', [GestionParticipantesController::class, 'edit']);
+Route::post('/update/participante/{number}', [GestionParticipantesController::class, 'update']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
 Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']);
 

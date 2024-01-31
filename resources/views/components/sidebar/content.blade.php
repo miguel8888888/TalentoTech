@@ -68,11 +68,13 @@
     </div>
 
     @php
-        $links = array_fill(0, 5, '');
+        $links = [
+        'usuarios.index',
+    ];
     @endphp
 
     @foreach ($links as $index => $link)
-        <x-sidebar.link title="Acción {{ $index + 1 }}" href="#" />
+        <x-sidebar.link title="Acción {{ $index + 1 }}" href="{{ route($link) }}" />
     @endforeach
 
 </x-perfect-scrollbar>

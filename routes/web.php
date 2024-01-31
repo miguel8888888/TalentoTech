@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\Admin\GestionParticipantesController;
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,17 @@ Route::get('/', function () {
 });
 
 Route::resource('participantes', GestionParticipantesController::class)->middleware('auth');
+Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 
 Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'])->name('participantes.search')->middleware('auth');
+Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
 Route::get('export/', [GestionParticipantesController::class, 'export'])->name('participantes.export')->middleware('auth');
 
+Route::post('/participantes/edit/{number}', [GestionParticipantesController::class, 'edit']);
+Route::post('/usuarios/edit/{number}', [UsuariosController::class, 'edit']);
 // Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
 Route::post('/matricula/{number}', [RegistrarController::class, 'guardarDatos']);
-Route::post('/participantes/edit/{number}', [GestionParticipantesController::class, 'edit']);
 Route::post('/update/participante/{number}', [GestionParticipantesController::class, 'update']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
 Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']);

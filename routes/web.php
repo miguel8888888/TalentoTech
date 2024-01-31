@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\Admin\GestionParticipantesController;
+use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\UsuariosController;
 
 /*
@@ -30,8 +31,11 @@ Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuari
 Route::get('export/', [GestionParticipantesController::class, 'export'])->name('participantes.export')->middleware('auth');
 
 Route::post('/participantes/edit/{number}', [GestionParticipantesController::class, 'edit']);
-Route::post('/usuarios/edit/{number}', [UsuariosController::class, 'edit']);
-// Route::resource('/pazysalvo', PazYSalvoController::class)->middleware('auth');
+
+// Route::get('registrar/usuario', [UsuariosController::class, 'create'])->name('usuarios.create');
+
+// Route::post('registrousuarios', [UsuariosController::class, 'store']);
+
 Route::post('/matricula/{number}', [RegistrarController::class, 'guardarDatos']);
 Route::post('/update/participante/{number}', [GestionParticipantesController::class, 'update']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
@@ -53,6 +57,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+Route::middleware('user')->group(function () {
+    Route::get('/profileUser/{user}', [ProfileUserController::class, 'edit'])->name('profileuser.edit');
+    Route::patch('/profileUser', [ProfileUserController::class, 'update'])->name('profileuser.update');
+    Route::delete('/profileUser', [ProfileUserController::class, 'destroy'])->name('profileuser.destroy');
 });
 
 // useless routes

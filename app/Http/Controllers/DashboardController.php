@@ -17,8 +17,12 @@ class DashboardController extends Controller
         $countInscripcion = Participante::where('estado_registro', $estadoInscipcion)->count();
         $countPosMatricula = Participante::where('estado_registro', $estadoPosMatricula)->count();
         $countPreMatricula = Participante::where('estado_registro', $estadoPreMatricula)->count();
+
+        $labels = ['Etiqueta 1', 'Etiqueta 2', 'Etiqueta 3'];
+        $data = [30, 50, 20];
         
         // dd($estadoMatricula);
-        return view('dashboard', ['countMatricula' => $countMatricula, 'countInscripcion' => $countInscripcion, 'countPosMatricula' => $countPosMatricula, 'countPreMatricula' =>  $countPreMatricula]);
+        return view('dashboard', ['countMatricula' => $countMatricula, 'countInscripcion' => $countInscripcion, 'countPosMatricula' => $countPosMatricula, 'countPreMatricula' =>  $countPreMatricula,
+    'labels' => $labels, 'data' => $data,]);
     }
 }

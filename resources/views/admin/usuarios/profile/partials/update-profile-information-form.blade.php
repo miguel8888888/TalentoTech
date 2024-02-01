@@ -12,10 +12,9 @@
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
-{{ echo $user }}
     <form
         method="post"
-        action="{{ route('profileuser.update') }}"
+        action="{{ route('profileuser.update', $user->id) }}"
         class="mt-6 space-y-6"
     >
         @csrf

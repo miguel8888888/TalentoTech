@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
+use App\Http\Requests\ProfileUserUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,29 +15,35 @@ class ProfileUserController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request, $user): View
+    public function edit($user): View
     {
-
+        $usuario = User::find($user);
+        // dd($usuario);
         return view('admin.usuarios.edit', [
-            'user' => $user,
+            'user' => $usuario,
         ]);
     }
 
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(ProfileUserUpdateRequest $request, $user): RedirectResponse
     {
-        dd($request->user());
-        $request->user()->fill($request->validated());
+        $usuario = User::find($user);
+        // dd($user);
+        $userId = $user;
+        $request->setUserId($userId);
+        $usuario->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($usuario->isDirty('email')) {
+            $usuario->email_verified_at = null;
         }
 
-        $request->user()->save();
+        $usuario->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profileuser.edit', [
+            'user' => $usuario,
+        ])->with('status', 'profile-updated');
     }
 
     /**

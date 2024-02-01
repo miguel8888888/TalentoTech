@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Http\Requests\ProfileUserUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -9,9 +10,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Validation\Rule;
 
 class ProfileUserController extends Controller
 {
+    private $idUsuario;
     /**
      * Display the user's profile form.
      */
@@ -27,25 +30,31 @@ class ProfileUserController extends Controller
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUserUpdateRequest $request, $user): RedirectResponse
+    public function update(Request $request, $user): RedirectResponse
     {
+        $validated = $request->validate(
+            [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($user)],
+            ]
+
+        );
         $usuario = User::find($user);
-        // dd($user);
-        $userId = $user;
-        $request->setUserId($userId);
-        $usuario->fill($request->validated());
+        $usuario->name = $request->input('name');
+        $usuario->email = $request->input('email');
 
-        if ($usuario->isDirty('email')) {
-            $usuario->email_verified_at = null;
-        }
-
-        $usuario->save();
+        $usuario->save($validated);
 
         return Redirect::route('profileuser.edit', [
-            'user' => $usuario,
+            'user' => $user,
         ])->with('status', 'profile-updated');
     }
 
+    public function obtenerIdUsuario()
+    {
+        // Lógica para obtener el ID del usuario
+        return $this->idUsuario; // Reemplaza con tu lógica real
+    }
     /**
      * Delete the user's account.
      */

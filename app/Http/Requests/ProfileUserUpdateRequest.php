@@ -2,18 +2,13 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Controllers\ProfileUserController;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class ProfileUserUpdateRequest extends FormRequest
 {
-    private $userId;
-
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -29,11 +24,14 @@ class ProfileUserUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
-        $userId = $this->input('userId');
-        dd($userId);
+        $otroControlador = new ProfileUserController();
+
+        // Obtener el ID del usuario desde OtroControlador
+        $idUsuarioParaIgnorar = $otroControlador->obtenerIdUsuario();
+        // dd($otroControlador);
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($userId)],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($idUsuarioParaIgnorar)],
         ];
     }
 }

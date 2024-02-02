@@ -90,15 +90,6 @@
                         <span>{{ __('Iniciar Sesión') }}</span>
                     </x-button>
                 </div>
-
-                @if (Route::has('register'))
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('No tienes una cuenta?') }}
-                        <a href="{{ route('register') }}" class="text-blue-500 hover:underline">
-                            {{ __('Resgistrar') }}
-                        </a>
-                    </p>
-                @endif
             </div>
         </form>
     </x-auth-card>

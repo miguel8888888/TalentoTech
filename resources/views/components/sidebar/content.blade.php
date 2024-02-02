@@ -87,7 +87,7 @@
         Futuros btn
     </div>
 
-    @php
+    {{-- @php
         $links = [
         'usuarios.index',
     ];
@@ -95,6 +95,6 @@
 
     @foreach ($links as $index => $link)
         <x-sidebar.link title="Acción {{ $index + 1 }}" href="{{ route($link) }}" />
-    @endforeach
+    @endforeach --}}
 
 </x-perfect-scrollbar>

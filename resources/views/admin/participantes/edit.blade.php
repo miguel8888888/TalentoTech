@@ -30,13 +30,14 @@
                 <div class="w-full">
                     @include('admin.participantes.edit.update-hogar-form') 
                 </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg dark:bg-gray-800">
-                <div class="w-full mt-3">
-                    <button id="sendForm" type="submit" class=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">Actualizar</button>
+                <div class="w-full mt-3 flex">
+                    <button id="sendForm" type="submit" class=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="margin: auto;">Actualizar</button>
                 </div>
             </div>
+
+            {{-- <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg dark:bg-gray-800">
+                
+            </div> --}}
         </div>
     </form>
 </x-app-layout>

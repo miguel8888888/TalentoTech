@@ -60,7 +60,7 @@
                 <div class="col-span-2">
                     <label for="numero_documento" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Número documento</label>
                     <div class="mt-2">
-                        <input type="number" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="gris_back px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        <input readonly type="number" inputmode="numeric" pattern="[0-9]*" name="numero_documento" id="numero_documento" autocomplete="numero-documento" class="gris_back px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
                         focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
                         dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full"  value="{{old('numero_documento', $participantes->numero_documento)}}"/>
                     </div>

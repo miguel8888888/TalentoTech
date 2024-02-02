@@ -79,13 +79,13 @@
         />
     </x-sidebar.dropdown> --}}
 
-    <div
+    {{-- <div
         x-transition
         x-show="isSidebarOpen || isSidebarHovered"
         class="text-sm text-gray-500"
     >
         Futuros btn
-    </div>
+    </div> --}}
 
     {{-- @php
         $links = [

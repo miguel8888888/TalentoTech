@@ -72,6 +72,8 @@ Route::middleware('user')->group(function () {
     Route::delete('/profileUser', [ProfileUserController::class, 'destroy'])->name('profileuser.destroy');
 });
 
+Route::put('passwordUpdate/{user}', [ProfileUserController::class, 'passUpdate'])->name('contrasena.update');
+
 // useless routes
 // Just to demo sidebar dropdown links active states.
 Route::get('/buttons/text', function () {

@@ -1,7 +1,7 @@
 <section>
     <header>
         <h2 class="text-lg font-medium">
-            {{ __('Actualizar Contraseña') }}
+            {{ __('Actualizar Contraseñassss') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
@@ -11,7 +11,7 @@
 
     <form
         method="post"
-        action="{{ route('password.update') }}"
+        action="{{ route('contrasena.update', $user->id) }}"
         class="mt-6 space-y-6"
     >
         @csrf

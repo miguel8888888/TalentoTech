@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use App\Http\Requests\ProfileUserUpdateRequest;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -49,11 +50,26 @@ class ProfileUserController extends Controller
             'user' => $user,
         ])->with('status', 'profile-updated');
     }
-
-    public function obtenerIdUsuario()
+    public function passUpdate(Request $request, $user): RedirectResponse
     {
-        // Lógica para obtener el ID del usuario
-        return $this->idUsuario; // Reemplaza con tu lógica real
+        $validated = $request->validateWithBag(
+            'updatePassword',
+            [
+                'current_password' => ['required', 'current_password'],
+                'password' => ['required', Password::defaults(), 'confirmed'],
+            ],
+            [
+                'current_password.required' => 'La contraseña es incorrecta',
+                'password.required' => 'El campo contraseña es requerido',
+            ]
+        );
+
+        $usuario = User::find($user);
+        $usuario->password = Hash::make($validated['password']);
+        $usuario->save();
+        // dd($usuario->password);
+
+        return back()->with('status', 'password-updated');
     }
     /**
      * Delete the user's account.

@@ -61,7 +61,7 @@
         // 1085925417
         if (form) {
             $("#sendForm").prop('disabled', true);
-            $("#sendForm").html('Enviando...');
+            $("#sendForm").html('Actualizando...');
             this.submit();
         }
     });

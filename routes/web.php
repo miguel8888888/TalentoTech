@@ -30,9 +30,13 @@ Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
 
-Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');;
 
 Route::get('export/', [GestionParticipantesController::class, 'export'])->name('participantes.export')->middleware('auth');
+
+Route::get('exceldowload', function () {
+    return view('exceldowload');
+})->middleware(['auth', 'verified'])->name('exceldowload');
 
 Route::post('/participantes/edit/{number}', [GestionParticipantesController::class, 'edit']);
 

@@ -168,10 +168,10 @@
         </div>
     </div>
     
-    <div class="container mx-auto mt-8">
+    <!-- <div class="container mx-auto mt-8">
         <div class=" mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-                <!-- Gráfico de Torta -->
+                Gráfico de Torta
                 <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500">
                     <div class="p-6">
                         <h5 class="text-lg font-semibold mb-4 dark:text-gray-50">Gráfico de Torta</h5>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
 
-                <!-- Gráfico de Barra -->
+                Gráfico de Barra
                 <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500">
                     <div class="p-6">
                         <h5 class="text-lg font-semibold mb-4 dark:text-gray-50">Gráfico de Barra</h5>
@@ -187,7 +187,7 @@
                     </div>
                 </div>
 
-                <!-- Gráfico de Radar -->
+                Gráfico de Radar
                 <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500">
                     <div class="p-6">
                         <h5 class="text-lg font-semibold mb-4 dark:text-gray-50">Gráfico de Radar</h5>
@@ -196,33 +196,17 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- <div class="container mx-auto mt-8">
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-white shadow-md rounded-lg overflow-hidden  dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500">
-                <div class="p-6">
-                    <h5 class="text-lg font-semibold mb-4 dark:text-gray-50">Gráfico de Torta</h5>
-                    <canvas id="miGrafico" class="w-full relative h-64"></canvas>
-                </div>
-            </div>
-        </div>
     </div> -->
 
+   
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <a href="{{ route('participantes.export') }}" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-            Descargar Excel Participantes
-            </span>
-        </a>
-    </div>
+
 
 </x-app-layout>
 
 <!-- Incluye Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+<!-- <script>
     // var ctx = document.getElementById('miGrafico').getContext('2d');
     // var myChart = new Chart(ctx, {
     //     type: 'pie',
@@ -289,6 +273,6 @@
             }],
         },
     });
-</script>
+</script> -->
 
 

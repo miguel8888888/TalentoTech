@@ -15,6 +15,16 @@
     </x-sidebar.link>
 
     <x-sidebar.link
+        title="Descargar Excel"
+        href="{{ route('exceldowload') }}"
+        :isActive="request()->routeIs('exceldowload')"
+    >
+        <x-slot name="icon">
+            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
+    <x-sidebar.link
         title="Perfil"
         href="{{ route('profile.edit') }}"
         :isActive="request()->routeIs('profile.edit')"

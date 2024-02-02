@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 class="text-xl font-semibold leading-tight">
-                {{ __('Dashboard') }}
+                {{ __('Listado de Participantes') }}
             </h2>
         </div>
     </x-slot>   
@@ -41,9 +41,9 @@
                     <th scope="col" class="px-6 py-3">
                         Apellidos
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <!-- <th scope="col" class="px-6 py-3">
                         Estado 
-                    </th>
+                    </th> -->
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Ver</span>
                     </th>
@@ -65,9 +65,9 @@
                     <td class="px-6 py-4">
                         {{ $data->primer_apellido}} 
                     </td>
-                    <td class="px-6 py-4">
+                    <!-- <td class="px-6 py-4">
                          {{ $data->estado_registro}}
-                    </td>
+                    </td> -->
                     <td class="px-6 py-4 text-right">
                         <a href="{{ route('participantes.edit', $data->id) }}"
                         :isActive="request()->routeIs('participantes.edit')" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Ver</a>

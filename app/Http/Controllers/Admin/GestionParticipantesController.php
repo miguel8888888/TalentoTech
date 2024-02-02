@@ -124,7 +124,9 @@ class GestionParticipantesController extends Controller
         // return view('admin.participantes.index', [
         //     'participantes' => $participantes,
         // ]);
-        return redirect()->route('registroexitoso');
+        return view('admin.participantes.edit', [
+            'participantes' => $participantes,
+        ]);
         // return redirect()->route('ruta.de.regreso')->with('success', 'Participante actualizado exitosamente');
     }
 }

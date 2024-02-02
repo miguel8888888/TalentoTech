@@ -1,11 +1,11 @@
 <section class="space-y-6">
     <header>
         <h2 class="text-lg font-medium">
-            {{ __('Eliminar Cuenta') }}
+            {{ __('Eliminar Usuario') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Una vez que se elimine su cuenta, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.') }}
+            {{ __('Una vez que se elimine su usuario, todos sus recursos y datos se eliminarán permanentemente. Antes de eliminar el usuario, descargue cualquier dato o información que desee conservar.') }}
         </p>
     </header>
 
@@ -14,7 +14,7 @@
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
     >
-        {{ __('Eliminar cuenta') }}
+        {{ __('Eliminar usuario') }}
     </x-button>
 
     <x-modal
@@ -24,18 +24,18 @@
     >
         <form
             method="post"
-            action="{{ route('profile.destroy') }}"
+            action="{{ route('profileuser.destroy', $user->id) }}"
             class="p-6"
         >
             @csrf
             @method('delete')
 
             <h2 class="text-lg font-medium">
-                {{ __('¿Estás seguro de que quieres eliminar tu cuenta?') }}
+                {{ __('¿Estás seguro de que quieres eliminar el usuario?') }}
             </h2>
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('Una vez que se elimina su cuenta, todos sus recursos y datos se eliminarán permanentemente. Ingrese su contraseña para confirmar que desea eliminar permanentemente su cuenta.') }}
+                {{ __('Una vez que se elimina el usuario, todos sus recursos y datos se eliminarán permanentemente. Ingrese la contraseña para confirmar que desea eliminar permanentemente al usuario.') }}
             </p>
 
             <div class="mt-6 space-y-6">
@@ -50,7 +50,7 @@
                     name="password"
                     type="password"
                     class="block w-3/4"
-                    placeholder="Password"
+                    placeholder="Contraseña"
                 />
 
                 <x-form.error :messages="$errors->userDeletion->get('password')" />

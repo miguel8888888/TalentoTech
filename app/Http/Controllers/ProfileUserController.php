@@ -74,14 +74,24 @@ class ProfileUserController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request, $user): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
+        $user = User::find($user);
 
-        $user = $request->user();
-
+        $request->validateWithBag(
+            'userDeletion',
+            [
+                'password' => ['required', function ($attribute, $value, $fail) use ($user) {
+                    // Verificar si la contraseña actual coincide
+                    if (!Hash::check($value, $user->password)) {
+                        $fail(__('La contraseña es incorrecta'));
+                    }
+                }],
+            ],
+            [
+                'password.required' =>  __('El campo contraseña es requerido'),
+            ]
+        );
         Auth::logout();
 
         $user->delete();
@@ -89,6 +99,6 @@ class ProfileUserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/');
+        return Redirect::to('/login');
     }
 }

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
+
 
 class ProfileController extends Controller
 {
@@ -42,9 +44,20 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
+        $request->validateWithBag(
+            'userDeletion',
+            [
+                'password' => ['required', function ($attribute, $value, $fail) use ($request) {
+                    // Verificar si la contraseña actual coincide
+                    if (!Hash::check($value, $request->user()->password)) {
+                        $fail(__('La contraseña es incorrecta'));
+                    }
+                }],
+            ],
+            [
+                'password.required' =>  __('El campo contraseña es requerido'),
+            ]
+        );
 
         $user = $request->user();
 

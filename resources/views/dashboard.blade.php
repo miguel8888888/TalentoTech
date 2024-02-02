@@ -68,14 +68,7 @@
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
                         <p>Total Inscritos</p>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 dark:text-gray-200"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                        
                         </div>
                     </div>
                 </div>
@@ -94,44 +87,10 @@
                         <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{$countMatricula}}</h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
                         <p>Total Matriculados</p>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 dark:text-gray-200"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                        
                         </div>
                     </div>
                 </div>
-                
-                <!-- <div class="w-full p-2 lg:w-1/4 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-                            </svg>
-                        </div>
-                        
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{$cantidadParticipantes}}</h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Inscritos</p>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 dark:text-gray-200"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        </div>
-                    </div>
-                </div> -->
                
                 <div class="w-full p-2 lg:w-1/4 md:w-1/2">
                     <div
@@ -149,14 +108,7 @@
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
                         <p>En estado de Pre-matricula</p>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 dark:text-gray-200"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                        
                         </div>
                     </div>
                 </div>
@@ -176,15 +128,8 @@
                         <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countInscripcion }}
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Pendientes por realizar pruebas</p>
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 dark:text-gray-200"
-                            viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd" />
-                            </svg>
-                        </span>
+                        <p>Pendientes por prueba</p>
+                        
                         </div>
                     </div>
                 </div>

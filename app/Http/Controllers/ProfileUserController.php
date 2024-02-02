@@ -55,11 +55,11 @@ class ProfileUserController extends Controller
         $validated = $request->validateWithBag(
             'updatePassword',
             [
-                'current_password' => ['required', 'current_password'],
+                // 'current_password' => ['required', 'current_password'],
                 'password' => ['required', Password::defaults(), 'confirmed'],
             ],
             [
-                'current_password.required' => 'La contraseña es incorrecta',
+                // 'current_password.required' => 'La contraseña es incorrecta',
                 'password.required' => 'El campo contraseña es requerido',
             ]
         );
@@ -81,9 +81,9 @@ class ProfileUserController extends Controller
         $request->validateWithBag(
             'userDeletion',
             [
-                'password' => ['required', function ($attribute, $value, $fail) use ($user) {
+                'password' => ['required', function ($attribute, $value, $fail) use ($request) {
                     // Verificar si la contraseña actual coincide
-                    if (!Hash::check($value, $user->password)) {
+                    if (!Hash::check($value, $request->user()->password)) {
                         $fail(__('La contraseña es incorrecta'));
                     }
                 }],
@@ -92,13 +92,9 @@ class ProfileUserController extends Controller
                 'password.required' =>  __('El campo contraseña es requerido'),
             ]
         );
-        Auth::logout();
 
         $user->delete();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/login');
+        return redirect()->route('usuarios.index');
     }
 }

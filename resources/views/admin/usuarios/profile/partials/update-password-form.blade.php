@@ -17,7 +17,7 @@
         @csrf
         @method('put')
 
-        <div class="space-y-2">
+        {{-- <div class="space-y-2">
             <x-form.label
                 for="current_password"
                 :value="__('Contraseña actual')"
@@ -32,7 +32,7 @@
             />
 
             <x-form.error :messages="$errors->updatePassword->get('current_password')" />
-        </div>
+        </div> --}}
 
         <div class="space-y-2">
             <x-form.label

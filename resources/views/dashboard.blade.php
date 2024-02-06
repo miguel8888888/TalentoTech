@@ -119,10 +119,10 @@
                         </div>
                         
                         </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ 10 }}
+                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaCorte1 }}
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total cohorte 1</p>
+                        <p>Total Cohorte 1</p>
                         
                         </div>
                     </div>
@@ -211,10 +211,10 @@
                         </div>
                         
                         </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ 10 }}
+                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoCorte1 }}
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total cohorte 1</p>
+                        <p>Total Cohorte 1</p>
                         
                         </div>
                     </div>

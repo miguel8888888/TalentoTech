@@ -17,21 +17,27 @@ class GestionParticipantesController extends Controller
     public function index(Request $request)
     {
         $request->flash();
-        $participantes = Participante::where([
-            ['primer_nombre', '!=', Null],
-            [function ($query) use ($request) {
-                if (($s = $request->buscar)) {
-                    $query->orWhere('primer_nombre', 'LIKE', '%' . $s . '%')
-                        ->orWhere('numero_documento', 'LIKE', '%' . $s . '%')
-                        ->orWhere('estado_registro', 'LIKE', '%' . $s . '%')
-                        ->get();
-                }
-            }]
-        ])->paginate(50);
-        return view('admin.participantes.index', [
-            'participantes' => $participantes,
-        ]);
+        
+        $participantesQuery = Participante::select('id','tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro')->where('primer_nombre', '!=', Null);
+
+        if ($request->has('buscar')) {
+            $buscar = $request->buscar;
+            $participantesQuery->where(function ($query) use ($buscar) {
+                $query->where('primer_nombre', 'LIKE', '%' . $buscar . '%')
+                    ->orWhere('numero_documento', 'LIKE', '%' . $buscar . '%')
+                    ->orWhere('estado_registro', 'LIKE', '%' . $buscar . '%');
+            });
+        }
+
+        if ($request->has('estado')) {
+            $filtro = $request->estado;
+            $participantesQuery->where('estado_registro', $filtro);
+            // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
+        }
+        $participantes = $participantesQuery->paginate(50);
+        return view('admin.participantes.index', compact('participantes'));
     }
+
 
     public function export()
     {

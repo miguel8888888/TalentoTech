@@ -1,3 +1,4 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 <x-app-layout>
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -15,6 +16,7 @@
                 <div class="relative w-full md:w-1/2">
                     <select id="estado_registro" onchange="submitForm()" value="{{old('estado')}}" name="estado" class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Seleccione...</option>
+                        <option value="" {{ old('estado') === '' ? 'selected' : '' }}>Listar todos</option>
                         <option value="Matricula" @if(old('estado') == 'Matricula') selected @endif>Matriculados</option>
                         <option value="Pre-matricula" @if(old('estado') == 'Pre-matricula') selected @endif>Pre-matriculados</option>
                     </select>
@@ -58,9 +60,28 @@
                     <!-- <th scope="col" class="px-6 py-3">
                         Estado 
                     </th> -->
+                    
+                    
+                    @if ($participantes->contains('estado_registro', 'Matricula'))
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Editar</span>
+                    </th>
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Ver</span>
                     </th>
+                    @elseif ($participantes->contains('estado_registro', 'Pre-matricula'))
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Editar</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        
+                    </th>
+                    @else
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Editar</span>
+                    </th>
+                    @endif
+                    
                 </tr>
             </thead>
             <tbody>
@@ -82,10 +103,27 @@
                     <!-- <td class="px-6 py-4">
                          {{ $data->estado_registro}}
                     </td> -->
-                    <td class="px-6 py-4 text-right">
-                        <a href="{{ route('participantes.edit', $data->id) }}"
-                        :isActive="request()->routeIs('participantes.edit')" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                    </td>
+                    @if ($data->estado_registro === 'Matricula')
+                        <td class="px-6 py-4 text-right">
+                            <a href="{{ route('participantes.edit', $data->id) }}" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <button data-modal-target="default-modal" data-modal-toggle="default-modal" data-numero-documento="{{$data->numero_documento}}" class="participante_{{$data->numero_documento}} font-medium text-blue-600 dark:text-blue-500 hover:underline" type="button">
+                                Ver Documento
+                            </button>
+                        </td>
+                    @elseif($data->estado_registro === 'Pre-matricula')
+                        <td class="px-6 py-4 text-right">
+                            <a href="{{ route('participantes.edit', $data->id) }}" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            
+                        </td>
+                    @else
+                        <td class="px-6 py-4 text-right">
+                            <a href="{{ route('participantes.edit', $data->id) }}" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
                 
@@ -97,13 +135,74 @@
         {!! $participantes->withQueryString()->links() !!}
     </div>
 
+        <!-- Main modal -->
+<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-auto max-h-full">
+    <div class="relative p-4 w-full md:w-3/5  h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 id="numero_documento_modal" class="text-xl font-semibold text-gray-900 dark:text-white">
+                    
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p   class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            
+                </p>
+                
+                <!-- <embed id="pdf-embed'" class="w-full" src="{{ asset('storage/uploads/documentos/1000179358.pdf') }}" type="application/pdf" width="100%" height="700px" /> -->
+                <embed id="pdf-embed" class="w-full" src=""  type="application/pdf" width="100%" height="600px" />
+                <!-- <iframe src="{{ asset('assets/img/1848990.pdf') }}" width="800px" height="600px"></iframe> -->
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </x-app-layout>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
 <script>
     window.addEventListener("load", function() {
         
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('default-modal');
+        const numeroDocumentoModal = modal.querySelector('#numero_documento_modal');
+
+        // Escucha el evento 'click' en todos los botones 'ver'
+        document.querySelectorAll('[data-modal-toggle="default-modal"]').forEach(item => {
+            item.addEventListener('click', event => {
+                const numeroDocumento = event.target.getAttribute('data-numero-documento');
+                // Actualiza el contenido del modal con el número de documento correspondiente
+                numeroDocumentoModal.textContent = numeroDocumento;
+
+                 // Actualiza también la fuente del PDF
+                const pdfEmbed = modal.querySelector('#pdf-embed');
+                const pdfUrl = 'storage/uploads/documentos/'+numeroDocumento+'.pdf';
+                // {{ asset('storage/uploads/documentos/${numeroDocumento}.pdf') }}
+                pdfEmbed.setAttribute('src', pdfUrl);
+            });
+        });
+    });
+
     function submitForm() {
+        let estadoSelect = document.getElementById("estado_registro");
+        if (estadoSelect.value === '') {
+            estadoSelect.removeAttribute('name'); // Remove the 'name' attribute to exclude it from the form submission
+        }
         document.getElementById('search-form').submit();
     }
 

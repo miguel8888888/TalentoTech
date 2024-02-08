@@ -29,7 +29,6 @@ Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 
 Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'])->name('participantes.search')->middleware('auth');
 
-Route::get('matriculados', [GestionMatriculadosController::class, 'index'])->name('matriculados.index')->middleware('auth');
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
 
@@ -63,6 +62,9 @@ Route::get('/recuperardocs', [RegistrarController::class, 'obtenerDocumentosCarg
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/symlink', function () {
+    Artisan::call('storage:link');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

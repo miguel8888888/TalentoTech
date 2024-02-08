@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrarController;
 use App\Http\Controllers\Admin\GestionParticipantesController;
+use App\Http\Controllers\Admin\GestionMatriculadosController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\DashboardController;
@@ -27,6 +28,8 @@ Route::resource('participantes', GestionParticipantesController::class)->middlew
 Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 
 Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'])->name('participantes.search')->middleware('auth');
+
+Route::get('matriculados', [GestionMatriculadosController::class, 'index'])->name('matriculados.index')->middleware('auth');
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
 

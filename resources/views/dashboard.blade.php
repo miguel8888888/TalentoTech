@@ -26,7 +26,7 @@
                         </div>
                         
                         </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $cantidadParticipantes }}
+                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCauca + $countNariño }}
                         </h1>
                         <div class="flex flex-row justify-between dark:text-gray-200">
                         <p>Total Inscritos</p>

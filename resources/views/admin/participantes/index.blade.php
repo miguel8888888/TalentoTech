@@ -69,6 +69,10 @@
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Ver</span>
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        <span class="sr-only">Documento aprobado</span>
+                    </th>
+                    
                     @elseif ($participantes->contains('estado_registro', 'Pre-matricula'))
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Editar</span>
@@ -76,9 +80,18 @@
                     <th scope="col" class="px-6 py-3">
                         
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                       
+                    </th>
                     @else
                     <th scope="col" class="px-6 py-3">
                         <span class="sr-only">Editar</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                       
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                       
                     </th>
                     @endif
                     
@@ -112,16 +125,35 @@
                                 Ver Documento
                             </button>
                         </td>
-                    @elseif($data->estado_registro === 'Pre-matricula')
+                        @if ($data-> aprobacion_documento === 'Si')
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center">
+                                <input  checked id="checkbox{{$data->id}}" type="checkbox" data-numero-documento="{{$data->numero_documento}}"  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            </div>
+                        </td>
+                        @else
+                        <td class="px-6 py-4 text-right">
+                            <div class="flex items-center mb-4">
+                                <input  id="checkbox{{$data->id}}" type="checkbox" data-numero-documento="{{$data->numero_documento}}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            </div>
+                        </td>
+                        @endif
+                    @elseif($data->estado_registro === 'Pre-matricula' || $data->estado_registro === 'Pos-matriculado')
                         <td class="px-6 py-4 text-right">
                             <a href="{{ route('participantes.edit', $data->id) }}" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
                         </td>
                         <td class="px-6 py-4 text-right">
                             
                         </td>
+                        <td class="px-6 py-4 text-right">
+                            
+                            </td>
                     @else
                         <td class="px-6 py-4 text-right">
                             <a href="{{ route('participantes.edit', $data->id) }}" class="participante_{{$data->id}} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            
                         </td>
                     @endif
                 </tr>
@@ -161,9 +193,15 @@
                 <embed id="pdf-embed" class="w-full" src=""  type="application/pdf" width="100%" height="600px" />
             </div>
             <!-- Modal footer -->
-            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <div class="flex justify-between items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                 <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cerrar</button>
+                <form id="aprobardocumento" method="POST" action="/aprobardocumento" class="m-0">
+                    @csrf
+                    <input type="hidden" id="cedulaValidar" name="cedulaValidar" >
+                    <button  type="submit" class="text-white bg-yellow-700 hover:yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Cambiar esado del documento</button>
+                </form>
             </div>
+            
         </div>
     </div>
 </div>
@@ -171,6 +209,9 @@
 
 </x-app-layout>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
 
 <script>
     window.addEventListener("load", function() {
@@ -189,6 +230,7 @@
                 numeroDocumentoModal.textContent = numeroDocumento;
 
                  // Actualiza también la fuente del PDF
+                document.getElementById("cedulaValidar").value = numeroDocumento;
                 const pdfEmbed = modal.querySelector('#pdf-embed');
                 const pdfUrl = 'storage/uploads/documentos/'+numeroDocumento+'.pdf';
                 // {{ asset('storage/uploads/documentos/${numeroDocumento}.pdf') }}
@@ -204,6 +246,52 @@
         }
         document.getElementById('search-form').submit();
     }
+
+    // Obtener todos los checkbox
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Iterar sobre cada checkbox
+    checkboxes.forEach(checkbox => {
+        // Agregar un evento de cambio a cada checkbox
+        checkbox.addEventListener('click', event => {
+                const numeroDocumento = event.target.getAttribute('data-numero-documento');
+                document.getElementById("cedulaValidar").value = numeroDocumento;
+                // console.log(numeroDocumento);
+                
+                // $.ajax({
+                //     url: '/aprobardocumento', // URL a la que se enviará la solicitud
+                //     method: 'POST', // Método de la solicitud (POST, GET, etc.)
+                //     data: {numeroDocumento: numeroDocumento}, // Datos que deseas enviar
+                //     success: function(response) {
+                //         // Manejar la respuesta del servidor
+                //     },
+                //     error: function(xhr, status, error) {
+                //         // Manejar errores
+                //     }
+                // });
+                document.getElementById('aprobardocumento').submit();
+         });
+        
+        // checkbox.addEventListener('change', function() {
+        //     console.log(numeroDocumento);
+        //     $.ajax({
+        //         url: '/aprobardocumento',
+        //         method: 'POST',
+        //         success: function(response) {
+        //             // Manejar la respuesta del servidor
+        //             console.log('funciona');
+        //         },
+        //         error: function(xhr, status, error) {
+        //             // Manejar errores
+        //             console.log(error);
+        //         }
+        //     });
+
+          
+        // });
+    });
+
+  
 
 </script>
 

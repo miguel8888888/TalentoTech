@@ -294,4 +294,25 @@ class RegistrarController extends Controller
         }
         echo 'datos actualizados';
     }
+
+
+
+    public function aprobardocumento(Request $request) {
+        
+        $CC = $request->input('cedulaValidar');
+        // dd($CC);
+        $documento_usuario = Participante::where('numero_documento', $CC)->first();
+        if ($documento_usuario->aprobacion_documento == "Si") {
+            $documento_usuario->aprobacion_documento = "No";
+            $documento_usuario->save();
+        } elseif ($documento_usuario->aprobacion_documento == "No") {
+            $documento_usuario->aprobacion_documento = "Si";
+            $documento_usuario->save();
+        }
+        // dd($documento_usuario->aprobacion_documento);
+        // $documento_usuario->save();
+        // dd($documento_usuario);
+        return redirect()->route('participantes.index');
+
+    }
 }

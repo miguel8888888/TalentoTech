@@ -18,7 +18,7 @@ class GestionParticipantesController extends Controller
     {
         $request->flash();
         
-        $participantesQuery = Participante::select('id','tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro')->where('primer_nombre', '!=', Null);
+        $participantesQuery = Participante::select('id','tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro', 'aprobacion_documento')->where('primer_nombre', '!=', Null);
 
         if ($request->has('buscar')) {
             $buscar = $request->buscar;

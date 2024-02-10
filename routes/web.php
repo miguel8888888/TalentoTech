@@ -58,6 +58,8 @@ Route::get('/correodocumento', [RegistrarController::class, 'enviarCorreos'])->n
 
 Route::get('/recuperardocs', [RegistrarController::class, 'obtenerDocumentosCargados'])->name('recuperardocs');
 
+Route::post('/aprobardocumento', [RegistrarController::class, 'aprobardocumento']);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

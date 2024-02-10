@@ -1026,7 +1026,7 @@
                                                     <div class="mt-2">
                                                         <select id="modalidad_bootcamps" name="modalidad_bootcamps" autocomplete="modalidad_bootcamps" class="gris_back block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
-                                                            <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'c') selected @endif value="Presencial / híbrido">Presencial / híbrido</option>
+                                                            <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Presencial / híbrido') selected @endif value="Presencial / híbrido">Presencial / híbrido</option>
                                                             <option @if(old('modalidad_bootcamps', $informacion_usuario->modalidad_bootcamps) === 'Virtual') selected @endif value="Virtual">Virtual</option>
                                                         </select>
                                                     </div>

@@ -49,7 +49,7 @@ Route::post('/participantes/edit/{number}', [GestionParticipantesController::cla
 Route::post('/matricula/{number}', [RegistrarController::class, 'guardarDatos']);
 Route::post('/update/participante/{number}', [GestionParticipantesController::class, 'update']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
-Route::post('/validarregistro', [RegistrarController::class, 'consultarUsuario']);
+Route::match(['get', 'post'],'/validarregistro', [RegistrarController::class, 'consultarUsuario']);
 
 
 Route::get('/cargardocumentos/{CC}', [RegistrarController::class, 'cargardocumentos'])->name('cargardocumentos');

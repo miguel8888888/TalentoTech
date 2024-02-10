@@ -194,32 +194,38 @@ class RegistrarController extends Controller
 
     public function consultarUsuario(Request $request)
     {
-        $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
-        $CC = $request->input('numero_documento');
-        if ($informacion_usuario) {
-            if ($informacion_usuario->estado_registro == "Pre-matricula") {
-                return view('Formularios/matricula', compact('informacion_usuario'));
-            } else if ($informacion_usuario->estado_registro == "Inscripción") {
-                $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
-                $mensaje2 = "¡INICIAR PRUEBA!";
-                $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
-                return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
-            } else if ($informacion_usuario->estado_registro == "Matricula") {
-                $mensaje = "Estimado usuario, Ya confirmaste matrícula, estaremos informando a tu correo la fecha de inicio";
-                $mensaje2 = "VOLVER!";
-                $url = "https://matricula.talentotechregion3.com.co/";
-                return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
-            } else if ($informacion_usuario->estado_registro == "Pos-matriculado") {
-                $mensaje = "Estimado usuario, por temas de manejo de información, para que su matrícula sea validada, por favor cargue el tipo de documento solicitado en el siguiente botón.";
-                $mensaje2 = "¡CARGAR DOCUMENTO!";
-                $url = route('cargardocumentos', ['CC' => $CC]);
+        // dd($request->has('numero_documento'));
+        if ($request->has('numero_documento')) {
+            $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
+            $CC = $request->input('numero_documento');
+            
+            if ($informacion_usuario) {
+                if ($informacion_usuario->estado_registro == "Pre-matricula") {
+                    return view('Formularios/matricula', compact('informacion_usuario'));
+                } else if ($informacion_usuario->estado_registro == "Inscripción") {
+                    $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
+                    $mensaje2 = "¡INICIAR PRUEBA!";
+                    $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
+                    return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+                } else if ($informacion_usuario->estado_registro == "Matricula") {
+                    $mensaje = "Estimado usuario, Ya confirmaste matrícula, estaremos informando a tu correo la fecha de inicio";
+                    $mensaje2 = "VOLVER!";
+                    $url = "https://matricula.talentotechregion3.com.co/";
+                    return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+                } else if ($informacion_usuario->estado_registro == "Pos-matriculado") {
+                    $mensaje = "Estimado usuario, por temas de manejo de información, para que su matrícula sea validada, por favor cargue el tipo de documento solicitado en el siguiente botón.";
+                    $mensaje2 = "¡CARGAR DOCUMENTO!";
+                    $url = route('cargardocumentos', ['CC' => $CC]);
+                    return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+                }
+            } else {
+                $mensaje = "Estimado usuario, en este momento no se encuentra inscrito, por favor regístrese en el siguiente botón.";
+                $mensaje2 = "¡INICIAR PROCESO DE INSCRIPCIÓN!";
+                $url = "https://talentotechregion3.com.co/registro/formulario.html";
                 return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
             }
         } else {
-            $mensaje = "Estimado usuario, en este momento no se encuentra inscrito, por favor regístrese en el siguiente botón.";
-            $mensaje2 = "¡INICIAR PROCESO DE INSCRIPCIÓN!";
-            $url = "https://talentotechregion3.com.co/registro/formulario.html";
-            return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
+            return redirect("https://matricula.talentotechregion3.com.co/");
         }
     }
     public function cargardocumentos($CC)

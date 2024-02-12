@@ -384,6 +384,14 @@
                 </div>
             </div>
             <div class="lg:col-span-4 col-span-2">
+                <label for="puntaje" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Puntaje de prueba</label>
+                <div class="mt-2">
+                    <input id="puntaje" name="puntaje"  type="number" inputmode="numeric" pattern="[0-9]*" autocomplete="puntaje" class="px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
+                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full" value="{{old('puntaje', $participantes->puntaje)}}"/>
+                </div>
+            </div>
+            <div class="lg:col-span-4 col-span-2">
                 <label for="nivel_formacion" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Nivel según el resultado posterior a la prueba de conocimiento</label>
                 <div class="mt-2">
                     <select id="nivel_formacion" name="nivel_formacion" autocomplete="nivel_formacion" class="gris_back px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring

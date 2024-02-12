@@ -120,6 +120,7 @@ class GestionParticipantesController extends Controller
         $participantes->disponibilidad_formacion = $request->input('disponibilidad_formacion');
         $participantes->horario_formacion = $request->input('horario_formacion');
         $participantes->eje_final_formacion = $request->input('eje_final_formacion');
+        $participantes->puntaje = $request->input('puntaje');
         $participantes->nivel_formacion = $request->input('nivel_formacion');
         $participantes->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         // $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');

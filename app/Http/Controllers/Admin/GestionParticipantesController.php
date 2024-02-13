@@ -15,10 +15,10 @@ class GestionParticipantesController extends Controller
 
     function __construct()
     {
-        $this->middleware('permission:participante-listar|participante-crear|participante-editar|participante-eliminar', ['only' => ['index', 'store']]);
-        $this->middleware('permission:participante-crear', ['only' => ['create', 'store']]);
-        $this->middleware('permission:participante-editar', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:participante-eliminar', ['only' => ['destroy']]);
+        $this->middleware('permission:participante-listar|participante-crear|participante-editar|participante-eliminar|reportes-listar|reportes-crear|reportes-editar|reportes-eliminar', ['only' => ['index', 'store']]);
+        $this->middleware('permission:participante-crear|reportes-crear', ['only' => ['create', 'store']]);
+        $this->middleware('permission:participante-editar|reportes-editar', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:participante-eliminar|reportes-eliminar', ['only' => ['destroy']]);
     }
 
     public function index(Request $request)

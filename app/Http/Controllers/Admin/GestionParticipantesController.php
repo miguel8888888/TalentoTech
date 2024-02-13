@@ -6,19 +6,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Participante;
 
-use App\Exports\ParticipantesExport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class GestionParticipantesController extends Controller
 {
     /**
      * Display the user's profile form.
      */
+
+    function __construct()
+    {
+        $this->middleware('permission:participante-listar|participante-crear|participante-editar|participante-eliminar', ['only' => ['index', 'store']]);
+        $this->middleware('permission:participante-crear', ['only' => ['create', 'store']]);
+        $this->middleware('permission:participante-editar', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:participante-eliminar', ['only' => ['destroy']]);
+    }
+
     public function index(Request $request)
     {
         $request->flash();
-        
-        $participantesQuery = Participante::select('id','tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro', 'aprobacion_documento')->where('primer_nombre', '!=', Null);
+
+        $participantesQuery = Participante::select('id', 'tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro', 'aprobacion_documento')->where('primer_nombre', '!=', Null);
 
         if ($request->has('buscar')) {
             $buscar = $request->buscar;
@@ -38,17 +45,11 @@ class GestionParticipantesController extends Controller
         return view('admin.participantes.index', compact('participantes'));
     }
 
-
-    public function export()
-    {
-        return Excel::download(new ParticipantesExport, 'participantes.xlsx');
-    }
-
     public function edit(Request $request, $number)
     {
         $participantes = Participante::find($number);
         // dd($participantes);
-       
+
 
         return view('admin.participantes.edit', [
             'participantes' => $participantes,
@@ -60,9 +61,9 @@ class GestionParticipantesController extends Controller
         $request->validate([
             // Define las reglas de validación según tus necesidades
         ]);
-        
+
         $participantes = Participante::find($number);
-       
+
 
 
         //  $informacion_usuario->fecha_diligenciamiento = date('Y-m-d');
@@ -126,8 +127,8 @@ class GestionParticipantesController extends Controller
         // $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
         // $informacion_usuario->estado_registro = "Matriculado";
         $participantes->save();
-        
-       
+
+
         // return view('admin.participantes.index', [
         //     'participantes' => $participantes,
         // ]);

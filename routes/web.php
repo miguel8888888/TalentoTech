@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\GestionMatriculadosController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReportesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuari
 
 Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');;
 
-Route::get('export/', [GestionParticipantesController::class, 'export'])->name('participantes.export')->middleware('auth');
+Route::get('export/', [ReportesController::class, 'export'])->name('participantes.export')->middleware('auth');
 
 Route::get('exceldowload', function () {
     return view('exceldowload');
@@ -64,9 +65,9 @@ Route::post('/aprobardocumento', [RegistrarController::class, 'aprobardocumento'
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/symlink', function () {
-    Artisan::call('storage:link');
-});
+// Route::get('/symlink', function () {
+//     Artisan::call('storage:link');
+// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

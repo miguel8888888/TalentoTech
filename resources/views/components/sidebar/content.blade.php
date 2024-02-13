@@ -1,59 +1,37 @@
-<x-perfect-scrollbar
-    as="nav"
-    aria-label="main"
-    class="flex flex-col flex-1 gap-4 px-3"
->
-
-    <x-sidebar.link
-        title="Inicio"
-        href="{{ route('dashboard') }}"
-        :isActive="request()->routeIs('dashboard')"
-    >
+<x-perfect-scrollbar as="nav" aria-label="main" class="flex flex-col flex-1 gap-4 px-3">
+    <x-sidebar.link title="Inicio" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
         <x-slot name="icon">
             <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.link
-        title="Descargar Excel"
-        href="{{ route('exceldowload') }}"
-        :isActive="request()->routeIs('exceldowload')"
-    >
+    @can('reportes-listar')
+        <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
+            <x-slot name="icon">
+                <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endcan
+
+    <x-sidebar.link title="Perfil" href="{{ route('profile.edit') }}" :isActive="request()->routeIs('profile.edit')">
         <x-slot name="icon">
             <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
-
-    <x-sidebar.link
-        title="Perfil"
-        href="{{ route('profile.edit') }}"
-        :isActive="request()->routeIs('profile.edit')"
-    >
-        <x-slot name="icon">
-            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-    </x-sidebar.link>
-
-    <x-sidebar.link
-        title="Listado de Participantes"
-        href="{{ route('participantes.index') }}"
-        :isActive="request()->routeIs('participantes.*')"
-    >
-        <x-slot name="icon">
-            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-    </x-sidebar.link>
-
-    <x-sidebar.link
-        title="Listado de Usuarios"
-        href="{{ route('usuarios.index') }}"
-        :isActive="request()->routeIs('usuarios.index')"
-    >
-        <x-slot name="icon">
-            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-    </x-sidebar.link>
-
+    @can('participante-listar')
+        <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
+            <x-slot name="icon">
+                <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endcan
+    @can('participante-listar')
+        <x-sidebar.link title="Listado de Usuarios" href="{{ route('usuarios.index') }}" :isActive="request()->routeIs('usuarios.index')">
+            <x-slot name="icon">
+                <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endcan
 
     {{-- <x-sidebar.dropdown
         title="Buttons"

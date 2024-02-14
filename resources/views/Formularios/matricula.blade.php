@@ -946,27 +946,35 @@
                                                                 @endif
                                                             @endif
                                                             @if($informacion_usuario->eje_final_formacion =="Inteligencia artificial")
-                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
-                                                                <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                @if($informacion_usuario->modalidad_bootcamps =="Virtual")
+                                                                    @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                    @endif
+                                                                @else
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'sabados 8am a 2pm') selected @endif value="sabados 8am a 2pm">sabados 8am a 2pm</option>
                                                                 @endif
                                                             @endif
                                                             @if($informacion_usuario->eje_final_formacion =="Arquitectura en la nube")
-                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y miercoles 9am a 12:30pm') selected @endif value="martes y miercoles 9am a 12:30pm">martes y miercoles 9am a 12:30pm</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                @if($informacion_usuario->modalidad_bootcamps =="Virtual")
+                                                                    @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y miercoles 9am a 12:30pm') selected @endif value="martes y miercoles 9am a 12:30pm">martes y miercoles 9am a 12:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    @endif
+                                                                @else
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'sabados 8am a 2pm') selected @endif value="sabados 8am a 2pm">sabados 8am a 2pm</option>
                                                                 @endif
                                                             @endif
                                                             @if($informacion_usuario->eje_final_formacion =="BlockChain")
@@ -981,17 +989,23 @@
                                                                 @endif
                                                             @endif
                                                             @if($informacion_usuario->eje_final_formacion =="Programación")
-                                                                @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
-                                                                @endif
-                                                                @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
-                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                @if($informacion_usuario->modalidad_bootcamps =="Virtual")
+                                                                    @if($informacion_usuario->nivel_formacion =="Explorador (Básico)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Integrador (Intermedio)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                    @endif
+                                                                    @if($informacion_usuario->nivel_formacion =="Innovador (Avanzado)")
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'lunes y miercoles 6pm a 9:30pm') selected @endif value="lunes y miercoles 6pm a 9:30pm">lunes y miercoles 6pm a 9:30pm</option>
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'martes y jueves 6pm a 9:30pm') selected @endif value="martes y jueves 6pm a 9:30pm">martes y jueves 6pm a 9:30pm</option>
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'jueves y viernes 9am a 12:30pm') selected @endif value="jueves y viernes 9am a 12:30pm">jueves y viernes 9am a 12:30pm</option>
+                                                                        <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'viernes 6pm a 9pm, sabados 8 a 12m') selected @endif value="viernes 6pm a 9pm, sabados 8 a 12m">viernes 6pm a 9pm, sabados 8 a 12m</option>
+                                                                    @endif
+
+                                                                @else
+                                                                    <option @if(old('horario_formacion', $informacion_usuario->horario_formacion) === 'sabados 8am a 2pm') selected @endif value="sabados 8am a 2pm">sabados 8am a 2pm</option>
+
                                                                 @endif
                                                             @endif
                                                         </select>

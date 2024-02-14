@@ -18,7 +18,7 @@
             <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
-    @can('participante-listar')
+    @can('reportes-listar')
         <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
             <x-slot name="icon">
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />

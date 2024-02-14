@@ -198,14 +198,14 @@ class RegistrarController extends Controller
         if ($request->has('numero_documento')) {
             $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
             $CC = $request->input('numero_documento');
-            
+
             if ($informacion_usuario) {
                 if ($informacion_usuario->estado_registro == "Pre-matricula") {
                     return view('Formularios/matricula', compact('informacion_usuario'));
                 } else if ($informacion_usuario->estado_registro == "Inscripción") {
                     $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
                     $mensaje2 = "¡INICIAR PRUEBA!";
-                    $url = "https://talentotechregion3.com.co/registro/PresentaPrueba.html";
+                    $url = "https://pruebas.talentotechregion3.com.co/login.php";
                     return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
                 } else if ($informacion_usuario->estado_registro == "Matricula") {
                     $mensaje = "Estimado usuario, Ya confirmaste matrícula, estaremos informando a tu correo la fecha de inicio";
@@ -286,7 +286,7 @@ class RegistrarController extends Controller
             $docCedula = pathinfo($archivo, PATHINFO_FILENAME) . PHP_EOL;
             $nombreArchivoLimpiado = str_replace(' ', '', $docCedula);
             $nombreArchivoSinSaltos = str_replace(["\r", "\n"], '', $nombreArchivoLimpiado);
-            
+
             $documento_usuario = Participante::where('numero_documento', $nombreArchivoSinSaltos)->first();
             // dd($nombreArchivoLimpiado);
             $documento_usuario->carga_documento = "Si";
@@ -297,8 +297,9 @@ class RegistrarController extends Controller
 
 
 
-    public function aprobardocumento(Request $request) {
-        
+    public function aprobardocumento(Request $request)
+    {
+
         $CC = $request->input('cedulaValidar');
         // dd($CC);
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
@@ -313,6 +314,5 @@ class RegistrarController extends Controller
         // $documento_usuario->save();
         // dd($documento_usuario);
         return redirect()->route('participantes.index');
-
     }
 }

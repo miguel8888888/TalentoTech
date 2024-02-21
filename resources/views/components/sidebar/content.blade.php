@@ -30,7 +30,7 @@
             <ul
                 class="relative px-0 pt-2 pb-0 ml-5 before:w-0 before:block before:absolute before:inset-y-0 before:left-0 before:border-l-2 before:border-l-gray-200 dark:before:border-l-gray-600"
             >
-            <x-sidebar.link title="Usuarios por curso" href="{{ route('estadisticas') }}" :isActive="request()->routeIs('estadisticas')">
+            <x-sidebar.link title="Graficas" href="{{ route('estadisticas') }}" :isActive="request()->routeIs('estadisticas')">
                 <x-slot name="icon">
                     <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
                 </x-slot>

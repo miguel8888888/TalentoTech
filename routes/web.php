@@ -34,8 +34,14 @@ Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
 
-Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');;
+Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');
 Route::get('/estadisticas', [EstadisticasController::class, 'mostrarDashboard'])->name('estadisticas')->middleware('auth');;
+Route::get('/obtener-datos-grafica', [EstadisticasController::class, 'obtenerDatosGrafica'])->name('obtener-datos-grafica')->middleware('auth');
+Route::get('/obtener-datos-grafica7', [EstadisticasController::class, 'obtenerDatosGrafica7'])->name('obtener-datos-grafica7')->middleware('auth');
+Route::get('/obtener-datos-grafica8', [EstadisticasController::class, 'obtenerDatosGrafica8'])->name('obtener-datos-grafica8')->middleware('auth');
+Route::get('/obtener-datos-grafica9', [EstadisticasController::class, 'obtenerDatosGrafica9'])->name('obtener-datos-grafica9')->middleware('auth');
+Route::get('/obtener-datos-grafica10', [EstadisticasController::class, 'obtenerDatosGrafica10'])->name('obtener-datos-grafica10')->middleware('auth');
+Route::get('/obtener-datos-grafica11', [EstadisticasController::class, 'obtenerDatosGrafica11'])->name('obtener-datos-grafica11')->middleware('auth');
 
 Route::get('export/', [ReportesController::class, 'export'])->name('participantes.export')->middleware('auth');
 

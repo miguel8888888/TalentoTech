@@ -70,6 +70,13 @@
             </x-slot>
         </x-sidebar.link>
     @endcan
+    @can('reportes-listar')
+        <x-sidebar.link title="Listado de Horarios" href="{{ route('horarios.index') }}" :isActive="request()->routeIs('horarios.*')">
+            <x-slot name="icon">
+                <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endcan
 
     {{-- <x-sidebar.dropdown
         title="Buttons"

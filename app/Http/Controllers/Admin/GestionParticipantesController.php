@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Horarios;
 use Illuminate\Http\Request;
 use App\Models\Participante;
 
@@ -48,11 +49,13 @@ class GestionParticipantesController extends Controller
     public function edit(Request $request, $number)
     {
         $participantes = Participante::find($number);
+        $horario = Horarios::all();
         // dd($participantes);
 
 
         return view('admin.participantes.edit', [
             'participantes' => $participantes,
+            'horario' => $horario,
         ]);
     }
 
@@ -63,6 +66,7 @@ class GestionParticipantesController extends Controller
         ]);
 
         $participantes = Participante::find($number);
+        $horario = Horarios::all();
 
 
 
@@ -134,6 +138,7 @@ class GestionParticipantesController extends Controller
         // ]);
         return view('admin.participantes.edit', [
             'participantes' => $participantes,
+            'horario' => $horario,
         ]);
         // return redirect()->route('ruta.de.regreso')->with('success', 'Participante actualizado exitosamente');
     }

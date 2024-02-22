@@ -9,6 +9,8 @@ use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EstadisticasController;
+use App\Http\Controllers\GestionHorariosController;
+use App\Http\Controllers\ProfileHorarioController;
 use App\Http\Controllers\ReportesController;
 
 /*
@@ -28,8 +30,11 @@ Route::get('/', function () {
 
 Route::resource('participantes', GestionParticipantesController::class)->middleware('auth');
 Route::resource('usuarios', UsuariosController::class)->middleware('auth');
+Route::resource('horarios', GestionHorariosController::class)->middleware('auth');
+
 
 Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'])->name('participantes.search')->middleware('auth');
+Route::get('horariosparticipante', [GestionHorariosController::class, 'index'])->name('horarios.search')->middleware('auth');
 
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
@@ -58,7 +63,7 @@ Route::post('/participantes/edit/{number}', [GestionParticipantesController::cla
 Route::post('/matricula/{number}', [RegistrarController::class, 'guardarDatos']);
 Route::post('/update/participante/{number}', [GestionParticipantesController::class, 'update']);
 Route::get('/registroexitoso', [RegistrarController::class, 'cargarVistaExito'])->name('registroexitoso');
-Route::match(['get', 'post'],'/validarregistro', [RegistrarController::class, 'consultarUsuario']);
+Route::match(['get', 'post'], '/validarregistro', [RegistrarController::class, 'consultarUsuario']);
 
 
 Route::get('/cargardocumentos/{CC}', [RegistrarController::class, 'cargardocumentos'])->name('cargardocumentos');
@@ -87,6 +92,9 @@ Route::middleware('user')->group(function () {
     Route::patch('/profileUser/{user}', [ProfileUserController::class, 'update'])->name('profileuser.update');
     Route::delete('/profileUser/{user}', [ProfileUserController::class, 'destroy'])->name('profileuser.destroy');
 });
+Route::get('/profilehorario/{horario}', [ProfileHorarioController::class, 'edit'])->name('profilehorario.edit')->middleware('auth');
+Route::patch('/profilehorario/{horario}', [ProfileHorarioController::class, 'update'])->name('profilehorario.update')->middleware('auth');
+Route::delete('/profilehorario/{horario}', [ProfileHorarioController::class, 'destroy'])->name('profilehorario.destroy')->middleware('auth');
 
 Route::put('passwordUpdate/{user}', [ProfileUserController::class, 'passUpdate'])->name('contrasena.update');
 

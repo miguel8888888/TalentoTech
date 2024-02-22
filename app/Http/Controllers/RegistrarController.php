@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\CargarDocumento;
 use App\Mail\MatriculaExito;
+use App\Models\Horarios;
 use App\Models\Participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -198,10 +199,15 @@ class RegistrarController extends Controller
         if ($request->has('numero_documento')) {
             $informacion_usuario =  Participante::where('numero_documento', $request->input('numero_documento'))->first();
             $CC = $request->input('numero_documento');
+            $horario = Horarios::all();
+
 
             if ($informacion_usuario) {
                 if ($informacion_usuario->estado_registro == "Pre-matricula") {
-                    return view('Formularios/matricula', compact('informacion_usuario'));
+                    return view('Formularios/matricula', [
+                        'informacion_usuario' => $informacion_usuario,
+                        'horario' => $horario,
+                    ]);
                 } else if ($informacion_usuario->estado_registro == "Inscripción") {
                     $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
                     $mensaje2 = "¡INICIAR PRUEBA!";

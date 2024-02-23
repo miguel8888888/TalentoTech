@@ -165,8 +165,9 @@ class RegistrarController extends Controller
         $informacion_usuario->nivel_formacion = $request->input('nivel_formacion');
         $informacion_usuario->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
-        $informacion_usuario->estado_registro = "Matricula";
+        $informacion_usuario->estado_registro = "Pos-matriculado";
         $informacion_usuario->carga_documento = "Si";
+        $informacion_usuario->aprobacion_documento = "NA";
         $informacion_usuario->save();
 
 
@@ -255,6 +256,8 @@ class RegistrarController extends Controller
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
         $documento_usuario->estado_registro = "Matricula";
         $documento_usuario->carga_documento = "Si";
+        $documento_usuario->aprobacion_documento = "NA";
+
         $documento_usuario->save();
 
         $cadena = $CC;
@@ -307,15 +310,27 @@ class RegistrarController extends Controller
     {
 
         $CC = $request->input('cedulaValidar');
+        $Aprobado = $request->input('checked');
         // dd($CC);
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
-        if ($documento_usuario->aprobacion_documento == "Si") {
-            $documento_usuario->aprobacion_documento = "No";
-            $documento_usuario->save();
-        } elseif ($documento_usuario->aprobacion_documento == "No") {
+        if ($Aprobado == "Si") {
             $documento_usuario->aprobacion_documento = "Si";
+            $documento_usuario->estado_registro = "Matricula";
+            $documento_usuario->save();
+        } elseif ($Aprobado == "No") {
+            $documento_usuario->aprobacion_documento = "No";
+            $documento_usuario->estado_registro = "Pos-matriculado";
             $documento_usuario->save();
         }
+        // if ($documento_usuario->aprobacion_documento == "Si") {
+        //     $documento_usuario->aprobacion_documento = "No";
+        //     $documento_usuario->estado_registro = "Pos-matriculado";
+        //     $documento_usuario->save();
+        // } elseif ($documento_usuario->aprobacion_documento == "No") {
+        //     $documento_usuario->aprobacion_documento = "Si";
+        //     $documento_usuario->estado_registro = "Matricula";
+        //     $documento_usuario->save();
+        // }
         // dd($documento_usuario->aprobacion_documento);
         // $documento_usuario->save();
         // dd($documento_usuario);

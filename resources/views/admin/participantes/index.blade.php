@@ -132,7 +132,7 @@
                         <!-- <td class="px-6 py-4">
                          {{ $data->estado_registro }}
                     </td> -->
-                        @if ($data->estado_registro === 'Matricula')
+                        @if ($data->estado_registro === 'Matricula' || $data->estado_registro === 'Pos-matriculado')
                             @can('participante-listar')
                                 <td class="px-6 py-4 text-right">
                                     <a href="{{ route('participantes.edit', $data->id) }}"
@@ -164,7 +164,7 @@
                                     </div>
                                 </td>
                             @endif
-                        @elseif($data->estado_registro === 'Pre-matricula' || $data->estado_registro === 'Pos-matriculado')
+                        @elseif($data->estado_registro === 'Pre-matricula')
                             @can('participante-listar')
                                 <td class="px-6 py-4 text-right">
                                     <a href="{{ route('participantes.edit', $data->id) }}"
@@ -241,9 +241,15 @@
                     <form id="aprobardocumento" method="POST" action="/aprobardocumento" class="m-0">
                         @csrf
                         <input type="hidden" id="cedulaValidar" name="cedulaValidar">
-                        <button type="submit"
-                            class="text-white bg-yellow-700 hover:yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Cambiar
-                            estado del documento</button>
+                        <input type="hidden" id="checked" name="checked">
+                        <button onclick="submitEstado('Si')"
+                            class="text-white bg-green-700 hover:green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Si
+                            aprueba
+                        </button>
+                        <button onclick="submitEstado('No')"
+                            class="text-white bg-red-700 hover:red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">No
+                            aprueba
+                        </button>
                     </form>
                 </div>
 
@@ -292,6 +298,11 @@
         document.getElementById('search-form').submit();
     }
 
+    function submitEstado(val) {
+        document.getElementById("checked").value = val;
+        document.getElementById('aprobardocumento').submit();
+    }
+
     // Obtener todos los checkbox
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -303,6 +314,12 @@
             document.getElementById("cedulaValidar").value = numeroDocumento;
             // console.log(numeroDocumento);
 
+            // Verificar si está marcado
+            if (checkbox.checked) {
+                document.getElementById("checked").value = "Si";
+            } else {
+                document.getElementById("checked").value = "No";
+            }
             // $.ajax({
             //     url: '/aprobardocumento', // URL a la que se enviará la solicitud
             //     method: 'POST', // Método de la solicitud (POST, GET, etc.)

@@ -286,9 +286,39 @@ class EstadisticasController extends Controller
 
         // Contar participantes por estrato socioeconómico
         foreach ($participantesCauca as $participanteCauca) {
-          $estrato = intval($participanteCauca->estrato); // Convertir el estrato a un entero // Suponiendo que 'estrato' es el nombre del campo en la tabla que almacena los estratos socioeconómicos
-          // Incrementar el conteo para el estrato socioeconómico correspondiente
-          $data[$estrato]++;
+          // Convertir el estrato a un entero // Suponiendo que 'estrato' es el nombre del campo en la tabla que almacena los estratos socioeconómicos
+         
+          $estrato = $participanteCauca->estrato_socioeconomico; // Suponiendo que 'estrato' es el nombre del campo en la tabla que almacena los estratos socioeconómicos
+           // Incrementar el conteo para el estrato socioeconómico correspondiente
+           switch ($estrato) {
+            case '1':
+                $data[0]++;
+                break;
+            case '2':
+                $data[1]++;
+                break;
+            case '3':
+                $data[2]++;
+                break;
+            case '4':
+                $data[3]++;
+                break;
+            case '5':
+                $data[4]++;
+                break;
+            case '6':
+                $data[5]++;
+                break;
+            case 'No estratificado':
+                $data[6]++;
+                break;
+            case 'Zona rural':
+                $data[7]++;
+                break;
+            default:
+                // Manejar cualquier otro valor que pueda surgir
+                break;
+          }
         }
 
          // Inicializar el arreglo para contar los participantes por estrato socioeconómico
@@ -301,9 +331,38 @@ class EstadisticasController extends Controller
  
          // Contar participantes por estrato socioeconómico
          foreach ($participantesNariño as $participanteNariño) {
-           $estrato = intval($participanteNariño->estrato); // Suponiendo que 'estrato' es el nombre del campo en la tabla que almacena los estratos socioeconómicos
+           $estrato = $participanteNariño->estrato_socioeconomico; // Suponiendo que 'estrato' es el nombre del campo en la tabla que almacena los estratos socioeconómicos
            // Incrementar el conteo para el estrato socioeconómico correspondiente
-           $data2[$estrato]++;
+           switch ($estrato) {
+            case '1':
+                $data2[0]++;
+                break;
+            case '2':
+                $data2[1]++;
+                break;
+            case '3':
+                $data2[2]++;
+                break;
+            case '4':
+                $data2[3]++;
+                break;
+            case '5':
+                $data2[4]++;
+                break;
+            case '6':
+                $data2[5]++;
+                break;
+            case 'No estratificado':
+                $data2[6]++;
+                break;
+            case 'Zona rural':
+                $data2[7]++;
+                break;
+            default:
+                // Manejar cualquier otro valor que pueda surgir
+                break;
+          }
+         
          }
  
 

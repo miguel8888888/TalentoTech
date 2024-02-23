@@ -921,7 +921,8 @@ function obtenerDatosGrafica8(cohorte,modalidad) {
       if (xhr3.status === 200) {
         // Convertir la respuesta JSON en un objeto JavaScript
         let response = JSON.parse(xhr3.responseText);
-        // console.log(response);
+        console.log(response.labels);
+        console.log(response.data);
         actualizarGrafica8(response.labels, response.data, response.data2);
         // Actualizar la gráfica con los nuevos datos recibidos del servidor
         // response contiene los datos devueltos por el servidor en formato JSON

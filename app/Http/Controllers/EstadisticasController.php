@@ -26,44 +26,86 @@ class EstadisticasController extends Controller
         $estadoPreMatricula = 'Pre-matricula'; // Cambia esto por el estado específico que estás buscando
         $estadoCohorte1 = 'cohorte1'; // Cambia esto por el estado específico que estás buscando
         $estadoCohorte2 = 'cohorte2'; // Cambia esto por el estado específico que estás buscando
-     
 
-        $cohorte1IA = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->count();
-        $cohorte1Programacion = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->count();
-        $cohorte1analisisDatos = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->count();
-        $cohorte1blockchain = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->count();
-        $cohorte1arqNube = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->count();
+        //grafica1
+        function obtenerDatosCohorte($estadoCohorte) {
+          $ia = 'Inteligencia artificial';
+          $programacion = 'Programación';
+          $analisisDatos = 'Análisis de Datos';
+          $blockchain = 'BlockChain';
+          $arqNube = 'Arquitectura en la nube';
+          $condiciones = ['cohorte' => $estadoCohorte];
+          $ejes = [$ia, $programacion, $analisisDatos, $blockchain, $arqNube];
+      
+          $data = [];
+          foreach ($ejes as $eje) {
+              $data[$eje] = Participante::select('id')->where($condiciones)->where('eje_final_formacion', $eje)->count();
+          }
+      
+          return $data;
+      }
+      
+        $data = obtenerDatosCohorte($estadoCohorte1);
+        $data2 = obtenerDatosCohorte($estadoCohorte2);
+        $labels = ['Inteligencia artificial', 'Programación', 'Análisis de Datos', 'BlockChain', 'Arquitectura en la nube'];
 
+
+      // DATA GRAFICA 2
+      function obtenerConteoDepartamento($variable, $departamento) {
+
+        $estadoCohorte1 = 'cohorte1'; 
+        $estadoCohorte2 = 'cohorte2';
+        return Participante::whereIn('cohorte', [$estadoCohorte1, $estadoCohorte2])
+            ->where('eje_final_formacion', $variable)
+            ->where('departamento_residencia', $departamento)
+            ->count();
+    }
+    $dataCauca = [
+      obtenerConteoDepartamento($ia, 'Cauca'),
+      obtenerConteoDepartamento($programacion, 'Cauca'),
+      obtenerConteoDepartamento($analisisDatos, 'Cauca'),
+      obtenerConteoDepartamento($blockchain, 'Cauca'),
+      obtenerConteoDepartamento($arqNube, 'Cauca'),
+  ];
+  
+  $dataNarino = [
+      obtenerConteoDepartamento($ia, 'Nariño'),
+      obtenerConteoDepartamento($programacion, 'Nariño'),
+      obtenerConteoDepartamento($analisisDatos, 'Nariño'),
+      obtenerConteoDepartamento($blockchain, 'Nariño'),
+      obtenerConteoDepartamento($arqNube, 'Nariño'),
+  ];
+ 
+        
         // Conteo para Cauca cohorte 1
-        $cohorte1IA_Cauca = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->count();
-        $cohorte1Programacion_Cauca = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->count();
-        $cohorte1analisisDatos_Cauca = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->count();
-        $cohorte1blockchain_Cauca = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->count();
-        $cohorte1arqNube_Cauca = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->count();
+        $cohorte1IA_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->count();
+        $cohorte1Programacion_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->count();
+        $cohorte1analisisDatos_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->count();
+        $cohorte1blockchain_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->count();
+        $cohorte1arqNube_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->count();
 
         // Conteo para Nariño cohorte 1
-        $cohorte1IA_Narino = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->count();
-        $cohorte1Programacion_Narino = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->count();
-        $cohorte1analisisDatos_Narino = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->count();
-        $cohorte1blockchain_Narino = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->count();
-        $cohorte1arqNube_Narino = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->count();
+        $cohorte1IA_Narino = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->count();
+        $cohorte1Programacion_Narino = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->count();
+        $cohorte1analisisDatos_Narino = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->count();
+        $cohorte1blockchain_Narino = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->count();
+        $cohorte1arqNube_Narino = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->count();
 
          // Conteo para Cauca cohorte 2
-         $cohorte2IA_Cauca = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->count();
-         $cohorte2Programacion_Cauca = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->count();
-         $cohorte2analisisDatos_Cauca = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->count();
-         $cohorte2blockchain_Cauca = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->count();
-         $cohorte2arqNube_Cauca = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->count();
+         $cohorte2IA_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->count();
+         $cohorte2Programacion_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->count();
+         $cohorte2analisisDatos_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->count();
+         $cohorte2blockchain_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->count();
+         $cohorte2arqNube_Cauca = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->count();
  
          // Conteo para Nariño cohorte 2
-         $cohorte2IA_Narino = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->count();
-         $cohorte2Programacion_Narino = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->count();
-         $cohorte2analisisDatos_Narino = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->count();
-         $cohorte2blockchain_Narino = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->count();
-         $cohorte2arqNube_Narino = Participante::where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->count();
+         $cohorte2IA_Narino = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->count();
+         $cohorte2Programacion_Narino = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->count();
+         $cohorte2analisisDatos_Narino = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->count();
+         $cohorte2blockchain_Narino = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->count();
+         $cohorte2arqNube_Narino = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->count();
        
-        $labels = ['Inteligencia artificial', 'Programación', 'Análisis de Datos', 'BlockChain', 'Arquitectura en la nube'];
-        $data = [$cohorte1IA,  $cohorte1Programacion, $cohorte1analisisDatos, $cohorte1blockchain, $cohorte1arqNube];
+      
 
         $dataCaucaCohorte1 = [$cohorte1IA_Cauca, $cohorte1Programacion_Cauca, $cohorte1analisisDatos_Cauca, $cohorte1blockchain_Cauca, $cohorte1arqNube_Cauca];
         $dataNarinoCohorte1 = [$cohorte1IA_Narino, $cohorte1Programacion_Narino, $cohorte1analisisDatos_Narino, $cohorte1blockchain_Narino, $cohorte1arqNube_Narino];
@@ -72,37 +114,93 @@ class EstadisticasController extends Controller
         $dataNarinoCohorte2 = [$cohorte2IA_Narino, $cohorte2Programacion_Narino, $cohorte2analisisDatos_Narino, $cohorte2blockchain_Narino, $cohorte2arqNube_Narino];
 
         
-        //conteo cauca corte1 virtual
-        $cohorte1IA_CaucaV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1Programacion_CaucaV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1analisisDatos_CaucaV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1blockchain_CaucaV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1arqNube_CaucaV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $virtual)->count();  
-        $dataCaucaCohorte1V = [$cohorte1IA_CaucaV, $cohorte1Programacion_CaucaV, $cohorte1analisisDatos_CaucaV, $cohorte1blockchain_CaucaV, $cohorte1arqNube_CaucaV];
+// Conteo para Cauca cohorte 1 virtual
+$dataCaucaCohorte1V = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte1)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Cauca')
+        ->where('modalidad_bootcamps', $virtual)
+        ->count();
+    $dataCaucaCohorte1V[$label] = $count;
+}
 
-        //conteo cauca corte1 presencial 
-        $cohorte1IA_CaucaP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $presencial)->count();
-        $cohorte1Programacion_CaucaP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $presencial)->count();
-        $cohorte1analisisDatos_CaucaP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $presencial)->count();
-        $cohorte1blockchain_CaucaP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $presencial)->count();
-        $cohorte1arqNube_CaucaP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Cauca')->where('modalidad_bootcamps', $presencial)->count();  
-        $dataCaucaCohorte1P = [$cohorte1IA_CaucaP, $cohorte1Programacion_CaucaP, $cohorte1analisisDatos_CaucaP, $cohorte1blockchain_CaucaP, $cohorte1arqNube_CaucaP];
+// Conteo para Cauca cohorte 1 presencial
+$dataCaucaCohorte1P = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte1)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Cauca')
+        ->where('modalidad_bootcamps', $presencial)
+        ->count();
+    $dataCaucaCohorte1P[$label] = $count;
+}
 
-        // Conteo para Nariño cohorte 1 virtual
-        $cohorte1IA_NarinoV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1Programacion_NarinoV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1analisisDatos_NarinoV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1blockchain_NarinoV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $virtual)->count();
-        $cohorte1arqNube_NarinoV = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $virtual)->count();
-        $dataNarinoCohorte1V = [$cohorte1IA_NarinoV, $cohorte1Programacion_NarinoV, $cohorte1analisisDatos_NarinoV, $cohorte1blockchain_NarinoV, $cohorte1arqNube_NarinoV];
+// Conteo para Nariño cohorte 1 virtual
+$dataNarinoCohorte1V = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte1)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Nariño')
+        ->where('modalidad_bootcamps', $virtual)
+        ->count();
+    $dataNarinoCohorte1V[$label] = $count;
+}
 
-          // Conteo para Nariño cohorte 1 presencial
-          $cohorte1IA_NarinoP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $ia)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $presencial)->count();
-          $cohorte1Programacion_NarinoP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $programacion)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $presencial)->count();
-          $cohorte1analisisDatos_NarinoP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $analisisDatos)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $presencial)->count();
-          $cohorte1blockchain_NarinoP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $blockchain)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $presencial)->count();
-          $cohorte1arqNube_NarinoP = Participante::where('cohorte', $estadoCohorte1)->where('eje_final_formacion', $arqNube)->where('departamento_residencia', 'Nariño')->where('modalidad_bootcamps', $presencial)->count();
-          $dataNarinoCohorte1P = [$cohorte1IA_NarinoP, $cohorte1Programacion_NarinoP, $cohorte1analisisDatos_NarinoP, $cohorte1blockchain_NarinoP, $cohorte1arqNube_NarinoP];
+// Conteo para Nariño cohorte 1 presencial
+$dataNarinoCohorte1P = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte1)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Nariño')
+        ->where('modalidad_bootcamps', $presencial)
+        ->count();
+    $dataNarinoCohorte1P[$label] = $count;
+}
+
+// Conteo para Cauca cohorte 2 virtual
+$dataCaucaCohorte2V = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte2)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Cauca')
+        ->where('modalidad_bootcamps', $virtual)
+        ->count();
+    $dataCaucaCohorte2V[$label] = $count;
+}
+
+// Conteo para Cauca cohorte 2 presencial
+$dataCaucaCohorte2P = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte2)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Cauca')
+        ->where('modalidad_bootcamps', $presencial)
+        ->count();
+    $dataCaucaCohorte2P[$label] = $count;
+}
+
+// Conteo para Nariño cohorte 2 virtual
+$dataNarinoCohorte2V = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte2)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Nariño')
+        ->where('modalidad_bootcamps', $virtual)
+        ->count();
+    $dataNarinoCohorte2V[$label] = $count;
+}
+
+// Conteo para Nariño cohorte 2 presencial
+$dataNarinoCohorte2P = [];
+foreach ($labels as $label) {
+    $count = Participante::select('id')->where('cohorte', $estadoCohorte2)
+        ->where('eje_final_formacion', $label)
+        ->where('departamento_residencia', 'Nariño')
+        ->where('modalidad_bootcamps', $presencial)
+        ->count();
+    $dataNarinoCohorte2P[$label] = $count;
+}
 
           $municipiosPorDepartamento = [
             "Nariño" => ["Albán", "Aldana", "Ancuya", "Arboleda", "Barbacoas", "Belén", "Buesaco", "Chachagüí", "Colón", "Consacá", "Contadero", "Córdoba", "Cuaspud", "Cumbal", "Cumbitara", "El Charco", "El Peñol", "El Rosario", "El Tablón De Gómez", "El Tambo", "Francisco Pizarro", "Funes", "Guachucal", "Guaitarilla", "Gualmatán", "Iles", "Imués", "Ipiales", "La Cruz", "La Florida", "La Llanada", "La Tola", "La Unión", "Leiva", "Linares", "Los Andes", "Magüí Payán", "Mallama", "Mosquera", "Nariño", "Olaya Herrera", "Ospina", "Pasto", "Policarpa", "Potosí", "Providencia", "Puerres", "Pupiales", "Ricaurte", "Roberto Payán", "Samaniego", "San Andrés De Tumaco", "San Bernardo", "San Lorenzo", "San Pablo", "San Pedro De Cartago", "Sandoná", "Santa Bárbara", "Santacruz", "Sapuyes", "Taminango", "Tangua", "Túquerres", "Yacuanquer"],
@@ -113,11 +211,23 @@ class EstadisticasController extends Controller
           foreach ($municipiosPorDepartamento as $departamento => $municipios) {
             foreach ($municipios as $municipio) {
                 $conteo = \DB::table('participante')
+                            ->select('id')
                             ->where('municipio_residencia', $municipio)
                             ->where('cohorte', 'cohorte1')
                             ->count();
         
                 $conteoPorMunicipio[$municipio] = $conteo;
+            }
+        }
+        foreach ($municipiosPorDepartamento as $departamento => $municipios) {
+            foreach ($municipios as $municipio) {
+                $conteo = \DB::table('participante')
+                            ->select('id')
+                            ->where('municipio_residencia', $municipio)
+                            ->where('cohorte', 'cohorte2')
+                            ->count();
+        
+                $conteoPorMunicipio2[$municipio] = $conteo;
             }
         }
 
@@ -127,7 +237,9 @@ class EstadisticasController extends Controller
 
         // dd($estadoMatricula);
         return view('admin/dashboard/estadisticas', [
-        'labels' => $labels, 'data' => $data, 
+        'labels' => $labels, 'data' => $data, 'data2' => $data2, 
+        'dataCauca' => $dataCauca, 
+        'dataNarino' => $dataNarino, 
         'dataCaucaCohorte1' => $dataCaucaCohorte1, 
         'dataNarinoCohorte1' => $dataNarinoCohorte1, 
         'dataCaucaCohorte2' => $dataCaucaCohorte2, 
@@ -136,7 +248,12 @@ class EstadisticasController extends Controller
         'dataCaucaCohorte1P' => $dataCaucaCohorte1P, 
         'dataNarinoCohorte1V' => $dataNarinoCohorte1V, 
         'dataNarinoCohorte1P' => $dataNarinoCohorte1P, 
+        'dataCaucaCohorte2V' => $dataCaucaCohorte2V, 
+        'dataCaucaCohorte2P' => $dataCaucaCohorte2P, 
+        'dataNarinoCohorte2V' => $dataNarinoCohorte2V, 
+        'dataNarinoCohorte2P' => $dataNarinoCohorte2P, 
         'conteoPorMunicipio' => $conteoPorMunicipio,
+        'conteoPorMunicipio2' => $conteoPorMunicipio2,
         ]);
     }
 
@@ -157,27 +274,27 @@ class EstadisticasController extends Controller
         $arqNube = 'Arquitectura en la nube';
         
         // Realizar la consulta a la base de datos para obtener los datos necesarios
-        $dataIa = Participante::where('cohorte', $cohorte)
+        $dataIa = Participante::select('id')->where('cohorte', $cohorte)
                               ->where('eje_final_formacion', $ia)
                               ->where('departamento_residencia', $departamento)
                               ->where('modalidad_bootcamps', $modalidad)
                               ->count();
-        $dataProgramacion = Participante::where('cohorte', $cohorte)
+        $dataProgramacion = Participante::select('id')->where('cohorte', $cohorte)
                               ->where('eje_final_formacion', $programacion)
                               ->where('departamento_residencia', $departamento)
                               ->where('modalidad_bootcamps', $modalidad)
                               ->count();
-        $dataAnalisisDatos = Participante::where('cohorte', $cohorte)
+        $dataAnalisisDatos = Participante::select('id')->where('cohorte', $cohorte)
                               ->where('eje_final_formacion', $analisisDatos)
                               ->where('departamento_residencia', $departamento)
                               ->where('modalidad_bootcamps', $modalidad)
                               ->count();
-        $dataBlockchain = Participante::where('cohorte', $cohorte)
+        $dataBlockchain = Participante::select('id')->where('cohorte', $cohorte)
                               ->where('eje_final_formacion', $blockchain)
                               ->where('departamento_residencia', $departamento)
                               ->where('modalidad_bootcamps', $modalidad)
                               ->count();
-        $dataArqNube = Participante::where('cohorte', $cohorte)
+        $dataArqNube = Participante::select('id')->where('cohorte', $cohorte)
                               ->where('eje_final_formacion', $arqNube)
                               ->where('departamento_residencia', $departamento)
                               ->where('modalidad_bootcamps', $modalidad)

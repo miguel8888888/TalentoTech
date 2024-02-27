@@ -9,10 +9,8 @@
 
     <div class="container mx-auto mt-8">
             <div class=" mx-auto">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-                  
-                
-                    
+                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+ 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden ">
                         <div class="p-6">
                             <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por curso - cohorte</h5>
@@ -209,8 +207,8 @@
 
 function grafica1() {
     // Configuración del Gráfico de Barra
-    var ctxBarra = document.getElementById('miGraficoBarra').getContext('2d');
-    var myChartBarra = new Chart(ctxBarra, {
+    let ctxBarra = document.getElementById('miGraficoBarra').getContext('2d');
+    let myChartBarra = new Chart(ctxBarra, {
         type: 'bar',
         data: {
             labels: {!! json_encode($labels) !!},
@@ -224,7 +222,7 @@ function grafica1() {
             },
             {
                 label: 'Cohorte 2',
-                data: {!! json_encode($data) !!},
+                data: {!! json_encode($data2) !!},
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
                     
@@ -238,14 +236,14 @@ grafica1();
 
 function grafica2() {
     // Configuración del Gráfico de Barra
-    var ctxBarra = document.getElementById('miGraficoBarra2').getContext('2d');
-      var myChartBarra = new Chart(ctxBarra, {
+    let ctxBarra = document.getElementById('miGraficoBarra2').getContext('2d');
+      let myChartBarra = new Chart(ctxBarra, {
           type: 'bar',
           data: {
               labels: {!! json_encode($labels) !!},
               datasets: [{
                   label: 'Cauca',
-                  data: {!! json_encode($dataCaucaCohorte1) !!},
+                  data: {!! json_encode($dataCauca) !!},
                   backgroundColor: [
                       'rgba(54, 162, 235, 0.7)',
                       
@@ -253,7 +251,7 @@ function grafica2() {
               },
               {
                   label: 'Nariño',
-                  data: {!! json_encode($dataNarinoCohorte1) !!},
+                  data: {!! json_encode($dataNarino) !!},
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.7)',
                       
@@ -267,8 +265,8 @@ grafica2();
 
 function grafica3() {
     // Configuración del Gráfico de Barra
-    var ctxBarra = document.getElementById('miGraficoBarra3').getContext('2d');
-    var myChartBarra = new Chart(ctxBarra, {
+    let ctxBarra = document.getElementById('miGraficoBarra3').getContext('2d');
+    let myChartBarra = new Chart(ctxBarra, {
       type: 'bar',
       data: {
           labels: {!! json_encode($labels) !!},
@@ -291,7 +289,7 @@ function grafica3() {
               },
               {
                   label: 'Cauca cohorte 2',
-                  data: {!! json_encode($dataCaucaCohorte1) !!},
+                  data: {!! json_encode($dataCaucaCohorte2) !!},
                   backgroundColor: [
                       'rgba(26, 83, 185, 0.7)',
                       
@@ -300,7 +298,7 @@ function grafica3() {
               },
               {
                   label: 'Nariño cohorte 2',
-                  data: {!! json_encode($dataNarinoCohorte1) !!},
+                  data: {!! json_encode($dataNarinoCohorte2) !!},
                   backgroundColor: [
                       'rgba(113, 203, 92, 0.7)',        
                   ],
@@ -337,14 +335,18 @@ grafica3();
 
 function grafica4() {
             // Obtener el contexto del lienzo de la gráfica
-            var ctxBarra = document.getElementById('miGraficoBarra4').getContext('2d');
+            let ctxBarra = document.getElementById('miGraficoBarra4').getContext('2d');
 
             // Datos ficticios para la demostración
-            var labels = {!! json_encode($labels) !!};
-            var dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
+            let labels = {!! json_encode($labels) !!};
+            let dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
             var dataCaucaCohorte1P = {!! json_encode($dataCaucaCohorte1P) !!};
             var dataNarinoCohorte1V = {!! json_encode($dataNarinoCohorte1V) !!};
             var dataNarinoCohorte1P = {!! json_encode($dataNarinoCohorte1P) !!};
+            var dataCaucaCohorte2V = {!! json_encode($dataCaucaCohorte2V) !!};
+            var dataCaucaCohorte2P = {!! json_encode($dataCaucaCohorte2P) !!};
+            var dataNarinoCohorte2V = {!! json_encode($dataNarinoCohorte2V) !!};
+            var dataNarinoCohorte2P = {!! json_encode($dataNarinoCohorte2P) !!};
             // var dataCaucaCohorte2 = [30, 25, 40, 20, 35];
             // var dataNarinoCohorte2 = [35, 20, 30, 25, 40];
 
@@ -429,10 +431,10 @@ function grafica4() {
                 } else if (selectCohorte.value === 'cohorte2') {
                     // Actualizar los datos para el segundo cohorte (si es necesario)
                     // Aquí debes proporcionar los datos para el segundo cohorte
-                    myChartBarra.data.datasets[0].data = [12,20,30,40,15];
-                    myChartBarra.data.datasets[1].data = [12,20,30,40,20];
-                    myChartBarra.data.datasets[2].data = [12,20,30,40,30];
-                    myChartBarra.data.datasets[3].data = [12,20,30,40,14];
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte2V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte2P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte2V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte2P) !!};
                 }
 
                 myChartBarra.update();
@@ -556,26 +558,33 @@ function grafica5() {
             ]
             // Puedes agregar más departamentos y sus municipios aquí
     };
-    var conteoPorMunicipio = {!! json_encode($conteoPorMunicipio) !!};
+    let conteoPorMunicipio = {!! json_encode($conteoPorMunicipio) !!};
+    let conteoPorMunicipio2 = {!! json_encode($conteoPorMunicipio2) !!};
 
     // Obtener los nombres de los municipios y los conteos
-    var municipios = Object.keys(conteoPorMunicipio);
-    var conteos = Object.values(conteoPorMunicipio);
+    let municipios = Object.keys(conteoPorMunicipio);
+    let conteos = Object.values(conteoPorMunicipio);
+    let conteo2 = Object.values(conteoPorMunicipio2);
             // Obtener el contexto del lienzo de la gráfica
-            var ctxBarra = document.getElementById('miGraficoBarra5').getContext('2d');
+            let ctxBarra = document.getElementById('miGraficoBarra5').getContext('2d');
 
             // Datos ficticios para la demostración
-            var labels = municipiosPorDepartamento["Cauca"];
-            var dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
+            let labels = municipiosPorDepartamento["Cauca"];
+            let dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
           
             // Definir los datos de la gráfica
-            var data = {
+            let data = {
                 labels: labels,
                 datasets: [
                     {
                         label: 'Estudiantes cohorte 1',
                         data: conteos,
                         backgroundColor: 'rgba(255, 206, 86, 0.7)'
+                    },
+                    {
+                        label: 'Estudiantes cohorte 2',
+                        data: conteo2,
+                        backgroundColor: 'rgba(26, 83, 185, 0.7)'
                     },
                     // {
                     //     label: 'Cauca presencial',
@@ -587,7 +596,7 @@ function grafica5() {
             };
 
             // Definir las opciones de la gráfica
-            var options = {
+            let options = {
                 indexAxis: 'x',
                 elements: {
                     bar: {
@@ -603,14 +612,14 @@ function grafica5() {
             };
 
             // Crear la gráfica inicial
-            var myChartBarra = new Chart(ctxBarra, {
+            let myChartBarra = new Chart(ctxBarra, {
                 type: 'bar',
                 data: data,
                 options: options
             });
 
             // Obtener los elementos select
-            var selectDept = document.getElementById('selectDept');
+            let selectDept = document.getElementById('selectDept');
       
 
             // Agregar eventos change a los selects
@@ -620,8 +629,8 @@ function grafica5() {
             // Función para actualizar la gráfica
             function updateChart() {
 
-                var departamentoSeleccionado = selectDepartamento.value;
-                var municipios = municipiosPorDepartamento[departamentoSeleccionado];
+                let departamentoSeleccionado = selectDepartamento.value;
+                let municipios = municipiosPorDepartamento[departamentoSeleccionado];
                 myChartBarra.data.labels = municipios;
                
 
@@ -637,7 +646,7 @@ grafica5();
 
 // function graficax(params) {
 //           // Datos para el gráfico
-//           var data = {
+//           let data = {
 //             labels: ['Cauca', 'Nariño'],
 //             datasets: [{
 //                 label: 'Cantidad de cursos',
@@ -655,7 +664,7 @@ grafica5();
 //         };
 
 //         // Configuración del gráfico
-//         var options = {
+//         let options = {
 //             // scales: {
 //             //     yAxes: [{
 //             //         ticks: {
@@ -666,15 +675,15 @@ grafica5();
 //         };
 
 //         // Crear el gráfico de barras inicial
-//         var ctx = document.getElementById('myChart').getContext('2d');
-//         var myChart = new Chart(ctx, {
+//         let ctx = document.getElementById('myChart').getContext('2d');
+//         let myChart = new Chart(ctx, {
 //             type: 'bar',
 //             data: data,
 //             options: options
 //         });
 
 //         // Obtener el elemento select
-//         var cohortSelect = document.getElementById('cohortSelect');
+//         let cohortSelect = document.getElementById('cohortSelect');
 
 //         // Agregar un evento change al select
 //         cohortSelect.addEventListener('change', function() {
@@ -921,8 +930,6 @@ function obtenerDatosGrafica8(cohorte,modalidad) {
       if (xhr3.status === 200) {
         // Convertir la respuesta JSON en un objeto JavaScript
         let response = JSON.parse(xhr3.responseText);
-        console.log(response.labels);
-        console.log(response.data);
         actualizarGrafica8(response.labels, response.data, response.data2);
         // Actualizar la gráfica con los nuevos datos recibidos del servidor
         // response contiene los datos devueltos por el servidor en formato JSON

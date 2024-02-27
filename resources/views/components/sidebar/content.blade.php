@@ -5,39 +5,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    @props([
-    'active' => false,
-    'title' => 'Estadisticas'
-    ])
-
-    <div class="relative" x-data="{ open: @json($active) }">
-        <x-sidebar.link
-            collapsible
-            title="{{ $title }}"
-            x-on:click="open = !open"
-            isActive="{{ $active }}"
-        >
-            @if ($icon ?? false)
-                <x-slot name="icon">
-                    {{ $icon }}
-                </x-slot>
-            @endif
-        </x-sidebar.link>
-        <div
-            x-show="open && (isSidebarOpen || isSidebarHovered)"
-            x-collapse
-        >
-            <ul
-                class="relative px-0 pt-2 pb-0 ml-5 before:w-0 before:block before:absolute before:inset-y-0 before:left-0 before:border-l-2 before:border-l-gray-200 dark:before:border-l-gray-600"
-            >
-            <x-sidebar.link title="Graficas" href="{{ route('estadisticas') }}" :isActive="request()->routeIs('estadisticas')">
-                <x-slot name="icon">
-                    <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-                </x-slot>
-            </x-sidebar.link>
-            </ul>
-        </div>
-    </div>
+   
 
     
 
@@ -76,6 +44,41 @@
                 <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+    @endcan
+
+    @props([
+    'active' => false,
+    'title' => 'Estadísticas'
+    ])
+    @can('reportes-listar')
+    <div class="relative" x-data="{ open: @json($active) }">
+        <x-sidebar.link
+            collapsible
+            title="{{ $title }}"
+            x-on:click="open = !open"
+            isActive="{{ $active }}"
+        >
+            @if ($icon ?? false)
+                <x-slot name="icon">
+                    {{ $icon }}
+                </x-slot>
+            @endif
+        </x-sidebar.link>
+        <div
+            x-show="open && (isSidebarOpen || isSidebarHovered)"
+            x-collapse
+        >
+            <ul
+                class="relative px-0 pt-2 pb-0 ml-5 before:w-0 before:block before:absolute before:inset-y-0 before:left-0 before:border-l-2 before:border-l-gray-200 dark:before:border-l-gray-600"
+            >
+            <x-sidebar.link title="Gráficas" href="{{ route('estadisticas') }}" :isActive="request()->routeIs('estadisticas')">
+                <x-slot name="icon">
+                    <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                </x-slot>
+            </x-sidebar.link>
+            </ul>
+        </div>
+    </div>
     @endcan
 
     {{-- <x-sidebar.dropdown

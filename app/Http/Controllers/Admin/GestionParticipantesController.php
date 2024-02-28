@@ -135,7 +135,9 @@ class GestionParticipantesController extends Controller
         $participantes->eje_final_formacion = $request->input('eje_final_formacion');
         $participantes->puntaje = $request->input('puntaje');
         $participantes->nivel_formacion = $request->input('nivel_formacion');
+        $participantes->cohorte = $request->input('cohorte');
         $participantes->modalidad_bootcamps = $request->input('modalidad_bootcamps');
+        $participantes->observaciones = $request->input('observaciones');
         // $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
         // $informacion_usuario->estado_registro = "Matriculado";
         $participantes->save();

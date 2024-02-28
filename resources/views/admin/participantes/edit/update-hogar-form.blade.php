@@ -626,6 +626,20 @@
                 </div>
             </div>
             <div class="lg:col-span-4 col-span-2">
+                <label for="cohorte"
+                    class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Cohorte</label>
+                <div class="mt-2">
+                    <select id="cohorte" name="cohorte" autocomplete="cohorte"
+                        class="gris_back px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
+                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full">
+                        <option selected disabled>Seleccione...</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte1') selected @endif value="cohorte1">Cohorte 1</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte2') selected @endif value="cohorte2">Cohorte 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="lg:col-span-4 col-span-2">
                 <label for="modalidad_bootcamps"
                     class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Modalidad en la que
                     realizará su bootcamps</label>
@@ -646,6 +660,13 @@
                     <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera
                         presencial y otras horas de modalidad virtual</em>
                 </p>
+            </div>
+
+            <div class="lg:col-span-8 col-span-2">
+                <label for="observaciones" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Observaciones</label>
+                <textarea id="observaciones" name="observaciones" rows="4" class="px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
+                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full" placeholder="Obsevaciones...">{{ old('observaciones', $participantes->observaciones) }}</textarea>
             </div>
 
 

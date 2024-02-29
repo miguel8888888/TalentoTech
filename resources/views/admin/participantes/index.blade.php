@@ -132,7 +132,7 @@
                         <!-- <td class="px-6 py-4">
                          {{ $data->estado_registro }}
                     </td> -->
-                        @if ($data->estado_registro === 'Matricula' || $data->estado_registro === 'Pos-matriculado')
+                        @if ($data->estado_registro === 'Matricula' || $data->estado_registro === 'Pos-matriculado'|| $data->estado_registro === 'nueva-prueba')
                             @can('participante-listar')
                                 <td class="px-6 py-4 text-right">
                                     <a href="{{ route('participantes.edit', $data->id) }}"

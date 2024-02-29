@@ -13,7 +13,7 @@
 
         <form id="search-form" class="mb-6 w-full" action="{{ route('participantes.search') }}" method="GET">
             <div class="flex flex-col md:flex-row gap-4">
-                <div class="relative w-full md:w-1/2">
+                <div class="relative w-full md:w-1/3">
                     <select id="estado_registro" onchange="submitForm()" value="{{ old('estado') }}" name="estado"
                         class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Seleccione...</option>
@@ -24,7 +24,20 @@
                         </option>
                     </select>
                 </div>
-                <div class="relative w-full md:w-1/2">
+                <div class="relative w-full md:w-1/3">
+                    <select id="aprobacion_documento" onchange="submitAprobacion()" value="{{ old('aprobacion_documento') }}" name="aprobacion_documento"
+                        class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected disabled>Seleccione...</option>
+                        <option value="" {{ old('aprobacion_documento') === '' ? 'selected' : '' }}>Listar todos</option>
+                        <option value="NA" @if (old('aprobacion_documento') == 'NA') selected @endif>No revisado
+                        </option>
+                        <option value="Si" @if (old('aprobacion_documento') == 'Si') selected @endif>Si aprobado
+                        </option>
+                        <option value="No" @if (old('aprobacion_documento') == 'No') selected @endif>No aprobado
+                        </option>
+                    </select>
+                </div>
+                <div class="relative w-full md:w-1/3">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
                     <div class="relative">
@@ -139,31 +152,41 @@
                                         class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
                                 </td>
                             @endcan
-                            <td class="px-6 py-4 text-right">
-                                <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-                                    data-numero-documento="{{ $data->numero_documento }}"
-                                    class="participante_{{ $data->numero_documento }} font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                    type="button">
-                                    Ver Documento
-                                </button>
-                            </td>
-                            @if ($data->aprobacion_documento === 'Si')
+                            @if($data->carga_documento === 'Si')
                                 <td class="px-6 py-4 text-right">
-                                    <div class="flex items-center">
-                                        <input checked id="checkbox{{ $data->id }}" type="checkbox"
-                                            data-numero-documento="{{ $data->numero_documento }}"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    </div>
+                                    <button data-modal-target="default-modal" data-modal-toggle="default-modal"
+                                        data-numero-documento="{{ $data->numero_documento }}"
+                                        class="participante_{{ $data->numero_documento }} font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        type="button">
+                                        Ver Documento
+                                    </button>
                                 </td>
+                                @if ($data->aprobacion_documento === 'Si')
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center">
+                                            <input checked id="checkbox{{ $data->id }}" type="checkbox"
+                                                data-numero-documento="{{ $data->numero_documento }}"
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        </div>
+                                    </td>
+                                @else
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="flex items-center mb-4">
+                                            <input id="checkbox{{ $data->id }}" type="checkbox"
+                                                data-numero-documento="{{ $data->numero_documento }}"
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        </div>
+                                    </td>
+                                @endif
                             @else
                                 <td class="px-6 py-4 text-right">
-                                    <div class="flex items-center mb-4">
-                                        <input id="checkbox{{ $data->id }}" type="checkbox"
-                                            data-numero-documento="{{ $data->numero_documento }}"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    </div>
+
+                                </td>
+                                <td class="px-6 py-4 text-right">
+
                                 </td>
                             @endif
+
                         @elseif($data->estado_registro === 'Pre-matricula')
                             @can('participante-listar')
                                 <td class="px-6 py-4 text-right">
@@ -292,6 +315,14 @@
 
     function submitForm() {
         let estadoSelect = document.getElementById("estado_registro");
+        if (estadoSelect.value === '') {
+            estadoSelect.removeAttribute('name'); // Remove the 'name' attribute to exclude it from the form submission
+        }
+        document.getElementById('search-form').submit();
+    }
+
+    function submitAprobacion() {
+        let estadoSelect = document.getElementById("aprobacion_documento");
         if (estadoSelect.value === '') {
             estadoSelect.removeAttribute('name'); // Remove the 'name' attribute to exclude it from the form submission
         }

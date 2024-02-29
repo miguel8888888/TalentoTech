@@ -26,7 +26,7 @@ class GestionParticipantesController extends Controller
     {
         $request->flash();
 
-        $participantesQuery = Participante::select('id', 'tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro', 'aprobacion_documento')->where('primer_nombre', '!=', Null);
+        $participantesQuery = Participante::select('id', 'tipo_documento', 'numero_documento', 'primer_nombre', 'primer_apellido', 'estado_registro', 'aprobacion_documento', 'carga_documento')->where('primer_nombre', '!=', Null);
 
         if ($request->has('buscar')) {
             $buscar = $request->buscar;
@@ -42,6 +42,14 @@ class GestionParticipantesController extends Controller
             $participantesQuery->where('estado_registro', $filtro);
             // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
         }
+
+        if ($request->has('aprobacion_documento')) {
+            $filtro = $request->aprobacion_documento;
+            // $participantesQuery->where('aprobacion_documento', $filtro);
+            $participantesQuery->where('aprobacion_documento', $filtro)->orderBy('carga_documento', 'desc');
+            // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
+        }
+        
         $participantes = $participantesQuery->paginate(50);
         return view('admin.participantes.index', compact('participantes'));
     }
@@ -127,7 +135,9 @@ class GestionParticipantesController extends Controller
         $participantes->eje_final_formacion = $request->input('eje_final_formacion');
         $participantes->puntaje = $request->input('puntaje');
         $participantes->nivel_formacion = $request->input('nivel_formacion');
+        $participantes->cohorte = $request->input('cohorte');
         $participantes->modalidad_bootcamps = $request->input('modalidad_bootcamps');
+        $participantes->observaciones = $request->input('observaciones');
         // $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
         // $informacion_usuario->estado_registro = "Matriculado";
         $participantes->save();

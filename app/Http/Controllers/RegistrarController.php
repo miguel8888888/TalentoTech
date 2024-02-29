@@ -209,7 +209,7 @@ class RegistrarController extends Controller
                         'informacion_usuario' => $informacion_usuario,
                         'horario' => $horario,
                     ]);
-                } else if ($informacion_usuario->estado_registro == "Inscripción") {
+                } else if ($informacion_usuario->estado_registro == "Inscripción" || $informacion_usuario->estado_registro == "nueva-prueba") {
                     $mensaje = "Estimado usuario, en este momento aun no has diligenciado la prueba de conocimiento, por favor realícela en el siguiente botón.";
                     $mensaje2 = "¡INICIAR PRUEBA!";
                     $url = "https://pruebas.talentotechregion3.com.co/login.php";
@@ -254,7 +254,6 @@ class RegistrarController extends Controller
             ]
         );
         $documento_usuario = Participante::where('numero_documento', $CC)->first();
-        $documento_usuario->estado_registro = "Matricula";
         $documento_usuario->carga_documento = "Si";
         $documento_usuario->aprobacion_documento = "NA";
 

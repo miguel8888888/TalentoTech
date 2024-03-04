@@ -655,6 +655,15 @@
                     </select>
                 </div>
             </div>
+
+            <div class="lg:col-span-4 col-span-2">
+                    <label for="profesor" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Profesor</label>
+                    <div class="mt-2">
+                        <input type="text" name="profesor" id="profesor" autocomplete="family-name" class="px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
+                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full"  value="{{old('profesor', $participantes->profesor)}}"/>
+                    </div>
+                </div>
             <div class="lg:col-span-6 col-span-2">
                 <p class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300 modalidadBootcamps">
                     <em>La modalidad híbrida consiste en que pueda tomar parte de sus horas en la sede de manera

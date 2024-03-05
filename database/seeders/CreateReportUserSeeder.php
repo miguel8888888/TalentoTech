@@ -15,19 +15,19 @@ class CreateReportUserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::create([
-            'name' => 'Líder de técnico',
-            'email' => 'LTecnico@talentotech.com',
-            'password' => bcrypt('Tecnico5674.Tech')
-        ]);
+        // $user = User::create([
+        //     'name' => 'Líder de técnico',
+        //     'email' => 'LTecnico@talentotech.com',
+        //     'password' => bcrypt('Tecnico5674.Tech')
+        // ]);
 
-        // $role = Role::where(['name' => 'Reportes'])->first();
+        $role = Role::where(['name' => 'Administrador'])->first();
         // $role = Role::create(['name' => 'Estadisticas']);
 
-        // $permissions = [9, 10, 11, 12];
+        $permissions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-        // $role->syncPermissions($permissions);
+        $role->syncPermissions($permissions);
 
-        $user->assignRole(3);
+        // $user->assignRole(3);
     }
 }

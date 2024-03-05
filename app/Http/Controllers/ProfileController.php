@@ -18,6 +18,14 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        // $roles = $request->user()->roles;
+
+        // // Luego, puedes iterar sobre estos roles y consultar los permisos asociados a cada uno de ellos
+        // foreach ($roles as $role) {
+        //     $permissions = $role->permissions;
+        //     // Aquí puedes hacer lo que necesites con los permisos asociados a cada rol
+        // }
+        // dd($permissions);
         return view('profile.edit', [
             'user' => $request->user(),
         ]);

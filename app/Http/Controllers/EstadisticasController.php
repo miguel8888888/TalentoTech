@@ -10,14 +10,14 @@ class EstadisticasController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:estadisticas-listar|estadisticas-create|estadisticas-edit|estadisticas-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:estadisticas-crear', ['only' => ['create', 'store']]);
-        $this->middleware('permission:estadisticas-editar', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:estadisticas-eliminar', ['only' => ['destroy']]);
+        $this->middleware('permission:estadisticas-listar', ['only' => ['mostrarDashboard', 'obtenerDatosGrafica', 'obtenerDatosGrafica7', 'obtenerDatosGrafica8', 'obtenerDatosGrafica9', 'obtenerDatosGrafica10', 'obtenerDatosGrafica11']]);
+        // $this->middleware('permission:estadisticas-crear', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:estadisticas-editar', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:estadisticas-eliminar', ['only' => ['destroy']]);
     }
     public function mostrarDashboard()
     {
-
+        // dd('hola');
         $ia = 'Inteligencia artificial';
         $programacion = 'Programación';
         $analisisDatos = 'Análisis de Datos';

@@ -48,11 +48,22 @@
         </x-sidebar.link>
     @endcan
 
-    @props([
-        'active' => false,
-        'title' => 'Estadísticas',
-    ])
+
+    {{-- @php
+        $roles = auth()->user()->roles;
+        // Aquí, puedes agregar un mensaje de log para verificar qué roles y permisos tiene el usuario
+        // dd('Roles del usuario:', $user->roles->pluck('name')->toArray());
+        foreach ($roles as $role) {
+            $permissions = $role->permissions;
+            // Aquí puedes hacer lo que necesites con los permisos asociados a cada rol
+        }
+        dd($permissions);
+    @endphp --}}
     @can('estadisticas-listar')
+        @props([
+            'active' => false,
+            'title' => 'Estadísticas',
+        ])
         <div class="relative" x-data="{ open: @json($active) }">
             <x-sidebar.link collapsible title="{{ $title }}" x-on:click="open = !open"
                 isActive="{{ $active }}">

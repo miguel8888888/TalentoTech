@@ -52,7 +52,7 @@
         'active' => false,
         'title' => 'Estadísticas',
     ])
-    @can('estadisticas-list')
+    @can('estadisticas-listar')
         <div class="relative" x-data="{ open: @json($active) }">
             <x-sidebar.link collapsible title="{{ $title }}" x-on:click="open = !open"
                 isActive="{{ $active }}">

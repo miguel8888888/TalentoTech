@@ -28,10 +28,10 @@ class PermissionTableSeeder extends Seeder
         ];
 
         $permissions3 = [
-            'estadisticas-list',
-            'estadisticas-create',
-            'estadisticas-edit',
-            'estadisticas-delete'
+            'estadisticas-listar',
+            'estadisticas-crear',
+            'estadisticas-editar',
+            'estadisticas-eliminar'
         ];
 
         

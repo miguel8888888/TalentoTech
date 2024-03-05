@@ -10,10 +10,10 @@ class EstadisticasController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:estadisticas-list|estadisticas-create|estadisticas-edit|estadisticas-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:estadisticas-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:estadisticas-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:estadisticas-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:estadisticas-listar|estadisticas-create|estadisticas-edit|estadisticas-delete', ['only' => ['index', 'store']]);
+        $this->middleware('permission:estadisticas-crear', ['only' => ['create', 'store']]);
+        $this->middleware('permission:estadisticas-editar', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:estadisticas-eliminar', ['only' => ['destroy']]);
     }
     public function mostrarDashboard()
     {

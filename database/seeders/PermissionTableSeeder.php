@@ -17,35 +17,26 @@ class PermissionTableSeeder extends Seeder
             'participante-listar',
             'participante-crear',
             'participante-editar',
-            'participante-eliminar',
+            'participante-eliminar'
+        ];
+
+        $permissions2 = [
             'reportes-listar',
             'reportes-crear',
             'reportes-editar',
             'reportes-eliminar'
         ];
 
-        $permissions4 = [
-            'documento-list',
-            'documento-create',
-            'documento-edit',
-            'documento-delete'
+        $permissions3 = [
+            'estadisticas-list',
+            'estadisticas-create',
+            'estadisticas-edit',
+            'estadisticas-delete'
         ];
 
-        $permissions5 = [
-            'documentos-usuarios-list',
-            'documentos-usuarios-create',
-            'documentos-usuarios-edit',
-            'documentos-usuarios-delete'
-        ];
+        
 
-        $permissions6 = [
-            'informacionusuario-list',
-            'informacionusuario-create',
-            'informacionusuario-edit',
-            'informacionusuario-delete'
-        ];
-
-        foreach ($permissions as $permission) {
+        foreach ($permissions3 as $permission) {
             Permission::create(['name' => $permission]);
         }
     }

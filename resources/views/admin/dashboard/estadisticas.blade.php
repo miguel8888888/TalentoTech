@@ -786,7 +786,7 @@ function actualizarGrafica(labels, data) {
         datasets: [{
           label: 'Cantidad de estudiantes',
           data: data,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         }]
@@ -886,14 +886,14 @@ function actualizarGrafica7(labels, data, data2) {
         datasets: [{
           label: 'Cauca',
           data: data,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(255, 99, 132, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         },
         {
           label: 'Nariño',
           data: data2,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de la barra
           borderWidth: 1
         }
@@ -990,14 +990,14 @@ function actualizarGrafica8(labels, data, data2) {
         datasets: [{
           label: 'Cauca',
           data: data,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(255, 99, 132, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         },
         {
           label: 'Nariño',
           data: data2,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de la barra
           borderWidth: 1
         }
@@ -1094,14 +1094,14 @@ function actualizarGrafica9(labels, data, data2) {
         datasets: [{
           label: 'Cauca',
           data: data,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(255, 99, 132, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         },
         {
           label: 'Nariño',
           data: data2,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de la barra
           borderWidth: 1
         }
@@ -1198,14 +1198,14 @@ function actualizarGrafica10(labels, data, data2) {
         datasets: [{
           label: 'Cauca',
           data: data,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(255, 99, 132, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         },
         {
           label: 'Nariño',
           data: data2,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de la barra
           borderWidth: 1
         }
@@ -1303,14 +1303,14 @@ function actualizarGrafica11(labels, data, data2) {
         datasets: [{
           label: 'Cauca',
           data: data,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(255, 99, 132, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
         },
         {
           label: 'Nariño',
           data: data2,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo de la barra
+          backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de la barra
           borderWidth: 1
         }

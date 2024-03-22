@@ -40,6 +40,7 @@
                                 <select id="selectCohorte" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                             </form>
                             <canvas id="miGraficoBarra4" class="w-full relative h-64"></canvas>
@@ -73,6 +74,7 @@
                                 <select id="cohorteSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -92,6 +94,7 @@
                                 <select id="cohorteSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -111,6 +114,7 @@
                                 <select id="cohorteSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -130,6 +134,7 @@
                                 <select id="cohorteSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect4" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -149,6 +154,7 @@
                                 <select id="cohorteSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect10" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -168,6 +174,7 @@
                                 <select id="cohorteSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
+                                    <option value="cohorte3">Cohorte 3</option>
                                 </select>
                                 <label for="modalidadSelect11" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -225,6 +232,14 @@ function grafica1() {
                 data: {!! json_encode($data2) !!},
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
+                    
+                ],
+            },
+            {
+                label: 'Cohorte 3',
+                data: {!! json_encode($data3) !!},
+                backgroundColor: [
+                    'rgba(255, 206, 86, 0.7)',
                     
                 ],
             }
@@ -302,7 +317,25 @@ function grafica3() {
                   backgroundColor: [
                       'rgba(113, 203, 92, 0.7)',        
                   ],
-              }
+              },
+              {
+                  label: 'Cauca cohorte 3',
+                  data: {!! json_encode($dataCaucaCohorte3) !!},
+                  backgroundColor: [
+                      'rgba(98, 16, 145, 0.7)',
+                      
+                      
+                  ],
+              },
+              {
+                  label: 'Nariño cohorte 3',
+                  data: {!! json_encode($dataNarinoCohorte3) !!},
+                  backgroundColor: [
+                      'rgba(255, 0, 0, 0.7)',
+                      
+                      
+                  ],
+              },
     
           ],
           
@@ -362,7 +395,7 @@ function grafica4() {
                     {
                         label: 'Cauca presencial',
                         data: dataCaucaCohorte1P,
-                        backgroundColor: 'rgba(255, 99, 132, 0.7))'
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)'
                     },
                     {
                         label: 'Nariño virtual',
@@ -435,6 +468,13 @@ function grafica4() {
                     myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte2P) !!};
                     myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte2V) !!};
                     myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte2P) !!};
+                } else if (selectCohorte.value === 'cohorte3') {
+                    // Actualizar los datos para el segundo cohorte (si es necesario)
+                    // Aquí debes proporcionar los datos para el segundo cohorte
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte3V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte3P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte3V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte3P) !!};
                 }
 
                 myChartBarra.update();
@@ -558,19 +598,21 @@ function grafica5() {
             ]
             // Puedes agregar más departamentos y sus municipios aquí
     };
-    let conteoPorMunicipio = {!! json_encode($conteoPorMunicipio) !!};
-    let conteoPorMunicipio2 = {!! json_encode($conteoPorMunicipio2) !!};
+    let conteoPorMunicipio = {!! json_encode($conteoPorMunicipioCohorte1) !!};
+    let conteoPorMunicipio2 = {!! json_encode($conteoPorMunicipioCohorte2) !!};
+    let conteoPorMunicipio3 = {!! json_encode($conteoPorMunicipioCohorte3) !!};
 
     // Obtener los nombres de los municipios y los conteos
     let municipios = Object.keys(conteoPorMunicipio);
     let conteos = Object.values(conteoPorMunicipio);
     let conteo2 = Object.values(conteoPorMunicipio2);
+    let conteo3 = Object.values(conteoPorMunicipio3);
             // Obtener el contexto del lienzo de la gráfica
             let ctxBarra = document.getElementById('miGraficoBarra5').getContext('2d');
 
             // Datos ficticios para la demostración
             let labels = municipiosPorDepartamento["Cauca"];
-            let dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
+            // let dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
           
             // Definir los datos de la gráfica
             let data = {
@@ -586,11 +628,12 @@ function grafica5() {
                         data: conteo2,
                         backgroundColor: 'rgba(26, 83, 185, 0.7)'
                     },
-                    // {
-                    //     label: 'Cauca presencial',
-                    //     data: dataCaucaCohorte1P,
-                    //     backgroundColor: 'rgba(255, 99, 132, 0.7))'
-                    // },
+                    {
+                        label: 'Estudiantes cohorte 3',
+                        data: conteo2,
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)'
+                    },
+                    
                  
                 ]
             };

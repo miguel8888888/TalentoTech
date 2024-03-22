@@ -10,6 +10,7 @@ use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EstadisticasController;
 use App\Http\Controllers\GestionHorariosController;
+use App\Http\Controllers\InfoAcademicaController;
 use App\Http\Controllers\ProfileHorarioController;
 use App\Http\Controllers\ReportesController;
 
@@ -38,6 +39,9 @@ Route::get('horariosparticipante', [GestionHorariosController::class, 'index'])-
 
 Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuarios.search')->middleware('auth');
 
+Route::get('infoacademica', [InfoAcademicaController::class, 'index'])->name('infoacademica.index')->middleware('auth');
+Route::get('buscarparticipanteinfoacademica', [InfoAcademicaController::class, 'index'])->name('infoacademica.search')->middleware('auth');
+Route::get('infoacademica/{info}', [InfoAcademicaController::class, 'edit'])->name('infoacademica.edit')->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');
 Route::get('/estadisticas', [EstadisticasController::class, 'mostrarDashboard'])->name('estadisticas')->middleware('auth');;

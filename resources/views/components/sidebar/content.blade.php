@@ -84,6 +84,12 @@
         </div>
     @endcan
 
+    <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.*')">
+            <x-slot name="icon">
+                <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+
     {{-- <x-sidebar.dropdown
         title="Buttons"
         :active="Str::startsWith(request()->route()->uri(), 'buttons')"

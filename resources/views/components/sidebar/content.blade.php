@@ -10,14 +10,21 @@
 
 
 
-
-    @can('reportes-listar')
-        <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
-            <x-slot name="icon">
-                <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-            </x-slot>
-        </x-sidebar.link>
-    @endcan
+    
+        @can('reportes-listar')
+            <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
+                <x-slot name="icon">
+                    <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                </x-slot>
+            </x-sidebar.link>
+        @endcan
+        @role('Gestor')
+            <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
+                <x-slot name="icon">
+                    <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                </x-slot>
+            </x-sidebar.link>
+        @endrole
 
 
     <x-sidebar.link title="Perfil" href="{{ route('profile.edit') }}" :isActive="request()->routeIs('profile.edit')">

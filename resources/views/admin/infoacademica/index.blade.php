@@ -22,6 +22,8 @@
                         </option>
                         <option value="cohorte2" @if (old('cohorte') == 'cohorte2') selected @endif>cohorte2
                         </option>
+                        <option value="cohorte3" @if (old('cohorte') == 'cohorte3') selected @endif>cohorte3
+                        </option>
                     </select>
                 </div>
                 

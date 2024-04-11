@@ -42,6 +42,10 @@ Route::get('buscarusuario', [UsuariosController::class, 'buscar'])->name('usuari
 Route::get('infoacademica', [InfoAcademicaController::class, 'index'])->name('infoacademica.index')->middleware('auth');
 Route::get('buscarparticipanteinfoacademica', [InfoAcademicaController::class, 'index'])->name('infoacademica.search')->middleware('auth');
 Route::get('infoacademica/{info}', [InfoAcademicaController::class, 'edit'])->name('infoacademica.edit')->middleware('auth');
+Route::get('graficas-academicas/', [InfoAcademicaController::class, 'graficas'])->name('infoacademica.graficas')->middleware('auth');
+Route::get('/obtener-datos-grafica-academica', [InfoAcademicaController::class, 'obtenerDatosGrafica'])->name('obtener-datos-grafica-academica')->middleware('auth');
+Route::get('/sincronizar-api', [InfoAcademicaController::class, 'sincronizarDatos'])->name('sincronizar-api')->middleware('auth');
+
 
 Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');
 Route::get('/estadisticas', [EstadisticasController::class, 'mostrarDashboard'])->name('estadisticas')->middleware('auth');;

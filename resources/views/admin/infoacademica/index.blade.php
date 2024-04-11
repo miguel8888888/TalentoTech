@@ -74,6 +74,15 @@
                         Cohorte
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Curso
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Progreso
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Inicios de sesión
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                                 <span class="sr-only">Editar</span>
                             </th>
                     <!-- <th scope="col" class="px-6 py-3">
@@ -100,6 +109,15 @@
                         </td>
                         <td class="px-6 py-4">
                             {{ $data->cohorte }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $data->curso }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $data->progreso }}%
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $data->inicios_de_sesion }}
                         </td>
                         <td class="px-6 py-4 text-right">
                                     <a href="{{ route('infoacademica.edit', $data->id, $data->numero_documento) }}"

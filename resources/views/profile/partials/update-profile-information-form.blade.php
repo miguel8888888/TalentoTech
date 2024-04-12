@@ -15,12 +15,12 @@
     {{-- <p>
 
         esta es la informacion
-    </p> --}}
+    </p>
     @foreach ($roles as $data)
         <td>{{ $data->name }}</td>
-        {{-- @if (!empty($data->getRoleNames()))
-        @endif --}}
-    @endforeach
+        @if (!empty($data->getRoleNames()))
+        @endif
+    @endforeach --}}
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')

@@ -10,7 +10,7 @@
 
 
 
-    
+
         @can('reportes-listar')
             <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
                 <x-slot name="icon">
@@ -91,6 +91,7 @@
         </div>
     @endcan
 
+    @role('Administrador')
     <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
             <x-slot name="icon">
                 <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
@@ -102,6 +103,8 @@
                 <x-icons.graficas class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+    @endrole
+
 
     {{-- <x-sidebar.dropdown
         title="Buttons"

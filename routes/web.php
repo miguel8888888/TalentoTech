@@ -13,6 +13,7 @@ use App\Http\Controllers\GestionHorariosController;
 use App\Http\Controllers\InfoAcademicaController;
 use App\Http\Controllers\ProfileHorarioController;
 use App\Http\Controllers\ReportesController;
+use App\Http\Controllers\InscripcionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get('/', function () {
     return view('Formularios/validar');
 });
 
+
+Route::get('inscripcion', [InscripcionController::class, 'inscripcion'])->name('inscripcion');
 Route::resource('participantes', GestionParticipantesController::class)->middleware('auth');
 Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 Route::resource('horarios', GestionHorariosController::class)->middleware('auth');

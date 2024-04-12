@@ -30,7 +30,7 @@ class SincronizarApiCommand extends Command
           $url = 'https://imaster.academy/report/didactic_report/Reportes.json';
           $json = file_get_contents($url);
           $datos = json_decode($json, true)[0]['data'];
-      
+
           // Iterar sobre los participantes obtenidos de la base de datos
           // Buscar la entrada correspondiente en $datos basándose en el número de documento
           foreach ($datos as $item) {
@@ -38,10 +38,16 @@ class SincronizarApiCommand extends Command
                if ($participante) {
                    $participante->curso = $item['curso'];
                    $participante->progreso = $item['progreso'];
+                   $participante->progreso = $item['progreso'];
+                   $participante->inicios_de_sesion = $item['inicios_de_sesión'];
+                   $participante->nota_final = $item['nota_final'];
                    $participante->save();
                }
                $participante = null;
-           
+
           }
+
+          \Log::info('Sincronizar api');
+
     }
 }

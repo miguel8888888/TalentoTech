@@ -24,19 +24,21 @@
                         </option>
                     </select>
                 </div>
-                <div class="relative w-full md:w-1/3">
-                    <select id="aprobacion_documento" onchange="submitAprobacion()" value="{{ old('aprobacion_documento') }}" name="aprobacion_documento"
-                        class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected disabled>Seleccione...</option>
-                        <option value="" {{ old('aprobacion_documento') === '' ? 'selected' : '' }}>Listar todos</option>
-                        <option value="NA" @if (old('aprobacion_documento') == 'NA') selected @endif>No revisado
-                        </option>
-                        <option value="Si" @if (old('aprobacion_documento') == 'Si') selected @endif>Si aprobado
-                        </option>
-                        <option value="No" @if (old('aprobacion_documento') == 'No') selected @endif>No aprobado
-                        </option>
-                    </select>
-                </div>
+                @if (!Auth::user()->hasRole('Verificador'))
+                    <div class="relative w-full md:w-1/3">
+                        <select id="aprobacion_documento" onchange="submitAprobacion()" value="{{ old('aprobacion_documento') }}" name="aprobacion_documento"
+                            class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected disabled>Seleccione...</option>
+                            <option value="" {{ old('aprobacion_documento') === '' ? 'selected' : '' }}>Listar todos</option>
+                            <option value="NA" @if (old('aprobacion_documento') == 'NA') selected @endif>No revisado
+                            </option>
+                            <option value="Si" @if (old('aprobacion_documento') == 'Si') selected @endif>Si aprobado
+                            </option>
+                            <option value="No" @if (old('aprobacion_documento') == 'No') selected @endif>No aprobado
+                            </option>
+                        </select>
+                    </div>
+                @endif
                 <div class="relative w-full md:w-1/3">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
@@ -87,40 +89,50 @@
 
                     @if ($participantes->contains('estado_registro', 'Matricula'))
                         @can('participante-listar')
-                            <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Editar</span>
-                            </th>
+                            @if (!Auth::user()->hasRole('Verificador'))
+                                <th scope="col" class="px-6 py-3">
+                                    <span class="sr-only">Editar</span>
+                                </th>
+                            @endif
                         @endcan
                         <th scope="col" class="px-6 py-3">
                             <span class="sr-only">Ver</span>
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            <span class="sr-only">Documento aprobado</span>
-                        </th>
+                        @if (!Auth::user()->hasRole('Verificador'))
+                            <th scope="col" class="px-6 py-3">
+                                <span class="sr-only">Documento aprobado</span>
+                            </th>
+                        @endif
                     @elseif ($participantes->contains('estado_registro', 'Pre-matricula'))
                         @can('participante-listar')
-                            <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Editar</span>
-                            </th>
+                            @if (!Auth::user()->hasRole('Verificador'))
+                                <th scope="col" class="px-6 py-3">
+                                    <span class="sr-only">Editar</span>
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+
+                                </th>
+                                @endif
+                                <th scope="col" class="px-6 py-3">
+
+                                </th>
                         @endcan
-                        <th scope="col" class="px-6 py-3">
-
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-
-                        </th>
                     @else
                         @can('participante-listar')
-                            <th scope="col" class="px-6 py-3">
-                                <span class="sr-only">Editar</span>
-                            </th>
+                            @if (!Auth::user()->hasRole('Verificador'))
+                                <th scope="col" class="px-6 py-3">
+                                    <span class="sr-only">Editar</span>
+                                </th>
+                            @endif
                         @endcan
-                        <th scope="col" class="px-6 py-3">
+                        @if (!Auth::user()->hasRole('Verificador'))
+                            <th scope="col" class="px-6 py-3">
 
-                        </th>
-                        <th scope="col" class="px-6 py-3">
+                            </th>
+                            <th scope="col" class="px-6 py-3">
 
-                        </th>
+                            </th>
+                        @endif
                     @endif
 
                 </tr>
@@ -147,10 +159,13 @@
                     </td> -->
                         @if ($data->estado_registro === 'Matricula' || $data->estado_registro === 'Pos-matriculado'|| $data->estado_registro === 'nueva-prueba')
                             @can('participante-listar')
-                                <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('participantes.edit', $data->id) }}"
-                                        class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                                </td>
+                                @if (!Auth::user()->hasRole('Verificador'))
+
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="{{ route('participantes.edit', $data->id) }}"
+                                            class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                    </td>
+                                @endif
                             @endcan
                             @if($data->carga_documento === 'Si')
                                 <td class="px-6 py-4 text-right">
@@ -161,22 +176,25 @@
                                         Ver Documento
                                     </button>
                                 </td>
-                                @if ($data->aprobacion_documento === 'Si')
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center">
-                                            <input checked id="checkbox{{ $data->id }}" type="checkbox"
-                                                data-numero-documento="{{ $data->numero_documento }}"
-                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        </div>
-                                    </td>
-                                @else
-                                    <td class="px-6 py-4 text-right">
-                                        <div class="flex items-center mb-4">
-                                            <input id="checkbox{{ $data->id }}" type="checkbox"
-                                                data-numero-documento="{{ $data->numero_documento }}"
-                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        </div>
-                                    </td>
+                                @if (!Auth::user()->hasRole('Verificador'))
+
+                                    @if ($data->aprobacion_documento === 'Si')
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center">
+                                                <input checked id="checkbox{{ $data->id }}" type="checkbox"
+                                                    data-numero-documento="{{ $data->numero_documento }}"
+                                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            </div>
+                                        </td>
+                                    @else
+                                        <td class="px-6 py-4 text-right">
+                                            <div class="flex items-center mb-4">
+                                                <input id="checkbox{{ $data->id }}" type="checkbox"
+                                                    data-numero-documento="{{ $data->numero_documento }}"
+                                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            </div>
+                                        </td>
+                                    @endif
                                 @endif
                             @else
                                 <td class="px-6 py-4 text-right">
@@ -189,24 +207,33 @@
 
                         @elseif($data->estado_registro === 'Pre-matricula')
                             @can('participante-listar')
-                                <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('participantes.edit', $data->id) }}"
-                                        class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                                </td>
+                                @if (!Auth::user()->hasRole('Verificador'))
+
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="{{ route('participantes.edit', $data->id) }}"
+                                            class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+
+                                    </td>
+                                    @endif
+                                    <td class="px-6 py-4 text-right">
+
+                                    </td>
                             @endcan
-                            <td class="px-6 py-4 text-right">
-
-                            </td>
-                            <td class="px-6 py-4 text-right">
-
-                            </td>
                         @else
                             @can('participante-listar')
-                                <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('participantes.edit', $data->id) }}"
-                                        class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
-                                </td>
+                                @if (!Auth::user()->hasRole('Verificador'))
+
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="{{ route('participantes.edit', $data->id) }}"
+                                            class="participante_{{ $data->id }} font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</a>
+                                    </td>
+                                @endif
                             @endcan
+                            <td class="px-6 py-4 text-right">
+
+                            </td>
                             <td class="px-6 py-4 text-right">
 
                             </td>
@@ -265,14 +292,16 @@
                         @csrf
                         <input type="hidden" id="cedulaValidar" name="cedulaValidar">
                         <input type="hidden" id="checked" name="checked">
-                        <button onclick="submitEstado('Si')"
-                            class="text-white bg-green-700 hover:green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Si
-                            aprueba
-                        </button>
-                        <button onclick="submitEstado('No')"
-                            class="text-white bg-red-700 hover:red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">No
-                            aprueba
-                        </button>
+                        @if (!Auth::user()->hasRole('Verificador'))
+                            <button onclick="submitEstado('Si')"
+                                class="text-white bg-green-700 hover:green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Si
+                                aprueba
+                            </button>
+                            <button onclick="submitEstado('No')"
+                                class="text-white bg-red-700 hover:red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">No
+                                aprueba
+                            </button>
+                        @endif
                     </form>
                 </div>
 

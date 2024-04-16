@@ -32,6 +32,8 @@ Route::get('/', function () {
 
 
 Route::get('inscripcion', [InscripcionController::class, 'inscripcion'])->name('inscripcion');
+Route::post('inscripcion/store', [InscripcionController::class, 'store']);
+
 Route::resource('participantes', GestionParticipantesController::class)->middleware('auth');
 Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 Route::resource('horarios', GestionHorariosController::class)->middleware('auth');

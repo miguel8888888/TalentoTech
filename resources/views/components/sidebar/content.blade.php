@@ -40,13 +40,20 @@
             </x-slot>
         </x-sidebar.link>
     @endcan
-    @can('participante-listar')
+    @role('Verificador')
+        <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
+            <x-slot name="icon">
+                <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endrole
+    @role('Administrador')
         <x-sidebar.link title="Listado de Usuarios" href="{{ route('usuarios.index') }}" :isActive="request()->routeIs('usuarios.index')">
             <x-slot name="icon">
                 <x-icons.users class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endcan
+    @endrole
     @can('reportes-listar')
         <x-sidebar.link title="Listado de Horarios" href="{{ route('horarios.index') }}" :isActive="request()->routeIs('horarios.*')">
             <x-slot name="icon">

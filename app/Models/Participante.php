@@ -39,6 +39,10 @@ class Participante extends Model
         'modalidad_bootcamps',
         'requisitos_aceptados',
         // 'computo',
+        'codigo_municipio',
+        'codigo_departamento',
+        'motivaciones',
+        'estado_registro',
         // 'parrafo',
         // 'tratamiento_datos',
 

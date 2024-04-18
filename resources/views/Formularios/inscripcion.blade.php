@@ -67,9 +67,8 @@
                                 <div class="tab-content">
                                     <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                                         <div class="pant pant1 space-y-12 grid grid-cols-1">
-
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="primer_nombre"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
                                                     <div class="mt-2">
@@ -82,7 +81,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="segundo_nombre"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Segundo
                                                         Nombre</label>
@@ -95,7 +94,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="primer_apellido"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Primer
                                                         Apellido</label>
@@ -108,7 +107,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="segundo_apellido"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Segundo
                                                         Apellido</label>
@@ -123,7 +122,7 @@
 
 
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="tipo_documento"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Tipo
                                                         Documento </label>
@@ -138,7 +137,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="numero_documento"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Número de
                                                         documento</label>
@@ -152,7 +151,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="fecha_nacimiento"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Fecha
                                                         de Nacimiento</label>
@@ -164,7 +163,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="fecha_exp_cc"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Fecha
                                                         de expedición de documento</label>
@@ -176,7 +175,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <div class="identi_genero ">
                                                         <label for="identidad_genero"
                                                             class="block text-sm font-medium leading-6 text-gray-900">Identidad
@@ -198,7 +197,7 @@
 
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="celular_llamadas"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Número
                                                         de teléfono</label>
@@ -212,7 +211,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="correo_electronico"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Correo
                                                         electrónico</label>
@@ -225,7 +224,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="nacionalidad"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Nacionalidad</label>
                                                     <div class="mt-2">
@@ -240,7 +239,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="departamento_residencia"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Departamento
                                                         de Residencia</label>
@@ -259,7 +258,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="municipio_residencia"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Municipio
                                                         Residencia</label>
@@ -273,7 +272,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="zona_ubicacion"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Zona
                                                         de ubicación</label>
@@ -290,7 +289,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="campesino"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Campesino</label>
                                                     <div class="mt-2">
@@ -306,7 +305,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="estrato_socioeconomico"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Estrato
                                                         socioeconómico</label>
@@ -336,7 +335,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="estrato_socioeconomico"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Autoidentificación
                                                         Étnica</label>
@@ -367,7 +366,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="victima"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Víctima del Conflicto Armado </label>
                                                     <div class="mt-2">
@@ -383,7 +382,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-2">
+                                                <div class="col-span-4">
                                                     <label for="grado_escolaridad"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Nivel educativo</label>
                                                     <div class="mt-2">
@@ -415,7 +414,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-3">
+                                                <div class="col-span-4">
                                                     <label for="discapacidad"
                                                         class="block text-sm font-medium leading-6 text-gray-900">¿Presenta
                                                         alguna discapacidad?</label>
@@ -432,7 +431,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-3">
+                                                <div class="col-span-4">
                                                     <label for="tipo_discapacidad"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Tipo de discapacidad</label>
                                                     <div class="mt-2">
@@ -452,15 +451,14 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="disponibilidad_formacion"
                                                         class="block text-sm font-medium leading-6 text-gray-900">¿Te comprometes a dedicar mínimo 10 horas semanales a Talento Tech?</label>
                                                     <div class="mt-2">
                                                         <select id="disponibilidad_formacion"
                                                             name="disponibilidad_formacion"
                                                             autocomplete="disponibilidad_formacion"
-                                                            class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                                            style="width: 25%;">
+                                                            class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option value="Si">Si</option>
                                                             <option value="No">No</option>
@@ -468,7 +466,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="eje_final_formacion"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Eje temático</label>
                                                     <div class="mt-2">
@@ -485,7 +483,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="modalidad_bootcamps"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Tipo de formación</label>
                                                     <div class="mt-2">
@@ -500,10 +498,10 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="requisitos_aceptados"
                                                         class="block text-sm font-medium leading-6 text-gray-900">He leído y acepto los
-                                                       <span><a href="Asset/Pdf/requisitos.pdf" id="requisitosConvocatoriaLink" target="_blank" class="underline">requisitos de la convocatoria</a></span> </label>
+                                                       <span><a href="{{ asset('assets/pdf/requisitos.pdf')}}" id="requisitosConvocatoriaLink" target="_blank" class="underline">requisitos de la convocatoria</a></span> </label>
                                                     <div class="mt-2">
                                                         <select id="requisitos_aceptados"
                                                             name="requisitos_aceptados"
@@ -516,7 +514,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="computo" class="block text-sm font-medium leading-6 text-gray-900">
                                                         Cuento con un equipo de cómputo y/o dispositivo móvil o la posibilidad de usar uno, con acceso a internet para llevar a cabo la formación
                                                     </label>
@@ -532,14 +530,14 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
-                                                    <label for="parrafo" class="block text-sm font-medium leading-6 text-gray-900">
+                                                <div class=" col-span-4">
+                                                    <label for="motivaciones" class="block text-sm font-medium leading-6 text-gray-900">
                                                         ¿Qué te motivó a participar?
                                                     </label>
                                                     <div class="mt-2">
-                                                        <select id="parrafo"
-                                                            name="parrafo"
-                                                            autocomplete="parrafo"
+                                                        <select id="motivaciones"
+                                                            name="motivaciones"
+                                                            autocomplete="motivaciones"
                                                             class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                                             <option selected disabled>Seleccione...</option>
                                                             <option value="Adquirir nuevos conocimientos">Adquirir nuevos conocimientos</option>
@@ -551,7 +549,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="lg:col-span-4 col-span-2">
+                                                <div class=" col-span-4">
                                                     <label for="tratamiento_datos"
                                                         class="block text-sm font-medium leading-6 text-gray-900">He leído y acepto la política de
                                                        <span><a href="https://www.mintic.gov.co/portal/715/articles-2627_resolucion_0448_2022.pdf" id="tratamientoDatosLink" target="_blank" class="underline">Tratamiento de Datos</a></span> </label>
@@ -569,9 +567,9 @@
 
                                             </div>
 
-                                            <div class="grid grid-cols-2 w-full">
+                                            <div class="grid justify-items-start  w-full">
 
-                                                <div class="w-full mt-3">
+                                                <div class="w-3/6 ">
                                                     <button id="sendForm" type="submit"
                                                         class=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">INSCRIBIRSE</button>
                                                 </div>
@@ -609,7 +607,7 @@
         <div class=" flex justify-center">
 
             <div class="bg-white rounded-xl py-4 px-2 mx-3 w-2/3 grid grid-cols-3">
-                <div class="correct col-span-3 text-5xl m-4">
+                <div class="correct col-span-2 text-5xl m-4">
                     <a href="https://twitter.com/Christopher4Lis" target="_blank"></a>
                     <i class="fa fa-lg fa-circle-check"></i>
                 </div>

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Participante;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\MatriculaExito;
+use App\Mail\InscripcionExitoMailable;
 
 class InscripcionController extends Controller
 {
@@ -265,8 +265,8 @@ class InscripcionController extends Controller
 
         // $contentMail = $informacion_usuario;
 
-        // $correo = new MatriculaExito($contentMail);
-        // Mail::to($informacion_usuario->correo_electronico)->send($correo);
+        $correo = new InscripcionExitoMailable();
+        Mail::to($informacion_usuario->correo_electronico)->send($correo);
 
         // Redirigir a una nueva vista con los datos
         $datos = ['mensaje' => $informacion_usuario->primer_nombre . ' ' . $informacion_usuario->primer_apellido];

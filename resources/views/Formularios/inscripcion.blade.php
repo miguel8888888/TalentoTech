@@ -70,7 +70,7 @@
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-4">
                                                     <label for="primer_nombre"
-                                                        class="block text-sm font-medium leading-6 text-gray-900">Primer Nombre</label>
+                                                        class="block text-sm font-medium leading-6 text-gray-900">Primer nombre</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="primer_nombre" id="primer_nombre"
                                                             autocomplete="given-name"
@@ -84,7 +84,7 @@
                                                 <div class="col-span-4">
                                                     <label for="segundo_nombre"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Segundo
-                                                        Nombre</label>
+                                                        nombre</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="segundo_nombre" id="segundo_nombre"
                                                             autocomplete="family-name"
@@ -97,7 +97,7 @@
                                                 <div class="col-span-4">
                                                     <label for="primer_apellido"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Primer
-                                                        Apellido</label>
+                                                        apellido</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="primer_apellido"
                                                             id="primer_apellido" autocomplete="family-name"
@@ -110,7 +110,7 @@
                                                 <div class="col-span-4">
                                                     <label for="segundo_apellido"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Segundo
-                                                        Apellido</label>
+                                                        apellido</label>
                                                     <div class="mt-2">
                                                         <input type="text" name="segundo_apellido"
                                                             id="segundo_apellido" autocomplete="given-name"
@@ -125,7 +125,7 @@
                                                 <div class="col-span-4">
                                                     <label for="tipo_documento"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Tipo
-                                                        Documento </label>
+                                                        documento </label>
                                                     <div class="mt-2">
                                                         <select id="tipo_documento" name="tipo_documento"
                                                             autocomplete="tipo-documento-name"
@@ -154,7 +154,7 @@
                                                 <div class="col-span-4">
                                                     <label for="fecha_nacimiento"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Fecha
-                                                        de Nacimiento</label>
+                                                        de nacimiento</label>
                                                     <div class="mt-2">
                                                         <input type="date" name="fecha_nacimiento"
                                                             id="fecha_nacimiento" autocomplete="family-name"
@@ -242,7 +242,7 @@
                                                 <div class="col-span-4">
                                                     <label for="departamento_residencia"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Departamento
-                                                        de Residencia</label>
+                                                        de residencia</label>
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="departamento_residencia" id="departamento_residencia" autocomplete="departamento_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="departamento_residencia"
@@ -261,7 +261,7 @@
                                                 <div class="col-span-4">
                                                     <label for="municipio_residencia"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Municipio
-                                                        Residencia</label>
+                                                        residencia</label>
                                                     <div class="mt-2">
                                                         <!-- <input type="text" name="municipio_residencia" id="municipio_residencia" autocomplete="municipio_residencia" class="block w-full rounded-full px-4 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" /> -->
                                                         <select id="municipio_residencia" name="municipio_residencia"
@@ -338,7 +338,7 @@
                                                 <div class="col-span-4">
                                                     <label for="estrato_socioeconomico"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Autoidentificación
-                                                        Étnica</label>
+                                                        étnica</label>
                                                     <div class="mt-2">
                                                         <select id="grupo_etnico" name="grupo_etnico"
                                                             autocomplete="grupo_etnico"
@@ -368,7 +368,7 @@
 
                                                 <div class="col-span-4">
                                                     <label for="victima"
-                                                        class="block text-sm font-medium leading-6 text-gray-900">Víctima del Conflicto Armado </label>
+                                                        class="block text-sm font-medium leading-6 text-gray-900">Víctima del conflicto armado </label>
                                                     <div class="mt-2">
                                                         <select id="victima" name="victima"
                                                             autocomplete="victima"
@@ -431,7 +431,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-span-4">
+                                                <div class="col-span-4" id="tipo_discapacidad_container">
                                                     <label for="tipo_discapacidad"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Tipo de discapacidad</label>
                                                     <div class="mt-2">
@@ -988,16 +988,9 @@
         $("#discapacidad").change(function() {
             /* alert( $('option:selected', this).text() ); */
             if ($('option:selected', this).text() == 'Si') {
-                $('.prent_discapaciti').removeClass('d-none');
+                $('#tipo_discapacidad_container').removeClass('d-none');
             } else if ($('option:selected', this).text() == 'No') {
-                $('.prent_discapaciti').addClass('d-none');
-            }
-        });
-        $("#identidad_genero_preg").change(function() {
-            if ($('option:selected', this).text() == 'Si') {
-                $('.identi_genero').removeClass('d-none');
-            } else if ($('option:selected', this).text() == 'No') {
-                $('.identi_genero').addClass('d-none');
+                $('#tipo_discapacidad_container').addClass('d-none');
             }
         });
 

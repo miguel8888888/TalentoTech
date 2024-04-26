@@ -49,7 +49,7 @@ class GestionParticipantesController extends Controller
             $participantesQuery->where('aprobacion_documento', $filtro)->orderBy('carga_documento', 'desc');
             // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
         }
-        
+
         $participantes = $participantesQuery->paginate(50);
         return view('admin.participantes.index', compact('participantes'));
     }
@@ -138,7 +138,7 @@ class GestionParticipantesController extends Controller
         $participantes->cohorte = $request->input('cohorte');
         $participantes->modalidad_bootcamps = $request->input('modalidad_bootcamps');
         $participantes->profesor = $request->input('profesor');
-        $participantes->observaciones = $request->input('observaciones');
+        $participantes->observacion = $request->input('observaciones');
         // $informacion_usuario->requisitos_aceptados = $request->input('requisitos_aceptados');
         // $informacion_usuario->estado_registro = "Matriculado";
         $participantes->save();

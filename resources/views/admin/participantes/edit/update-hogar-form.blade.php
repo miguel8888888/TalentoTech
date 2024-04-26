@@ -636,6 +636,12 @@
                         <option selected disabled>Seleccione...</option>
                         <option @if (old('cohorte', $participantes->cohorte) === 'cohorte1') selected @endif value="cohorte1">Cohorte 1</option>
                         <option @if (old('cohorte', $participantes->cohorte) === 'cohorte2') selected @endif value="cohorte2">Cohorte 2</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte3') selected @endif value="cohorte2">Cohorte 3</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte4') selected @endif value="cohorte2">Cohorte 4</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte5') selected @endif value="cohorte2">Cohorte 5</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte6') selected @endif value="cohorte2">Cohorte 6</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte7') selected @endif value="cohorte2">Cohorte 7</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte8') selected @endif value="cohorte2">Cohorte 8</option>
                     </select>
                 </div>
             </div>
@@ -675,8 +681,14 @@
                 <label for="observaciones" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Observaciones</label>
                 <textarea id="observaciones" name="observaciones" rows="4" class="px-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
                         focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
-                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full" placeholder="Obsevaciones...">{{ old('observaciones', $participantes->observaciones) }}</textarea>
+                        dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 block w-full" placeholder="Obsevaciones...">{{ old('observaciones', $participantes->observacion) }}</textarea>
             </div>
+            @if ($participantes->curso)
+            <div class="lg:col-span-8 col-span-2">
+                <label for="observaciones" class="block text-sm font-medium leading-6 text-gray-800 dark:text-gray-300">Curso</label>
+                <p>{{ $participantes->curso }}</p>
+            </div>
+            @endif
 
 
         </div>

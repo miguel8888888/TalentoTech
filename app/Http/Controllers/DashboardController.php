@@ -16,6 +16,7 @@ class DashboardController extends Controller
         $estadoCohorte1 = 'cohorte1'; // Cambia esto por el estado específico que estás buscando
         $estadoCohorte2 = 'cohorte2'; // Cambia esto por el estado específico que estás buscando
         $estadoCohorte3 = 'cohorte3'; // Cambia esto por el estado específico que estás buscando
+        $estadoCohorte4 = 'cohorte4'; // Cambia esto por el estado específico que estás buscando
         $countMatricula = Participante::select('id')->where('estado_registro', $estadoMatricula )->count();
         $countInscripcion = Participante::select('id')->where('estado_registro', $estadoInscipcion)->count();
         $countPosMatricula = Participante::select('id')->where('estado_registro', $estadoPosMatricula)->count();
@@ -30,6 +31,7 @@ class DashboardController extends Controller
         $countCaucaCorte1 = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('departamento_residencia', 'Cauca')->count();
         $countCaucaCorte2 = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('departamento_residencia', 'Cauca')->count();
         $countCaucaCorte3 = Participante::select('id')->where('cohorte', $estadoCohorte3)->where('departamento_residencia', 'Cauca')->count();
+        $countCaucaCorte4 = Participante::select('id')->where('cohorte', $estadoCohorte4)->where('departamento_residencia', 'Cauca')->count();
 
 
         // Contar participantes del departamento Nariño
@@ -40,10 +42,11 @@ class DashboardController extends Controller
         $countNariñoCorte1 = Participante::select('id')->where('cohorte', $estadoCohorte1)->where('departamento_residencia', 'Nariño')->count();
         $countNariñoCorte2 = Participante::select('id')->where('cohorte', $estadoCohorte2)->where('departamento_residencia', 'Nariño')->count();
         $countNariñoCorte3 = Participante::select('id')->where('cohorte', $estadoCohorte3)->where('departamento_residencia', 'Nariño')->count();
+        $countNariñoCorte4 = Participante::select('id')->where('cohorte', $estadoCohorte4)->where('departamento_residencia', 'Nariño')->count();
 
         $labels = ['Etiqueta 1', 'Etiqueta 2', 'Etiqueta 3'];
         $data = [30, 50, 20];
-        
+
         // dd($estadoMatricula);
         return view('dashboard', ['countMatricula' => $countMatricula, 'countInscripcion' => $countInscripcion, 'countPosMatricula' => $countPosMatricula, 'countPreMatricula' =>  $countPreMatricula,
         'labels' => $labels, 'data' => $data, 'cantidadParticipantes' => $cantidadParticipantes,
@@ -61,6 +64,8 @@ class DashboardController extends Controller
         'countNariñoCorte2' => $countNariñoCorte2,
         'countCaucaCorte3' => $countCaucaCorte3,
         'countNariñoCorte3' => $countNariñoCorte3,
+        'countCaucaCorte4' => $countCaucaCorte4,
+        'countNariñoCorte4' => $countNariñoCorte4,
         ]);
     }
 }

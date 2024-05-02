@@ -10,7 +10,7 @@
     <div class="container mx-auto mt-8">
             <div class=" mx-auto">
                 <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4">
- 
+
                     <div class="bg-white shadow-md rounded-lg overflow-hidden ">
                         <div class="p-6">
                             <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por curso - cohorte</h5>
@@ -34,13 +34,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por cohorte y departamento</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por cohorte y departamento</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="selectCohorte" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un cohorte</label>
                                 <select id="selectCohorte" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                             </form>
                             <canvas id="miGraficoBarra4" class="w-full relative h-64"></canvas>
@@ -49,7 +50,7 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Lugar de origen</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Lugar de origen</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="selectDepartamento" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Departamento</label>
                                 <select id="selectDepartamento" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -63,7 +64,7 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por departamento - modalidad - cohorte</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por departamento - modalidad - cohorte</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="departamentoSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Departamento</label>
                                 <select id="departamentoSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -75,6 +76,7 @@
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -88,13 +90,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Grupos Etarios</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Grupos Etarios</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -108,13 +111,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico de estrato</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico de estrato</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -128,13 +132,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico identidad de genero</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico identidad de genero</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect4" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect4" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -148,13 +153,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico de identificación étnica</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico de identificación étnica</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect10" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect10" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -168,13 +174,14 @@
 
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
-                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico población vulnerable</h5>      
+                            <h5 class="text-lg font-semibold mb-4 dark:text-black">Gráfico población vulnerable</h5>
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect11" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                     <option value="cohorte1">Cohorte 1</option>
                                     <option value="cohorte2">Cohorte 2</option>
                                     <option value="cohorte3">Cohorte 3</option>
+                                    <option value="cohorte4">Cohorte 4</option>
                                 </select>
                                 <label for="modalidadSelect11" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -189,7 +196,7 @@
                     <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
                         <div class="p-6">
                             <h5 class="text-lg font-semibold mb-4">Estudiantes por cohorte y departamento</h5>
-                            
+
                             <form class="max-w-sm mx-auto">
                                 <label for="cohortSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un cohorte</label>
                                 <select id="cohortSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -224,7 +231,7 @@ function grafica1() {
                 data: {!! json_encode($data) !!},
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.7)',
-                    
+
                 ],
             },
             {
@@ -232,7 +239,7 @@ function grafica1() {
                 data: {!! json_encode($data2) !!},
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
-                    
+
                 ],
             },
             {
@@ -240,7 +247,15 @@ function grafica1() {
                 data: {!! json_encode($data3) !!},
                 backgroundColor: [
                     'rgba(255, 206, 86, 0.7)',
-                    
+
+                ],
+            },
+            {
+                label: 'Cohorte 4',
+                data: {!! json_encode($data4) !!},
+                backgroundColor: [
+                    'rgba(52, 235, 107, 0.7)',
+
                 ],
             }
         ],
@@ -261,7 +276,7 @@ function grafica2() {
                   data: {!! json_encode($dataCauca) !!},
                   backgroundColor: [
                       'rgba(54, 162, 235, 0.7)',
-                      
+
                   ],
               },
               {
@@ -269,7 +284,7 @@ function grafica2() {
                   data: {!! json_encode($dataNarino) !!},
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.7)',
-                      
+
                   ],
               }
           ],
@@ -291,7 +306,7 @@ function grafica3() {
                   data: {!! json_encode($dataCaucaCohorte1) !!},
                   backgroundColor: [
                       'rgba(255, 206, 86, 0.7)',
-                      
+
                   ],
               },
               {
@@ -299,7 +314,7 @@ function grafica3() {
                   data: {!! json_encode($dataNarinoCohorte1) !!},
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.7)',
-                      
+
                   ],
               },
               {
@@ -307,15 +322,15 @@ function grafica3() {
                   data: {!! json_encode($dataCaucaCohorte2) !!},
                   backgroundColor: [
                       'rgba(26, 83, 185, 0.7)',
-                      
-                      
+
+
                   ],
               },
               {
                   label: 'Nariño cohorte 2',
                   data: {!! json_encode($dataNarinoCohorte2) !!},
                   backgroundColor: [
-                      'rgba(113, 203, 92, 0.7)',        
+                      'rgba(113, 203, 92, 0.7)',
                   ],
               },
               {
@@ -323,8 +338,6 @@ function grafica3() {
                   data: {!! json_encode($dataCaucaCohorte3) !!},
                   backgroundColor: [
                       'rgba(98, 16, 145, 0.7)',
-                      
-                      
                   ],
               },
               {
@@ -332,15 +345,29 @@ function grafica3() {
                   data: {!! json_encode($dataNarinoCohorte3) !!},
                   backgroundColor: [
                       'rgba(255, 0, 0, 0.7)',
-                      
-                      
                   ],
               },
-    
+
+              {
+                  label: 'Cauca cohorte 4',
+                  data: {!! json_encode($dataCaucaCohorte4) !!},
+                  backgroundColor: [
+                      'rgba(52, 79, 235, 0.7)',
+                  ],
+              },
+              {
+                  label: 'Nariño cohorte 4',
+                  data: {!! json_encode($dataNarinoCohorte4) !!},
+                  backgroundColor: [
+                      'rgba(235, 153, 52, 0.7)',
+                  ],
+              },
+
+
           ],
-          
+
       },
-    
+
       options: {
           indexAxis: 'y',
           // Elements options apply to all of the options unless overridden in a dataset
@@ -361,7 +388,7 @@ function grafica3() {
           // }
           }
       },
-    
+
     });
 }
 grafica3();
@@ -445,7 +472,7 @@ function grafica4() {
 
             // Obtener los elementos select
             var selectCohorte = document.getElementById('selectCohorte');
-      
+
 
             // Agregar eventos change a los selects
             selectCohorte.addEventListener('change', updateChart);
@@ -475,6 +502,13 @@ function grafica4() {
                     myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte3P) !!};
                     myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte3V) !!};
                     myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte3P) !!};
+                } else if (selectCohorte.value === 'cohorte4') {
+                    // Actualizar los datos para el segundo cohorte (si es necesario)
+                    // Aquí debes proporcionar los datos para el segundo cohorte
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte4V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte4P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte4V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte4P) !!};
                 }
 
                 myChartBarra.update();
@@ -601,19 +635,21 @@ function grafica5() {
     let conteoPorMunicipio = {!! json_encode($conteoPorMunicipioCohorte1) !!};
     let conteoPorMunicipio2 = {!! json_encode($conteoPorMunicipioCohorte2) !!};
     let conteoPorMunicipio3 = {!! json_encode($conteoPorMunicipioCohorte3) !!};
+    let conteoPorMunicipio4 = {!! json_encode($conteoPorMunicipioCohorte4) !!};
 
     // Obtener los nombres de los municipios y los conteos
     let municipios = Object.keys(conteoPorMunicipio);
     let conteos = Object.values(conteoPorMunicipio);
     let conteo2 = Object.values(conteoPorMunicipio2);
     let conteo3 = Object.values(conteoPorMunicipio3);
+    let conteo4 = Object.values(conteoPorMunicipio4);
             // Obtener el contexto del lienzo de la gráfica
             let ctxBarra = document.getElementById('miGraficoBarra5').getContext('2d');
 
             // Datos ficticios para la demostración
             let labels = municipiosPorDepartamento["Cauca"];
             // let dataCaucaCohorte1V = {!! json_encode($dataCaucaCohorte1V) !!};
-          
+
             // Definir los datos de la gráfica
             let data = {
                 labels: labels,
@@ -630,11 +666,16 @@ function grafica5() {
                     },
                     {
                         label: 'Estudiantes cohorte 3',
-                        data: conteo2,
+                        data: conteo3,
                         backgroundColor: 'rgba(255, 99, 132, 0.7)'
                     },
-                    
-                 
+                    {
+                        label: 'Estudiantes cohorte 4',
+                        data: conteo4,
+                        backgroundColor: 'rgba(52, 73, 235, 0.7)'
+                    },
+
+
                 ]
             };
 
@@ -663,7 +704,7 @@ function grafica5() {
 
             // Obtener los elementos select
             let selectDept = document.getElementById('selectDept');
-      
+
 
             // Agregar eventos change a los selects
             selectDepartamento.addEventListener('change', updateChart);
@@ -675,7 +716,7 @@ function grafica5() {
                 let departamentoSeleccionado = selectDepartamento.value;
                 let municipios = municipiosPorDepartamento[departamentoSeleccionado];
                 myChartBarra.data.labels = municipios;
-               
+
 
                 myChartBarra.update();
             }
@@ -748,11 +789,11 @@ grafica5();
 function obtenerDatosGrafica(cohorte, departamento, modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
   let xhr = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url = '/obtener-datos-grafica?cohorte=' + cohorte + '&departamento=' + departamento + '&modalidad=' + modalidad;
   xhr.open('GET', url, true);
-  
+
   // Manejar la respuesta del servidor
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -770,7 +811,7 @@ function obtenerDatosGrafica(cohorte, departamento, modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr.send();
 }
@@ -779,7 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado = document.getElementById('cohorteSelect').value;
   let departamentoSeleccionado = document.getElementById('departamentoSelect').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada);
 });
@@ -789,7 +830,7 @@ document.getElementById('cohorteSelect').addEventListener('change', function() {
   let cohorteSeleccionado = this.value;
   let departamentoSeleccionado = document.getElementById('departamentoSelect').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect').value;
-  
+
   obtenerDatosGrafica(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada);
 });
 
@@ -797,7 +838,7 @@ document.getElementById('departamentoSelect').addEventListener('change', functio
   let cohorteSeleccionado = document.getElementById('cohorteSelect').value;
   let departamentoSeleccionado = this.value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect').value;
-  
+
   obtenerDatosGrafica(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada);
 });
 
@@ -805,7 +846,7 @@ document.getElementById('modalidadSelect').addEventListener('change', function()
   let cohorteSeleccionado = document.getElementById('cohorteSelect').value;
   let departamentoSeleccionado = document.getElementById('departamentoSelect').value;
   let modalidadSeleccionada = this.value;
-  
+
   obtenerDatosGrafica(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada);
 });
 
@@ -814,7 +855,7 @@ let miGraficoBarra6 = null;
 
 function actualizarGrafica(labels, data) {
   let ctx = document.getElementById('miGraficoBarra6').getContext('2d');
-  
+
   if (miGraficoBarra6) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra6.data.labels = labels;
@@ -857,11 +898,11 @@ function obtenerDatosGrafica7(cohorte,modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
     //   console.log(cohorte + modalidad);
   let xhr2 = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url2 = '/obtener-datos-grafica7?cohorte=' + cohorte + '&modalidad=' + modalidad;
   xhr2.open('GET', url2, true);
-  
+
   // Manejar la respuesta del servidor
   xhr2.onreadystatechange = function() {
     if (xhr2.readyState === XMLHttpRequest.DONE) {
@@ -879,7 +920,7 @@ function obtenerDatosGrafica7(cohorte,modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr2.send();
 }
@@ -887,7 +928,7 @@ function obtenerDatosGrafica7(cohorte,modalidad) {
 document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado2 = document.getElementById('cohorteSelect2').value;
   let modalidadSeleccionada2 = document.getElementById('modalidadSelect2').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica7(cohorteSeleccionado2, modalidadSeleccionada2);
 });
@@ -896,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('cohorteSelect2').addEventListener('change', function() {
   let cohorteSeleccionado2 = this.value;
   let modalidadSeleccionada2 = document.getElementById('modalidadSelect2').value;
-  
+
   obtenerDatosGrafica7(cohorteSeleccionado2, modalidadSeleccionada2);
 });
 
@@ -904,14 +945,14 @@ document.getElementById('cohorteSelect2').addEventListener('change', function() 
 document.getElementById('modalidadSelect2').addEventListener('change', function() {
   let cohorteSeleccionado2 = document.getElementById('cohorteSelect2').value;
   let modalidadSeleccionada2 = this.value;
-  
+
   obtenerDatosGrafica7(cohorteSeleccionado2, modalidadSeleccionada2);
 });
 let miGraficoBarra7 = null;
 
 function actualizarGrafica7(labels, data, data2) {
   let ctx = document.getElementById('miGraficoBarra7').getContext('2d');
-  
+
   if (miGraficoBarra7) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra7.data.labels = labels;
@@ -962,11 +1003,11 @@ function obtenerDatosGrafica8(cohorte,modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
   //   console.log(cohorte + modalidad);
   let xhr3 = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url3 = '/obtener-datos-grafica8?cohorte=' + cohorte + '&modalidad=' + modalidad;
   xhr3.open('GET', url3, true);
-  
+
   // Manejar la respuesta del servidor
   xhr3.onreadystatechange = function() {
     if (xhr3.readyState === XMLHttpRequest.DONE) {
@@ -983,7 +1024,7 @@ function obtenerDatosGrafica8(cohorte,modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr3.send();
 }
@@ -991,7 +1032,7 @@ function obtenerDatosGrafica8(cohorte,modalidad) {
 document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado3 = document.getElementById('cohorteSelect3').value;
   let modalidadSeleccionada3 = document.getElementById('modalidadSelect3').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica8(cohorteSeleccionado3, modalidadSeleccionada3);
 });
@@ -1000,7 +1041,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('cohorteSelect3').addEventListener('change', function() {
   let cohorteSeleccionado3 = this.value;
   let modalidadSeleccionada3 = document.getElementById('modalidadSelect3').value;
-  
+
   obtenerDatosGrafica8(cohorteSeleccionado3, modalidadSeleccionada3);
 });
 
@@ -1008,21 +1049,21 @@ document.getElementById('cohorteSelect3').addEventListener('change', function() 
 document.getElementById('modalidadSelect3').addEventListener('change', function() {
   let cohorteSeleccionado3 = document.getElementById('cohorteSelect3').value;
   let modalidadSeleccionada3 = this.value;
-  
+
   obtenerDatosGrafica8(cohorteSeleccionado3, modalidadSeleccionada3);
 });
 let miGraficoBarra8 = null;
 
 function actualizarGrafica8(labels, data, data2) {
   let ctx = document.getElementById('miGraficoBarra8').getContext('2d');
-  
+
   if (miGraficoBarra8) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra8.data.labels = labels;
     // console.log(labels);
     miGraficoBarra8.data.datasets[0].data = data;
     miGraficoBarra8.data.datasets[1].data = data2;
-    
+
     miGraficoBarra8.update();
   } else {
     // Si no existe un gráfico, crea uno nuevo
@@ -1066,11 +1107,11 @@ function obtenerDatosGrafica9(cohorte,modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
   //   console.log(cohorte + modalidad);
   let xhr4 = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url4 = '/obtener-datos-grafica9?cohorte=' + cohorte + '&modalidad=' + modalidad;
   xhr4.open('GET', url4, true);
-  
+
   // Manejar la respuesta del servidor
   xhr4.onreadystatechange = function() {
     if (xhr4.readyState === XMLHttpRequest.DONE) {
@@ -1088,7 +1129,7 @@ function obtenerDatosGrafica9(cohorte,modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr4.send();
 }
@@ -1096,7 +1137,7 @@ function obtenerDatosGrafica9(cohorte,modalidad) {
 document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado4 = document.getElementById('cohorteSelect4').value;
   let modalidadSeleccionada4 = document.getElementById('modalidadSelect4').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica9(cohorteSeleccionado4, modalidadSeleccionada4);
 });
@@ -1105,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('cohorteSelect4').addEventListener('change', function() {
   let cohorteSeleccionado4 = this.value;
   let modalidadSeleccionada4 = document.getElementById('modalidadSelect4').value;
-  
+
   obtenerDatosGrafica9(cohorteSeleccionado4, modalidadSeleccionada4);
 });
 
@@ -1113,14 +1154,14 @@ document.getElementById('cohorteSelect4').addEventListener('change', function() 
 document.getElementById('modalidadSelect4').addEventListener('change', function() {
   let cohorteSeleccionado4 = document.getElementById('cohorteSelect4').value;
   let modalidadSeleccionada4 = this.value;
-  
+
   obtenerDatosGrafica9(cohorteSeleccionado4, modalidadSeleccionada4);
 });
 let miGraficoBarra9 = null;
 
 function actualizarGrafica9(labels, data, data2) {
   let ctx = document.getElementById('miGraficoBarra9').getContext('2d');
-  
+
   if (miGraficoBarra9) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra9.data.labels = labels;
@@ -1170,11 +1211,11 @@ function obtenerDatosGrafica10(cohorte,modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
   //   console.log(cohorte + modalidad);
   let xhr4 = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url4 = '/obtener-datos-grafica10?cohorte=' + cohorte + '&modalidad=' + modalidad;
   xhr4.open('GET', url4, true);
-  
+
   // Manejar la respuesta del servidor
   xhr4.onreadystatechange = function() {
     if (xhr4.readyState === XMLHttpRequest.DONE) {
@@ -1192,7 +1233,7 @@ function obtenerDatosGrafica10(cohorte,modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr4.send();
 }
@@ -1200,7 +1241,7 @@ function obtenerDatosGrafica10(cohorte,modalidad) {
 document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado10 = document.getElementById('cohorteSelect10').value;
   let modalidadSeleccionada10 = document.getElementById('modalidadSelect10').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica10(cohorteSeleccionado10, modalidadSeleccionada10);
 });
@@ -1209,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('cohorteSelect10').addEventListener('change', function() {
   let cohorteSeleccionado10 = this.value;
   let modalidadSeleccionada10 = document.getElementById('modalidadSelect10').value;
-  
+
   obtenerDatosGrafica10(cohorteSeleccionado10, modalidadSeleccionada10);
 });
 
@@ -1217,14 +1258,14 @@ document.getElementById('cohorteSelect10').addEventListener('change', function()
 document.getElementById('modalidadSelect10').addEventListener('change', function() {
   let cohorteSeleccionado10 = document.getElementById('cohorteSelect10').value;
   let modalidadSeleccionada10 = this.value;
-  
+
   obtenerDatosGrafica10(cohorteSeleccionado10, modalidadSeleccionada10);
 });
 let miGraficoBarra10 = null;
 
 function actualizarGrafica10(labels, data, data2) {
   let ctx = document.getElementById('miGraficoBarra10').getContext('2d');
-  
+
   if (miGraficoBarra10) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra10.data.labels = labels;
@@ -1275,11 +1316,11 @@ function obtenerDatosGrafica11(cohorte,modalidad) {
   // Crear un nuevo objeto XMLHttpRequest
   //   console.log(cohorte + modalidad);
   let xhr4 = new XMLHttpRequest();
-  
+
   // Definir la URL de la solicitud y el método HTTP
   let url4 = '/obtener-datos-grafica11?cohorte=' + cohorte + '&modalidad=' + modalidad;
   xhr4.open('GET', url4, true);
-  
+
   // Manejar la respuesta del servidor
   xhr4.onreadystatechange = function() {
     if (xhr4.readyState === XMLHttpRequest.DONE) {
@@ -1297,7 +1338,7 @@ function obtenerDatosGrafica11(cohorte,modalidad) {
       }
     }
   };
-  
+
   // Enviar la solicitud
   xhr4.send();
 }
@@ -1305,7 +1346,7 @@ function obtenerDatosGrafica11(cohorte,modalidad) {
 document.addEventListener('DOMContentLoaded', function() {
   let cohorteSeleccionado11 = document.getElementById('cohorteSelect11').value;
   let modalidadSeleccionada11 = document.getElementById('modalidadSelect11').value;
-  
+
   // Llamar a la función actualizarGrafica con los valores por defecto
   obtenerDatosGrafica11(cohorteSeleccionado11, modalidadSeleccionada11);
 });
@@ -1314,7 +1355,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('cohorteSelect11').addEventListener('change', function() {
   let cohorteSeleccionado11 = this.value;
   let modalidadSeleccionada11 = document.getElementById('modalidadSelect11').value;
-  
+
   obtenerDatosGrafica11(cohorteSeleccionado11, modalidadSeleccionada11);
 });
 
@@ -1322,14 +1363,14 @@ document.getElementById('cohorteSelect11').addEventListener('change', function()
 document.getElementById('modalidadSelect11').addEventListener('change', function() {
   let cohorteSeleccionado11 = document.getElementById('cohorteSelect11').value;
   let modalidadSeleccionada11 = this.value;
-  
+
   obtenerDatosGrafica11(cohorteSeleccionado11, modalidadSeleccionada11);
 });
 let miGraficoBarra11 = null;
 
 function actualizarGrafica11(labels, data, data2) {
   let ctx = document.getElementById('miGraficoBarra11').getContext('2d');
-  
+
   if (miGraficoBarra11) {
     // Si ya existe un gráfico, actualiza los datos
     miGraficoBarra11.data.labels = labels;

@@ -11,10 +11,10 @@
     <section class="grid grid-cols-1  xl:grid-cols-2 gap-4">
 
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-  
+
           <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5">
               <div class="p-6">
-                <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por departamento - cohorte - bootcamp - modalidad</h5>      
+                <h5 class="text-lg font-semibold mb-4 dark:text-black">Estudiantes por departamento - cohorte - bootcamp - modalidad</h5>
                  <div class="">
                    <form class="max-w-sm  mx-auto grid grid-cols-1 md:max-w-4xl md:grid-cols-4 gap-4 ">
                     <div>
@@ -30,6 +30,7 @@
                           <option value="cohorte1">Cohorte 1</option>
                           <option value="cohorte2">Cohorte 2</option>
                           <option value="cohorte3">Cohorte 3</option>
+                          <option value="cohorte4">Cohorte 4</option>
                       </select>
                     </div>
                     <div>
@@ -54,17 +55,17 @@
                  </div>
               </div>
           </div>
-  
-  
-  
-        
-  
+
+
+
+
+
       </div>
-  
+
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5">
             <div class="p-6">
-              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio del progreso del curso por departamento - cohorte - bootcamp - modalidad</h5>      
+              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio del progreso del curso por departamento - cohorte - bootcamp - modalidad</h5>
                <div class="">
                  <form class="max-w-sm  mx-auto grid grid-cols-1 md:max-w-4xl md:grid-cols-4 gap-4 ">
                   <div>
@@ -80,6 +81,7 @@
                         <option value="cohorte1">Cohorte 1</option>
                         <option value="cohorte2">Cohorte 2</option>
                         <option value="cohorte3">Cohorte 3</option>
+                        <option value="cohorte4">Cohorte 4</option>
                     </select>
                   </div>
                   <div>
@@ -109,7 +111,7 @@
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5">
             <div class="p-6">
-              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio de inicios de sesión de los cursos por departamento - cohorte - bootcamp - modalidad</h5>      
+              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio de inicios de sesión de los cursos por departamento - cohorte - bootcamp - modalidad</h5>
                <div class="">
                  <form class="max-w-sm  mx-auto grid grid-cols-1 md:max-w-4xl md:grid-cols-4 gap-4 ">
                   <div>
@@ -125,6 +127,7 @@
                         <option value="cohorte1">Cohorte 1</option>
                         <option value="cohorte2">Cohorte 2</option>
                         <option value="cohorte3">Cohorte 3</option>
+                        <option value="cohorte4">Cohorte 4</option>
                     </select>
                   </div>
                   <div>
@@ -154,7 +157,7 @@
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
         <div class="bg-white shadow-md rounded-lg overflow-hidden mb-5">
             <div class="p-6">
-              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio de notas de los cursos por departamento - cohorte - bootcamp - modalidad</h5>      
+              <h5 class="text-lg font-semibold mb-4 dark:text-black">Promedio de notas de los cursos por departamento - cohorte - bootcamp - modalidad</h5>
                <div class="">
                  <form class="max-w-sm  mx-auto grid grid-cols-1 md:max-w-4xl md:grid-cols-4 gap-4 ">
                   <div>
@@ -170,6 +173,7 @@
                         <option value="cohorte1">Cohorte 1</option>
                         <option value="cohorte2">Cohorte 2</option>
                         <option value="cohorte3">Cohorte 3</option>
+                        <option value="cohorte4">Cohorte 4</option>
                     </select>
                   </div>
                   <div>
@@ -203,7 +207,7 @@
 
 
 
-   
+
 
 </x-app-layout>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
@@ -214,7 +218,7 @@
 
 
 <script>
-   
+
 
     // ----------grafica  1------------------
 
@@ -224,10 +228,10 @@ function manejarCambioSelectorGrafica1() {
   let departamentoSeleccionado = document.getElementById('departamentoSelect').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect').value;
   let bootcampSeleccionado = document.getElementById('ejeFormacion').value;
-  
+
   obtenerDatosGrafica1(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada, bootcampSeleccionado);
 }
-   
+
 
 document.addEventListener('DOMContentLoaded', function() {
   manejarCambioSelectorGrafica1();
@@ -251,13 +255,13 @@ document.getElementById('modalidadSelect').addEventListener('change', function()
 });
 
 
-function obtenerDatosGrafica1(cohorte, departamento, modalidad, bootcamp) { 
-  // Crear un nuevo objeto XMLHttpRequest     
+function obtenerDatosGrafica1(cohorte, departamento, modalidad, bootcamp) {
+  // Crear un nuevo objeto XMLHttpRequest
   let xhr = new XMLHttpRequest();
   let url = '/obtener-datos-grafica-academica?cohorte=' + cohorte + '&departamento=' + departamento + '&modalidad=' + modalidad + '&bootcamp=' + bootcamp;
   // Definir la URL de la solicitud y el método HTTP
   xhr.open('GET', url, true);
-        
+
   // Manejar la respuesta del servidor
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -301,7 +305,7 @@ function actualizarGrafica1(labels, participantesPorCurso) {
           backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
-        }, 
+        },
         ]
       },
       options: {
@@ -326,10 +330,10 @@ function actualizarGrafica1(labels, participantesPorCurso) {
   let departamentoSeleccionado = document.getElementById('departamentoSelect2').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect2').value;
   let bootcampSeleccionado = document.getElementById('ejeFormacion2').value;
-  
+
   obtenerDatosGrafica2(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada, bootcampSeleccionado);
 }
-   
+
 
 document.addEventListener('DOMContentLoaded', function() {
   manejarCambioSelectorGrafica2();
@@ -353,13 +357,13 @@ document.getElementById('modalidadSelect2').addEventListener('change', function(
 });
 
 
-function obtenerDatosGrafica2(cohorte, departamento, modalidad, bootcamp) { 
-  // Crear un nuevo objeto XMLHttpRequest     
+function obtenerDatosGrafica2(cohorte, departamento, modalidad, bootcamp) {
+  // Crear un nuevo objeto XMLHttpRequest
   let xhr = new XMLHttpRequest();
   let url = '/obtener-datos-grafica-academica?cohorte=' + cohorte + '&departamento=' + departamento + '&modalidad=' + modalidad + '&bootcamp=' + bootcamp;
   // Definir la URL de la solicitud y el método HTTP
   xhr.open('GET', url, true);
-        
+
   // Manejar la respuesta del servidor
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -403,7 +407,7 @@ function actualizarGrafica2(labels, promedioProgresos) {
           backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
-        }, 
+        },
         ]
       },
       options: {
@@ -428,10 +432,10 @@ function actualizarGrafica2(labels, promedioProgresos) {
   let departamentoSeleccionado = document.getElementById('departamentoSelect3').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect3').value;
   let bootcampSeleccionado = document.getElementById('ejeFormacion3').value;
-  
+
   obtenerDatosGrafica3(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada, bootcampSeleccionado);
 }
-   
+
 
 document.addEventListener('DOMContentLoaded', function() {
   manejarCambioSelectorGrafica3();
@@ -455,13 +459,13 @@ document.getElementById('modalidadSelect3').addEventListener('change', function(
 });
 
 
-function obtenerDatosGrafica3(cohorte, departamento, modalidad, bootcamp) { 
-  // Crear un nuevo objeto XMLHttpRequest     
+function obtenerDatosGrafica3(cohorte, departamento, modalidad, bootcamp) {
+  // Crear un nuevo objeto XMLHttpRequest
   let xhr = new XMLHttpRequest();
   let url = '/obtener-datos-grafica-academica?cohorte=' + cohorte + '&departamento=' + departamento + '&modalidad=' + modalidad + '&bootcamp=' + bootcamp;
   // Definir la URL de la solicitud y el método HTTP
   xhr.open('GET', url, true);
-        
+
   // Manejar la respuesta del servidor
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -505,7 +509,7 @@ function actualizarGrafica3(labels, promedioIniciosSesion) {
           backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
-        }, 
+        },
         ]
       },
       options: {
@@ -530,10 +534,10 @@ function actualizarGrafica3(labels, promedioIniciosSesion) {
   let departamentoSeleccionado = document.getElementById('departamentoSelect4').value;
   let modalidadSeleccionada = document.getElementById('modalidadSelect4').value;
   let bootcampSeleccionado = document.getElementById('ejeFormacion4').value;
-  
+
   obtenerDatosGrafica4(cohorteSeleccionado, departamentoSeleccionado, modalidadSeleccionada, bootcampSeleccionado);
 }
-   
+
 
 document.addEventListener('DOMContentLoaded', function() {
   manejarCambioSelectorGrafica4();
@@ -557,13 +561,13 @@ document.getElementById('modalidadSelect4').addEventListener('change', function(
 });
 
 
-function obtenerDatosGrafica4(cohorte, departamento, modalidad, bootcamp) { 
-  // Crear un nuevo objeto XMLHttpRequest     
+function obtenerDatosGrafica4(cohorte, departamento, modalidad, bootcamp) {
+  // Crear un nuevo objeto XMLHttpRequest
   let xhr = new XMLHttpRequest();
   let url = '/obtener-datos-grafica-academica?cohorte=' + cohorte + '&departamento=' + departamento + '&modalidad=' + modalidad + '&bootcamp=' + bootcamp;
   // Definir la URL de la solicitud y el método HTTP
   xhr.open('GET', url, true);
-        
+
   // Manejar la respuesta del servidor
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -607,7 +611,7 @@ function actualizarGrafica4(labels, promedioNotas) {
           backgroundColor: 'rgba(54, 162, 235, 0.7)', // Color de fondo de la barra
           borderColor: 'rgba(255, 99, 132, 1)', // Color del borde de la barra
           borderWidth: 1
-        }, 
+        },
         ]
       },
       options: {
@@ -623,7 +627,7 @@ function actualizarGrafica4(labels, promedioNotas) {
 
 
 // ----------fin grafica 4------------------
-  
+
 
 
 </script>

@@ -18,7 +18,9 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/smartwizart/css/smart_wizard_all.min.css') }}">
-
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+    rel="stylesheet" />
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> --}}
 
 </head>
@@ -26,30 +28,96 @@
 <body>
     <!-- partial:index.partial.html -->
     <!-- This pen isn't a fan of small view heights, check it out in  fullpage view for optimal viewing	 -->
-    <header>
-        <nav class="grid grid-cols-3 p-6">
-            <div class="w-full flex items-center">
 
-                <div>
-                    <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}">
-                </div>
-            </div>
-            <div class="w-full flex items-center">
+    <header style="position: relative; z-index: 10000">
+      <nav class="bg-[#00000042] md:bg-[#00000042] fixed w-full z-20 top-0 start-0 border-b border-gray-600 backdrop-blur-sm ">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="h-8" alt="Logo potencia de la vida" />
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="h-12" alt="Logo mintic" />
+            </a>
+            <button data-collapse-toggle="navbar-sticky" type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul
+              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  border-gray-700">
+              <li class="">
+                <a href="https://talentotechregion3.com.co/registro/index.html"
+                  class="block  text-white  rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b] p-2 "
+                  aria-current="page">Inicio</a>
+              </li>
+              <li class="">
+                <a href="https://matricula.talentotechregion3.com.co/inscripcion"
+                  class="block p-4 bg-[#082e4b] text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Inscríbete</a>
+              </li>
+              <li class="">
+                <a href="https://pruebas.talentotechregion3.com.co/login.php"
+                  class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Prueba</a>
+              </li>
+              <li class="">
+                <a href="https://matricula.talentotechregion3.com.co/"
+                  class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Matrícula</a>
+              </li>
+              <li class="">
+                <a href="https://imaster.academy/login/index.php"
+                  class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Plataforma
+                  de formación</a>
+              </li>
+              <li class="">
+                <a href="https://talentotechregion3.com.co/registro/index.html#preguntas-frecuentes"
+                  class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Preguntas
+                  frecuentes</a>
+              </li>
 
-                <div>
-                    <img src="{{ asset('assets/img/TalentoTech.png') }}" class="mx-auto w-2/3">
+              <li class="">
+                <a id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                  class="flex items-center justify-between w-full block text-white  rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Kit
+                  programador <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 1 4 4 4-4" />
+                  </svg></a>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar"
+                  class="z-10 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
+                  <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <a href="compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
+                    </li>
+                    <li>
+                      <a href="entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
+                    </li>
+
+                  </ul>
                 </div>
-            </div>
-            <div class="w-full flex items-center">
-                <div class="mx-auto" style="margin-right: 0px">
-                    <img src="{{ asset('assets/img/logo_mintic.svg') }}">
-                </div>
-            </div>
-        </nav>
+          </div>
+      </nav>
+
     </header>
     <div class="intro-container">
+
         <div class="text-left sky-container__right w-100">
-            <div class="py-4">
+
+
+            <div class="py-4" style="position: relative; z-index: 1;">
+                <section>
+                    <div
+                      class="w-full justify-center flex logo-talentotech"
+                      style="margin-top: 60px">
+                      <img src="{{ asset('assets/img/TalentoTech.png') }}" class="mx-auto w-1/2">
+                    </div>
+                  </section>
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg px-12 py-4">
                         <div class="sky-container__left w-full text-black text-right">
@@ -652,6 +720,10 @@
     <script src="{{ asset('assets/plugins/jquery_validate/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery_validate/additional-methods.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery_validate/localization/messages_es.min.js') }}"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+
+
 
     <script type="text/javascript">
         let form = $("#enviar_inscripcion");
@@ -811,6 +883,19 @@
             if (departamentoSeleccionado) {
                 cargarMunicipios(departamentoSeleccionado);
             }
+
+            const links = document.querySelectorAll("nav ul li a");
+                links.forEach(function(link) {
+                  link.addEventListener("click", function() {
+                    // Remover la clase "selected" de todos los enlaces
+                    links.forEach(function(item) {
+                      item.classList.remove("selected");
+                    });
+                    // Agregar la clase "selected" al enlace seleccionado
+                    this.classList.add("selected");
+                    console.log('holaaa');
+                  });
+                });
 
 
             // $('#enviar_matricula input[type="checkbox"]').each(function() {
@@ -1004,6 +1089,8 @@
                 this.submit();
             }
         });
+
+
 
 
 

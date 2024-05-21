@@ -30,10 +30,10 @@ class InfoAcademicaController extends Controller
             $participantesQuery->where('cohorte', $filtro);
             // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
         }
-     
+
         $participantes = $participantesQuery->paginate(50);
 
-       
+
         return view('admin.infoacademica.index', compact('participantes'));
     }
 
@@ -66,19 +66,19 @@ class InfoAcademicaController extends Controller
                 // var_dump($info_academica_participante);
             }
         }
-     
-        
+
+
 
         return view('admin.infoacademica.edit', [
             'participantes' => $participantes,
             'info_academica_participante' => $info_academica_participante,
-            
+
         ]);
     }
 
     public function buscaTech($clave, $datos) {
         $claves_encontradas = array();
-    
+
         // Recorrer cada estudiante en la lista
         foreach ($datos as $indice => $estudiante) {
             // Buscar el valor en el array asociativo del estudiante actual
@@ -91,14 +91,14 @@ class InfoAcademicaController extends Controller
     }
 
     public function graficas(){
-        
+
         $participantes=Participante::select('id');
-      
+
         return view('admin.infoacademica.graficas', compact('participantes'));
         // return redirect()->route('infoacademica.graficas');
     }
 
-    
+
     public function obtenerDatosGrafica(Request $request)
     {
         // Obtener los parámetros de los filtros
@@ -115,7 +115,7 @@ class InfoAcademicaController extends Controller
             ->whereNotNull('curso')
             ->groupBy('curso')
             ->pluck('curso');
-    
+
         // Inicializar arreglos para almacenar los promedios
         $promedioProgresos = [];
         $promedioIniciosSesion = [];
@@ -145,7 +145,7 @@ class InfoAcademicaController extends Controller
             ->where('modalidad_bootcamps', $modalidad)
             ->where('eje_final_formacion', $bootcamp)
             ->sum('nota_final');
-        
+
             // Contar el número de participantes para el curso actual
             $cantidadParticipantes = Participante::where('cohorte', $cohorte)
                 ->where('curso', $curso)
@@ -153,7 +153,7 @@ class InfoAcademicaController extends Controller
                 ->where('modalidad_bootcamps', $modalidad)
                 ->where('eje_final_formacion', $bootcamp)
                 ->count();
-        
+
              // Calcular el promedio de progreso para el curso actual
             $promedioProgreso = $cantidadParticipantes > 0 ? $sumaProgreso / $cantidadParticipantes : 0;
             // Calcular el promedio de inicios de sesión para el curso actual
@@ -177,14 +177,14 @@ class InfoAcademicaController extends Controller
                 ->count();
             $participantesPorCurso[$curso] = $cantidadParticipantes;
         }
-        
+
 
         return response()->json([
             'labels' => $cursos,
             'promedioProgresos' => $promedioProgresos,
             'promedioIniciosSesion' => $promedioIniciosSesion ,
             'promedioNotas' => $promedioNotas ,
-         
+
             'participantesPorCurso' => $participantesPorCurso
         ]);
     }
@@ -194,12 +194,13 @@ class InfoAcademicaController extends Controller
                $url = 'https://imaster.academy/report/didactic_report/Reportes.json';
                $json = file_get_contents($url);
                $datos = json_decode($json, true)[0]['data'];
-           
+
                // Iterar sobre los participantes obtenidos de la base de datos
                // Buscar la entrada correspondiente en $datos basándose en el número de documento
                foreach ($datos as $item) {
                     $participante = Participante::where('numero_documento', $item['cedula'])->first();
                     if ($participante) {
+                        $participante->curso_id = $item['courseid'];
                         $participante->curso = $item['curso'];
                         $participante->progreso = $item['progreso'];
                         $participante->inicios_de_sesion = $item['inicios_de_sesión'];
@@ -207,7 +208,7 @@ class InfoAcademicaController extends Controller
                         $participante->save();
                     }
                     $participante = null;
-                
+
                }
     }
 }

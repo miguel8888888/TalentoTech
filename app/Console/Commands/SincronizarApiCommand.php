@@ -19,7 +19,7 @@ class SincronizarApiCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Actualizar campo curso y campo prograso de la tabla participante';
+    protected $description = 'Actualizar campo curso y campo progreso de la tabla participante';
 
     /**
      * Execute the console command.
@@ -36,6 +36,7 @@ class SincronizarApiCommand extends Command
           foreach ($datos as $item) {
                $participante = Participante::where('numero_documento', $item['cedula'])->first();
                if ($participante) {
+                   $participante->curso_id = $item['courseid'];
                    $participante->curso = $item['curso'];
                    $participante->progreso = $item['progreso'];
                    $participante->progreso = $item['progreso'];

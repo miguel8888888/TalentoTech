@@ -33,11 +33,11 @@
       <nav class="bg-[#00000042] md:bg-[#00000042] fixed w-full z-20 top-0 start-0 border-b border-gray-600 backdrop-blur-sm ">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="h-8" alt="Logo potencia de la vida" />
+            {{-- <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="h-8" alt="Logo potencia de la vida" /> --}}
           </a>
           <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="h-12" alt="Logo mintic" />
+              <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="h-14" alt="Logo mintic" />
             </a>
             <button data-collapse-toggle="navbar-sticky" type="button"
               class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -53,7 +53,7 @@
             <ul
               class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  border-gray-700">
               <li class="">
-                <a href="https://talentotechregion3.com.co/registro/index.html"
+                <a href="https://talentotechregion3.com.co/"
                   class="block  text-white  rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b] p-2 "
                   aria-current="page">Inicio</a>
               </li>
@@ -75,7 +75,7 @@
                   de formación</a>
               </li>
               <li class="">
-                <a href="https://talentotechregion3.com.co/registro/index.html#preguntas-frecuentes"
+                <a href="https://registro.talentotechregion3.com.co/preguntas_frecuentes.html"
                   class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Preguntas
                   frecuentes</a>
               </li>
@@ -93,10 +93,10 @@
                   class="z-10 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                   <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownLargeButton">
                     <li>
-                      <a href="compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
+                      <a href="https://registro.talentotechregion3.com.co/compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
                     </li>
                     <li>
-                      <a href="entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
+                      <a href="https://registro.talentotechregion3.com.co/entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
                     </li>
 
                   </ul>
@@ -130,11 +130,35 @@
                             @csrf
                             <!-- SmartWizard html -->
                             <div id="smartwizard">
+                                <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#step-1">
+                                            <div class="num">1</div>
+                                            Paso 1
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#step-2">
+                                            <span class="num">2</span>
+                                            Paso 2
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#step-3">
+                                            <span class="num">3</span>
+                                            Paso 3
+                                        </a>
+                                    </li>
 
+                                </ul>
 
                                 <div class="tab-content">
                                     <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                                         <div class="pant pant1 space-y-12 grid grid-cols-1">
+                                            <div class="border-b border-gray-900/10">
+                                                <p class="mt-1 text-black leading-6">Datos personales</p>
+
+                                            </div>
                                             <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class="col-span-4">
                                                     <label for="primer_nombre"
@@ -403,6 +427,24 @@
                                                     </div>
                                                 </div>
 
+
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
+                                        <div class="pant pant2 space-y-12 grid grid-cols-1">
+                                            <div class="border-b border-gray-900/10">
+                                                <p class="mt-1 text-black leading-6">Grupo étnico </p>
+
+                                            </div>
+                                            <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
+
+
                                                 <div class="col-span-4">
                                                     <label for="estrato_socioeconomico"
                                                         class="block text-sm font-medium leading-6 text-gray-900">Autoidentificación
@@ -519,6 +561,20 @@
                                                     </div>
                                                 </div>
 
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
+                                        <div class="pant pant3 space-y-12 grid grid-cols-1">
+                                            <div class="border-b border-gray-900/10">
+                                                {{-- <p class="mt-1 text-black leading-6">Autorreconocimiento Grupo Étnico
+                                                    del Beneficiario </p> --}}
+
+                                            </div>
+                                            <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-8">
                                                 <div class=" col-span-4">
                                                     <label for="disponibilidad_formacion"
                                                         class="block text-sm font-medium leading-6 text-gray-900">¿Te comprometes a dedicar mínimo 10 horas semanales a Talento Tech?</label>
@@ -632,19 +688,17 @@
                                                         </select>
                                                     </div>
                                                 </div>
-
                                             </div>
-
-                                            <div class="grid justify-items-start  w-full">
+                                            <div class="grid justify-items-center  w-full">
 
                                                 <div class="w-3/6 ">
                                                     <button id="sendForm" type="submit"
                                                         class=" rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full">INSCRIBIRSE</button>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
+
 
                                 </div>
                                 {{-- <div style="position: relative;">
@@ -1077,6 +1131,56 @@
             } else if ($('option:selected', this).text() == 'No') {
                 $('#tipo_discapacidad_container').addClass('d-none');
             }
+        });
+
+        // function bloquear() {
+        //     $("#enviar_inscripcion input[type='text'], #enviar_inscripcion input[type='date'], #enviar_inscripcion input[type='number'], #enviar_inscripcion input[type='email']")
+        //         .each(function() {
+        //             // Verificar si el valor del input no está vacío
+        //             if ($(this).val() !== "") {
+        //                 // Deshabilitar el input si tiene un valor
+        //                 $(this).prop("disabled", true);
+        //                 $(this).addClass("gris_back ");
+        //             }
+        //         });
+        //     $('#enviar_inscripcion select').each(function() {
+        //         // Verifica si la opción seleccionada tiene valor y está seleccionada
+        //         if ($(this).find('option:selected').val() !== "Seleccione...") {
+        //             // Si la opción seleccionada tiene valor y está seleccionada, deshabilita el select
+        //             $(this).prop('disabled', true);
+        //             $(this).addClass('gris_back');
+        //         }
+        //     });
+        // }
+
+        $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+            if (form.valid()) {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        $("#smartwizard").on("showStep", function(e, anchorObject, stepIndex, stepDirection) {
+            $(".sw-btn-prev").removeClass("d-none");
+            $(".sw-btn-next").removeClass("d-none");
+            switch (stepIndex) {
+                // bloquear();
+                case 0:
+                    $(".sw-btn-prev").addClass("d-none");
+                    // $(".sw-btn-next").attr("onclick", "bloquear()");
+                    break;
+                case 2:
+                    $(".sw-btn-next").addClass("d-none");
+                    // $(".sw-btn-prev").attr("onclick", "bloquear()");
+                    break;
+                default:
+                    // code block
+            }
+            // bloquear();
         });
 
 

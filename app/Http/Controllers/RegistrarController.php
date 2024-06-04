@@ -228,7 +228,7 @@ class RegistrarController extends Controller
             } else {
                 $mensaje = "Estimado usuario, en este momento no se encuentra inscrito, por favor regístrese en el siguiente botón.";
                 $mensaje2 = "¡INICIAR PROCESO DE INSCRIPCIÓN!";
-                $url = "https://talentotechregion3.com.co/registro/formulario.html";
+                $url = "https://matricula.talentotechregion3.com.co/inscripcion";
                 return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
             }
         } else {

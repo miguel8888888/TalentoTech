@@ -30,11 +30,12 @@
         <nav class="bg-trasparent md:bg-trasparent fixed w-full z-20 top-0 start-0 border-b border-gray-600 backdrop-blur-sm ">
           <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="h-8" alt="Logo potencia de la vida" />
+{{--
+              <img src="{{ asset('assets/img/logo_potenciadelavida.svg') }}" class="h-8" alt="Logo potencia de la vida" /> --}}
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
               <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="h-12" alt="Logo mintic" />
+                <img src="{{ asset('assets/img/logo_mintic.svg') }}" class="h-14" alt="Logo mintic" />
               </a>
               <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -50,7 +51,7 @@
               <ul
                 class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  border-gray-700">
                 <li class="">
-                  <a href="https://talentotechregion3.com.co/registro/index.html"
+                  <a href="https://talentotechregion3.com.co/"
                     class="block  text-white  rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b] p-2 "
                     aria-current="page">Inicio</a>
                 </li>
@@ -72,7 +73,7 @@
                     de formación</a>
                 </li>
                 <li class="">
-                  <a href="https://talentotechregion3.com.co/registro/index.html#preguntas-frecuentes"
+                  <a href="https://registro.talentotechregion3.com.co/preguntas_frecuentes.html"
                     class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Preguntas
                     frecuentes</a>
                 </li>
@@ -90,10 +91,10 @@
                     class="z-10 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownLargeButton">
                       <li>
-                        <a href="compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
+                        <a href="https://registro.talentotechregion3.com.co/compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
                       </li>
                       <li>
-                        <a href="entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
+                        <a href="https://registro.talentotechregion3.com.co/entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
                       </li>
 
                     </ul>

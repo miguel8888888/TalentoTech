@@ -26,7 +26,7 @@ class InscripcionController extends Controller
             $mensaje = "¡El número de identificación ya está registrado!";
             $mensaje2 = "VOLVER!";
             // $url = url()->previous();
-            $url = "https://talentotechregion3.com.co/registro/index.html";
+            $url = "https://talentotechregion3.com.co";
             return view('Formularios/errorUsuario', compact("mensaje", "mensaje2", "url"));
         }
 

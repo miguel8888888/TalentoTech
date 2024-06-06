@@ -91,10 +91,10 @@
                     class="z-10 hidden font-normal divide-y rounded-lg shadow w-44 bg-gray-700 divide-gray-600">
                     <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownLargeButton">
                       <li>
-                        <a href="compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
+                        <a href="https://registro.talentotechregion3.com.co/compilador.html" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Simuladores</a>
                       </li>
                       <li>
-                        <a href="entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
+                        <a href="https://registro.talentotechregion3.com.co/entrenador.html" class="block px-4 py-2   hover:bg-gray-600 hover:text-white">Entrenador</a>
                       </li>
 
                     </ul>

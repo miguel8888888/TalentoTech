@@ -99,6 +99,11 @@
     @endcan
 
     @role('Administrador')
+    <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
+        <x-slot name="icon">
+            <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
     <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
             <x-slot name="icon">
                 <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
@@ -106,6 +111,12 @@
         </x-sidebar.link>
 
         <x-sidebar.link title="Gráficas Académicas" href="{{ route('infoacademica.graficas') }}" :isActive="request()->routeIs('infoacademica.graficas')">
+            <x-slot name="icon">
+                <x-icons.graficas class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+
+        <x-sidebar.link title="Gráficas Empleabilidad" href="{{ route('empleabilidad.graficas') }}" :isActive="request()->routeIs('infoacademica.graficas')">
             <x-slot name="icon">
                 <x-icons.graficas class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>

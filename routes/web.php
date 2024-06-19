@@ -14,6 +14,7 @@ use App\Http\Controllers\InfoAcademicaController;
 use App\Http\Controllers\ProfileHorarioController;
 use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\InscripcionController;
+use App\Http\Controllers\CampistaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,12 @@ Route::resource('participantes', GestionParticipantesController::class)->middlew
 Route::resource('usuarios', UsuariosController::class)->middleware('auth');
 Route::resource('horarios', GestionHorariosController::class)->middleware('auth');
 
+Route::get('/campistas', [CampistaController::class, 'index']);
+
+Route::get('reportes', [ReportesController::class, 'index'])->name('reportes.index')->middleware('auth');
+Route::get('buscarcampista', [ReportesController::class, 'index'])->name('reportes.search')->middleware('auth');
+Route::get('exportcampista/', [ReportesController::class, 'excelCampistaExport'])->name('reportes.export')->middleware('auth');
+
 
 Route::get('buscarparticipante', [GestionParticipantesController::class, 'index'])->name('participantes.search')->middleware('auth');
 Route::get('horariosparticipante', [GestionHorariosController::class, 'index'])->name('horarios.search')->middleware('auth');
@@ -51,6 +58,11 @@ Route::get('infoacademica/{info}', [InfoAcademicaController::class, 'edit'])->na
 Route::get('graficas-academicas/', [InfoAcademicaController::class, 'graficas'])->name('infoacademica.graficas')->middleware('auth');
 Route::get('/obtener-datos-grafica-academica', [InfoAcademicaController::class, 'obtenerDatosGrafica'])->name('obtener-datos-grafica-academica')->middleware('auth');
 Route::get('/sincronizar-api', [InfoAcademicaController::class, 'sincronizarDatos'])->name('sincronizar-api')->middleware('auth');
+
+Route::get('empleabilidad-graficas', [CampistaController::class, 'index'])->name('empleabilidad.graficas')->middleware('auth');
+Route::get('/obtener-datos-grafica-empleabilidad', [CampistaController::class, 'obtenerDatosGrafica'])->name('obtener-datos-grafica-empleabilidad')->middleware('auth');
+Route::get('/obtener-datos-grafica-empleabilidad2', [CampistaController::class, 'obtenerDatosGrafica2'])->name('obtener-datos-grafica-empleabilidad2')->middleware('auth');
+Route::get('/obtener-datos-grafica-empleabilidad3', [CampistaController::class, 'obtenerDatosGrafica3'])->name('obtener-datos-grafica-empleabilidad3')->middleware('auth');
 
 
 Route::get('/dashboard', [DashboardController::class, 'mostrarDashboard'])->name('dashboard')->middleware('auth');
@@ -87,6 +99,8 @@ Route::get('/correodocumento', [RegistrarController::class, 'enviarCorreos'])->n
 Route::get('/recuperardocs', [RegistrarController::class, 'obtenerDocumentosCargados'])->name('recuperardocs');
 
 Route::post('/aprobardocumento', [RegistrarController::class, 'aprobardocumento']);
+
+
 
 
 // Route::get('/dashboard', function () {

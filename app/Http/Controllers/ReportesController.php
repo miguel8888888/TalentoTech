@@ -69,7 +69,7 @@ class ReportesController extends Controller
 
 
 
-        $participantes = $participantesQuery->paginate(7);
+        $participantes = $participantesQuery->paginate(20);
 
 
         return view('admin.reportes.index', compact('participantes'));

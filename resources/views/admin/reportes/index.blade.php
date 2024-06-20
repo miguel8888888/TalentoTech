@@ -130,9 +130,9 @@
                     <th scope="col" class="px-6 py-3">
                         Documento
                     </th>
-                    {{-- <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3">
                         Departamento
-                    </th> --}}
+                    </th>
                     <th scope="col" class="px-6 py-3">
                         Nombre
                     </th>
@@ -142,24 +142,24 @@
                     <th scope="col" class="px-6 py-3">
                         Bootcamp
                     </th>
-                    {{-- <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-3">
                         Modalidad
-                    </th> --}}
+                    </th>
                     <th scope="col" class="px-6 py-3">
                         Nivel
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Estado de registro
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    {{-- <th scope="col" class="px-6 py-3">
                         Asistencias
-                    </th>
+                    </th> --}}
                     <th scope="col" class="px-6 py-3">
                         Fecha de inicio
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    {{-- <th scope="col" class="px-6 py-3">
                         Fecha de finalizacion
-                    </th>
+                    </th> --}}
                     <th scope="col" class="px-6 py-3">
                         Estado de formación
                     </th>
@@ -189,9 +189,9 @@
                         <td class="px-6 py-4">
                             {{ $data->numero_documento }}
                         </td>
-                        {{-- <td class="px-6 py-4">
+                        <td class="px-6 py-4">
                             {{ $data->departamento_residencia }}
-                        </td> --}}
+                        </td>
                         <td class="px-6 py-4">
                             {{ $data->primer_nombre . ' ' . $data->segundo_nombre . ' ' . $data->primer_apellido . ' ' . $data->segundo_apellido}}
                         </td>
@@ -201,33 +201,32 @@
                         <td class="px-6 py-4">
                            {{ $data->eje_final_formacion }}
                         </td>
-                        {{-- <td class="px-6 py-4">
+                        <td class="px-6 py-4">
                             {{ $data->modalidad_bootcamps }}
-                         </td> --}}
+                         </td>
                         <td class="px-6 py-4">
                            {{ $data->nivel_formacion }}
                         </td>
                         <td class="px-6 py-4">
                             {{ $data->estado_registro }}
                         </td>
-                        <td class="px-6 py-4">
-                            {{-- {{ $data->inicios_de_sesion }} --}}
+                        {{-- <td class="px-6 py-4">
                             @php
                                 // Generar un número aleatorio entre 30 y 90
                                 $percentage = rand(30, 90);
                                 // Imprimir el porcentaje con el símbolo %
                                 echo $percentage . '%';
                             @endphp
-                        </td>
+                        </td> --}}
                         <td class="px-6 py-4">
                             {{ $data->fecha_inicio_formacion }}
                         </td>
-                        <td class="px-6 py-4">
+                        {{-- <td class="px-6 py-4">
                             @php
                                 $values = ["2024-06-11","2024-06-01", "2024-06-13", "2024-05-24"];
                                 echo $values[array_rand($values)];
                             @endphp
-                        </td>
+                        </td> --}}
                         <td class="px-6 py-4">
                             {{ $data->estado_de_formacion }}
                         </td>

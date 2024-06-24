@@ -116,7 +116,7 @@
             </x-slot>
         </x-sidebar.link>
 
-        <x-sidebar.link title="Gráficas Empleabilidad" href="{{ route('empleabilidad.graficas') }}" :isActive="request()->routeIs('infoacademica.graficas')">
+        <x-sidebar.link title="Gráficas Empleabilidad" href="{{ route('empleabilidad.graficas') }}" :isActive="request()->routeIs('empleabilidad.graficas')">
             <x-slot name="icon">
                 <x-icons.graficas class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>

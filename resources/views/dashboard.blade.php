@@ -13,28 +13,7 @@
 
         <div class="container items-center px-4 m-auto mt-5">
             <div class="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
-
-            <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCauca + $countNariño }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Inscritos</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <x-card :count="$countCauca + $countNariño" description="Total Inscritos" />
         </div>
 
 
@@ -46,148 +25,17 @@
                 </h2>
             </div>
             <div class="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
-            <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCauca }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Inscritos</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                            <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{$countCaucaPreMatriculados + $countCaucaPosMatriculados }}</h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Pre-matriculados</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaMatriculados }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Matriculados</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaCorte1 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 1</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaCorte2 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 2</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaCorte3 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 3</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countCaucaCorte4 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 4</p>
-
-                        </div>
-                    </div>
-                </div>
+                <x-card :count="$countCauca" description="Total Inscritos" />
+                <x-card :count="$countCaucaPreMatriculados + $countCaucaPosMatriculados" description="Total Pre-matriculados" />
+                <x-card :count="$countCaucaMatriculados" description="Total Matriculados" />
+                <x-card :count="$countCaucaCorte1" description="Total Cohorte 1" />
+                <x-card :count="$countCaucaCorte2" description="Total Cohorte 2" />
+                <x-card :count="$countCaucaCorte3" description="Total Cohorte 3" />
+                <x-card :count="$countCaucaCorte4" description="Total Cohorte 4" />
+                <x-card :count="$countCaucaCorte5" description="Total Cohorte 5" />
+                <x-card :count="$countCaucaCorte6" description="Total Cohorte 6" />
             </div>
+
         </div>
 
         <div class="container items-center px-4  m-auto ">
@@ -198,149 +46,15 @@
                 </h2>
             </div>
             <div class="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
-            <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariño }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Inscritos</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                            <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{$countNariñoPreMatriculados + $countNariñoPosMatriculados }}</h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Pre-matriculados</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoMatriculados }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Matriculados</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoCorte1 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 1</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoCorte2 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 2</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoCorte3 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 3</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full p-2 lg:w-1/3 md:w-1/2">
-                    <div
-                        class="flex flex-col px-6 py-10 overflow-hidden bg-white dark:bg-gradient-to-br dark:from-purple-400 dark:via-blue-400 dark:to-blue-500 rounded-xl shadow-lg duration-300 dark:shadow-2xl group">
-                        <div class="flex flex-row justify-between items-center">
-                        <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-gray-50" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        </div>
-                        <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 dark:text-gray-50">{{ $countNariñoCorte4 }}
-                        </h1>
-                        <div class="flex flex-row justify-between dark:text-gray-200">
-                        <p>Total Cohorte 4</p>
-
-                        </div>
-                    </div>
-                </div>
+                <x-card :count="$countNariño" description="Total Inscritos" />
+                <x-card :count="$countNariñoPreMatriculados + $countNariñoPosMatriculados" description="Total Pre-matriculados" />
+                <x-card :count="$countNariñoMatriculados" description="Total Matriculados" />
+                <x-card :count="$countNariñoCorte1" description="Total Cohorte 1" />
+                <x-card :count="$countNariñoCorte2" description="Total Cohorte 2" />
+                <x-card :count="$countNariñoCorte3" description="Total Cohorte 3" />
+                <x-card :count="$countNariñoCorte4" description="Total Cohorte 4" />
+                <x-card :count="$countNariñoCorte5" description="Total Cohorte 5" />
+                <x-card :count="$countNariñoCorte6" description="Total Cohorte 6" />
 
             </div>
         </div>

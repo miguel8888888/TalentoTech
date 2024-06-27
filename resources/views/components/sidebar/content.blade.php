@@ -121,6 +121,14 @@
                 <x-icons.graficas class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+
+        <x-sidebar.link title="Seguimiento y Avance" href="{{ url('seguimiento') }}" target="_blank" :isActive="request()->routeIs('seguimiento')">
+            <x-slot name="icon">
+                <x-icons.jira class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+
+
     @endrole
 
 

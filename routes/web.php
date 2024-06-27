@@ -100,6 +100,11 @@ Route::get('/recuperardocs', [RegistrarController::class, 'obtenerDocumentosCarg
 
 Route::post('/aprobardocumento', [RegistrarController::class, 'aprobardocumento']);
 
+Route::get('/seguimiento', function () {
+    return redirect('https://az-utp-projects.atlassian.net/jira/core/projects/TTR3/board');
+});
+
+
 
 
 

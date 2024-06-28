@@ -98,7 +98,7 @@
         </div>
     @endcan
 
-    @role('Administrador')
+    @hasanyrole('Administrador|Verificador')
     <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
         <x-slot name="icon">
             <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
@@ -129,7 +129,8 @@
         </x-sidebar.link>
 
 
-    @endrole
+
+    @endhasanyrole
 
 
     {{-- <x-sidebar.dropdown

@@ -11,20 +11,20 @@
 
 
 
-        @can('reportes-listar')
-            <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
-                <x-slot name="icon">
-                    <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-                </x-slot>
-            </x-sidebar.link>
-        @endcan
-        @role('Gestor')
-            <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
-                <x-slot name="icon">
-                    <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-                </x-slot>
-            </x-sidebar.link>
-        @endrole
+    @can('reportes-listar')
+        <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
+            <x-slot name="icon">
+                <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endcan
+    @role('Gestor')
+        <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
+            <x-slot name="icon">
+                <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+    @endrole
 
 
     <x-sidebar.link title="Perfil" href="{{ route('profile.edit') }}" :isActive="request()->routeIs('profile.edit')">
@@ -33,13 +33,13 @@
         </x-slot>
     </x-sidebar.link>
 
-    @can('reportes-listar')
+    @role('Administrador')
         <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
             <x-slot name="icon">
                 <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endcan
+    @endrole
     @role('Verificador')
         <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
             <x-slot name="icon">
@@ -54,13 +54,13 @@
             </x-slot>
         </x-sidebar.link>
     @endrole
-    @can('reportes-listar')
+    @role('Administrador')
         <x-sidebar.link title="Listado de Horarios" href="{{ route('horarios.index') }}" :isActive="request()->routeIs('horarios.*')">
             <x-slot name="icon">
                 <x-icons.horarios class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endcan
+    @endrole
 
 
     {{-- @php
@@ -99,12 +99,12 @@
     @endcan
 
     @hasanyrole('Administrador|Verificador')
-    <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
-        <x-slot name="icon">
-            <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-        </x-slot>
-    </x-sidebar.link>
-    <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
+        <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
+            <x-slot name="icon">
+                <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+        <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
             <x-slot name="icon">
                 <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
@@ -127,9 +127,6 @@
                 <x-icons.jira class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-
-
-
     @endhasanyrole
 
 

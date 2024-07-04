@@ -17,6 +17,11 @@
                 <x-icons.download class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
+        <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
+            <x-slot name="icon">
+                <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
     @endcan
     @role('Gestor')
         <x-sidebar.link title="Descargar Excel" href="{{ route('exceldowload') }}" :isActive="request()->routeIs('exceldowload')">
@@ -40,13 +45,14 @@
             </x-slot>
         </x-sidebar.link>
     @endrole
-    @role('Verificador')
+    @hasanyrole('Verificador|Reportes')
+
         <x-sidebar.link title="Listado de Participantes" href="{{ route('participantes.index') }}" :isActive="request()->routeIs('participantes.*')">
             <x-slot name="icon">
                 <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
         </x-sidebar.link>
-    @endrole
+    @endhasanyrole
     @role('Administrador')
         <x-sidebar.link title="Listado de Usuarios" href="{{ route('usuarios.index') }}" :isActive="request()->routeIs('usuarios.index')">
             <x-slot name="icon">
@@ -73,7 +79,17 @@
         }
         dd($permissions);
     @endphp --}}
-    @can('estadisticas-listar')
+    {{-- @can('estadisticas-listar')
+
+    @endcan --}}
+
+    @hasanyrole('Administrador|Verificador')
+        <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
+            <x-slot name="icon">
+                <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+        </x-sidebar.link>
+
         @props([
             'active' => false,
             'title' => 'Estadísticas',
@@ -96,19 +112,7 @@
                 </ul>
             </div>
         </div>
-    @endcan
 
-    @hasanyrole('Administrador|Verificador')
-        <x-sidebar.link title="Reportes" href="{{ route('reportes.index') }}" :isActive="request()->routeIs('reportes.index')">
-            <x-slot name="icon">
-                <x-icons.report class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-            </x-slot>
-        </x-sidebar.link>
-        <x-sidebar.link title="Listado Académico" href="{{ route('infoacademica.index') }}" :isActive="request()->routeIs('infoacademica.index')">
-            <x-slot name="icon">
-                <x-icons.list class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-            </x-slot>
-        </x-sidebar.link>
 
         <x-sidebar.link title="Gráficas Académicas" href="{{ route('infoacademica.graficas') }}" :isActive="request()->routeIs('infoacademica.graficas')">
             <x-slot name="icon">

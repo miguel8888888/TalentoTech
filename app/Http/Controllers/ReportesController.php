@@ -7,6 +7,7 @@ use App\Exports\ParticipantesExport;
 use App\Exports\CampistasExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Participante;
+use App\Models\Cohorte;
 
 
 class ReportesController extends Controller
@@ -65,6 +66,7 @@ class ReportesController extends Controller
 
         }
 
+        $cohortes = Cohorte::all();
 
 
 
@@ -72,7 +74,7 @@ class ReportesController extends Controller
         $participantes = $participantesQuery->paginate(20);
 
 
-        return view('admin.reportes.index', compact('participantes'));
+        return view('admin.reportes.index', compact('participantes') , compact('cohortes'));
     }
 
     public function excelCampistaExport(Request $request)

@@ -20,7 +20,7 @@
                         class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Seleccione un cohorte...</option>
                         <option value="" {{ old('cohorte') === '' ? 'selected' : '' }}>Listar todos</option>
-                        <option value="cohorte1" @if (old('cohorte') == 'cohorte1') selected @endif>cohorte1
+                        {{-- <option value="cohorte1" @if (old('cohorte') == 'cohorte1') selected @endif>cohorte1
                         </option>
                         <option value="cohorte2" @if (old('cohorte') == 'cohorte2') selected @endif>cohorte2
                         </option>
@@ -29,7 +29,12 @@
                         <option value="cohorte4" @if (old('cohorte') == 'cohorte4') selected @endif>cohorte4
                         </option>
                         <option value="cohorte5" @if (old('cohorte') == 'cohorte5') selected @endif>cohorte5
+                        </option> --}}
+                        @foreach ($cohortes as $cohorte)
+                        <option value="{{ $cohorte->nombre }}" {{ old('cohorte') == $cohorte->nombre ? 'selected' : '' }}>
+                            {{ $cohorte->nombre }}
                         </option>
+                    @endforeach
 
 
                     </select>

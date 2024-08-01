@@ -18,15 +18,20 @@
                         class="bg-gray-50 p-4 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected disabled>Seleccione un cohorte...</option>
                         <option value="" {{ old('cohorte') === '' ? 'selected' : '' }}>Listar todos</option>
-                        <option value="cohorte1" @if (old('cohorte') == 'cohorte1') selected @endif>cohorte1
+                        {{-- <option value="cohorte1" @if (old('cohorte') == 'cohorte1') selected @endif>cohorte1
                         </option>
                         <option value="cohorte2" @if (old('cohorte') == 'cohorte2') selected @endif>cohorte2
                         </option>
                         <option value="cohorte3" @if (old('cohorte') == 'cohorte3') selected @endif>cohorte3
-                        </option>
+                        </option> --}}
+                         @foreach ($cohortes as $cohorte)
+                         <option value="{{ $cohorte->nombre }}" {{ old('cohorte') == $cohorte->nombre ? 'selected' : '' }}>
+                             {{ $cohorte->nombre }}
+                         </option>
+                     @endforeach
                     </select>
                 </div>
-                
+
                 <div class="relative w-full md:w-1/3">
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
@@ -126,7 +131,7 @@
                         <!-- <td class="px-6 py-4">
                          {{ $data->estado_registro }}
                     </td> -->
-                        
+
                     </tr>
                 @endforeach
 
@@ -142,7 +147,7 @@
 
 
 
-   
+
 
 </x-app-layout>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
@@ -151,7 +156,7 @@
 
 
 <script>
-   
+
 
     function submitForm() {
         let estadoSelect = document.getElementById("cohorte");
@@ -161,7 +166,7 @@
         document.getElementById('search-form').submit();
     }
 
-  
+
 
 
 </script>

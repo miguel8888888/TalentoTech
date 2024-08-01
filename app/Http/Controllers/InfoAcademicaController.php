@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Participante;
 use App\Models\Campista;
+use App\Models\Cohorte;
 
 
 class InfoAcademicaController extends Controller
@@ -33,10 +34,12 @@ class InfoAcademicaController extends Controller
             // Reemplaza 'columna_a_filtrar' con el nombre real de la columna en tu tabla Participante
         }
 
+        $cohortes = Cohorte::all();
+
         $participantes = $participantesQuery->paginate(50);
 
 
-        return view('admin.infoacademica.index', compact('participantes'));
+        return view('admin.infoacademica.index', compact('participantes'), compact('cohortes'));
     }
 
     public function edit(Request $request, $number)

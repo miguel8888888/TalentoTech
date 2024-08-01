@@ -9,13 +9,16 @@ use App\Models\Participante;
 use App\Models\Proyectos;
 use App\Models\Empresa;
 use App\Models\Ofertas;
+use App\Models\Cohorte;
 
 class CampistaController extends Controller
 {
     public function index()
     {
+        $cohortes = Cohorte::all();
       //grafica 4
         $empresas = Empresa::all()->count();
+
 
         $empresasCauca = Empresa::where('departamento', 'Cauca')->count();
         $empresasNarino = Empresa::where('departamento', 'Nariño')->count();
@@ -57,6 +60,7 @@ class CampistaController extends Controller
             'nombres_empresas' => $nombres_empresas,
             'conteo_ofertas' => $conteo_ofertas,
             'colores' => $colores,
+            'cohortes' => $cohortes,
         ]);
 
 

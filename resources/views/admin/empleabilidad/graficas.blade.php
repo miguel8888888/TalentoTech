@@ -28,12 +28,12 @@
                         <div>
                         <label for="cohorteSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                         <select id="cohorteSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                <option value="">Todos</option>
-                            <option value="cohorte1">Cohorte 1</option>
-                            <option value="cohorte2">Cohorte 2</option>
-                            <option value="cohorte3">Cohorte 3</option>
-                            <option value="cohorte4">Cohorte 4</option>
-                            <option value="cohorte5">Cohorte 5</option>
+                            <option value="">Todos</option>
+                            @foreach ($cohortes as $cohorte)
+                                <option value="{{ $cohorte->nombre }}">
+                                    {{ $cohorte->nombre }}
+                                </option>
+                            @endforeach
                         </select>
                         </div>
                         <div>
@@ -78,11 +78,11 @@
                         <label for="cohorteSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                         <select id="cohorteSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="">Todos</option>
-                            <option value="cohorte1">Cohorte 1</option>
-                            <option value="cohorte2">Cohorte 2</option>
-                            <option value="cohorte3">Cohorte 3</option>
-                            <option value="cohorte4">Cohorte 4</option>
-                            <option value="cohorte5">Cohorte 5</option>
+                            @foreach ($cohortes as $cohorte)
+                                <option value="{{ $cohorte->nombre }}">
+                                    {{ $cohorte->nombre }}
+                                </option>
+                            @endforeach
 
                         </select>
                     </div>
@@ -123,11 +123,11 @@
                         <label for="cohorteSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                         <select id="cohorteSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option value="">Todos</option>
-                            <option value="cohorte1">Cohorte 1</option>
-                            <option value="cohorte2">Cohorte 2</option>
-                            <option value="cohorte3">Cohorte 3</option>
-                            <option value="cohorte4">Cohorte 4</option>
-                            <option value="cohorte5">Cohorte 5</option>
+                            @foreach ($cohortes as $cohorte)
+                                <option value="{{ $cohorte->nombre }}">
+                                    {{ $cohorte->nombre }}
+                                </option>
+                            @endforeach
                         </select>
                     </div>
                     <div>

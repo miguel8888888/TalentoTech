@@ -99,7 +99,9 @@ class InfoAcademicaController extends Controller
 
         $participantes=Participante::select('id');
 
-        return view('admin.infoacademica.graficas', compact('participantes'));
+        $cohortes = Cohorte::all();
+
+        return view('admin.infoacademica.graficas', compact('participantes'), compact('cohortes'));
         // return redirect()->route('infoacademica.graficas');
     }
 

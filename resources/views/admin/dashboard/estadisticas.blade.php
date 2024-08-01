@@ -38,10 +38,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="selectCohorte" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un cohorte</label>
                                 <select id="selectCohorte" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </form>
                             <canvas id="miGraficoBarra4" class="w-full relative h-64"></canvas>
@@ -73,10 +74,11 @@
                                 </select>
                                 <label for="cohorteSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -94,10 +96,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect2" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect2" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -115,10 +118,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect3" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -136,10 +140,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect4" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect4" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect4" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -157,10 +162,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect10" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect10" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -178,10 +184,11 @@
                             <form class="max-w-sm mx-auto">
                                 <label for="cohorteSelect11" class="block mb-2 text-sm font-medium text-gray-900">Selecciona un Cohorte</label>
                                 <select id="cohorteSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option value="cohorte1">Cohorte 1</option>
-                                    <option value="cohorte2">Cohorte 2</option>
-                                    <option value="cohorte3">Cohorte 3</option>
-                                    <option value="cohorte4">Cohorte 4</option>
+                                    @foreach ($cohortes as $cohorte)
+                                        <option value="{{ $cohorte->nombre }}" >
+                                            {{ $cohorte->nombre }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 <label for="modalidadSelect11" class="block mb-2 text-sm font-medium text-gray-900">Selecciona una Modalidad</label>
                                 <select id="modalidadSelect11" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
@@ -219,50 +226,90 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 
+// function grafica1() {
+//     // Configuración del Gráfico de Barra
+//     let ctxBarra = document.getElementById('miGraficoBarra').getContext('2d');
+//     let myChartBarra = new Chart(ctxBarra, {
+//         type: 'bar',
+//         data: {
+//             labels: {!! json_encode($labels) !!},
+//             datasets: [{
+//                 label: 'Cohorte 1',
+//                 data: {!! json_encode($data) !!},
+//                 backgroundColor: [
+//                     'rgba(54, 162, 235, 0.7)',
+
+//                 ],
+//             },
+//             {
+//                 label: 'Cohorte 2',
+//                 data: {!! json_encode($data2) !!},
+//                 backgroundColor: [
+//                     'rgba(255, 99, 132, 0.7)',
+
+//                 ],
+//             },
+//             {
+//                 label: 'Cohorte 3',
+//                 data: {!! json_encode($data3) !!},
+//                 backgroundColor: [
+//                     'rgba(255, 206, 86, 0.7)',
+
+//                 ],
+//             },
+//             {
+//                 label: 'Cohorte 4',
+//                 data: {!! json_encode($data4) !!},
+//                 backgroundColor: [
+//                     'rgba(52, 235, 107, 0.7)',
+
+//                 ],
+//             }
+//         ],
+//         },
+//     });
+// }
+// grafica1();
+
 function grafica1() {
     // Configuración del Gráfico de Barra
     let ctxBarra = document.getElementById('miGraficoBarra').getContext('2d');
+
+    // Variables de PHP a JavaScript
+    let cohortes = {!! json_encode($cohortes) !!};
+    let dataCohorte = {!! json_encode($dataCohorte) !!};
+
+    // Paleta de colores para las barras
+    let colores = [
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(255, 206, 86, 0.7)',
+        'rgba(52, 235, 107, 0.7)',
+        'rgba(52, 79, 235, 0.7)',
+        'rgba(98, 16, 145, 0.7)',
+        'rgba(235, 153, 52, 0.7)',
+        // Agrega más colores si es necesario
+    ];
+
+    // Configuración de datasets
+    let datasets = cohortes.map((cohorte, index) => ({
+        label: cohorte.nombre,  // Asume que cada cohorte tiene un nombre
+        data: dataCohorte[cohorte.id],
+        backgroundColor: colores[index % colores.length]
+    }));
+
+    // Crear el gráfico de barras
     let myChartBarra = new Chart(ctxBarra, {
         type: 'bar',
         data: {
             labels: {!! json_encode($labels) !!},
-            datasets: [{
-                label: 'Cohorte 1',
-                data: {!! json_encode($data) !!},
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.7)',
-
-                ],
-            },
-            {
-                label: 'Cohorte 2',
-                data: {!! json_encode($data2) !!},
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.7)',
-
-                ],
-            },
-            {
-                label: 'Cohorte 3',
-                data: {!! json_encode($data3) !!},
-                backgroundColor: [
-                    'rgba(255, 206, 86, 0.7)',
-
-                ],
-            },
-            {
-                label: 'Cohorte 4',
-                data: {!! json_encode($data4) !!},
-                backgroundColor: [
-                    'rgba(52, 235, 107, 0.7)',
-
-                ],
-            }
-        ],
+            datasets: datasets
         },
     });
 }
+
 grafica1();
+
 
 function grafica2() {
     // Configuración del Gráfico de Barra
@@ -509,6 +556,23 @@ function grafica4() {
                     myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte4P) !!};
                     myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte4V) !!};
                     myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte4P) !!};
+                } else if (selectCohorte.value === 'cohorte5') {
+                    // Actualizar los datos para el segundo cohorte (si es necesario)
+                    // Aquí debes proporcionar los datos para el segundo cohorte
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte5V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte5P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte5V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte5P) !!};
+                } else if (selectCohorte.value === 'cohorte6' ){
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte6V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte6P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte6V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte6P) !!};
+                } else if (selectCohorte.value === 'cohorte7' ){
+                    myChartBarra.data.datasets[0].data = {!! json_encode($dataCaucaCohorte7V) !!};
+                    myChartBarra.data.datasets[1].data = {!! json_encode($dataCaucaCohorte7P) !!};
+                    myChartBarra.data.datasets[2].data = {!! json_encode($dataNarinoCohorte7V) !!};
+                    myChartBarra.data.datasets[3].data = {!! json_encode($dataNarinoCohorte7P) !!};
                 }
 
                 myChartBarra.update();

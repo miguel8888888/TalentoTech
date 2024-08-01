@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Participante;
+use App\Models\Cohorte;
 
 class EstadisticasController extends Controller
 {
@@ -27,6 +28,8 @@ class EstadisticasController extends Controller
         //modalidad bootcamps
         $presencial = 'Presencial / híbrido';
         $virtual = 'Virtual';
+
+        $cohortes = Cohorte::all();
 
         $estadoMatricula = 'Matricula'; // Cambia esto por el estado específico que estás buscando
         $estadoInscipcion = 'Inscripción'; // Cambia esto por el estado específico que estás buscando
@@ -54,6 +57,12 @@ class EstadisticasController extends Controller
             }
 
             return $data;
+        }
+
+        $dataCohorte = [];
+
+        foreach( $cohortes as $cohorte){
+            $dataCohorte[$cohorte->id] = obtenerDatosCohorte($cohorte->nombre);
         }
 
         $data = obtenerDatosCohorte($estadoCohorte1);
@@ -191,6 +200,11 @@ class EstadisticasController extends Controller
         $estadoCohorte2 = 'cohorte2';
         $estadoCohorte3 = 'cohorte3';
         $estadoCohorte4 = 'cohorte4';
+        $estadoCohorte5 = 'cohorte5';
+        $estadoCohorte6 = 'cohorte6';
+        $estadoCohorte7 = 'cohorte7';
+
+
         $labels = [$ia, $programacion, $analisisDatos, $blockchain, $arqNube];
         $departamentoCauca = 'Cauca';
         $departamentoNarino = 'Nariño';
@@ -216,6 +230,24 @@ class EstadisticasController extends Controller
         $dataCaucaCohorte4P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte4, $labels, $departamentoCauca, $modalidadPresencial);
         $dataNarinoCohorte4V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte4, $labels, $departamentoNarino, $modalidadVirtual);
         $dataNarinoCohorte4P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte4, $labels, $departamentoNarino, $modalidadPresencial);
+
+        $dataCaucaCohorte5V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte5, $labels, $departamentoCauca, $modalidadVirtual);
+        $dataCaucaCohorte5P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte5, $labels, $departamentoCauca, $modalidadPresencial);
+        $dataNarinoCohorte5V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte5, $labels, $departamentoNarino, $modalidadVirtual);
+        $dataNarinoCohorte5P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte5, $labels, $departamentoNarino, $modalidadPresencial);
+
+        $dataCaucaCohorte6V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte6, $labels, $departamentoCauca, $modalidadVirtual);
+        $dataCaucaCohorte6P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte6, $labels, $departamentoCauca, $modalidadPresencial);
+        $dataNarinoCohorte6V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte6, $labels, $departamentoNarino, $modalidadVirtual);
+        $dataNarinoCohorte6P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte6, $labels, $departamentoNarino, $modalidadPresencial);
+
+        $dataCaucaCohorte7V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte7, $labels, $departamentoCauca, $modalidadVirtual);
+        $dataCaucaCohorte7P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte7, $labels, $departamentoCauca, $modalidadPresencial);
+        $dataNarinoCohorte7V = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte7, $labels, $departamentoNarino, $modalidadVirtual);
+        $dataNarinoCohorte7P = obtenerConteoPorTipoFormacionYModalidad($estadoCohorte7, $labels, $departamentoNarino, $modalidadPresencial);
+
+
+
 
         // // Conteo para Cauca cohorte 1 virtual
         // $dataCaucaCohorte1V = [];
@@ -366,6 +398,8 @@ class EstadisticasController extends Controller
         // dd($estadoMatricula);
         return view('admin/dashboard/estadisticas', [
             'labels' => $labels, 'data' => $data, 'data2' => $data2, 'data3' => $data3, 'data4' => $data4,
+            'dataCohorte' => $dataCohorte,
+            'cohortes' => $cohortes,
             'dataCauca' => $dataCauca,
             'dataNarino' => $dataNarino,
             'dataCaucaCohorte1' => $dataCaucaCohorte1,
@@ -392,6 +426,18 @@ class EstadisticasController extends Controller
             'dataCaucaCohorte4P' => $dataCaucaCohorte4P,
             'dataNarinoCohorte4V' => $dataNarinoCohorte4V,
             'dataNarinoCohorte4P' => $dataNarinoCohorte4P,
+            'dataCaucaCohorte5V' => $dataCaucaCohorte5V,
+            'dataCaucaCohorte5P' => $dataCaucaCohorte5P,
+            'dataNarinoCohorte5V' => $dataNarinoCohorte5V,
+            'dataNarinoCohorte5P' => $dataNarinoCohorte5P,
+            'dataCaucaCohorte6V' => $dataCaucaCohorte6V,
+            'dataCaucaCohorte6P' => $dataCaucaCohorte6P,
+            'dataNarinoCohorte6V' => $dataNarinoCohorte6V,
+            'dataNarinoCohorte6P' => $dataNarinoCohorte6P,
+            'dataCaucaCohorte7V' => $dataCaucaCohorte7V,
+            'dataCaucaCohorte7P' => $dataCaucaCohorte7P,
+            'dataNarinoCohorte7V' => $dataNarinoCohorte7V,
+            'dataNarinoCohorte7P' => $dataNarinoCohorte7P,
             'conteoPorMunicipioCohorte1' => $conteoPorMunicipioCohorte1,
             'conteoPorMunicipioCohorte2' => $conteoPorMunicipioCohorte2,
             'conteoPorMunicipioCohorte3' => $conteoPorMunicipioCohorte3,

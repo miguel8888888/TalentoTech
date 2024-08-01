@@ -28,12 +28,10 @@
                 <x-card :count="$countCauca" description="Total Inscritos" />
                 <x-card :count="$countCaucaPreMatriculados + $countCaucaPosMatriculados" description="Total Pre-matriculados" />
                 <x-card :count="$countCaucaMatriculados" description="Total Matriculados" />
-                <x-card :count="$countCaucaCorte1" description="Total Cohorte 1" />
-                <x-card :count="$countCaucaCorte2" description="Total Cohorte 2" />
-                <x-card :count="$countCaucaCorte3" description="Total Cohorte 3" />
-                <x-card :count="$countCaucaCorte4" description="Total Cohorte 4" />
-                <x-card :count="$countCaucaCorte5" description="Total Cohorte 5" />
-                <x-card :count="$countCaucaCorte6" description="Total Cohorte 6" />
+                @foreach ($cohortes as $cohorte)
+                    <x-card :count="$countCaucaCohorte[$cohorte->id]" description="Total Cohorte {{ $cohorte->id }}" />
+                @endforeach
+
             </div>
 
         </div>
@@ -49,12 +47,10 @@
                 <x-card :count="$countNariño" description="Total Inscritos" />
                 <x-card :count="$countNariñoPreMatriculados + $countNariñoPosMatriculados" description="Total Pre-matriculados" />
                 <x-card :count="$countNariñoMatriculados" description="Total Matriculados" />
-                <x-card :count="$countNariñoCorte1" description="Total Cohorte 1" />
-                <x-card :count="$countNariñoCorte2" description="Total Cohorte 2" />
-                <x-card :count="$countNariñoCorte3" description="Total Cohorte 3" />
-                <x-card :count="$countNariñoCorte4" description="Total Cohorte 4" />
-                <x-card :count="$countNariñoCorte5" description="Total Cohorte 5" />
-                <x-card :count="$countNariñoCorte6" description="Total Cohorte 6" />
+                @foreach ($cohortes as $cohorte)
+                    <x-card :count="$countNariñoCohorte[$cohorte->id]" description="Total Cohorte {{ $cohorte->id }}" />
+                @endforeach
+
 
             </div>
         </div>

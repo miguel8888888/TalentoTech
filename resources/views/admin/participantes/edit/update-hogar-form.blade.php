@@ -636,12 +636,12 @@
                         <option selected disabled>Seleccione...</option>
                         <option @if (old('cohorte', $participantes->cohorte) === 'cohorte1') selected @endif value="cohorte1">Cohorte 1</option>
                         <option @if (old('cohorte', $participantes->cohorte) === 'cohorte2') selected @endif value="cohorte2">Cohorte 2</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte3') selected @endif value="cohorte2">Cohorte 3</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte4') selected @endif value="cohorte2">Cohorte 4</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte5') selected @endif value="cohorte2">Cohorte 5</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte6') selected @endif value="cohorte2">Cohorte 6</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte7') selected @endif value="cohorte2">Cohorte 7</option>
-                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte8') selected @endif value="cohorte2">Cohorte 8</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte3') selected @endif value="cohorte3">Cohorte 3</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte4') selected @endif value="cohorte4">Cohorte 4</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte5') selected @endif value="cohorte5">Cohorte 5</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte6') selected @endif value="cohorte6">Cohorte 6</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte7') selected @endif value="cohorte7">Cohorte 7</option>
+                        <option @if (old('cohorte', $participantes->cohorte) === 'cohorte8') selected @endif value="cohorte8">Cohorte 8</option>
                     </select>
                 </div>
             </div>

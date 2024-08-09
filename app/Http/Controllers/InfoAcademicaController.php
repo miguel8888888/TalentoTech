@@ -202,13 +202,21 @@ class InfoAcademicaController extends Controller
                // Cargar los datos externos una vez
                $url = 'https://imaster.academy/report/didactic_report/Reportes.json';
                $json = file_get_contents($url);
-               $datos = json_decode($json, true)[0]['data'];
+               $data = json_decode($json, true);
+               $datos = $data[0]['data'];
+
+
 
                // Iterar sobre los participantes obtenidos de la base de datos
                // Buscar la entrada correspondiente en $datos basándose en el número de documento
                foreach ($datos as $item) {
-                    $participante = Participante::where('numero_documento', $item['cedula'])->first();
+
+
+                    $participante = Participante::where('numero_documento', $item['cedula'])
+                    ->orWhere('numero_documento', $item['usuario'])
+                    ->first();
                     if ($participante) {
+                       echo 'Participante encontrado: ' . $participante->primer_nombre . ' ' . $participante->numero_documento . '<br>';
                         $participante->curso_id = $item['courseid'];
                         $participante->curso = $item['curso'];
                         $participante->progreso = $item['progreso'];
@@ -277,5 +285,10 @@ class InfoAcademicaController extends Controller
                 Participante::where('postulacion_registrada', null)
                 ->orWhere('postulacion_registrada', '')
                 ->update(['postulacion_registrada' => 'No']);
+
+
+
+
+
     }
 }

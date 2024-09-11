@@ -51,7 +51,7 @@
           </div>
           <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
             <ul
-              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  border-gray-700">
+              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-5 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  border-gray-700">
               <li class="">
                 <a href="https://talentotechregion3.com.co/"
                   class="block  text-white  rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b] p-2 "
@@ -73,6 +73,11 @@
                 <a href="https://imaster.academy/login/index.php"
                   class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Plataforma
                   de formación</a>
+              </li>
+              <li class="">
+                <a href="https://empleabilidad.talentotechregion3.com.co/login"
+                  class="block text-white rounded-[15px]  md:text-white md:p-0 md:dark:text-white hover:bg-[#082e4b]">Plataforma
+                  de empleabilidad</a>
               </li>
               <li class="">
                 <a href="https://registro.talentotechregion3.com.co/preguntas_frecuentes.html"

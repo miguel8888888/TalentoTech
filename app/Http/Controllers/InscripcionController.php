@@ -12,7 +12,7 @@ class InscripcionController extends Controller
 {
     public function inscripcion()
     {
-        return view('Formularios.inscripcion');
+        return view('Formularios.cierreInscripcion');
 
 
     }

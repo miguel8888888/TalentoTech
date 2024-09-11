@@ -28,7 +28,7 @@ use App\Http\Controllers\CampistaController;
 */
 
 Route::get('/', function () {
-    return view('Formularios/validar');
+    return view('Formularios/cierreInscripcion');
 });
 
 

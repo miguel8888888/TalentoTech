@@ -31,8 +31,13 @@ Route::get('/', function () {
     return view('Formularios/cierreInscripcion');
 });
 
+//retornar view de validar
+Route::get('validar', function () {
+    return view('Formularios/validar');
+});
 
 Route::get('inscripcion', [InscripcionController::class, 'inscripcion'])->name('inscripcion');
+Route::get('inscribirse', [InscripcionController::class, 'inscribirse'])->name('inscribirse');
 Route::post('inscripcion/store', [InscripcionController::class, 'store']);
 Route::get('inscripcionexitosa', [InscripcionController::class, 'cargarVistaExito'])->name('inscripcionexitosa');
 

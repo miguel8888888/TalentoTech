@@ -17,6 +17,11 @@ class InscripcionController extends Controller
 
     }
 
+    public function inscribirse()
+    {
+        return view('Formularios.inscripcion');
+    }
+
     public function store(Request $request)
     {
 
